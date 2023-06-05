@@ -1,0 +1,6 @@
+owner = REI
+controller = REI
+add_core = GUY
+trade_goods = tropical_wood
+life_rating = 35
+colonial = 2

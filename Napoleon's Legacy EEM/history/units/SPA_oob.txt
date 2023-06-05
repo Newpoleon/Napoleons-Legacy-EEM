@@ -1,0 +1,89 @@
+#Sphere of Influence
+MEX = {
+    value = 75
+}
+ECU = {
+    value = 100
+}
+PEU = {
+    value = 100
+}
+BOL = {
+    value = 100
+}
+CHL = {
+    value = 100
+}
+PRG = {
+    value = 100
+}
+UCA = {
+    value = 100
+}
+CAN = {
+    value = 100
+}
+BRZ = {
+    value = 100
+}
+URU = {
+    value = 75
+}
+REI = {
+    value = 100
+}
+POR = {
+    value = 100
+}
+NSA = {
+    value = -200
+}
+FRA = {
+    value = -200
+}
+
+leader = {
+    name = "Andres de Santa Cruz"
+    type = land
+    date = 1836.1.1
+    personality = arrogant
+    background = old_school
+}
+
+navy = {
+    name = "Marina de Guerra del Peru"
+    location = 2295
+    ship = {
+        name= "Monteagudo"
+        type = frigate
+    }
+
+    ship = {
+        name= "Santa Cruz"
+        type = frigate
+    }
+
+}
+
+army = {
+    name = "Ej�rcito del Per�"
+    location = 2295
+    regiment = {
+        name= "1. Brigada de Infanter�a"
+        type = infantry
+        home = 2295
+    }
+
+    regiment = {
+        name= "2. Brigada de Infanter�a"
+        type = infantry
+        home = 2295
+    }
+
+    regiment = {
+        name= "3. Brigada de Infanter�a"
+        type = infantry
+        home = 2302
+    }
+
+}

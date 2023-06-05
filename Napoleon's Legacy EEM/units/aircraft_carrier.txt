@@ -1,0 +1,62 @@
+aircraft_carrier = {
+    icon = 22
+    naval_icon = 11 #battleships are 10
+
+    type = naval
+    sprite = Dreadnought
+    unit_type = big_ship
+    capital = yes
+    active = no
+
+    move_sound = steam_move
+    select_sound = steam_selected
+    floating_flag = yes
+    can_build_overseas = no
+    colonial_points = 30
+
+    #Core Abilities
+    priority = 80
+    max_strength = 100
+    default_organisation = 30
+    maximum_speed = 21
+    weighted_value = 500.0		#400
+
+
+    #Building Costs
+    build_time = 480
+    build_cost = {
+        steamer_convoy = 100 	#125    
+        artillery = 20          
+        canned_food = 60        
+        telephones = 20           
+        regular_clothes = 60    
+        fuel = 100               
+        radio = 20 				#40
+        aeroplanes = 10			#20
+    }
+
+    min_port_level = 6
+    limit_per_port = 1
+    supply_consumption_score = 80 #120
+
+    supply_consumption = 1.0
+    supply_cost = {
+        steamer_convoy = 1.0	#1.2
+        artillery = 0.1
+        canned_food = 1
+        telephones = 0.01
+        fuel = 10
+        ammunition = 0.5
+        regular_clothes = 0.5
+        tobacco = 2
+        radio = 0.02
+        aeroplanes = 0.2		#0.1
+    }
+
+    #Naval Abilities
+    hull = 20
+    gun_power = 14 #4 + 11 = 15
+    fire_range = 1.6 #2
+    evasion = 0
+    torpedo_attack = 5 #0
+}

@@ -1,0 +1,63 @@
+political_decisions = {
+
+    claim_north_cape_colony = {
+        picture = map_saf
+        potential = {
+            tag = SAF
+            2093 = {
+                empty = no
+                NOT = { owned_by = THIS }
+            }
+            NOT = { has_country_flag = claimed_north_cape_colony }
+        }
+
+        allow = {
+            owns = 2087
+            2093 = { NOT = { is_core = THIS } }
+        }
+
+        effect = {
+            set_country_flag = claimed_north_cape_colony
+            2088 = {
+                owner = {
+                    add_casus_belli = {
+                        target = THIS
+                        type = place_in_the_sun
+                        months = 60
+                    }
+                }
+            }
+            2092 = {
+                owner = {
+                    add_casus_belli = {
+                        target = THIS
+                        type = place_in_the_sun
+                        months = 60
+                    }
+                }
+            }
+            2093 = {
+                owner = {
+                    add_casus_belli = {
+                        target = THIS
+                        type = place_in_the_sun
+                        months = 60
+                    }
+                }
+            }
+            2558 = { owner = {
+            add_casus_belli = {
+                target = THIS
+                type = place_in_the_sun
+                months = 60
+                    }
+                }
+            }
+            random_country = {
+                limit = { owns = 2093 }
+                relation = { who = THIS value = -100 }
+                leave_alliance = THIS
+            }
+        }
+    }
+}

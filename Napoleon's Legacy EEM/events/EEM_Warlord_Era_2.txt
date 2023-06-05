@@ -1,0 +1,612 @@
+country_event = {
+    id = 131715
+    title = "EVTNAME131715" #The New Army
+    desc = "EVTDESC131715"
+    news = yes
+    news_desc_long = "EVTDESC131715_NEWS_LONG"
+    news_desc_medium = "EVTDESC131715_NEWS_MEDIUM"
+    news_desc_short = "EVTDESC131715_NEWS_SHORT"
+    picture = "warlords"
+
+    fire_only_once = yes
+
+    trigger = {
+        OR = {
+            AND = {
+                tag = QNG
+                TPG = { exists = no }
+                CHI = { exists = no }
+                RTR = { exists = no }
+            }
+            AND = {
+                tag = TPG
+                QNG = { exists = no }
+                CHI = { exists = no }
+                RTR = { exists = no }
+            }
+            AND = {
+                tag = CHI
+                TPG = { exists = no }
+                QNG = { exists = no }
+                RTR = { exists = no }
+            }
+            AND = {
+                tag = RTR
+                TPG = { exists = no }
+                QNG = { exists = no }
+                CHI = { exists = no }
+            }
+        }
+        war = no
+        OR = {
+            civilized = yes
+            AND = {
+                civilized = no
+                civilization_progress = 0.7
+                OR = {
+                    foreign_weapons = yes_foreign_weapons
+                    foreign_artillery = yes_foreign_artillery
+                    AND = {
+                        foreign_officers = yes_foreign_officers
+                        army_schools = yes_army_schools
+                    }
+                }
+            }
+            AND = {
+                tag = QNG
+                has_country_flag = manchu_elite_cleared_out
+                NOT = { nationalvalue = nv_tradition }
+            }
+        }
+        NOT = { has_global_flag = the_new_army }
+    }
+
+
+    mean_time_to_happen = {
+        months = 12
+        modifier = {
+            factor = 2
+            NOT = { has_country_flag = manchu_elite_cleared_out }
+        }
+        modifier = {
+            factor = 0.1
+            is_greater_power = yes
+        }
+        modifier = {
+            factor = 0.5
+            breech_loaded_rifles = 1
+        }
+        modifier = {
+            factor = 0.6
+            army_decision_making = 1
+        }
+        modifier = {
+            factor = 0.5
+            military_statistics = 1
+        }
+        modifier = {
+            factor = 0.8
+            year = 1880
+        }
+        modifier = {
+            factor = 0.85
+            year = 1905
+        }
+        modifier = {
+            factor = 0.9
+            year = 1910
+        }
+        modifier = {
+            factor = 0.95
+            year = 1915
+        }
+    }
+
+    immediate = { set_global_flag = the_new_army }
+
+    option = {
+        name = "EVT131715OPTA"
+        set_global_flag = spread_warlord_influence
+        tech_school = army_tech_school
+        add_country_modifier = {
+            name = academic_confusion
+            duration = 1825
+        }
+        soldiers = { militancy = -8 }
+        officers = { militancy = -8 }
+        random_owned = { limit = { region = CHI_1082 } CHI_1082 = { add_core = MCK } }
+        MCK = { random_owned = { limit = { region = CHI_1082 } CHI_1082 = { add_core = MCK } } }
+        random_owned = { limit = { region = CHI_1082 } CHI_1082 = { add_core = MCK } }
+        CHI_1479 = { add_core = MCK }
+        CHI_1552 = { add_core = MCK }
+        1533 = { add_core = MCK }
+        random_owned = {
+            limit = {
+                owner = { NOT = { tag = QNG } }
+            }
+            QNG = {
+                all_core = { remove_core = QNG }
+            }
+        }
+        random_owned = {
+            limit = { region = CHI_1572 }
+            CHI_1572 = { add_core = SXI }
+        }
+        random_owned = {
+            limit = { region = CHI_1470 }
+            CHI_1470 = { add_core = HUI }
+        }
+        random_owned = {
+            limit = { region = CHI_1477 }
+            CHI_1477 = { add_core = HUI }
+        }
+        random_owned = {
+            limit = { region = CHI_1578 }
+            CHI_1578 = { add_core = SZC }
+        }
+        random_owned = {
+            limit = { region = CHI_1579 }
+            CHI_1579 = { add_core = SZC }
+        }
+        random_owned = {
+            limit = { region = CHI_1600 }
+            CHI_1600 = { add_core = XIN }
+        }
+        random_owned = {
+            limit = { region = CHI_1594 }
+            CHI_1594 = { add_core = XIN }
+        }
+        random_owned = {
+            limit = { region = CHI_1524 }
+            CHI_1524 = { add_core = HNN }
+        }
+        random_owned = {
+            limit = { region = CHI_1526 }
+            CHI_1526 = { add_core = HNN }
+        }
+        #random_owned = {
+        #    limit = { region = CHI_1505 }
+        #    CHI_1505 = { add_core = MAO }
+        #}
+        any_country = {
+            limit = {
+                exists = no
+                OR = {
+                    tag = FJN
+                    tag = GMJ
+                    tag = GNG
+                    tag = GXI
+                    tag = HNN
+                    tag = HUI
+                    tag = MCK
+                    tag = SXI
+                    tag = SZC
+                    tag = TAI
+                    tag = XBI
+                    tag = XIN
+                    tag = YNN
+                    #tag = MAO
+                }
+            }
+            civilized = yes
+            government = presidential_dictatorship
+            political_reform = none_voting
+            political_reform = party_appointed
+            political_reform = no_meeting
+            political_reform = state_press
+            political_reform = state_controlled
+            political_reform = underground_parties
+        }
+
+        #any_country = {
+        #    limit = {
+        #        exists = no
+        #        tag = MAO
+        #    }
+        #    primary_culture = nanfaren
+        #    add_accepted_culture = miao
+        #    religion = mahayana
+        #    clr_country_flag = animist_country
+        #    set_country_flag = mahayana_country
+        #}
+
+        random_owned = {
+		    limit = {
+                owner = { tag = QNG }
+                NOT = { exists = RTR }
+            }
+            RTR = { all_core = { remove_core = RTR } }
+            set_global_flag = ming_has_happened
+            set_global_flag = ming_has_been_defeated
+		}
+        random_owned = {
+		    limit = {
+                owner = { tag = QNG }
+                NOT = { exists = TPG }
+            }
+            TPG = { all_core = { remove_core = TPG } }
+            set_global_flag = taiping_has_happened
+            set_global_flag = taiping_has_been_defeated
+		}
+
+        random_owned = {
+            limit = { owner = { has_country_modifier = yong_ying } }
+            owner = { remove_country_modifier = yong_ying }
+        }
+
+    }
+}
+
+country_event = {
+    id = 164600
+    title = "EVTNAME164600" #The Tongmenghui
+    desc = "EVTDESC164600"
+    news = yes
+    news_desc_long = "EVTDESC164600_NEWS_LONG"
+    news_desc_medium = "EVTDESC164600_NEWS_MEDIUM"
+    news_desc_short = "EVTDESC164600_NEWS_SHORT"
+    picture = "xinhai"
+
+    trigger = {
+        OR = {
+            AND = {
+                tag = QNG
+                NOT = { exists = TPG }
+                NOT = { exists = CHI }
+                NOT = { exists = RTR }
+            }
+            AND = {
+                tag = TPG
+                NOT = { exists = QNG }
+                NOT = { exists = CHI }
+                NOT = { exists = RTR }
+            }
+            AND = {
+                tag = CHI
+                NOT = { exists = TPG }
+                NOT = { exists = QNG }
+                NOT = { exists = RTR }
+            }
+            AND = {
+                tag = RTR
+                NOT = { exists = TPG }
+                NOT = { exists = QNG }
+                NOT = { exists = CHI }
+            }
+        }
+        civilized = yes
+        OR = {
+            government = absolute_monarchy
+            government = prussian_constitutionalism
+            AND = { government = hms_government tag = QNG }
+            has_country_modifier = the_terror
+            has_country_modifier = totalitarian_system
+            has_country_modifier = political_education
+            has_country_modifier = cult_of_personality
+        }
+        has_global_flag = the_new_army
+        NOT = { has_country_flag = tongmenghui }
+    }
+
+    mean_time_to_happen = {
+        months = 30
+        modifier = {
+            factor = 1.2
+            is_greater_power = yes
+        }
+        modifier = {
+            factor = 0.9
+            has_recently_lost_war = yes
+        }
+        modifier = {
+            factor = 0.5
+            vote_franschise = none_voting
+        }
+        modifier = {
+            factor = 0.5
+            vote_franschise = landed_voting
+        }
+        modifier = {
+            factor = 1.5
+            vote_franschise = universal_weighted_voting
+        }
+        modifier = {
+            factor = 2
+            vote_franschise = universal_voting
+        }
+        modifier = {
+            factor = 1.5
+            ruling_party_ideology = liberal
+        }
+        modifier = {
+            factor = 0.8
+            ruling_party_ideology = reactionary
+        }
+        modifier = {
+            factor = 0.8
+            political_parties = underground_parties
+        }
+        modifier = {
+            factor = 1.5
+            OR = {
+                political_parties = non_secret_ballots
+                political_parties = secret_ballots
+            }
+        }
+        modifier = {
+            factor = 1.5
+            NOT = { liberal = 10 }
+        }
+        modifier = {
+            factor = 0.8
+            year = 1900
+        }
+        modifier = {
+            factor = 0.8
+            year = 1905
+        }
+        modifier = {
+            factor = 0.8
+            year = 1910
+        }
+        modifier = {
+            factor = 0.8
+            year = 1915
+        }
+    }
+
+    immediate = {
+        set_country_flag = tongmenghui
+    }
+
+    option = {
+        name = "EVT164600OPTA"
+        set_country_flag = appease_societies
+        prestige = -10
+        poor_strata = {
+            limit = { is_culture_group = east_asian }
+            consciousness = 2
+            ideology = {
+                value = liberal
+                factor = 0.08
+            }
+        }
+        middle_strata = {
+            limit = { is_culture_group = east_asian }
+            consciousness = 4
+            ideology = {
+                value = liberal
+                factor = 0.12
+            }
+        }
+    }
+
+    option = {
+        name = "EVT164600OPTB"
+        poor_strata = {
+            limit = {
+                is_culture_group = east_asian
+                is_primary_culture = no
+            }
+            militancy = 3
+        }
+
+        random_state = {
+            limit = {
+                OR = {
+                    liberal = 10
+                    socialist = 10
+                    communist = 10
+                    fascist = 10
+                }
+                any_owned_province = { is_core = CHI }
+            }
+            any_pop = {
+                limit = { is_culture_group = east_asian }
+                militancy = 3
+            }
+            any_owned = {
+                add_province_modifier = {
+                    name = peasant_revolt
+                    duration = 365
+                }
+            }
+        }
+    }
+}
+
+province_event = {
+    id = 164601
+    title = "$STATENAME$ Uprising"   #Revolutionary Uprising in $STATENAME$
+    desc = "EVTDESC164601_NEW"
+
+    trigger = {
+        is_core = CHI
+        NOT = { has_province_modifier = peasant_revolt }
+        NOT = { owner = { government = hms_government } }
+        NOT = { owner = { government = democracy } }
+        OR = {
+            liberal = 10
+            socialist = 10
+            communist = 10
+            fascist = 10
+            average_militancy = 4
+        }
+        owner = {
+            has_country_flag = tongmenghui
+            NOT = { has_global_flag = warlord_era_has_begun }
+            war = no
+            OR = {
+                government = absolute_monarchy
+                government = prussian_constitutionalism
+                government = hms_government
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2100
+        modifier = {
+            factor = 3
+            NOT = { controlled_by = THIS }
+        }
+        modifier = {
+            factor = 1.2
+            owner = {
+                NOT = { part_of_sphere = yes }
+            }
+        }
+        modifier = {
+            factor = 0.8
+            OR = {
+                liberal = 20
+                socialist = 20
+                communist = 20
+                fascist = 20
+            }
+        }
+        modifier = {
+            factor = 0.9
+            average_militancy = 5
+        }
+        modifier = {
+            factor = 0.9
+            average_militancy = 7
+        }
+        modifier = {
+            factor = 4 #2
+            is_primary_culture = yes
+        }
+        modifier = {
+            factor = 1.5
+            is_accepted_culture = yes
+        }
+        modifier = {
+            factor = 0.8
+            owner = { vote_franschise = none_voting }
+        }
+        modifier = {
+            factor = 0.9
+            owner = { vote_franschise = landed_voting }
+        }
+        modifier = {
+            factor = 1.5
+            owner = { vote_franschise = universal_weighted_voting }
+        }
+        modifier = {
+            factor = 2
+            owner = { vote_franschise = universal_voting }
+        }
+        modifier = {
+            factor = 0.8
+            owner = { political_parties = underground_parties }
+        }
+        modifier = {
+            factor = 1.5
+            owner = { has_country_flag = appease_societies }
+        }
+        modifier = {
+            factor = 0.8
+            any_neighbor_province = { has_province_modifier = peasant_revolt }
+        }
+        modifier = {
+            factor = 0.8
+            year = 1900
+        }
+        modifier = {
+            factor = 0.8
+            year = 1905
+        }
+        modifier = {
+            factor = 0.8
+            year = 1910
+        }
+    }
+
+    option = {
+        name = "EVT164601OPTA"
+
+        NWO = {
+            change_variable = {
+                which = chinese_uprising_counter
+                value = 1
+            }
+        }
+
+        any_pop = {
+            limit = {
+                is_culture_group = east_asian
+                is_primary_culture = no
+            }
+            reduce_pop = 0.995
+            militancy = 6
+            consciousness = 6
+        }
+
+        state_scope = {
+            any_owned = {
+                limit = {
+                    NOT = { owner = { has_country_flag = appease_societies } }
+                }
+                add_province_modifier = {
+                    name = peasant_revolt
+                    duration = 365
+                }
+                any_pop = {
+                    limit = {
+                        is_culture_group = east_asian
+                        is_primary_culture = no
+                    }
+                    reduce_pop = 0.995
+                    militancy = 3
+                }
+            }
+
+            any_owned = {
+                limit = {
+                   owner = { has_country_flag = appease_societies } 
+                }
+                add_province_modifier = {
+                    name = peasant_revolt
+                    duration = 180
+                }
+                any_pop = {
+                    limit = {
+                        is_culture_group = east_asian
+                        is_primary_culture = no
+                    }
+                    consciousness = 2
+                    ideology = {
+                        value = liberal
+                        factor = 0.1
+                    }
+                }
+            }
+
+            any_pop = {
+                limit = { is_culture_group = east_asian strata = poor }
+                consciousness = 2
+                ideology = {
+                    value = liberal
+                    factor = 0.1   #0.05
+                }
+            }
+            any_pop = {
+                limit = { is_culture_group = east_asian strata = middle }
+                consciousness = 2
+                ideology = {
+                    value = liberal
+                    factor = 0.2   #0.1
+                }
+            }
+            any_pop = {
+                scaled_militancy = {
+                    ideology = liberal
+                    factor = 3
+                }
+            }
+        }
+
+    }
+}
+

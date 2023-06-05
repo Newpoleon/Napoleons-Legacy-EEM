@@ -1,0 +1,1479 @@
+#166700 test events, trade zone generic events
+
+country_event = {
+    id = 166700
+    title = "The Unequal Treaties"
+    desc = "EVTDESC166700"
+    picture = "asian_administration"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "The barbarians are still too powerful to resist."
+        random_owned = {
+            limit = { owner = { has_country_flag = tore_up_unequal_treaties } }
+            owner = { clr_country_flag = tore_up_unequal_treaties }
+        }
+        random_country = {
+            limit = {
+                tag = TZ1
+                exists = yes
+                neighbour = THIS
+            }
+            THIS = { create_vassal = TZ1 }
+            1565 = { secede_province = TZ1 }
+            1567 = { secede_province = TZ1 }
+            1570 = { secede_province = TZ1 }
+        }
+        random_country = {
+            limit = {
+                tag = TZ2
+                exists = yes
+                neighbour = THIS
+            }
+            THIS = { create_vassal = TZ2 }
+            1571 = { secede_province = TZ2 }
+            1568 = { secede_province = TZ2 }
+            1564 = { secede_province = TZ2 }
+
+        }
+        #random_country = {
+        #    limit = {
+        #        tag = TZ3
+        #        exists = yes
+        #        neighbour = THIS
+        #    }
+        #    THIS = { create_vassal = TZ3 }
+        #}
+        random_country = {
+            limit = {
+                tag = TZ4
+                exists = yes
+                neighbour = THIS
+            }
+            THIS = { create_vassal = TZ4 }
+            1539 = { secede_province = TZ4 }
+            1537 = { secede_province = TZ4 }
+            1544 = { secede_province = TZ4 }
+        }
+        random_country = {
+            limit = {
+                tag = TZ5
+                exists = yes
+                neighbour = THIS
+            }
+            THIS = { create_vassal = TZ5 }
+            1605 = { secede_province = TZ5 }
+            1475 = { secede_province = TZ5 }
+            1471 = { secede_province = TZ5 }
+            1470 = { secede_province = TZ5 }
+        }
+        random_country = {
+            limit = {
+                tag = TZ6
+                exists = yes
+                neighbour = THIS
+            }
+            THIS = { create_vassal = TZ6 }
+            1610 = { secede_province = TZ6 }
+            1611 = { secede_province = TZ6 }
+            1609 = { secede_province = TZ6 }
+            1607 = { secede_province = TZ6 }
+            1604 = { secede_province = TZ6 }
+            1473 = { secede_province = TZ6 }
+
+        }
+        random_country = {
+            limit = {
+                tag = TZ7
+                exists = yes
+                neighbour = THIS
+            }
+            THIS = { create_vassal = TZ7 }
+            1493 = { secede_province = TZ7 }
+            1497 = { secede_province = TZ7 }
+            1494 = { secede_province = TZ7 }
+            1500 = { secede_province = TZ7 }
+        }
+        random_country = {
+            limit = {
+                tag = TZ8
+                exists = yes
+                neighbour = THIS
+            }
+            THIS = { create_vassal = TZ8 }
+            1495 = { secede_province = TZ8 }
+            1501 = { secede_province = TZ8 }
+            3326 = { secede_province = TZ8 }
+        }
+
+
+
+        any_neighbor_country = {
+            limit = {
+                is_vassal = yes
+                overlord = { tag = QNG }
+                THIS = { tag = QNG }
+                OR = {
+                    tag = TZ1
+                    tag = TZ2
+                    #tag = TZ3
+                    tag = TZ4
+                    tag = TZ5
+                    tag = TZ6
+                    tag = TZ7
+                    tag = TZ8
+                }
+            }
+            add_accepted_culture = manchu
+        }
+
+
+
+        ai_chance = {
+            factor = 80
+            modifier = {
+                factor = 0.5
+                tag = RTR
+            }
+            modifier = {
+                factor = 0
+                ruling_party_ideology = reactionary
+            }
+            modifier = {
+                factor = 0
+                has_country_modifier = reactionary_demands
+            }
+        }
+    }
+
+
+    option = {
+        name = "Tear up the unequal treaties!"
+        prestige = 10
+        badboy = 2
+        set_country_flag = tore_up_unequal_treaties
+        any_pop = {
+            limit = {
+                OR = {
+                    is_primary_culture = yes
+                    is_accepted_culture = yes
+                }
+            }
+            militancy = -6
+        }
+
+        any_neighbor_country = {
+            limit = {
+                OR = {
+                    tag = TZ1
+                    tag = TZ2
+                    #tag = TZ3
+                    tag = TZ4
+                    tag = TZ5
+                    tag = TZ6
+                    tag = TZ7
+                    tag = TZ8
+                }
+                exists = yes
+            }
+            #neutrality = yes
+            remove_accepted_culture = manchu
+            annex_to = THIS
+        }
+
+        any_country = {
+            limit = {
+                is_greater_power = yes
+                OR = {
+                    owns = 1498 #Macao
+                    owns = 1538 #Shanghai
+                    owns = 1496 #Hong Kong
+                    owns = 1566 #Qingdao
+                    owns = 1481 #Lushun - Port Arthur
+                    owns = 1569 #Weihaiwei
+                    owns = 1606 #Jiaxing
+                    owns = 2681 #Taibei
+                    owns = 2562 #Tainan
+                    owns = 1499 #Hainan
+                    owns = 2632 #Kwangchowan
+                    owns = 1608 #Ningbo
+                }
+            }
+            country_event = 166703
+        }
+
+
+        ai_chance = {
+            factor = 20
+            modifier = {
+                factor = 2
+                NOT = { owns = 1538 } #Shanghai is too close to Nanjing
+            }
+        }
+    }
+}
+
+
+#    id = 166701
+
+
+country_event = {
+    id = 166702
+    title = "The End of the $COUNTRY$ Trade Zone"
+    desc = "We are but a region created to faciliate trade with the barbarians. We no longer serve this purpose, so it is time to rejoin the homeland."
+    picture = "asian_administration"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "They are our rightful rulers."
+        #random_owned = {
+        #    limit = {
+        #        owner = { civilized = no }
+        #    }
+        #    owner = { civilized = yes }
+        #}
+        random_owned = {
+            limit = { owner = { accepted_culture = manchu } }
+            owner = { remove_accepted_culture = manchu }
+        }
+        FROM = { inherit = THIS }
+
+        ai_chance = { factor = 100 }
+    }
+
+    option = {
+        name = "We should fight for our independence!"
+        #random_owned = {
+        #    limit = {
+        #        owner = { civilized = no }
+        #    }
+        #    owner = { civilized = yes }
+        #}
+        prestige = 10
+        relation = {
+            who = FROM
+            value = -200
+        }
+        release_vassal = THIS
+        leave_alliance = FROM
+        random_owned = {
+            limit = { owner = { accepted_culture = manchu } }
+            owner = { remove_accepted_culture = manchu }
+        }
+        ai_chance = { factor = 0 }
+    }
+
+}
+
+country_event = {
+    id = 166703
+    title = "$FROMCOUNTRY$ Dishonours Treaties"
+    desc = "The new regime in China has declared the treaties negotiated previously void. It may soon become much more difficult for merchants to access the Chinese market, unless we force China open again."
+    picture = "arrow_incident"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "Launch a punitive expedition immediately!"
+        prestige = -2
+        leave_alliance = FROM
+        relation = { who = FROM value = -400 }
+        diplomatic_influence = { who = FROM value = -400 }
+
+        war = {
+            target = FROM
+            attacker_goal = { casus_belli = treaty_port_casus_belli }
+            #defender_goal = { casus_belli = status_quo }
+            call_ally = no
+        }
+
+        ai_chance = {
+            factor = 50
+            modifier = {
+                factor = 0.5
+                war = yes
+            }
+            modifier = {
+                factor = 0
+                OR = {
+                    any_greater_power = { war_with = THIS }
+                    NOT = { total_amount_of_divisions = 2 }
+                    NOT = { total_amount_of_ships = 5 }
+                    war_policy = pacifism
+                }
+            }
+            modifier = {
+                factor = 2
+                war_policy = jingism
+            }
+
+        }
+    }
+
+
+    option = {
+        name = "Our forces are not ready at this time"
+        prestige = -2
+        leave_alliance = FROM
+        relation = { who = FROM value = -400 }
+        diplomatic_influence = { who = FROM value = -400 }
+        casus_belli = {
+            target = FROM
+            type = treaty_port_casus_belli
+            months = 80
+        }
+        ai_chance = { factor = 50 }
+    }
+}
+
+
+#Shifting Allegiances
+country_event = {
+
+    id = 166704
+    title = "Shifting Allegiances"
+    desc = "We no longer border our overlords. As we are just a administrative zone, responsibility for our defence falls to our new neighbors."
+    picture = "treaty"
+
+    trigger = {
+        war = no
+        NOT = { has_country_modifier = loyal_vassal }
+        #OR = {
+        #    AND = {
+                is_vassal = yes
+                overlord = { NOT = { neighbour = THIS } }
+        #    }
+        #    has_country_modifier = negotiating_treaty 
+        #}
+        OR = {
+            tag = TZ1
+            tag = TZ2
+            #tag = TZ3
+            tag = TZ4
+            tag = TZ5
+            tag = TZ6
+            tag = TZ7
+            tag = TZ8
+        }
+        
+        any_neighbor_country = {
+            war = no
+            is_culture_group = east_asian
+            NOT = {
+                OR = {
+                    tag = TZ1
+                    tag = TZ2
+                    #tag = TZ3
+                    tag = TZ4
+                    tag = TZ5
+                    tag = TZ6
+                    tag = TZ7
+                    tag = TZ8
+                }
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "Embrace the new power"
+        #random_owned = {
+        #    limit = {
+        #        owner = { has_country_modifier = negotiating_treaty }
+        #    }
+        #    owner = { remove_country_modifier = negotiating_treaty }
+        #}
+        random_owned = {
+            limit = { owner = { accepted_culture = manchu } }
+            owner = { remove_accepted_culture = manchu }
+        }
+        random_country = {
+            limit = { is_our_vassal = THIS }
+            country_event = 166705
+        }
+        random_country = {
+            limit = {
+                war = no
+                is_culture_group = east_asian
+                NOT = {
+                    OR = {
+                        tag = TZ1
+                        tag = TZ2
+                        #tag = TZ3
+                        tag = TZ4
+                        tag = TZ5
+                        tag = TZ6
+                        tag = TZ7
+                        tag = TZ8
+                    }
+                }
+                neighbour = THIS
+            }
+            country_event = 166706
+        }
+    }
+}
+
+#Shifting Allegiances - Overlord gets informed
+country_event = {
+
+    id = 166705
+    title = "$FROMCOUNTRY$ Defects"
+    desc = "As we no longer border $FROMCOUNTRY$, administrators from their new neighbors are attempting to take over."
+    picture = "treaty"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "Unfortunate"
+        prestige = -2
+        relation = { who = FROM value = -250 }
+        diplomatic_influence = { who = FROM value = -200 }
+        leave_alliance = FROM
+        end_military_access = FROM
+        #casus_belli = {
+        #    target = FROM
+        #    type = make_puppet
+        #    months = 12
+        #}
+    }
+}
+
+#Shifting Allegiances - New Overlord is informed
+country_event = {
+
+    id = 166706
+    title = "$FROMCOUNTRY$ Defects"
+    desc = "The trade zone of $FROMCOUNTRY$ has been detached from their original owner and thus has come under our control."
+    picture = "treaty"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "Excellent!"
+        prestige = 2
+        FROM = {
+            overlord = {
+                release_vassal = FROM
+                casus_belli = {
+                    target = THIS
+                    type = release_puppet
+                    months = 12
+                }
+            }
+        }
+        relation = { who = FROM value = 100 }
+        diplomatic_influence = { who = FROM value = 400 }
+        create_vassal = FROM
+
+        random_owned = {
+            limit = { owner = { tag = QNG } }
+            FROM = { add_accepted_culture = manchu }
+        }
+
+        ai_chance = {
+            factor = 100
+        }
+    }
+
+    #option = {
+    #    name = "Who needs traitors like them?"
+    #    prestige_factor = -0.05
+    #    FROM = { add_country_modifier = { name = loyal_vassal duration = 3650 } }
+    #    ai_chance = {
+    #        factor = 0
+    #    }
+    #}
+}
+
+#country_event = {
+#    id = 166707
+#    title = "Become China"
+#    desc = "Our strategic position in the Northern China and independence has given us the opportunity to become the one true China."
+#    picture = "Celebration"
+#
+#    trigger = {
+#        OR = { tag = TZ1 tag = TZ2 }
+#        is_vassal = no
+#        is_substate = no
+#        civilized = yes
+#        NOT = { exists = CHI }
+#    }
+#
+#    option = {
+#        name = "Excellent"
+#        random_owned = {
+#            limit = { owner = { accepted_culture = manchu } }
+#            owner = { remove_accepted_culture = manchu }
+#        }
+#        change_tag = CHI
+#    }
+#}
+
+country_event = {
+    id = 166708
+    title = "Become Anhui"
+    desc = "Our strategic position in Central China has allowed us to reorganize into a true state which shall surely dominate China."
+    picture = "Celebration"
+
+    trigger = {
+        OR = {
+            tag = TZ1
+            tag = TZ2
+            #tag = TZ3
+            tag = TZ4
+            tag = TZ5
+            tag = TZ6
+        }
+        is_vassal = no
+        is_substate = no
+        civilized = yes
+        NOT = { exists = HUI }
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "Excellent"
+        random_owned = {
+            limit = { owner = { accepted_culture = manchu } }
+            owner = { remove_accepted_culture = manchu }
+        }
+        any_owned = {
+            limit = { is_core = CHI }
+            add_core = HUI
+        }
+        change_tag = HUI
+    }
+}
+
+country_event = {
+    id = 166709
+    title = "Become Guangdong"
+    desc = "It is time to become Guangdong."
+    picture = "Celebration"
+
+    trigger = {
+        OR = { tag = TZ7 tag = TZ8 }
+        is_vassal = no
+        is_substate = no
+        civilized = yes
+        NOT = { exists = GNG }
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "Ok"
+        random_owned = {
+            limit = { owner = { accepted_culture = manchu } }
+            owner = { remove_accepted_culture = manchu }
+        }
+        change_tag = GNG
+    }
+}
+
+########## TZ1 ##########
+country_event = {
+    id = 166710
+    title = "EVTNAME166710"
+    desc = "EVTDESC166710"
+    picture = "china_trade_zone"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT166710OPTA"
+        random_owned = {
+            limit = {
+                owner = { NOT = { has_country_flag = TZ1_research } }
+            }
+            owner = {
+                years_of_research = 1
+                set_country_flag = TZ1_research
+            }
+        }
+
+
+        1565 = {
+            secede_province = TZ1
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1567 = { secede_province = TZ1 } 
+        1570 = { secede_province = TZ1 }
+
+        create_vassal = TZ1
+        create_alliance = TZ1
+        TZ1 = {
+            remove_country_modifier = western_influences
+            add_country_modifier = {
+                name = "uncivilized_isolationism"
+                duration = -1
+            }
+            add_country_modifier = {
+                name = "legation_quarter"
+                duration = -1
+            }
+            random_owned = {
+                limit = { owner = { NOT = { border_policy = open_borders } } }
+                owner = { political_reform = open_borders }
+            }
+            ruling_party_ideology = conservative
+        }
+
+        random_owned = {
+            limit = { owner = { tag = QNG } }
+            TZ1 = { add_accepted_culture  = manchu }
+        }
+        random_owned = { limit = { owner = { land_reform = yes_land_reform } }                       TZ1 = { economic_reform = yes_land_reform } }
+        random_owned = { limit = { owner = { admin_reform = yes_admin_reform } }                     TZ1 = { economic_reform = yes_admin_reform } }
+        random_owned = { limit = { owner = { finance_reform = yes_finance_reform } }                 TZ1 = { economic_reform = yes_finance_reform } }
+        random_owned = { limit = { owner = { finance_reform = finance_reform_two } }                 TZ1 = { economic_reform = finance_reform_two } }
+        random_owned = { limit = { owner = { monetary_reform = yes_monetary_reform } }               TZ1 = { economic_reform = yes_monetary_reform } }
+        random_owned = { limit = { owner = { monetary_reform = monetary_reform_two } }               TZ1 = { economic_reform = monetary_reform_two activate_technology = no_standard } }
+        random_owned = { limit = { owner = { education_reform = yes_education_reform } }             TZ1 = { economic_reform = yes_education_reform } }
+        random_owned = { limit = { owner = { research_reform = yes_research_reform } }               TZ1 = { economic_reform = yes_research_reform activate_technology = late_enlightenment_philosophy } }
+        random_owned = { limit = { owner = { foreign_training = yes_foreign_training } }             TZ1 = { military_reform = yes_foreign_training } }
+        random_owned = { limit = { owner = { foreign_weapons = yes_foreign_weapons } }               TZ1 = { military_reform = yes_foreign_weapons activate_technology = flintlock_rifles } }
+        random_owned = { limit = { owner = { foreign_officers = yes_foreign_officers } }             TZ1 = { military_reform = yes_foreign_officers activate_technology = military_staff_system } }
+        random_owned = { limit = { owner = { army_schools = yes_army_schools } }                     TZ1 = { military_reform = yes_army_schools } }
+        random_owned = { limit = { owner = { foreign_naval_officers = yes_foreign_naval_officers } } TZ1 = { military_reform = yes_foreign_naval_officers } }
+        random_owned = { limit = { owner = { naval_schools = yes_naval_schools } }                   TZ1 = { military_reform = yes_naval_schools } }
+        random_owned = { limit = { owner = { foreign_navies = yes_foreign_navies } }                 TZ1 = { military_reform = yes_foreign_navies activate_technology = clipper_design activate_technology = steamers } }
+        random_owned = { limit = { owner = { western_shipyards = yes_western_shipyards } }           TZ1 = { military_reform = yes_western_shipyards activate_technology = post_nelsonian_thought } }
+        random_owned = { limit = { owner = { foreign_artillery = yes_foreign_artillery } }           TZ1 = { military_reform = yes_foreign_artillery activate_technology = bronze_muzzle_loaded_artillery } }
+
+        FROM = {
+            diplomatic_influence = {
+                who = TZ1
+                value = 400
+            }
+        }
+
+        1565 = {
+            secede_province = TZ1
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1567 = { secede_province = TZ1 } 
+        1570 = { secede_province = TZ1 }
+    }
+}
+
+country_event = {
+    id = 166713
+    title = "EVTNAME166713" #Annex Trade Zone
+    desc = "EVTDESC166713"
+    picture = "china_trade_zone"
+
+    trigger = {
+        is_culture_group = east_asian
+        neighbour = TZ1
+        is_vassal = no
+        is_substate = no
+        war = no
+        TZ1 = { vassal_of = THIS }
+        OR = {
+            civilized = yes
+            owns = 1569
+            has_country_flag = tore_up_unequal_treaties
+            TZ1 = { part_of_sphere = no }
+            TZ1 = { sphere_owner = { NOT = { owns = 1569 } } }
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 7
+    }
+
+    option = {
+        name = "EVT166713OPTA"
+        TZ1 = { country_event = 166702 }
+    }
+}
+
+
+########## TZ2 ##########
+country_event = {
+    id = 166720
+    title = "EVTNAME166720"
+    desc = "EVTDESC166720"
+    picture = "china_trade_zone"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT166720OPTA"
+        random_owned = {
+            limit = {
+                owner = { NOT = { has_country_flag = TZ2_research } }
+            }
+            owner = {
+                years_of_research = 1
+                set_country_flag = TZ2_research
+            }
+        }
+
+
+        1571 = {
+            secede_province = TZ2
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1568 = { secede_province = TZ2 } 
+        1564 = { secede_province = TZ2 }
+
+        create_vassal = TZ2
+        create_alliance = TZ2
+        TZ2 = {
+            remove_country_modifier = western_influences
+            add_country_modifier = {
+                name = "uncivilized_isolationism"
+                duration = -1
+            }
+            add_country_modifier = {
+                name = "legation_quarter"
+                duration = -1
+            }
+            random_owned = {
+                limit = { owner = { NOT = { border_policy = open_borders } } }
+                owner = { political_reform = open_borders }
+            }
+            ruling_party_ideology = conservative
+        }
+
+        random_owned = {
+            limit = { owner = { tag = QNG } }
+            TZ2 = { add_accepted_culture  = manchu }
+        }
+        random_owned = { limit = { owner = { land_reform = yes_land_reform } }                       TZ2 = { economic_reform = yes_land_reform } }
+        random_owned = { limit = { owner = { admin_reform = yes_admin_reform } }                     TZ2 = { economic_reform = yes_admin_reform } }
+        random_owned = { limit = { owner = { finance_reform = yes_finance_reform } }                 TZ2 = { economic_reform = yes_finance_reform } }
+        random_owned = { limit = { owner = { finance_reform = finance_reform_two } }                 TZ2 = { economic_reform = finance_reform_two } }
+        random_owned = { limit = { owner = { monetary_reform = yes_monetary_reform } }               TZ2 = { economic_reform = yes_monetary_reform } }
+        random_owned = { limit = { owner = { monetary_reform = monetary_reform_two } }               TZ2 = { economic_reform = monetary_reform_two activate_technology = no_standard } }
+        random_owned = { limit = { owner = { education_reform = yes_education_reform } }             TZ2 = { economic_reform = yes_education_reform } }
+        random_owned = { limit = { owner = { research_reform = yes_research_reform } }               TZ2 = { economic_reform = yes_research_reform activate_technology = late_enlightenment_philosophy } }
+        random_owned = { limit = { owner = { foreign_training = yes_foreign_training } }             TZ2 = { military_reform = yes_foreign_training } }
+        random_owned = { limit = { owner = { foreign_weapons = yes_foreign_weapons } }               TZ2 = { military_reform = yes_foreign_weapons activate_technology = flintlock_rifles } }
+        random_owned = { limit = { owner = { foreign_officers = yes_foreign_officers } }             TZ2 = { military_reform = yes_foreign_officers activate_technology = military_staff_system } }
+        random_owned = { limit = { owner = { army_schools = yes_army_schools } }                     TZ2 = { military_reform = yes_army_schools } }
+        random_owned = { limit = { owner = { foreign_naval_officers = yes_foreign_naval_officers } } TZ2 = { military_reform = yes_foreign_naval_officers } }
+        random_owned = { limit = { owner = { naval_schools = yes_naval_schools } }                   TZ2 = { military_reform = yes_naval_schools } }
+        random_owned = { limit = { owner = { foreign_navies = yes_foreign_navies } }                 TZ2 = { military_reform = yes_foreign_navies activate_technology = clipper_design activate_technology = steamers } }
+        random_owned = { limit = { owner = { western_shipyards = yes_western_shipyards } }           TZ2 = { military_reform = yes_western_shipyards activate_technology = post_nelsonian_thought } }
+        random_owned = { limit = { owner = { foreign_artillery = yes_foreign_artillery } }           TZ2 = { military_reform = yes_foreign_artillery activate_technology = bronze_muzzle_loaded_artillery } }
+
+        FROM = {
+            diplomatic_influence = {
+                who = TZ2
+                value = 400
+            }
+        }
+
+        1571 = {
+            secede_province = TZ2
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1568 = { secede_province = TZ2 } 
+        1564 = { secede_province = TZ2 }
+    }
+}
+
+country_event = {
+    id = 166723
+    title = "EVTNAME166723" #Annex Trade Zone
+    desc = "EVTDESC166723"
+    picture = "china_trade_zone"
+
+    trigger = {
+        is_culture_group = east_asian
+        neighbour = TZ2
+        is_vassal = no
+        is_substate = no
+        war = no
+        TZ2 = { vassal_of = THIS }
+        OR = {
+            civilized = yes
+            owns = 1566
+            has_country_flag = tore_up_unequal_treaties
+            TZ2 = { part_of_sphere = no }
+            TZ2 = { sphere_owner = { NOT = { owns = 1566 } } }
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 7
+    }
+
+    option = {
+        name = "EVT166723OPTA"
+        TZ2 = { country_event = 166702 }
+    }
+}
+
+########## TZ3 Nantong isn't a treaty port ##########
+
+
+########## TZ4 ##########
+country_event = {
+    id = 166740
+    title = "EVTNAME166740"
+    desc = "EVTDESC166740"
+    picture = "china_trade_zone"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT166740OPTA"
+        random_owned = {
+            limit = {
+                owner = { NOT = { has_country_flag = TZ4_research } }
+            }
+            owner = {
+                years_of_research = 1
+                set_country_flag = TZ4_research
+            }
+        }
+
+
+        1539 = {
+            secede_province = TZ4
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1537 = { secede_province = TZ4 } 
+        1544 = { secede_province = TZ4 }
+
+        create_vassal = TZ4
+        create_alliance = TZ4
+        TZ4 = {
+            remove_country_modifier = western_influences
+            add_country_modifier = {
+                name = "uncivilized_isolationism"
+                duration = -1
+            }
+            add_country_modifier = {
+                name = "legation_quarter"
+                duration = -1
+            }
+            random_owned = {
+                limit = { owner = { NOT = { border_policy = open_borders } } }
+                owner = { political_reform = open_borders }
+            }
+            ruling_party_ideology = conservative
+        }
+
+        random_owned = {
+            limit = { owner = { tag = QNG } }
+            TZ4 = { add_accepted_culture  = manchu }
+        }
+        random_owned = { limit = { owner = { land_reform = yes_land_reform } }                       TZ4 = { economic_reform = yes_land_reform } }
+        random_owned = { limit = { owner = { admin_reform = yes_admin_reform } }                     TZ4 = { economic_reform = yes_admin_reform } }
+        random_owned = { limit = { owner = { finance_reform = yes_finance_reform } }                 TZ4 = { economic_reform = yes_finance_reform } }
+        random_owned = { limit = { owner = { finance_reform = finance_reform_two } }                 TZ4 = { economic_reform = finance_reform_two } }
+        random_owned = { limit = { owner = { monetary_reform = yes_monetary_reform } }               TZ4 = { economic_reform = yes_monetary_reform } }
+        random_owned = { limit = { owner = { monetary_reform = monetary_reform_two } }               TZ4 = { economic_reform = monetary_reform_two activate_technology = no_standard } }
+        random_owned = { limit = { owner = { education_reform = yes_education_reform } }             TZ4 = { economic_reform = yes_education_reform } }
+        random_owned = { limit = { owner = { research_reform = yes_research_reform } }               TZ4 = { economic_reform = yes_research_reform activate_technology = late_enlightenment_philosophy } }
+        random_owned = { limit = { owner = { foreign_training = yes_foreign_training } }             TZ4 = { military_reform = yes_foreign_training } }
+        random_owned = { limit = { owner = { foreign_weapons = yes_foreign_weapons } }               TZ4 = { military_reform = yes_foreign_weapons activate_technology = flintlock_rifles } }
+        random_owned = { limit = { owner = { foreign_officers = yes_foreign_officers } }             TZ4 = { military_reform = yes_foreign_officers activate_technology = military_staff_system } }
+        random_owned = { limit = { owner = { army_schools = yes_army_schools } }                     TZ4 = { military_reform = yes_army_schools } }
+        random_owned = { limit = { owner = { foreign_naval_officers = yes_foreign_naval_officers } } TZ4 = { military_reform = yes_foreign_naval_officers } }
+        random_owned = { limit = { owner = { naval_schools = yes_naval_schools } }                   TZ4 = { military_reform = yes_naval_schools } }
+        random_owned = { limit = { owner = { foreign_navies = yes_foreign_navies } }                 TZ4 = { military_reform = yes_foreign_navies activate_technology = clipper_design activate_technology = steamers } }
+        random_owned = { limit = { owner = { western_shipyards = yes_western_shipyards } }           TZ4 = { military_reform = yes_western_shipyards activate_technology = post_nelsonian_thought } }
+        random_owned = { limit = { owner = { foreign_artillery = yes_foreign_artillery } }           TZ4 = { military_reform = yes_foreign_artillery activate_technology = bronze_muzzle_loaded_artillery } }
+
+        FROM = {
+            diplomatic_influence = {
+                who = TZ4
+                value = 400
+            }
+        }
+
+        1539 = {
+            secede_province = TZ4
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1537 = { secede_province = TZ4 } 
+        1544 = { secede_province = TZ4 }
+    }
+}
+
+country_event = {
+    id = 166743
+    title = "EVTNAME166743" #Annex Trade Zone
+    desc = "EVTDESC166743"
+    picture = "china_trade_zone"
+
+    trigger = {
+        is_culture_group = east_asian
+        neighbour = TZ4
+        is_vassal = no
+        is_substate = no
+        war = no
+        TZ4 = { vassal_of = THIS }
+        OR = {
+            civilized = yes
+            owns = 1538
+            has_country_flag = tore_up_unequal_treaties
+            TZ4 = { part_of_sphere = no }
+            TZ4 = { sphere_owner = { NOT = { owns = 1538 } } }
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 7
+    }
+
+    option = {
+        name = "EVT166743OPTA"
+        TZ4 = { country_event = 166702 }
+    }
+}
+
+########## TZ5 ##########
+country_event = {
+    id = 166750
+    title = "EVTNAME166750"
+    desc = "EVTDESC166750"
+    picture = "china_trade_zone"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT166750OPTA"
+        random_owned = {
+            limit = {
+                owner = { NOT = { has_country_flag = TZ5_research } }
+            }
+            owner = {
+                years_of_research = 1
+                set_country_flag = TZ5_research
+            }
+        }
+
+
+        1605 = {
+            secede_province = TZ5
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1475 = { secede_province = TZ5 }
+        1471 = { secede_province = TZ5 }
+        1470 = { secede_province = TZ5 }
+
+        create_vassal = TZ5
+        create_alliance = TZ5
+        TZ5 = {
+            remove_country_modifier = western_influences
+            add_country_modifier = {
+                name = "uncivilized_isolationism"
+                duration = -1
+            }
+            add_country_modifier = {
+                name = "legation_quarter"
+                duration = -1
+            }
+            random_owned = {
+                limit = { owner = { NOT = { border_policy = open_borders } } }
+                owner = { political_reform = open_borders }
+            }
+            ruling_party_ideology = conservative
+        }
+
+        random_owned = {
+            limit = { owner = { tag = QNG } }
+            TZ5 = { add_accepted_culture  = manchu }
+        }
+        random_owned = { limit = { owner = { land_reform = yes_land_reform } }                       TZ5 = { economic_reform = yes_land_reform } }
+        random_owned = { limit = { owner = { admin_reform = yes_admin_reform } }                     TZ5 = { economic_reform = yes_admin_reform } }
+        random_owned = { limit = { owner = { finance_reform = yes_finance_reform } }                 TZ5 = { economic_reform = yes_finance_reform } }
+        random_owned = { limit = { owner = { finance_reform = finance_reform_two } }                 TZ5 = { economic_reform = finance_reform_two } }
+        random_owned = { limit = { owner = { monetary_reform = yes_monetary_reform } }               TZ5 = { economic_reform = yes_monetary_reform } }
+        random_owned = { limit = { owner = { monetary_reform = monetary_reform_two } }               TZ5 = { economic_reform = monetary_reform_two activate_technology = no_standard } }
+        random_owned = { limit = { owner = { education_reform = yes_education_reform } }             TZ5 = { economic_reform = yes_education_reform } }
+        random_owned = { limit = { owner = { research_reform = yes_research_reform } }               TZ5 = { economic_reform = yes_research_reform activate_technology = late_enlightenment_philosophy } }
+        random_owned = { limit = { owner = { foreign_training = yes_foreign_training } }             TZ5 = { military_reform = yes_foreign_training } }
+        random_owned = { limit = { owner = { foreign_weapons = yes_foreign_weapons } }               TZ5 = { military_reform = yes_foreign_weapons activate_technology = flintlock_rifles } }
+        random_owned = { limit = { owner = { foreign_officers = yes_foreign_officers } }             TZ5 = { military_reform = yes_foreign_officers activate_technology = military_staff_system } }
+        random_owned = { limit = { owner = { army_schools = yes_army_schools } }                     TZ5 = { military_reform = yes_army_schools } }
+        random_owned = { limit = { owner = { foreign_naval_officers = yes_foreign_naval_officers } } TZ5 = { military_reform = yes_foreign_naval_officers } }
+        random_owned = { limit = { owner = { naval_schools = yes_naval_schools } }                   TZ5 = { military_reform = yes_naval_schools } }
+        random_owned = { limit = { owner = { foreign_navies = yes_foreign_navies } }                 TZ5 = { military_reform = yes_foreign_navies activate_technology = clipper_design activate_technology = steamers } }
+        random_owned = { limit = { owner = { western_shipyards = yes_western_shipyards } }           TZ5 = { military_reform = yes_western_shipyards activate_technology = post_nelsonian_thought } }
+        random_owned = { limit = { owner = { foreign_artillery = yes_foreign_artillery } }           TZ5 = { military_reform = yes_foreign_artillery activate_technology = bronze_muzzle_loaded_artillery } }
+
+        FROM = {
+            diplomatic_influence = {
+                who = TZ5
+                value = 400
+            }
+        }
+
+        1605 = {
+            secede_province = TZ5
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1475 = { secede_province = TZ5 }
+        1471 = { secede_province = TZ5 }
+        1470 = { secede_province = TZ5 }
+    }
+}
+
+country_event = {
+    id = 166753
+    title = "EVTNAME166753" #Annex Trade Zone
+    desc = "EVTDESC166753"
+    picture = "china_trade_zone"
+
+    trigger = {
+        is_culture_group = east_asian
+        neighbour = TZ5
+        is_vassal = no
+        is_substate = no
+        war = no
+        TZ5 = { vassal_of = THIS }
+        OR = {
+            civilized = yes
+            owns = 1606
+            has_country_flag = tore_up_unequal_treaties
+            TZ5 = { part_of_sphere = no }
+            TZ5 = { sphere_owner = { NOT = { owns = 1606 } } }
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 7
+    }
+
+    option = {
+        name = "EVT166753OPTA"
+        TZ5 = { country_event = 166702 }
+    }
+}
+
+########## TZ6 ##########
+country_event = {
+    id = 166760
+    title = "EVTNAME166760"
+    desc = "EVTDESC166760"
+    picture = "china_trade_zone"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT166760OPTA"
+        random_owned = {
+            limit = {
+                owner = { NOT = { has_country_flag = TZ6_research } }
+            }
+            owner = {
+                years_of_research = 1
+                set_country_flag = TZ6_research
+            }
+        }
+
+
+        1610 = {
+            secede_province = TZ6
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1611 = { secede_province = TZ6 } 
+        1609 = { secede_province = TZ6 }
+        1607 = { secede_province = TZ6 }
+        1604 = { secede_province = TZ6 }
+        1473 = { secede_province = TZ6 }
+
+        create_vassal = TZ6
+        create_alliance = TZ6
+        TZ6 = {
+            remove_country_modifier = western_influences
+            add_country_modifier = {
+                name = "uncivilized_isolationism"
+                duration = -1
+            }
+            add_country_modifier = {
+                name = "legation_quarter"
+                duration = -1
+            }
+            random_owned = {
+                limit = { owner = { NOT = { border_policy = open_borders } } }
+                owner = { political_reform = open_borders }
+            }
+            ruling_party_ideology = conservative
+        }
+
+        random_owned = {
+            limit = { owner = { tag = QNG } }
+            TZ6 = { add_accepted_culture  = manchu }
+        }
+        random_owned = { limit = { owner = { land_reform = yes_land_reform } }                       TZ6 = { economic_reform = yes_land_reform } }
+        random_owned = { limit = { owner = { admin_reform = yes_admin_reform } }                     TZ6 = { economic_reform = yes_admin_reform } }
+        random_owned = { limit = { owner = { finance_reform = yes_finance_reform } }                 TZ6 = { economic_reform = yes_finance_reform } }
+        random_owned = { limit = { owner = { finance_reform = finance_reform_two } }                 TZ6 = { economic_reform = finance_reform_two } }
+        random_owned = { limit = { owner = { monetary_reform = yes_monetary_reform } }               TZ6 = { economic_reform = yes_monetary_reform } }
+        random_owned = { limit = { owner = { monetary_reform = monetary_reform_two } }               TZ6 = { economic_reform = monetary_reform_two activate_technology = no_standard } }
+        random_owned = { limit = { owner = { education_reform = yes_education_reform } }             TZ6 = { economic_reform = yes_education_reform } }
+        random_owned = { limit = { owner = { research_reform = yes_research_reform } }               TZ6 = { economic_reform = yes_research_reform activate_technology = late_enlightenment_philosophy } }
+        random_owned = { limit = { owner = { foreign_training = yes_foreign_training } }             TZ6 = { military_reform = yes_foreign_training } }
+        random_owned = { limit = { owner = { foreign_weapons = yes_foreign_weapons } }               TZ6 = { military_reform = yes_foreign_weapons activate_technology = flintlock_rifles } }
+        random_owned = { limit = { owner = { foreign_officers = yes_foreign_officers } }             TZ6 = { military_reform = yes_foreign_officers activate_technology = military_staff_system } }
+        random_owned = { limit = { owner = { army_schools = yes_army_schools } }                     TZ6 = { military_reform = yes_army_schools } }
+        random_owned = { limit = { owner = { foreign_naval_officers = yes_foreign_naval_officers } } TZ6 = { military_reform = yes_foreign_naval_officers } }
+        random_owned = { limit = { owner = { naval_schools = yes_naval_schools } }                   TZ6 = { military_reform = yes_naval_schools } }
+        random_owned = { limit = { owner = { foreign_navies = yes_foreign_navies } }                 TZ6 = { military_reform = yes_foreign_navies activate_technology = clipper_design activate_technology = steamers } }
+        random_owned = { limit = { owner = { western_shipyards = yes_western_shipyards } }           TZ6 = { military_reform = yes_western_shipyards activate_technology = post_nelsonian_thought } }
+        random_owned = { limit = { owner = { foreign_artillery = yes_foreign_artillery } }           TZ6 = { military_reform = yes_foreign_artillery activate_technology = bronze_muzzle_loaded_artillery } }
+
+        FROM = {
+            diplomatic_influence = {
+                who = TZ6
+                value = 400
+            }
+        }
+
+
+        1610 = {
+            secede_province = TZ6
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1611 = { secede_province = TZ6 } 
+        1609 = { secede_province = TZ6 }
+        1607 = { secede_province = TZ6 }
+        1604 = { secede_province = TZ6 }
+        1473 = { secede_province = TZ6 }
+    }
+}
+
+country_event = {
+    id = 166763
+    title = "EVTNAME166763" #Annex Trade Zone
+    desc = "EVTDESC166763"
+    picture = "china_trade_zone"
+
+    trigger = {
+        is_culture_group = east_asian
+        neighbour = TZ6
+        is_vassal = no
+        is_substate = no
+        war = no
+        TZ6 = { vassal_of = THIS }
+        OR = {
+            civilized = yes
+            owns = 1608
+            has_country_flag = tore_up_unequal_treaties
+            TZ6 = { part_of_sphere = no }
+            TZ6 = { sphere_owner = { NOT = { owns = 1608 } } }
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 7
+    }
+
+    option = {
+        name = "EVT166763OPTA"
+        TZ6 = { country_event = 166702 }
+    }
+}
+
+########## TZ7 ##########
+country_event = {
+    id = 166770
+    title = "EVTNAME166770"
+    desc = "EVTDESC166770"
+    picture = "china_trade_zone"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT166770OPTA"
+        random_owned = {
+            limit = {
+                owner = { NOT = { has_country_flag = TZ7_research } }
+            }
+            owner = {
+                years_of_research = 1
+                set_country_flag = TZ7_research
+            }
+        }
+
+
+        1493 = {
+            secede_province = TZ7
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1497 = { secede_province = TZ7 }
+        1494 = { secede_province = TZ7 }
+        1500 = { secede_province = TZ7 }
+
+        create_vassal = TZ7
+        create_alliance = TZ7
+        TZ7 = {
+            remove_country_modifier = western_influences
+            add_country_modifier = {
+                name = "uncivilized_isolationism"
+                duration = -1
+            }
+            add_country_modifier = {
+                name = "legation_quarter"
+                duration = -1
+            }
+            random_owned = {
+                limit = { owner = { NOT = { border_policy = open_borders } } }
+                owner = { political_reform = open_borders }
+            }
+            ruling_party_ideology = conservative
+        }
+
+        random_owned = {
+            limit = { owner = { tag = QNG } }
+            TZ7 = { add_accepted_culture  = manchu }
+        }
+        random_owned = { limit = { owner = { land_reform = yes_land_reform } }                       TZ7 = { economic_reform = yes_land_reform } }
+        random_owned = { limit = { owner = { admin_reform = yes_admin_reform } }                     TZ7 = { economic_reform = yes_admin_reform } }
+        random_owned = { limit = { owner = { finance_reform = yes_finance_reform } }                 TZ7 = { economic_reform = yes_finance_reform } }
+        random_owned = { limit = { owner = { finance_reform = finance_reform_two } }                 TZ7 = { economic_reform = finance_reform_two } }
+        random_owned = { limit = { owner = { monetary_reform = yes_monetary_reform } }               TZ7 = { economic_reform = yes_monetary_reform } }
+        random_owned = { limit = { owner = { monetary_reform = monetary_reform_two } }               TZ7 = { economic_reform = monetary_reform_two activate_technology = no_standard } }
+        random_owned = { limit = { owner = { education_reform = yes_education_reform } }             TZ7 = { economic_reform = yes_education_reform } }
+        random_owned = { limit = { owner = { research_reform = yes_research_reform } }               TZ7 = { economic_reform = yes_research_reform activate_technology = late_enlightenment_philosophy } }
+        random_owned = { limit = { owner = { foreign_training = yes_foreign_training } }             TZ7 = { military_reform = yes_foreign_training } }
+        random_owned = { limit = { owner = { foreign_weapons = yes_foreign_weapons } }               TZ7 = { military_reform = yes_foreign_weapons activate_technology = flintlock_rifles } }
+        random_owned = { limit = { owner = { foreign_officers = yes_foreign_officers } }             TZ7 = { military_reform = yes_foreign_officers activate_technology = military_staff_system } }
+        random_owned = { limit = { owner = { army_schools = yes_army_schools } }                     TZ7 = { military_reform = yes_army_schools } }
+        random_owned = { limit = { owner = { foreign_naval_officers = yes_foreign_naval_officers } } TZ7 = { military_reform = yes_foreign_naval_officers } }
+        random_owned = { limit = { owner = { naval_schools = yes_naval_schools } }                   TZ7 = { military_reform = yes_naval_schools } }
+        random_owned = { limit = { owner = { foreign_navies = yes_foreign_navies } }                 TZ7 = { military_reform = yes_foreign_navies activate_technology = clipper_design activate_technology = steamers } }
+        random_owned = { limit = { owner = { western_shipyards = yes_western_shipyards } }           TZ7 = { military_reform = yes_western_shipyards activate_technology = post_nelsonian_thought } }
+        random_owned = { limit = { owner = { foreign_artillery = yes_foreign_artillery } }           TZ7 = { military_reform = yes_foreign_artillery activate_technology = bronze_muzzle_loaded_artillery } }
+
+        FROM = {
+            diplomatic_influence = {
+                who = TZ7
+                value = 400
+            }
+        }
+
+        1493 = {
+            secede_province = TZ7
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1497 = { secede_province = TZ7 }
+        1494 = { secede_province = TZ7 }
+        1500 = { secede_province = TZ7 }
+
+    }
+}
+
+country_event = {
+    id = 166773
+    title = "EVTNAME166773" #Annex Trade Zone
+    desc = "EVTDESC166773"
+    picture = "china_trade_zone"
+
+    trigger = {
+        is_culture_group = east_asian
+        neighbour = TZ7
+        is_vassal = no
+        is_substate = no
+        war = no
+        TZ7 = { vassal_of = THIS }
+        OR = {
+            civilized = yes
+            AND = {
+                owns = 1496
+                owns = 1498
+            }
+            has_country_flag = tore_up_unequal_treaties
+            TZ7 = { part_of_sphere = no }
+            AND = {
+                TZ7 = { sphere_owner = { NOT = { owns = 1496 } } }
+                TZ7 = { sphere_owner = { NOT = { owns = 1498 } } }
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 7
+    }
+
+    option = {
+        name = "EVT166773OPTA"
+        TZ7 = { country_event = 166702 }
+    }
+}
+
+
+########## TZ8 ##########
+country_event = {
+    id = 166780
+    title = "EVTNAME166780"
+    desc = "EVTDESC166780"
+    picture = "china_trade_zone"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT166780OPTA"
+        random_owned = {
+            limit = {
+                owner = { NOT = { has_country_flag = TZ8_research } }
+            }
+            owner = {
+                years_of_research = 1
+                set_country_flag = TZ8_research
+            }
+        }
+
+        1495 = {
+            secede_province = TZ8
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1501 = { secede_province = TZ8 }
+        3326 = { secede_province = TZ8 }
+
+        create_vassal = TZ8
+        create_alliance = TZ8
+        TZ8 = {
+            remove_country_modifier = western_influences
+            add_country_modifier = {
+                name = "uncivilized_isolationism"
+                duration = -1
+            }
+            add_country_modifier = {
+                name = "legation_quarter"
+                duration = -1
+            }
+            random_owned = {
+                limit = { owner = { NOT = { border_policy = open_borders } } }
+                owner = { political_reform = open_borders }
+            }
+            ruling_party_ideology = conservative
+        }
+
+        random_owned = {
+            limit = { owner = { tag = QNG } }
+            TZ8 = { add_accepted_culture  = manchu }
+        }
+        random_owned = { limit = { owner = { land_reform = yes_land_reform } }                       TZ8 = { economic_reform = yes_land_reform } }
+        random_owned = { limit = { owner = { admin_reform = yes_admin_reform } }                     TZ8 = { economic_reform = yes_admin_reform } }
+        random_owned = { limit = { owner = { finance_reform = yes_finance_reform } }                 TZ8 = { economic_reform = yes_finance_reform } }
+        random_owned = { limit = { owner = { finance_reform = finance_reform_two } }                 TZ8 = { economic_reform = finance_reform_two } }
+        random_owned = { limit = { owner = { monetary_reform = yes_monetary_reform } }               TZ8 = { economic_reform = yes_monetary_reform } }
+        random_owned = { limit = { owner = { monetary_reform = monetary_reform_two } }               TZ8 = { economic_reform = monetary_reform_two activate_technology = no_standard } }
+        random_owned = { limit = { owner = { education_reform = yes_education_reform } }             TZ8 = { economic_reform = yes_education_reform } }
+        random_owned = { limit = { owner = { research_reform = yes_research_reform } }               TZ8 = { economic_reform = yes_research_reform activate_technology = late_enlightenment_philosophy } }
+        random_owned = { limit = { owner = { foreign_training = yes_foreign_training } }             TZ8 = { military_reform = yes_foreign_training } }
+        random_owned = { limit = { owner = { foreign_weapons = yes_foreign_weapons } }               TZ8 = { military_reform = yes_foreign_weapons activate_technology = flintlock_rifles } }
+        random_owned = { limit = { owner = { foreign_officers = yes_foreign_officers } }             TZ8 = { military_reform = yes_foreign_officers activate_technology = military_staff_system } }
+        random_owned = { limit = { owner = { army_schools = yes_army_schools } }                     TZ8 = { military_reform = yes_army_schools } }
+        random_owned = { limit = { owner = { foreign_naval_officers = yes_foreign_naval_officers } } TZ8 = { military_reform = yes_foreign_naval_officers } }
+        random_owned = { limit = { owner = { naval_schools = yes_naval_schools } }                   TZ8 = { military_reform = yes_naval_schools } }
+        random_owned = { limit = { owner = { foreign_navies = yes_foreign_navies } }                 TZ8 = { military_reform = yes_foreign_navies activate_technology = clipper_design activate_technology = steamers } }
+        random_owned = { limit = { owner = { western_shipyards = yes_western_shipyards } }           TZ8 = { military_reform = yes_western_shipyards activate_technology = post_nelsonian_thought } }
+        random_owned = { limit = { owner = { foreign_artillery = yes_foreign_artillery } }           TZ8 = { military_reform = yes_foreign_artillery activate_technology = bronze_muzzle_loaded_artillery } }
+
+        FROM = {
+            diplomatic_influence = {
+                who = TZ8
+                value = 400
+            }
+        }
+
+        1495 = {
+            secede_province = TZ8
+            add_province_modifier = { name = local_opium_habit duration = 3650 }
+            add_province_modifier = { name = foreign_trading_post duration = 3650 }
+            add_province_modifier = { name = western_presence duration = 3650 }
+            add_province_modifier = { name = western_presence_research duration = 3650 }
+        }
+        1501 = { secede_province = TZ8 }
+        3326 = { secede_province = TZ8 }
+    }
+}
+
+country_event = {
+    id = 166783
+    title = "EVTNAME166783" #Annex Trade Zone
+    desc = "EVTDESC166783"
+    picture = "china_trade_zone"
+
+    trigger = {
+        is_culture_group = east_asian
+        neighbour = TZ8
+        is_vassal = no
+        is_substate = no
+        war = no
+        TZ8 = { vassal_of = THIS }
+        OR = {
+            civilized = yes
+            AND = {
+                owns = 2632
+                owns = 1499
+            }
+            has_country_flag = tore_up_unequal_treaties
+            TZ8 = { part_of_sphere = no }
+            AND = {
+                TZ8 = { sphere_owner = { NOT = { owns = 2632 } } }
+                TZ8 = { sphere_owner = { NOT = { owns = 1499 } } }
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 7
+    }
+
+    option = {
+        name = "EVT166783OPTA"
+        TZ8 = { country_event = 166702 }
+    }
+}

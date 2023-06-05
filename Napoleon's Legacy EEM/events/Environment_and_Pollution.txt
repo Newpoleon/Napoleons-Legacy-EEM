@@ -1,0 +1,220 @@
+    #id = 12300
+    #title = "Pollution, Pollution"
+    #picture = "air_pollution"
+    #NWO = { change_variable = { which = pollution_counter value = 1 } }
+    #pollution remains responsible for approximately 9 million deaths per year, corresponding to one in six deaths worldwide. 
+	#add_province_modifier = { name = local_pollution_problem duration = 365 }
+
+
+    #id = 12301
+    #title = "Clean Air Act"
+    #add_country_modifier = { name = clean_air_act duration = -1 }
+
+    #id = 12302
+    #title = "Repeal Clean Air Act?"
+
+########################## Highly Productive RGOs ########################## 
+
+province_event = {
+    id = 12310
+    title = "Large Oil Fields in $PROVINCENAME$"
+    desc = "EVTDESC12310"
+
+    trigger = {
+        owner = {
+            war = no
+            invention = oil_pumping_machinery
+        }
+        NOT = { has_province_modifier = productive_mine_2 }
+        trade_goods = oil
+        OR = {
+            province_id = 1102 #Baku
+            province_id = 2270 #Maracaibo
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+    }
+
+    option = {
+        name = "Great!"
+        add_province_modifier = {
+            name = productive_mine_2
+            duration = -1
+        }
+        add_province_modifier = {
+            name = province_small_immigration_boom
+            duration = 730
+        }
+    }
+}
+
+
+province_event = {
+    id = 12311
+    title = "Rich Mineral Deposits in $PROVINCENAME$"
+    desc = "$PROVINCENAME$ is known for its mineral resources, but much of its potential remained untapped until now."
+
+    trigger = {
+        owner = {
+            war = no
+            integral_rail_system = 1
+        }
+        NOT = { has_province_modifier = productive_mine_1 }
+        trade_goods = iron
+        OR = {
+            province_id = 323 #Falun, Sweden
+            province_id = 326 #Vasteras, Sweden
+            province_id = 319 #Ostersund, Sweden
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+    }
+
+    option = {
+        name = "Great!"
+        add_province_modifier = {
+            name = productive_mine_1
+            duration = -1
+        }
+    }
+}
+
+province_event = {
+    id = 12313
+    title = "Very Rich Mineral Deposits in $PROVINCENAME$"
+    desc = "$PROVINCENAME$ is well known for its mineral resources, but much of its potential remained untapped until now."
+
+    trigger = {
+        owner = {
+            war = no
+            integral_rail_system = 1
+        }
+        NOT = { has_province_modifier = productive_mine_2 }
+        trade_goods = iron
+        OR = {
+            province_id = 321 #Lulea, Sweden
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+    }
+
+    option = {
+        name = "Great!"
+        add_province_modifier = {
+            name = productive_mine_2
+            duration = -1
+        }
+        add_province_modifier = {
+            name = province_small_immigration_boom
+            duration = 730
+        }
+    }
+}
+
+########################## Resource Depletion ########################## 
+
+province_event = {
+    id = 12320
+    title = "$PROVINCENAME$ No Longer Productive"
+    desc = "As $PROVINCENAME$ no longer produces oil, it is no longer highly productive in it."
+    #picture = "abandoned_oil_well"
+
+    trigger = {
+        OR = {
+           has_province_modifier = productive_mine_1
+           has_province_modifier = productive_mine_2
+        }
+        NOT = { trade_goods = oil }
+        OR = {
+            province_id = 1102 #Baku
+            province_id = 2270 #Maracaibo
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "Unfortunate."
+        remove_province_modifier = productive_mine_1
+        remove_province_modifier = productive_mine_2
+    }
+}
+
+province_event = {
+    id = 12321
+    title = "$PROVINCENAME$ Not Highly Productive"
+    desc = "As $PROVINCENAME$ no longer produces iron, it is no longer highly productive in it."
+    #picture = "abandoned_oil_well"
+
+    trigger = {
+        OR = {
+           has_province_modifier = productive_mine_1
+           has_province_modifier = productive_mine_2
+        }        NOT = { trade_goods = iron }
+        OR = {
+            province_id = 321 #Lulea, Sweden
+            province_id = 323 #Falun, Sweden
+            province_id = 326 #Vasteras, Sweden
+            province_id = 319 #Ostersund, Sweden
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "Unfortunate."
+        remove_province_modifier = productive_mine_1
+        remove_province_modifier = productive_mine_2
+    }
+}
+
+
+
+
+########## by country ##########
+
+#make it a province event instead?
+country_event = {
+    id = 12330
+    title = "Oil Runs Dry in Queretaro"
+    desc = "The oil field in Queretaro has run out of oil."
+    picture = "abandoned_oil_well"
+
+    trigger = {
+        year = 1922
+        owns = 2173
+        2173 = { trade_goods = oil }
+        #NOT = { has_global_flag = queretaro_peak_oil }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+        modifier = {
+            factor = 0.5
+            year = 1925
+        }
+        modifier = {
+            factor = 0.5
+            year = 1930
+        }
+    }
+
+    option = {
+        name = "Unfortunate."
+        #set_global_flag = queretaro_peak_oil
+        2173 = {
+            trade_goods = fruit
+            add_province_modifier = { name = switched_production duration = 365 }
+        }
+    }
+}

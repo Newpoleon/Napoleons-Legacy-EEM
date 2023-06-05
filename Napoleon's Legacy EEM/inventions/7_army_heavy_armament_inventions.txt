@@ -1,0 +1,141 @@
+#At the outbreak of World War II, virtually all artillery was still being moved around by artillery tractors or horses.
+#The 10.5 cm leFH 16 Geschützwagen Mk VI 736 (e) was a German self-propelled artillery piece. It was created by mounting the German 10.5 cm leFH 16 field gun onto the chassis of the British Vickers Mk VI light tank. Becker found abandoned vehicles while his unit was performing coastal protection duties in France. He made use of his artillery crews to build this vehicle and a number of others to motorize his battery. Becker's unit was the first self-propelled artillery battery of the war. 
+#merged APC and assault_gun into this
+self_propelled_artillery = {
+    limit = { heavy_armament_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = tank_experiments
+        }
+        modifier = {
+            factor = 2
+            invention = army_motorization
+        }
+        modifier = {
+            factor = 2
+            invention = mechanized_assault_doctrine
+        }
+    }
+    effect = {
+        artillery = {
+            attack = 0.1
+            maximum_speed = 1
+            supply_consumption = 0.40
+        }
+        tank = {
+            attack = 2
+            defence = 1
+            supply_consumption = 0.50
+        }
+        motorized_infantry = {
+            reconnaissance = 1
+            maximum_speed = 1
+            attack = 2
+            supply_consumption = 0.50
+        }
+    }
+}
+
+#The first self-propelled multiple rocket launcher – and arguably the most famous – was the Soviet BM-13 Katyusha, first used during World War II (1939)
+rocket_artillery = {
+    limit = { heavy_armament_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = -6
+            NOT = { invention = rocket_experiments }
+        }
+        modifier = {
+            factor = 2
+            invention = army_motorization
+        }
+        modifier = {
+            factor = 2
+            invention = hydraulic_aircraft_catapult
+        }
+    }
+    effect = {
+        artillery = {
+            attack = 0.1
+            supply_consumption = 0.05
+        }
+    }
+}
+
+#British military researchers at the Telecommunications Research Establishment (TRE) Samuel C. Curran, William A. S. Butement, Edward S. Shire, and Amherst F. H. Thomson conceived of the idea of a proximity fuze in the early stages of World War II.[8] Their system involved a small, short range, Doppler radar. British tests were then carried out with "unrotated projectiles," in this case rockets. However, British scientists were uncertain whether a fuze could be developed for anti-aircraft shells, which had to withstand much higher accelerations than rockets. The British shared a wide range of possible ideas for designing a fuze, including a photoelectric fuze and a radio fuze, with United States during the Tizard Mission in late 1940. To work in shells, a fuze needed to be miniaturized, survive the high acceleration of cannon launch, and be reliable.[9]
+#proximity_fuze
+proximity_fuze = {
+    limit = { heavy_armament_7 = 1 }
+    chance = {
+        base = -2
+        modifier = {
+            factor = 2
+            invention = miniature_vacuum_tube
+        }
+        modifier = {
+            factor = 4
+            invention = cavity_magnetron
+        }
+    }
+    effect = {
+        artillery = {
+            attack = 0.1
+            defence = 0.5
+            supply_consumption = 0.05
+        }
+    }
+}
+
+#but the first tanks to be completely fitted with sloped armour were the French SOMUA S35 (1936) and other contemporary French tanks like the Renault R35, which had fully cast hulls and turrets. It was also used to a greater effect on the famous Soviet T-34 (1940) 
+sloped_armor = {
+    limit = { heavy_armament_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = ducol_steel_armor
+        }
+        modifier = {
+            factor = 2
+            invention = basic_oxygen_steelmaking
+        }
+    }
+    effect = {
+        tank = {
+            attack = 2
+            defence = 1
+            supply_consumption = 0.5
+        }
+    }
+}
+
+main_battle_tank = {
+    limit = { heavy_armament_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = -4
+			OR = {
+                NOT = { invention = self_propelled_artillery } #formerally assault_gun
+                NOT = { invention = sloped_armor }
+            }
+        }
+        modifier = {
+            factor = 2
+            invention = combined_arms_offensive
+        }
+        modifier = {
+            factor = 2
+            invention = mechanized_assault_doctrine
+        }
+    }
+    effect = {
+        tank = {
+            attack = 2
+            defence = 1
+            supply_consumption = 0.5
+        }
+    }
+}

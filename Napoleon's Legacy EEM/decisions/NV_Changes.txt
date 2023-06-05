@@ -1,0 +1,621 @@
+political_decisions = {
+
+    change_national_value_on = {
+        alert = yes
+        picture = national_value
+        potential = {
+            nationalvalue = nv_tradition
+            NOT = { has_country_flag = nv_change }
+            civilized = no
+        }
+
+        allow = {
+            civilization_progress = 0.5
+            NOT = { has_country_modifier = national_confusion }
+            war = no
+            NOT = { num_of_revolts = 1 }
+        }
+
+        effect = { set_country_flag = nv_change }
+
+        ai_will_do = {
+            factor = 1
+
+            modifier = {
+                factor = 0
+                OR = {
+                    tag = XBI #Qinghai
+                    tag = XIN #Xinjiang
+                    tag = TIB #Tibet
+                    tag = KML #Kumul
+                    tag = MCK
+                    tag = CHI
+                    tag = QNG
+                }
+                OR = {
+                    substate_of = QNG
+                    government = absolute_monarchy
+                    government = theocracy
+                }
+            }
+
+            modifier = {
+                factor = 0
+                is_culture_group = east_asian
+                ruling_party_ideology = reactionary
+            }
+
+        }
+    }
+
+    change_national_value_off = {
+        alert = no
+        picture = national_value
+        potential = {
+            has_country_flag = nv_change
+        }
+
+        allow = { }
+
+        effect = { clr_country_flag = nv_change }
+
+        ai_will_do = { factor = 0 }
+    }
+
+    # All five national values are designed to be picked at random by eligible AI countries.
+    # Normally this would be achieved through e.g. a `random_list` command. Unfortunately this can
+    # be tricky to get right when done from a decision as all countries activating the same decision
+    # on the same day can get identical results.
+    #
+    # Instead we rely on the `ai_will_do` factor which, for a decision, is the chance (should all
+    # requirements be met) that the AI activates it on any given day. However because the engine
+    # processes available decisions top to bottom (order being the same as in the decision file) the
+    # actual factors have to be computed carefully.
+    #
+    # For instance if the first processed decision has weight A, the practical factor B' of the
+    # second decision should be the original weight B but rescaled over the smaller probability
+    # space in the outcome that the preceding decision was not activated, which has complement
+    # probablity (1 - A):
+    #
+    #     B' = B / (1 - A)
+    #
+    # This generalises to multiple successive decisions. Notably it leads to a last practical factor
+    # of 1, such that whenever it is the day for an AI country to pick a new national value they are
+    # guaranteed to choose (as long as no other higher priority decision is available to be taken).
+    #
+    # The following table summarises the desired random weights & probabilities, as well as some of
+    # the computation details leading to the final practical factor:
+    #
+    # National value | Weight | Probability | CRD | Factor                  P         CRD        Factor    modifier
+    # ---------------+--------+-------------+-----+-------                                                          
+    # Order          |      1 |         20% |   1 | 0.200                   0.4        1          0.400     2
+    # Productivity   |      1 |         20% | 0.8 | 0.250                   0.2        0.6        0.333     1.333
+    # Autocracy      |      1 |         20% | 0.6 | 0.333                   0.3996     0.4        0.999     3      
+    # Liberty        |      1 |         20% | 0.4 | 0.500                   0.0002     0.0004     0.5       1
+    # Equality       |      1 |         20% | 0.2 | 1.000                   0.0002     0.0002     1         1
+    #
+    # where:
+    # - CRD is Cumulative Rescale Divisor
+    # - Factor is the practical in-game `ai_will_do` factor, equal to probability over CRD
+    #
+    # (Note that in testing the engine did not seem to handle decimals well beyond the thousandth
+    # place.)
+
+    switch_to_order = {
+        picture = switch_to_order
+        potential = {
+            nationalvalue = nv_tradition
+            NOT = { has_country_flag = switched_nv }
+            has_country_flag = nv_change
+        }
+
+        allow = {
+            war = no
+            NOT = { has_country_modifier = national_confusion }
+            NOT = { num_of_revolts = 1 }
+        }
+
+        effect = {
+            clr_country_flag = nv_change
+            set_country_flag = switched_nv
+            nationalvalue = nv_order
+            add_country_modifier = {
+                name = national_confusion
+                duration = 3650
+            }
+            any_pop = {
+                scaled_militancy = {
+                    ideology = reactionary
+                    factor = 8
+                }
+                scaled_militancy = {
+                    ideology = conservative
+                    factor = 2
+                }
+                scaled_militancy = {
+                    ideology = liberal
+                    factor = -2
+                }
+            }
+
+            random_owned = {
+                limit = {
+                    OR = {
+                        owner = { tag = TZ4 }
+                        owner = { tag = TZ5 }
+                        owner = { tag = TZ6 }
+                    }
+                    NOT = { exists = HUI }
+                    HUI = { nationalvalue = nv_tradition }
+                }
+                HUI = {
+                    clr_country_flag = nv_change
+                    set_country_flag = switched_nv
+                    nationalvalue = nv_order
+                    add_country_modifier = {
+                        name = national_confusion
+                        duration = 3650
+                    }
+                }
+            }
+
+            random_owned = {
+                limit = {
+                    OR = {
+                        owner = { tag = TZ7 }
+                        owner = { tag = TZ8 }
+                    }
+                    NOT = { exists = GNG }
+                    GNG = { nationalvalue = nv_tradition }
+                }
+                GNG = {
+                    clr_country_flag = nv_change
+                    set_country_flag = switched_nv
+                    nationalvalue = nv_order
+                    add_country_modifier = {
+                        name = national_confusion
+                        duration = 3650
+                    }
+                }
+            }
+
+        }
+
+        ai_will_do = {
+            factor = 0.2
+
+            modifier = {
+                factor = 2
+                OR = {
+                    is_culture_group = east_asian
+                    substate_of = QNG
+                }
+                NOT = { tag = QNG }
+            }
+            modifier = {
+                factor = 0
+                tag = TPG
+                NOT = { government = absolute_monarchy }
+                NOT = { government = prussian_constitutionalism }
+                NOT = { government = hms_government }
+            }
+        }
+    }
+
+    switch_to_production = {
+        picture = switch_to_productivity
+        potential = {
+            nationalvalue = nv_tradition
+            NOT = { has_country_flag = switched_nv }
+            has_country_flag = nv_change
+        }
+
+        allow = {
+            war = no
+            NOT = { has_country_modifier = national_confusion }
+            NOT = { num_of_revolts = 1 }
+        }
+
+        effect = {
+            clr_country_flag = nv_change
+            set_country_flag = switched_nv
+            nationalvalue = nv_productivity
+            add_country_modifier = {
+                name = national_confusion
+                duration = 3650
+            }
+            any_pop = {
+                scaled_militancy = {
+                    ideology = reactionary
+                    factor = 8
+                }
+                scaled_militancy = {
+                    ideology = conservative
+                    factor = 2
+                }
+                scaled_militancy = {
+                    ideology = liberal
+                    factor = -2
+                }
+            }
+
+            random_owned = {
+                limit = {
+                    OR = {
+                        owner = { tag = TZ4 }
+                        owner = { tag = TZ5 }
+                        owner = { tag = TZ6 }
+                    }
+                    NOT = { exists = HUI }
+                    HUI = { nationalvalue = nv_tradition }
+                }
+                HUI = {
+                    clr_country_flag = nv_change
+                    set_country_flag = switched_nv
+                    nationalvalue = nv_productivity
+                    add_country_modifier = {
+                        name = national_confusion
+                        duration = 3650
+                    }
+                }
+            }
+
+            random_owned = {
+                limit = {
+                    OR = {
+                        owner = { tag = TZ7 }
+                        owner = { tag = TZ8 }
+                    }
+                    NOT = { exists = GNG }
+                    GNG = { nationalvalue = nv_tradition }
+                }
+                GNG = {
+                    clr_country_flag = nv_change
+                    set_country_flag = switched_nv
+                    nationalvalue = nv_productivity
+                    add_country_modifier = {
+                        name = national_confusion
+                        duration = 3650
+                    }
+                }
+            }
+
+        }
+
+        ai_will_do = {
+            factor = 0.25
+
+            modifier = {
+                factor = 1.333
+                OR = {
+                    is_culture_group = east_asian
+                    substate_of = QNG
+                }
+                NOT = { tag = QNG }
+            }
+            modifier = {
+                factor = 0
+                tag = TPG
+                NOT = { government = absolute_monarchy }
+                NOT = { government = prussian_constitutionalism }
+                NOT = { government = hms_government }
+            }
+            modifier = {
+                factor = 0
+                tag = QNG
+            }
+
+            modifier = {
+                factor = 0
+                OR = {
+                    tag = TIB #Tibet
+                    tag = XBI #Qinghai
+                    tag = KML #Kumul
+                    tag = XIN #Xinjiang
+                    tag = MGL #Mongolia
+                    tag = TNT #Tuva
+                    tag = MCK #Manchuria
+                }
+                OR = {
+                    government = absolute_monarchy
+                    government = theocracy
+                }
+            }
+
+        }
+    }
+
+    switch_to_autocracy = {
+        picture = switch_to_autocracy
+        potential = {
+            nationalvalue = nv_tradition
+            NOT = { has_country_flag = switched_nv }
+            has_country_flag = nv_change
+        }
+
+        allow = {
+            war = no
+            NOT = { has_country_modifier = national_confusion }
+            NOT = { num_of_revolts = 1 }
+        }
+
+        effect = {
+            clr_country_flag = nv_change
+            set_country_flag = switched_nv
+            nationalvalue = nv_autocracy
+            add_country_modifier = {
+                name = national_confusion
+                duration = 3650
+            }
+            any_pop = {
+                scaled_militancy = {
+                    ideology = reactionary
+                    factor = 8
+                }
+                scaled_militancy = {
+                    ideology = conservative
+                    factor = 2
+                }
+                scaled_militancy = {
+                    ideology = liberal
+                    factor = -2
+                }
+            }
+
+            random_owned = {
+                limit = {
+                    OR = {
+                        owner = { tag = TZ4 }
+                        owner = { tag = TZ5 }
+                        owner = { tag = TZ6 }
+                    }
+                    NOT = { exists = HUI }
+                    HUI = { nationalvalue = nv_tradition }
+                }
+                HUI = {
+                    clr_country_flag = nv_change
+                    set_country_flag = switched_nv
+                    nationalvalue = nv_autocracy
+                    add_country_modifier = {
+                        name = national_confusion
+                        duration = 3650
+                    }
+                }
+            }
+
+            random_owned = {
+                limit = {
+                    OR = {
+                        owner = { tag = TZ7 }
+                        owner = { tag = TZ8 }
+                    }
+                    NOT = { exists = GNG }
+                    GNG = { nationalvalue = nv_tradition }
+                }
+                GNG = {
+                    clr_country_flag = nv_change
+                    set_country_flag = switched_nv
+                    nationalvalue = nv_autocracy
+                    add_country_modifier = {
+                        name = national_confusion
+                        duration = 3650
+                    }
+                }
+            }
+        }
+
+        ai_will_do = {
+            factor = 0.333
+
+            modifier = {
+                factor = 3
+                OR = {
+                    is_culture_group = east_asian
+                    substate_of = QNG
+                }
+                NOT = { tag = GNG }
+                NOT = { tag = TZ7 }
+                NOT = { tag = TZ8 }
+                NOT = { tag = TPG }
+                NOT = { tag = RTR }
+            }
+            modifier = {
+                factor = 30
+                tag = QNG
+            }
+            modifier = {
+                factor = 0
+                tag = RTR
+                NOT = { government = absolute_monarchy }
+                NOT = { government = prussian_constitutionalism }
+                NOT = { government = hms_government }
+            }
+            modifier = {
+                factor = 0
+                tag = TPG
+                NOT = { government = absolute_monarchy }
+                NOT = { government = prussian_constitutionalism }
+                NOT = { government = hms_government }
+            }
+        }
+    }
+
+    switch_to_equality = {
+        picture = switch_to_equality
+        potential = {
+            nationalvalue = nv_tradition
+            NOT = { has_country_flag = switched_nv }
+            has_country_flag = nv_change
+        }
+
+        allow = {
+            war = no
+            NOT = { has_country_modifier = national_confusion }
+            NOT = { num_of_revolts = 1 }
+        }
+
+        effect = {
+            clr_country_flag = nv_change
+            set_country_flag = switched_nv
+            nationalvalue = nv_equality
+            add_country_modifier = {
+                name = national_confusion
+                duration = 3650
+            }
+            any_pop = {
+                scaled_militancy = {
+                    ideology = reactionary
+                    factor = 8
+                }
+                scaled_militancy = {
+                    ideology = conservative
+                    factor = 2
+                }
+                scaled_militancy = {
+                    ideology = liberal
+                    factor = -2
+                }
+            }
+
+            random_owned = {
+                limit = {
+                    OR = {
+                        owner = { tag = TZ4 }
+                        owner = { tag = TZ5 }
+                        owner = { tag = TZ6 }
+                    }
+                    NOT = { exists = HUI }
+                    HUI = { nationalvalue = nv_tradition }
+                }
+                HUI = {
+                    clr_country_flag = nv_change
+                    set_country_flag = switched_nv
+                    nationalvalue = nv_equality
+                    add_country_modifier = {
+                        name = national_confusion
+                        duration = 3650
+                    }
+                }
+            }
+
+            random_owned = {
+                limit = {
+                    OR = {
+                        owner = { tag = TZ7 }
+                        owner = { tag = TZ8 }
+                    }
+                    NOT = { exists = GNG }
+                    GNG = { nationalvalue = nv_tradition }
+                }
+                GNG = {
+                    clr_country_flag = nv_change
+                    set_country_flag = switched_nv
+                    nationalvalue = nv_equality
+                    add_country_modifier = {
+                        name = national_confusion
+                        duration = 3650
+                    }
+                }
+            }
+        }
+
+        ai_will_do = {
+            factor = 0.5
+            modifier = {
+                factor = 2
+                tag = TPG
+                NOT = { government = absolute_monarchy }
+                NOT = { government = prussian_constitutionalism }
+                NOT = { government = hms_government }
+            }
+            modifier = {
+                factor = 0
+                OR = { tag = QNG tag = RTR }
+            }
+        }
+    }
+
+    switch_to_liberty = {
+        picture = switch_to_liberty
+        potential = {
+            nationalvalue = nv_tradition
+            NOT = { has_country_flag = switched_nv }
+            has_country_flag = nv_change
+        }
+
+        allow = {
+            war = no
+            NOT = { has_country_modifier = national_confusion }
+            NOT = { num_of_revolts = 1 }
+        }
+
+        effect = {
+            clr_country_flag = nv_change
+            set_country_flag = switched_nv
+            nationalvalue = nv_liberty
+            add_country_modifier = {
+                name = national_confusion
+                duration = 3650
+            }
+            any_pop = {
+                scaled_militancy = {
+                    ideology = reactionary
+                    factor = 8
+                }
+                scaled_militancy = {
+                    ideology = conservative
+                    factor = 2
+                }
+                scaled_militancy = {
+                    ideology = liberal
+                    factor = -2
+                }
+            }
+
+            random_owned = {
+                limit = {
+                    OR = {
+                        owner = { tag = TZ4 }
+                        owner = { tag = TZ5 }
+                        owner = { tag = TZ6 }
+                    }
+                    NOT = { exists = HUI }
+                    HUI = { nationalvalue = nv_tradition }
+                }
+                HUI = {
+                    clr_country_flag = nv_change
+                    set_country_flag = switched_nv
+                    nationalvalue = nv_liberty
+                    add_country_modifier = {
+                        name = national_confusion
+                        duration = 3650
+                    }
+                }
+            }
+
+            random_owned = {
+                limit = {
+                    OR = {
+                        owner = { tag = TZ7 }
+                        owner = { tag = TZ8 }
+                    }
+                    NOT = { exists = GNG }
+                    GNG = { nationalvalue = nv_tradition }
+                }
+                GNG = {
+                    clr_country_flag = nv_change
+                    set_country_flag = switched_nv
+                    nationalvalue = nv_liberty
+                    add_country_modifier = {
+                        name = national_confusion
+                        duration = 3650
+                    }
+                }
+            }
+        }
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
+}

@@ -1,0 +1,3 @@
+#event ids start at 666000
+
+#Peace march: consult event 18580 in NationalValues.txt

@@ -1,0 +1,12 @@
+political_decisions = {
+
+#    The World Bank Group
+#        the International Bank for Reconstruction and Development (IBRD), established in 1944, which provides debt financing on the basis of sovereign guarantees;
+#        the International Finance Corporation (IFC), established in 1956, which provides various forms of financing without sovereign guarantees, primarily to the private sector;
+#        the International Development Association (IDA), established in 1960, which provides concessional financing (interest-free loans or grants), usually with sovereign guarantees; When a country reaches a GDP per person over US$1,145, they are no longer eligible for IDA financial support.
+#        the International Centre for Settlement of Investment Disputes (ICSID), established in 1965, which works with governments to reduce investment risk;
+#        the Multilateral Investment Guarantee Agency (MIGA), established in 1988, which provides insurance against certain types of risk, including political risk, primarily to the private sector.
+
+
+
+}

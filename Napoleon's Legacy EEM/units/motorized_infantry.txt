@@ -1,0 +1,47 @@
+motorized_infantry = {
+	icon = 23 #CVs are 22
+	
+	type = land
+	sprite = Infantry
+	active = no
+	unit_type = cavalry
+	floating_flag = yes
+	
+	#Core Abilities
+	priority = 45
+	max_strength = 3
+	default_organisation = 30
+	maximum_speed = 10.00
+	weighted_value = 50.0	#40
+
+
+	#Building Costs
+	build_time = 150
+	build_cost = {
+		small_arms = 10
+		canned_food = 10
+		automobiles = 5 #10
+		fuel = 5
+		radio = 1
+	}
+	
+	supply_consumption = 1.0
+	supply_cost = {
+		small_arms = 0.012
+		ammunition = 0.075
+		canned_food = 0.07
+		automobiles = 0.05
+		fuel = 0.1
+		radio = 0.001
+	}
+	
+
+	#Land Abilties
+	reconnaissance = 1
+	attack = 14
+	defence = 14
+	discipline = 1.0
+	support = 0.0
+	maneuver = 4 #3
+	
+}

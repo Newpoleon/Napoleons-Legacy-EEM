@@ -1,0 +1,6 @@
+owner = SPA
+controller = SPA
+add_core = SPA
+add_core = PEU
+trade_goods = rubber
+life_rating = 31

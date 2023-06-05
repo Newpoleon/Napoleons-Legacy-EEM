@@ -1,0 +1,37 @@
+country_event = {
+    id = 16462
+    title = "EVTNAME16462"
+    desc = "EVTDESC16462"
+    picture = "yankee"
+
+    is_triggered_only = yes
+
+    #Richmond
+    option = {
+        name = "EVT16462OPTA"
+		capital = 60
+		2146 = { change_province_name = "Washington" }
+        ai_chance = {
+            factor = 5
+        }
+    }
+	
+	#Washington
+	option = {
+        name = "EVT16462OPTB"
+		capital = 2146
+        ai_chance = {
+            factor = 3
+        }
+    }
+	
+	#Charleston
+	option = {
+        name = "EVT16462OPTC"
+		capital = 205
+		2146 = { change_province_name = "Washington" }
+        ai_chance = {
+            factor = 2
+        }
+    }
+}

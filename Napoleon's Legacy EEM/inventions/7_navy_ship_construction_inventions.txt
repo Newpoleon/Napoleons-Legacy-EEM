@@ -1,0 +1,202 @@
+seaplane_tenders = {
+    limit = { oil_driven_ships = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = military_aviation
+        }
+        modifier = {
+            factor = 2
+            invention = on_board_recon_aircraft 
+        }
+    }
+    effect = {
+        cruiser = {
+            gun_power = 1
+        }
+    }
+}
+
+#experimental_air_carriers 
+
+converted_hulk_air_carriers = {
+    limit = { oil_driven_ships = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = -5
+            NOT = { invention = seaplane_tenders }
+        }
+        modifier = {
+            factor = 1
+            any_neighbor_country = { invention = purpose_built_air_carriers }
+        }
+        modifier = {
+            factor = 2
+            war = yes
+            war_countries = { invention = purpose_built_air_carriers }
+        }
+    }
+    effect = {
+        activate_unit = aircraft_carrier
+    }
+}
+
+purpose_built_air_carriers = {
+    limit = { oil_driven_ships = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = -6
+            NOT = { invention = converted_hulk_air_carriers }
+        }
+        modifier = {
+            factor = 2
+            invention = early_interwar_bombers
+        }
+        modifier = {
+            factor = 2
+            invention = early_interwar_fighters
+        }
+    }
+    effect = {
+        aircraft_carrier = {
+            maximum_speed = 1
+            hull = 2
+            gun_power = 2
+        }
+    }
+}
+
+light_air_carriers = { #and escort_air_carriers
+    limit = { oil_driven_ships = 1  }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = purpose_built_air_carriers
+        }
+        modifier = {
+            factor = 2
+            invention = converted_hulk_air_carriers
+        }
+        modifier = {
+            factor = 2
+            invention = fleet_air_carriers
+        }
+    }
+    effect = {
+        aircraft_carrier = {
+            maximum_speed = 2
+            gun_power = 2
+        }
+    }
+}
+
+fleet_air_carriers = {
+    limit = { ship_construction_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = -6
+            NOT = { invention = purpose_built_air_carriers }
+        }
+        modifier = {
+            factor = 2
+            invention = light_air_carriers
+        }
+        modifier = {
+            factor = 2
+            invention = fleet_auxiliary_carrier_doctrine
+        }
+    }
+    effect = {
+        aircraft_carrier = {
+            maximum_speed = 2
+            hull = 2
+			gun_power = 2
+        }
+    }
+}
+
+large_air_carriers = {
+    limit = { ship_construction_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = -6
+			NOT = {
+                invention = fleet_air_carriers
+		    }
+        }
+        modifier = {
+            factor = 2
+            invention = armored_flight_deck
+        }
+        modifier = {
+            factor = 2
+            invention = naval_radar
+        }
+		modifier = {
+            factor = 2
+            invention = hydraulic_aircraft_catapult
+        }
+    }
+    effect = {
+        aircraft_carrier = {
+            maximum_speed = 1
+            hull = 2
+            torpedo_attack = 2
+			gun_power = 2
+        }
+    }
+}
+
+large_cruisers = {
+    limit = { ship_construction_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = dual_purpose_guns
+        }
+        modifier = {
+            factor = 2
+            invention = acoustic_homing_torpedo
+        }
+        modifier = {
+            factor = 2
+            invention = ducol_steel_armor
+        }
+    }
+    effect = {
+        cruiser = {
+            gun_power = 1
+            torpedo_attack = 1
+            hull = 2
+        }
+    }
+}
+
+armored_flight_deck = {
+    limit = { ship_construction_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = naval_plastic_armor
+        }
+        modifier = {
+            factor = -4
+            NOT = {
+                invention = fleet_air_carriers
+            }
+        }
+    }
+    effect = {
+        aircraft_carrier = {
+            hull = 5
+        }
+    }
+}

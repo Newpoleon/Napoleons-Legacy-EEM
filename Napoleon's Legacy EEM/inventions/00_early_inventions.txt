@@ -1,0 +1,242 @@
+########## Earlier Inventions ##########
+#Lubrication oil was an accidental discovery while attempting to distil kerosene. Everest noted the residue from the extraction was suitable as a lubricant.
+#In 1880 Vacuum was absorbed by Standard Oil and developed rapidly when lubricating oil was needed for the stationary engine, the automobile, and finally the electric generator, motor and transformer and the steam turbine. 
+#lubrication_oil = {
+#    limit = { organic_chemistry = 1 }
+#    chance = {
+#        base = 0
+#        modifier = {
+#            factor = 2
+#            invention = cracking
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = oil_pumping_machinery
+#        }
+#    }
+#    effect = {
+#        factory_goods_output = { machine_parts = 0.02 }
+#    }
+#}
+
+#The ball screw was invented independently by H.M. Stevenson and D. Glenn who were issued in 1898 patents
+#1929: The ball screw is invented by Rudolph G. Boehm.
+#Low friction in ball screws yields high mechanical efficiency compared to alternatives. A typical ball screw may be 90 percent efficient, versus 20 to 25 percent efficiency of an Acme lead screw of equal size
+#ball_screw = {
+#    limit = { electric_furnace = 1 }
+#    chance = {
+#        base = 0
+#        modifier = {
+#            factor = 2
+#            invention = lubrication_oil
+#        }
+#        modifier = {
+#            factor = 2
+#            assembly_line = 1
+#        }
+#    }
+#    effect = {
+#        factory_goods_output = { machine_parts = 0.02 }
+#    }
+#}
+
+#1886: Carl Gassner invents the zinc–carbon battery, the first dry cell battery, making portable electronics practical.
+#1899: Waldemar Jungner invents the rechargeable nickel-cadmium battery (NiCd) as well as the nickel-iron electric storage battery (NiFe) and the rechargeable alkaline silver-cadmium battery (AgCd)
+#zinc_carbon_battery = {
+#    limit = { electricity = 1 }
+#    chance = {
+#        base = 0
+#        modifier = {
+#            factor = 2
+#            invention = edison_light_bulb  
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = electrical_lighting 
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = electric_rolling_techniques
+#        }
+#    }
+#    effect = {
+#        factory_goods_output = { electric_gear = 0.02 }
+#    }
+#}
+
+#1881: Nikolay Benardos presents carbon arc welding, the first practical arc welding method.
+#arc_welding = {
+#    limit = { electricity = 1 }
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = 2
+#            invention = electric_furnace
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = electrical_lighting 
+#        }
+#    }
+#    effect = {
+#        factory_goods_output = { automobiles = 0.01 }
+#        factory_goods_output = { steamer_convoy = 0.02 }
+#    }
+#}
+
+#1909: Fritz Haber invents the Haber process.
+haber_process = {
+    limit = { electric_furnace = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = steel_alloys 
+        }
+        modifier = {
+            factor = 2
+            organic_chemistry = 1
+        }
+        modifier = {
+            factor = 2
+            invention = cracking 
+        }
+    }
+    effect = {
+        factory_goods_output = { fertilizer = 0.25 }
+    }
+}
+
+#In the 1860s, magnetic separation started to become commercialized. It was used to separate iron from brass.[3]
+#After the 1880s, ferromagnetic materials started to be magnetically separated. 
+#In the 1900s, high intensity magnetic separation was inaugurated which allowed the separation of pragmatic materials.[3] 
+#After the Second World War, systems that were the most common were electromagnets. The technique was used in scrap yards. 
+#Magnetic separation was developed again in the late 1970s with new technologies being inaugurated.[2] The new forms of magnetic separation included magnetic pulleys, overhead magnets and magnetic drums. 
+magnetic_separation = {
+    limit = { regenerative_furnaces = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = electrical_lighting #electromagnet
+        }
+        modifier = {
+            factor = 2
+            assembly_line = 1 #1870
+        }
+        modifier = {
+            factor = -2
+            any_owned_province = {
+                controlled_by = THIS
+                trade_goods = iron
+                unemployment_by_type = { value = 0.05 type = labourers }
+                province_control_days = 1825
+            }
+       }
+        modifier = {
+            factor = -1
+            any_owned_province = {
+                controlled_by = THIS
+                trade_goods = iron
+                unemployment_by_type = { value = 0.01 type = labourers }
+            }
+        }
+        modifier = {
+            factor = -2
+            any_owned_province = {
+                controlled_by = THIS
+                trade_goods = iron
+                unemployment_by_type = { value = 0.03 type = labourers }
+            }
+        }
+    }
+    effect = {
+        rgo_goods_output = { iron = 0.20 }
+        rgo_goods_output = { coal = 0.05 }
+    }
+}
+
+#Tetraethyllead (commonly styled tetraethyl lead), abbreviated TEL, is an organolead compound with the formula (CH3CH2)4Pb. It is a petro-fuel additive, first being mixed with gasoline beginning in the 1920s as a patented octane rating booster that allowed engine compression to be raised substantially. This in turn caused increased vehicle performance and fuel economy.[3][4] TEL had been identified chemically in the mid-19th century, but its antiknock effectiveness was discovered in 1921 by the General Motors research laboratory, which had spent several years attempting to find an additive that was both highly effective and inexpensive.
+#Concerns were later raised over the toxic effects of lead, especially on children. Lead also poisons catalytic converters and is a major cause of spark plug fouling.[5] From the 1970s many countries began phasing out and eventually banning TEL in automotive fuel. In 2011, a study backed by the United Nations estimated that the removal of TEL had resulted in $2.4 trillion in annual benefits, and 1.2 million fewer premature deaths.[6] 
+leaded_gasoline = {
+    limit = { synthetic_polymers = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            combustion_engine = 1
+        }
+        modifier = {
+            factor = 2
+            invention = daimlers_automobile
+        }
+        modifier = {
+            factor = 2
+            invention = fordism
+        }
+    }
+    effect = {
+        factory_goods_output = {
+            fuel = 0.02
+        }
+        education_efficiency = -0.2
+    }
+}
+
+
+#By 1910, The Goodrich Tire Company started replacing white pigments in automotive tires with carbon black, thus increasing road wear by 100X and tensile strength by as much as 1008 percent (4).
+#Phthalates were first introduced in the 1920s and quickly replaced earlier forms of additives that make plastics more flexible.
+rubber_n_plastic_additives = {
+    limit = { synthetic_polymers = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = -6
+            OR = {
+                NOT = { invention = rubber_vulcanization }
+                NOT = { invention = rayon }
+            }
+        }
+        modifier = {
+            factor = 2
+            invention = daimlers_automobile
+        }
+        modifier = {
+            factor = 2
+            invention = bakelite
+        }
+    }
+    effect = {
+        rgo_goods_output = { rubber = 0.5 }
+        factory_goods_output = { glass = 0.01 }
+        factory_goods_output = { fabric = 0.01 }
+        factory_goods_output = { cement = 0.01 }
+    }
+}
+
+#1903: first low-grade copper porhypry
+#1913: Development of Bucket Wheel Excavator
+#1920s: Concept of continuous and mass mining systems for coal/ore mining 
+    # continuous mining machine cuts or rips coal from the face and loads it onto conveyors or into shuttle cars in a continuous operation. Thus, the drilling and shooting operations are eliminated, along with the necessity for working several headings in order to have available a heading in which loading can be in progress at all times.
+    # = local_conveyors_and_excavators
+
+
+#in 1884, his firm, Wayss & Freytag, made the first commercial use of reinforced concrete. 
+#One of the first skyscrapers made with reinforced concrete was the 16-story Ingalls Building in Cincinnati, constructed in 1904.
+#reinforced_concrete = {
+#    limit = { advanced_metallurgy = 1 }
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = 2
+#            invention = electric_rolling_techniques
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = modern_design
+#        }
+#    }
+#    effect = {
+#        factory_goods_output = { cement = 0.05 }
+#    }
+#}

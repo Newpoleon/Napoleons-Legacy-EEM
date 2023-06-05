@@ -1,0 +1,198 @@
+#Starting event announcing Germanization
+country_event = {
+    id = 55010
+    title = "EVTNAME55010"
+    desc = "EVTDESC55010"
+    picture = "Ferdinand"
+
+    trigger = {
+        OR = {
+            tag = AUS
+            tag = KUK
+            tag = DNB
+        }
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        days = 1
+    }
+
+    option = {
+        name = "EVTOPTA55010"
+    }
+}
+
+#Resignation of Metternich
+country_event = {
+    id = 55017
+    title = "EVTNAME55017"
+    desc = "EVTDESC55017"
+    picture = "Upperhouse"
+
+    trigger = {
+        tag = AUS
+        has_country_flag = liberal_revolution_fired
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        months = 1
+    }
+
+
+    option = {
+        name = "EVTOPTA55017"
+        any_pop = {
+            ideology = {
+                value = liberal
+                factor = 0.1
+            }
+        }
+
+        any_pop = {
+            scaled_militancy = {
+                factor = -1
+                ideology = liberal
+            }
+        }
+
+        any_pop = {
+            scaled_consciousness = {
+                factor = 1
+                ideology = liberal
+            }
+        }
+
+        set_country_flag = metternich_gone
+    }
+}
+
+#Jacobin Rebels in Vienna
+country_event = {
+    id = 55018
+    title = "EVTNAME55018"
+    desc = "EVTDESC55018"
+    picture = "Riot"
+
+    trigger = {
+        tag = AUS
+        has_country_flag = metternich_gone
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        months = 2
+    }
+
+    option = {
+        name = "EVTOPTA55018"
+        prestige = -30
+        any_pop = {
+            ideology = {
+                value = liberal
+                factor = 0.1
+            }
+        }
+        any_pop = {
+            scaled_militancy = {
+                factor = -3
+                ideology = liberal
+            }
+        }
+        any_pop = {
+            scaled_consciousness = {
+                factor = 3
+                ideology = liberal
+            }
+        }
+        set_country_flag = austrian_constitution
+        ai_chance = {
+            factor = 80
+                }
+    }
+
+    option = {
+        name = "EVTOPTB55018"
+        any_pop = {
+            scaled_militancy = {
+                factor = 5
+                ideology = liberal
+            }
+        }
+
+        set_country_flag = austrian_constitution
+
+        ai_chance = {
+            factor = 20
+        }
+    }
+}
+
+#Franz Joseph comes to the throne
+country_event = {
+    id = 55019
+    title = "EVTNAME55019"
+    desc = "EVTDESC55019"
+    picture = "Sisi"
+
+    trigger = {
+        tag = AUS
+        has_country_flag = austrian_constitution
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        months = 3
+    }
+
+    option = {
+        name = "EVTOPTA55019"
+        government = absolute_monarchy
+        political_reform = none_voting
+        political_reform = appointed
+        political_reform = censored_press
+        political_reform = underground_parties
+
+        prestige = 10
+        set_country_flag = franz_emperor
+
+        any_pop = {
+            militancy = -4
+            consciousness = -3
+        }
+    }
+}
+
+#Pan-Slav Congress
+country_event = {
+    id = 55020
+    title = "EVTNAME55020"
+    desc = "EVTDESC55020"
+    picture = "anticorn"
+
+    trigger = {
+        owns = 625
+        tag = AUS
+        has_country_flag = metternich_gone
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        months = 1
+    }
+
+    option = {
+        name = "EVTOPTA55020"
+        any_pop = {
+            limit = { has_pop_culture = czech }
+            militancy = 1
+            consciousness = 3
+        }
+    }
+}

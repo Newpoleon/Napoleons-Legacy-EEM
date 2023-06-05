@@ -1,0 +1,362 @@
+#SPA gets the news
+country_event = {
+    id = 600027
+    title = "EVTNAME600027"
+    desc = "EVTDESC600027"
+    picture = "Monarchy"
+    is_triggered_only = yes
+
+    #on SYC's terms
+    option = {
+        name = "EVTOPTA600027"
+        SYC = { country_event = 600028 }
+
+        ai_chance = {
+            factor = 30
+        }
+    }
+
+    #On SPA's terms
+    option = {
+        name = "EVTOPTB600027"
+        SYC = { country_event = 600029 }
+        prestige = 5
+
+        ai_chance = {
+            factor = 60
+        }
+    }
+
+    #No deal
+    option = {
+        name = "EVTOPTC600027"
+        SYC = { country_event = 600030 }
+
+        set_country_flag = peru_unlocked
+
+        ai_chance = {
+            factor = 10
+        }
+    }
+}
+
+#On SYC's terms
+country_event = {
+    id = 600028
+    title = "EVTNAME600028"
+    desc = "EVTDESC600028"
+    picture = "Monarchy"
+    is_triggered_only = yes
+
+    #on SYC's terms
+    option = {
+        name = "EVTOPTA600028"
+        prestige = 10
+
+        political_reform = yes_slavery
+        badboy = 2
+        primary_culture = spanish
+        add_accepted_culture = south_italian
+
+        relation = { who = FRA value = -100 }
+        relation = { who = SIC value = -100 }
+
+        SYC = {
+            all_core = { remove_core = SYC }
+        }
+
+        SYC = { inherit = SPA }
+        change_tag = SPA
+    }
+}
+
+#Accept SPA terms?
+country_event = {
+    id = 600029
+    title = "EVTNAME600029"
+    desc = "EVTDESC600029"
+    picture = "Administration"
+    is_triggered_only = yes
+
+    #On SPA's terms
+    option = {
+        name = "EVTOPTA600029"
+        political_reform = yes_slavery
+        political_reform = wealth_voting
+        political_reform = censored_press
+        political_reform = non_socialist
+        political_reform = non_secret_ballots
+
+        prestige = 5
+        badboy = 2
+        primary_culture = spanish
+        add_accepted_culture = south_italian
+
+        relation = { who = FRA value = -100 }
+        relation = { who = SIC value = -100 }
+
+        SYC = {
+            all_core = { remove_core = SYC }
+        }
+
+        SYC = { inherit = SPA }
+        change_tag = SPA
+        SPA = { country_event = 600032 }
+
+        ai_chance = {
+            factor = 40
+        }
+    }
+
+    #No deal
+    option = {
+        name = "EVTOPTB600029"
+        SPA = { country_event = 600031 }
+
+        ai_chance = {
+            factor = 60
+        }
+    }
+}
+
+#No Deal for SYC
+country_event = {
+    id = 600030
+    title = "EVTNAME600030"
+    desc = "EVTDESC600030"
+    picture = "slavepower"
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA600030"
+    }
+}
+
+#No Deal for SPA
+country_event = {
+    id = 600031
+    title = "EVTNAME600031"
+    desc = "EVTDESC600031"
+    picture = "slavepower"
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA600031"
+        set_country_flag = peru_unlocked
+    }
+}
+
+#No Deal for SPA
+country_event = {
+    id = 600032
+    title = "EVTNAME600032"
+    desc = "EVTDESC600032"
+    picture = "Monarchy"
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA600032"
+    }
+}
+
+#SPA became Peru
+country_event = {
+    id = 600033
+    title = "EVTNAME600033"
+    desc = "EVTDESC600033"
+    picture = "Monarchy"
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA600033"
+        SPA = {
+            all_core = {
+                limit = {
+                    NOT = {
+                        OR = {
+                            is_core = PEU
+                            is_core = CAT
+                        }
+                    }
+                }
+
+                add_core = NSA
+            }
+        }
+
+        SPA = { all_core = { remove_core = SPA } }
+
+        SPA_498 = {
+            add_core = FRA
+        }
+    }
+}
+
+#NSA gets the news
+country_event = {
+    id = 600034
+    title = "EVTNAME600034"
+    desc = "EVTDESC600034"
+    picture = "Celebration"
+
+    is_triggered_only = yes
+
+    #Be annexed
+    option = {
+        name = "EVTOPTA600034"
+        SPA = { country_event = 600035 }
+        NSA = {
+            all_core = {
+                remove_core = NSA
+            }
+        }
+
+        SPA = { inherit = NSA }
+        ai_chance = {
+                factor = 90
+        }
+    }
+
+    #Not be anexxed
+    option = {
+        name = "EVTOPTB600034"
+        SPA = { country_event = 600036 }
+        any_pop = {
+            limit = {
+                is_primary_culture = yes
+            }
+            militancy = 6
+        }
+
+        ai_chance = {
+            factor = 10
+        }
+    }
+}
+
+#NSA accepts
+country_event = {
+    id = 600035
+    title = "EVTNAME600035"
+    desc = "EVTDESC600035"
+    picture = "Celebration"
+    is_triggered_only = yes
+
+    #Be annexed
+    option = {
+        name = "EVTOPTA600035"
+        prestige = 30
+        any_pop = {
+            limit = {
+                is_primary_culture = yes
+            }
+            militancy = -4
+            consciousness = -4
+        }
+    }
+}
+
+#NSA declines
+country_event = {
+    id = 600036
+    title = "EVTNAME600036"
+    desc = "EVTDESC600036"
+    picture = "Celebration"
+    is_triggered_only = yes
+
+    #Be annexed
+    option = {
+        name = "EVTOPTA600036"
+    }
+}
+
+
+# NSA Revolts against France
+country_event = {
+    id = 600037
+    title = "EVTNAME600037"
+    desc = "EVTDESC600037"
+    picture = "Monarchy"
+
+    trigger = {
+        tag = NSA
+        exists = FRA
+        NSA = {
+            vassal_of = FRA
+        }
+        FRA = {
+            war_with = BOR
+        }
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        months = 1
+    }
+
+    option = {
+        name = "EVTOPTA600037"
+        FRA = { release_vassal = NSA }
+        relation = {
+            who = FRA
+            value = -150
+        }
+
+        FRA = { country_event = 7880767 }
+        ai_chance = {
+            factor = 100
+            modifier = {
+                factor = .5
+                relation = {
+                    who = FRA
+                    value = 100
+                }
+            }
+        }
+    }
+
+    option = {
+        name = "EVTOPTB600037"
+        prestige = -5
+        ai_chance = {
+            factor = 0
+        }
+    }
+}
+
+# France responds
+country_event = {
+
+    id = 7880767
+
+    is_triggered_only = yes
+
+    title = "EVTNAME7880767"
+    desc = "EVTDESC7880767"
+    picture = "Riot"
+
+    option = {
+        name = "EVT7880767OPTA"
+        casus_belli = {
+            target = FROM
+            type = make_puppet
+            months = 1
+        }
+
+        war = {
+            target = NSA
+            attacker_goal = {
+                casus_belli = make_puppet
+            }
+            defender_goal = {
+                casus_belli = status_quo
+            }
+        }
+    }
+
+    option = {
+        name = "EVT7880767OPTB"
+        prestige = -15
+    }
+}

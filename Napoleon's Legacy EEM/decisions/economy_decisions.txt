@@ -1,0 +1,355 @@
+political_decisions = {
+    enact_opium_ban = {
+        picture = opium_crates
+
+        potential = {
+            mass_politics = 1 #1900
+            NOT = { has_country_flag = opium_ban }
+
+            OR = {
+                ai = no
+                AND = {
+                    NOT = { government = presidential_dictatorship }
+                    is_vassal = no
+                    NOT = { debt_law = serfdom }
+                    war = no
+                    moralism = 2
+
+                    NOT = { has_country_flag = orthodox_country }
+                    NOT = { has_country_flag = coptic_country }
+                    NOT = { has_country_flag = sunni_country }
+                    NOT = { has_country_flag = shiite_country }
+                    NOT = { has_country_flag = ibadi_country }
+                    NOT = { has_country_flag = druze_country }
+                    NOT = { has_country_flag = jewish_country }
+                    NOT = { has_country_flag = yazidi_country }
+                    NOT = { has_country_flag = theravada_country }
+                    NOT = { has_country_flag = sikh_country }
+                    NOT = { has_country_flag = animist_country }
+                    OR = {
+                        government = democracy
+                        AND = {
+                            NOT = { has_country_flag = shinto_country }
+                            NOT = { has_country_flag = mahayana_country }
+                        }
+                    }
+                }
+            }
+        }
+
+        allow = {
+            OR = {
+                moralism = 2
+                government = proletarian_dictatorship
+                government = fascist_dictatorship
+                government = presidential_dictatorship
+                government = absolute_monarchy
+            }
+        }
+
+        effect = {
+            set_country_flag = opium_ban
+
+            any_owned = {
+                limit = {
+                    trade_goods = opium
+                    OR = {
+                        province_id = 866         # Afyon
+                        province_id = 1127        # Isfahan
+                        province_id = 2145        # Parral
+                        province_id = 2133        # Gizab
+                    }
+                }
+                trade_goods = cattle
+                add_province_modifier = {
+                    name = switched_production
+                    duration = 1825
+                }
+                add_province_modifier = {
+                    name = local_drug_habit
+                    duration = 365
+                }
+            }
+
+            any_owned = {
+                limit = {
+                    trade_goods = opium
+                    OR = {
+                        province_id = 1355        # Chiang Mai
+                    }
+                }
+                trade_goods = coffee
+                add_province_modifier = {
+                    name = switched_production
+                    duration = 1825
+                }
+                add_province_modifier = {
+                    name = local_drug_habit
+                    duration = 365
+                }
+            }
+
+            any_owned = {
+                limit = {
+                    trade_goods = opium
+                    OR = {
+                        province_id = 1192        # Nukus
+                        province_id = 1271        # Indore
+                        province_id = 668         # Merv
+                    }
+                }
+                trade_goods = cotton
+                add_province_modifier = {
+                    name = switched_production
+                    duration = 1825
+                }
+                add_province_modifier = {
+                    name = local_drug_habit
+                    duration = 365
+                }
+            }
+
+            any_owned = {
+                limit = {
+                    trade_goods = opium
+                    OR = {
+                        province_id = 1182	#Guryev
+                        #province_id = 1174	#Salalah
+                        #province_id = 1173	#Mukalla
+                    }
+                }
+                trade_goods = fish
+                add_province_modifier = {
+                    name = switched_production
+                    duration = 1825
+                }
+                add_province_modifier = {
+                    name = local_drug_habit
+                    duration = 365
+                }
+            }
+
+            any_owned = {
+                limit = {
+                    trade_goods = opium
+                    OR = {
+                        province_id = 1335	#Kyaukse
+                        #province_id = 1166	#Muscat
+                        #province_id = 1175	#Ghayda
+                        province_id = 1122	#Hamadan
+                        province_id = 1580	#Jiading
+                    }
+                }
+                trade_goods = fruit
+                add_province_modifier = {
+                    name = switched_production
+                    duration = 1825
+                }
+                add_province_modifier = {
+                    name = local_drug_habit
+                    duration = 365
+                }
+            }
+
+            any_owned = {
+                limit = {
+                    trade_goods = opium
+                    OR = {
+                        province_id = 1348	#Nakhon Sawan
+                        province_id = 1347	#Lopburi
+                        province_id = 1349	#Sukothai
+                        #province_id = 1170	#Nizwa
+                        province_id = 1247	#Patna
+                        province_id = 1333	#Toungoo
+                        province_id = 1216	#Jalalabad
+                        province_id = 2171	#Cololo
+                        province_id = 1625	#Kaesong
+                        province_id = 1218	#Peshawar
+                        province_id = 1211	#Balkh
+                        province_id = 1269	#Udaipur
+                    }
+                }
+                trade_goods = grain
+                add_province_modifier = {
+                    name = switched_production
+                    duration = 1825
+                }
+                add_province_modifier = {
+                    name = local_drug_habit
+                    duration = 365
+                }
+            }
+
+            any_owned = {
+                limit = {
+                    trade_goods = opium
+                    OR = {
+                        province_id = 1245	#Benares
+                    }
+                }
+                trade_goods = silk
+                add_province_modifier = {
+                    name = switched_production
+                    duration = 1825
+                }
+                add_province_modifier = {
+                    name = local_drug_habit
+                    duration = 365
+                }
+            }
+
+            any_owned = {
+                limit = {
+                    trade_goods = opium
+                    OR = {
+                        province_id = 1258	#Gauhati
+                        province_id = 1338	#Taunggye
+                    }
+                }
+                trade_goods = tea
+                add_province_modifier = {
+                    name = switched_production
+                    duration = 1825
+                }
+                add_province_modifier = {
+                    name = local_drug_habit
+                    duration = 365
+                }
+            }
+
+            any_owned = {
+                limit = {
+                    trade_goods = opium
+                    OR = {
+                        province_id = 807	#Bitola
+                        province_id = 1602	#Dali
+                    }
+                }
+                trade_goods = timber
+                add_province_modifier = {
+                    name = switched_production
+                    duration = 1825
+                }
+                add_province_modifier = {
+                    name = local_drug_habit
+                    duration = 365
+                }
+            }
+
+            any_owned = {
+                limit = {
+                    trade_goods = opium
+                    OR = {
+                        province_id = 1135	#Shiraz
+                    }
+                }
+                trade_goods = tobacco
+                add_province_modifier = {
+                    name = switched_production
+                    duration = 1825
+                }
+                add_province_modifier = {
+                    name = local_drug_habit
+                    duration = 365
+                }
+            }
+
+            any_owned = {
+                limit = {
+                    trade_goods = opium
+                    OR = {
+                        province_id = 1356	#Luang Prabang
+                    }
+                }
+                trade_goods = tropical_wood
+                add_province_modifier = {
+                    name = switched_production
+                    duration = 1825
+                }
+                add_province_modifier = {
+                    name = local_drug_habit
+                    duration = 365
+                }
+            }
+
+            any_owned = {
+                limit = {
+                    trade_goods = opium
+                    OR = {
+                        province_id = 808	#Petrich 
+                        province_id = 1210	#Kunduz
+                        province_id = 1215	#Kandahar
+                        province_id = 2248	#Ibague
+                    }
+                }
+                trade_goods = wool
+                add_province_modifier = {
+                    name = switched_production
+                    duration = 1825
+                }
+                add_province_modifier = {
+                    name = local_drug_habit
+                    duration = 365
+                }
+            }
+
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+
+    end_opium_ban = {
+        picture = opium_crates
+
+        potential = {
+            has_country_flag = opium_ban
+
+            OR = {
+                ai = no
+                AND = {
+                    NOT = { has_country_flag = catholic_country }
+                    NOT = { has_country_flag = protestant_country }
+                    NOT = { has_country_flag = mormon_country }
+                    NOT = { has_country_flag = coptic_country }
+                    NOT = { has_country_flag = mahayana_country }
+                    NOT = { has_country_flag = gelugpa_country }
+                    NOT = { has_country_flag = hindu_country }
+                    NOT = { has_country_flag = shinto_country }
+                    NOT = { has_country_flag = animist_country }
+                }
+                government = bourgeois_dictatorship
+            }
+
+        }
+
+        allow = {
+            OR = {
+                #filled with hippies
+                AND = { 
+                    pro_atheism = 5
+                    NOT = { moralism = 1 }
+                }
+                government = proletarian_dictatorship
+                government = fascist_dictatorship
+                government = presidential_dictatorship
+                government = bourgeois_dictatorship
+            }
+        }
+
+        effect = {
+            clr_country_flag = opium_ban
+            any_owned = {
+                limit = {
+                    has_province_modifier = local_opium_ban
+                }
+                remove_province_modifier = local_opium_ban
+            }
+        }
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+
+}

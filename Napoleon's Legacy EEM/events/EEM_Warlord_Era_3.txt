@@ -1,0 +1,1075 @@
+#End of The Liberal Revolution
+#    id = 166601
+#    title = "Tongmenghui Support Fades"
+#    desc = "Although there are still active Tongmenghui cells, governmental reforms have reached a point where popular support for a democratic revolution has declined significantly."
+#    picture = "Riot"
+#disabled because tongmenghui no longer gives global_liberal_agitation
+
+#The Xinhai Revolution (alternative version used if capital occupied by rebels or if China is so small no center of revolution can be set)
+country_event = {
+    id = 164599
+    title = "EVTNAME164599"
+    desc = "EVTDESC164599"
+    news = yes
+    news_desc_long = "EVTDESC164599"
+    news_desc_medium = "EVTDESC164599_NEWS_MEDIUM"
+    news_desc_short = "EVTDESC164599_NEWS_SHORT"
+    picture = "xinhai"
+    major = yes
+
+    fire_only_once = yes
+
+    trigger = {
+        has_global_flag = the_new_army
+        NOT = { has_global_flag = warlord_era_has_begun }
+        #NOT = { has_country_flag = xinhai_revolution }
+        #NOT = { has_global_flag = xinhai_revolution_global }
+        civilized = yes
+        OR = {
+            AND = {
+                tag = QNG
+                TPG = { exists = no }
+                CHI = { exists = no }
+                RTR = { exists = no }
+            }
+            AND = {
+                tag = TPG
+                QNG = { exists = no }
+                CHI = { exists = no }
+                RTR = { exists = no }
+            }
+            AND = {
+                tag = CHI
+                TPG = { exists = no }
+                QNG = { exists = no }
+                RTR = { exists = no }
+            }
+            AND = {
+                tag = RTR
+                TPG = { exists = no }
+                QNG = { exists = no }
+                CHI = { exists = no }
+			}
+        }
+        KMT = { exists = no }
+
+
+        ####
+        capital_scope = {
+            OR = {
+                controlled_by = THIS
+                controlled_by_rebels = yes
+            }
+        }
+        ####
+
+        OR = {
+            ####
+            revolt_percentage = 0.30
+            average_militancy = 5
+            ####
+
+            capital_scope = { controlled_by_rebels = yes }
+            AND = {
+                has_recently_lost_war = yes
+                war_exhaustion = 15
+                average_militancy = 2
+            }
+            has_country_modifier = the_terror
+            has_country_modifier = totalitarian_system
+            has_country_modifier = political_education
+            has_country_modifier = cult_of_personality
+            AND = { ruling_party_ideology = fascist average_militancy = 2 }
+            AND = { ruling_party_ideology = communist average_militancy = 2 }
+            AND = { ruling_party_ideology = anarcho_liberal average_militancy = 2 }
+
+            #AND = {
+            #    NOT = { owns = 1522 } #Wuchang, East Hubei
+            #    NOT = { owns = 1601 } #Kunming, Yunnan
+            #    NOT = { owns = 1578 } #Chengdu, West Sichuan
+            #    NOT = { owns = 1524 } #Changsha, West Hunan
+            #    NOT = { owns = 1572 } #Taiyuan, Shanxi
+            #    NOT = { owns = 1559 } #Xian, Shaanxi
+            #    NOT = { owns = 1493 } #Canton, East Canton
+            #    NOT = { owns = 1545 } #Nanchang, North Jiangxi
+            #    OR = {
+            #        revolt_percentage = 0.30
+            #        average_militancy = 5
+            #    }
+            #}
+        }
+
+    }
+
+    #mean_time_to_happen = {
+    #    months = 6
+    #}
+
+    mean_time_to_happen = {
+        months = 30
+        modifier = {
+            factor = 0.025
+            capital_scope = { controlled_by_rebels = yes }
+        }
+        modifier = {
+            factor = 0.05
+            NOT = { capital_scope = { controlled_by_rebels = yes } }
+            revolt_percentage = 0.30
+        }
+        modifier = {
+            factor = 0.8
+            average_militancy = 6
+        }
+        modifier = {
+            factor = 0.85
+            average_militancy = 7
+        }
+        modifier = {
+            factor = 0.9
+            average_militancy = 8
+        }
+        modifier = {
+            factor = 0.95
+            average_militancy = 9
+        }
+        modifier = {
+            factor = 0.7
+            year = 1890
+        }
+
+        modifier = {
+            factor = 0.8
+            year = 1900
+        }
+        modifier = {
+            factor = 0.8
+            year = 1905
+        }
+        modifier = {
+            factor = 0.8
+            year = 1910
+        }
+    }
+
+
+    immediate = {
+        set_country_flag = xinhai_revolution
+        #set_global_flag = xinhai_revolution_global
+        #set_country_flag = beiyang_army_coup
+    }
+
+    option = {
+        name = "EVT164599OPTA"
+        prestige = -25
+        clr_country_flag = totalitarian_government
+        remove_country_modifier = the_terror
+        remove_country_modifier = totalitarian_system
+        remove_country_modifier = political_education
+        remove_country_modifier = cult_of_personality
+        QNG = { all_core = { remove_core = QNG } }
+        TPG = { all_core = { remove_core = TPG } }
+        RTR = { all_core = { remove_core = RTR } }
+        random_owned = {
+            limit = {
+                is_capital = yes
+                controlled_by_rebels = yes
+            }
+            change_controller = THIS
+        }
+        random_country = {
+            limit = {
+                tag = KOR
+                vassal_of = THIS
+            }
+            THIS = { release_vassal = KOR }
+        }
+        random_country = {
+            limit = {
+                tag = TNT
+                vassal_of = THIS
+            }
+            THIS = { release_vassal = TNT }
+        }
+        random_country = {
+            limit = {
+                tag = KML
+                vassal_of = THIS
+            }
+            THIS = { release_vassal = KML }
+        }
+        random_country = {
+            limit = {
+                tag = TIB
+                vassal_of = THIS
+            }
+            THIS = { release_vassal = TIB }
+        }
+        random_owned = {
+            limit = {
+                province_id = 1587
+                NOT = { exists = TIB }
+            }
+            owner = {
+                any_owned = {
+                    limit = {
+                        region = TIB_1591
+                    }
+                    secede_province = TIB
+                }
+            }
+        }
+        random = {
+            chance = 70
+            random_country = {
+                limit = { tag = MGL vassal_of = THIS }
+                government = theocracy
+            }
+        }
+
+        random_country = {
+            limit = {
+                tag = MGL
+                vassal_of = THIS
+            }
+            relation = { who = THIS value = 100 }
+            THIS = { release_vassal = MGL }
+        }
+        random_owned = {
+            limit = {
+                province_id = 1465
+                NOT = { exists = MGL }
+            }
+            owner = {
+                any_owned = {
+                    limit = {
+                        is_core = MGL
+                        NOT = { region = CHI_1532 }
+                    }
+                    secede_province = MGL
+                }
+                relation = { who = MGL value = 100 }
+                MGL = { civilized = yes }
+            }
+        }
+        CHI_1468 = { remove_core = CHI }
+        CHI_1465 = { remove_core = CHI }
+        government = presidential_dictatorship
+        ruling_party_ideology = reactionary
+        political_reform = none_voting
+        political_reform = party_appointed
+        political_reform = no_meeting
+        political_reform = state_press
+        political_reform = no_trade_unions
+        political_reform = underground_parties
+        random_owned = {
+            limit = { owner = { NOT = { tag = CHI } } }
+            owner = {
+                change_tag = CHI
+                primary_culture = beifaren
+                add_accepted_culture = nanfaren
+            }
+        }
+        any_pop = {
+            limit = { has_pop_culture = beifaren }
+            militancy = -2
+        }
+        any_pop = {
+            limit = { has_pop_culture = nanfaren }
+            militancy = -1
+        }
+        random_owned = {
+            limit = {
+                province_id = 1616
+                is_capital = no
+            }
+            owner = { capital = 1616 }
+        }
+        any_owned = { remove_province_modifier = peasant_revolt }
+        add_country_modifier = {
+            name = national_confusion
+            duration = 365
+        }
+        any_country = {
+            limit = { substate_of = THIS }
+            government = presidential_dictatorship
+            political_reform = none_voting
+            political_reform = party_appointed
+            political_reform = no_meeting
+            political_reform = state_press
+            political_reform = no_trade_unions
+            political_reform = underground_parties
+        }
+        any_country = {
+            limit = { is_greater_power = yes }
+            diplomatic_influence = { who = THIS value = -200 }
+        }
+        ai_chance = { factor = 80 }
+    }
+
+    option = {
+        name = "EVT164599OPTB"
+        prestige = -25
+        QNG = { all_core = { remove_core = QNG } }
+        TPG = { all_core = { remove_core = TPG } }
+        RTR = { all_core = { remove_core = RTR } }
+        random_owned = {
+            limit = {
+                is_capital = yes
+                controlled_by_rebels = yes
+            }
+            change_controller = THIS
+        }
+        random_country = {
+            limit = {
+                tag = KOR
+                vassal_of = THIS
+            }
+            THIS = { release_vassal = KOR }
+        }
+        random_country = {
+            limit = {
+                tag = TIB
+                vassal_of = THIS
+            }
+            THIS = { release_vassal = TIB }
+        }
+        random_owned = {
+            limit = {
+                province_id = 1587
+                NOT = { exists = TIB }
+            }
+            owner = {
+                any_owned = {
+                    limit = {
+                        region = TIB_1591
+                    }
+                    secede_province = TIB
+                }
+            }
+        }
+        random_country = {
+            limit = {
+                tag = MGL
+                vassal_of = THIS
+            }
+            relation = { who = THIS value = 100 }
+            THIS = { release_vassal = MGL }
+        }
+        random_owned = {
+            limit = {
+                province_id = 1465
+                NOT = { exists = MGL }
+            }
+            owner = {
+                any_owned = {
+                    limit = {
+                        is_core = MGL
+                        NOT = { region = CHI_1532 }
+                    }
+                    secede_province = MGL
+                }
+                relation = { who = MGL value = 100 }
+                MGL = { civilized = yes }
+            }
+        }
+        CHI_1468 = { remove_core = CHI }
+        CHI_1465 = { remove_core = CHI }
+
+        government = democracy
+        ruling_party_ideology = liberal
+        political_reform = universal_weighted_voting
+        political_reform = party_appointed
+        political_reform = yes_meeting
+        political_reform = state_press
+        political_reform = state_controlled
+        political_reform = harassment
+        CHI = {
+            all_core = { add_core = KMT }
+        }
+        change_tag = KMT
+        primary_culture = nanfaren
+        add_accepted_culture = beifaren
+        any_pop = {
+            limit = { has_pop_culture = nanfaren }
+            militancy = -8
+        }
+        any_pop = {
+            limit = { has_pop_culture = beifaren }
+            militancy = -4
+        }
+        random_owned = {
+            limit = {
+                province_id = 2221
+                is_capital = no
+            }
+            owner = { capital = 2221 }
+        }
+        any_owned = {
+            remove_province_modifier = peasant_revolt
+        }
+        add_country_modifier = {
+            name = national_confusion
+            duration = 365
+        }
+        any_country = {
+            limit = { substate_of = THIS }
+            government = democracy
+            political_reform = universal_weighted_voting
+            political_reform = party_appointed
+            political_reform = yes_meeting
+            political_reform = state_press
+            political_reform = state_controlled
+            political_reform = harassment
+        }
+        any_country = {
+            limit = { is_greater_power = yes }
+            diplomatic_influence = {
+                who = THIS
+                value = -200
+            }
+        }
+        ai_chance = {
+            factor = 20
+        }
+    }
+}
+
+
+
+
+#Main Warlord Event (BEGIN)
+country_event = {
+    id = 131730
+    title = "EVTNAME131730" #The Warlord Era begins
+    desc = "EVTDESC131730"
+    news = yes
+    news_desc_long = "EVTDESC131730_NEWS_LONG"
+    news_desc_medium = "EVTDESC131730_NEWS_MEDIUM"
+    news_desc_short = "EVTDESC131730_NEWS_SHORT"
+    picture = "warlords"
+    major = yes
+
+    fire_only_once = yes
+
+    trigger = {
+        war = no
+        OR = {
+            AND = {
+                tag = KMT
+                NOT = { exists = TPG }
+                NOT = { exists = CHI }
+                NOT = { exists = RTR }
+            }
+            AND = {
+                tag = TPG
+                NOT = { exists = KMT }
+                NOT = { exists = CHI }
+                NOT = { exists = RTR }
+            }
+            AND = {
+                tag = CHI
+                NOT = { exists = TPG }
+                NOT = { exists = KMT }
+                NOT = { exists = RTR }
+            }
+            AND = {
+                tag = RTR
+                NOT = { exists = TPG }
+                NOT = { exists = CHI }
+                NOT = { exists = KMT }
+            }
+        }
+        NOT = { exists = QNG }
+        has_global_flag = the_new_army
+        has_global_flag = spread_warlord_influence
+        NOT = { has_global_flag = warlord_era_has_begun }
+        civilized = yes
+        OR = {
+            is_disarmed = yes
+            lost_national = 0.10
+            revolt_percentage = 0.10
+            average_militancy = 4
+            exists = HUI
+            exists = GNG
+            tag = KMT
+            AND = {
+                tag = CHI
+                NOT = { government = presidential_dictatorship }
+                has_global_flag = xinhai_revolution_global
+            }
+            AND = {
+                tag = TPG
+                OR = {
+                    government = democracy
+                    government = hms_government
+                }
+            }
+            AND = {
+                tag = RTR
+                OR = {
+                    government = democracy
+                    government = hms_government
+                    government = theocracy
+                }
+            }
+            NOT = { prestige = 200 }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 75
+        modifier = {
+            factor = 1.5
+            is_greater_power = yes
+        }
+        modifier = {
+            factor = 0.5
+            has_recently_lost_war = yes
+        }
+        modifier = {
+            factor = 1.5
+            NOT = { has_country_flag = xinhai_revolution }
+        }
+        modifier = {
+            factor = 0.5
+            tag = KMT
+        }
+        modifier = {
+            factor = 0.5
+            tag = TPG
+        }
+        modifier = {
+            factor = 0.5
+            tag = RTR
+            OR = {
+                NOT = { has_global_flag = ming_victorious_2 }
+                government = theocracy
+            }
+        }
+        modifier = {
+            factor = 2
+            tag = RTR
+            has_global_flag = ming_victorious_2
+        }
+        modifier = {
+            factor = 0.8
+            average_militancy = 6
+        }
+        modifier = {
+            factor = 0.8
+            average_militancy = 7
+        }
+        modifier = {
+            factor = 0.8
+            average_militancy = 8
+        }
+        modifier = {
+            factor = 0.8
+            average_militancy = 9
+        }
+        modifier = {
+            factor = 0.5
+            revolt_percentage = 0.10
+        }
+        modifier = {
+            factor = 0.6
+            revolt_percentage = 0.15
+        }
+        modifier = {
+            factor = 0.7
+            revolt_percentage = 0.20
+        }
+        modifier = {
+            factor = 0.8
+            revolt_percentage = 0.25
+        }
+        modifier = {
+            factor = 0.9
+            revolt_percentage = 0.30
+        }
+        modifier = {
+            factor = 0.01
+            capital_scope = { controlled_by_rebels = yes }
+        }
+        modifier = {
+            factor = 0.75
+            lost_national = 0.20
+        }
+        modifier = {
+            factor = 0.75
+            lost_national = 0.30
+        }
+        modifier = {
+            factor = 0.1
+            OR = {
+                government = bourgeois_dictatorship
+                government = proletarian_dictatorship
+                government = fascist_dictatorship
+                government = absolute_monarchy
+            }
+        }
+        modifier = {
+            factor = 0.1
+            tag = RTR
+            OR = {
+                government = democracy
+                government = hms_government
+            }
+        }
+        modifier = {
+            factor = 0.1
+            tag = TPG
+            OR = {
+                government = democracy
+                government = hms_government
+            }
+        }
+        modifier = {
+            factor = 0.1
+            tag = CHI
+            NOT = { government = presidential_dictatorship }
+        }
+        modifier = {
+            factor = 0.5
+            exists = GNG
+            GNG = {
+                NOT = { substate_of = THIS }
+            }
+        }
+        modifier = {
+            factor = 0.8
+            exists = GXI
+            GXI = {
+                NOT = { substate_of = THIS }
+            }
+        }
+        modifier = {
+            factor = 0.8
+            exists = HNN
+            HNN = {
+                NOT = { substate_of = THIS }
+            }
+        }
+        modifier = {
+            factor = 0.5
+            exists = HUI
+            HUI = {
+                NOT = { substate_of = THIS }
+            }
+        }
+        modifier = {
+            factor = 0.5
+            exists = MCK
+            MCK = {
+                NOT = { substate_of = THIS }
+            }
+        }
+        modifier = {
+            factor = 0.8
+            exists = SXI
+            SXI = {
+                NOT = { substate_of = THIS }
+            }
+        }
+        modifier = {
+            factor = 0.8
+            exists = SZC
+            SZC = {
+                NOT = { substate_of = THIS }
+            }
+        }
+        modifier = {
+            factor = 0.8
+            exists = XBI
+            XBI = {
+                NOT = { substate_of = THIS }
+            }
+        }
+        modifier = {
+            factor = 0.8
+            exists = XIN
+            XIN = {
+                NOT = { substate_of = THIS }
+            }
+        }
+        modifier = {
+            factor = 0.8
+            exists = YNN
+            YNN = {
+                NOT = { substate_of = THIS }
+            }
+        }
+        modifier = {
+            factor = 0.8
+            exists = MAO
+            MAO = {
+                NOT = { substate_of = THIS }
+            }
+        }
+        modifier = {
+            factor = 0.8
+            year = 1890
+        }
+        modifier = {
+            factor = 0.85
+            year = 1905
+        }
+        modifier = {
+            factor = 0.9
+            year = 1910
+        }
+        modifier = {
+            factor = 0.95
+            year = 1915
+        }
+        modifier = {
+            factor = 0.99
+            year = 1920
+        }
+    }
+
+    option = {
+        name = "EVT131730OPTA"
+        clr_global_flag = spread_warlord_influence
+        set_global_flag = warlord_era_has_begun
+        prestige = -25
+
+        any_owned = {
+            limit = {
+               state_scope = { any_owned_province = { is_capital = yes } }  #Make super sure capital doesn't get defect to warlords
+            }
+            add_core = TZ3
+        }
+
+        random_country = {
+            limit = {
+                tag = KOR
+                vassal_of = THIS
+            }
+            leave_alliance = THIS
+            THIS = { release_vassal = KOR }
+        }
+        random_country = {
+            limit = {
+                tag = GNG
+                OR = {
+                    vassal_of = THIS
+                    substate_of = THIS
+                }
+            }
+            THIS = { release_vassal = GNG }
+        }
+        any_owned = {
+            limit = { is_core = GNG NOT = { is_core = TZ3 } }
+            secede_province = GNG
+        }
+        random_country = {
+            limit = {
+                tag = GXI
+                OR = {
+                    vassal_of = THIS
+                    substate_of = THIS
+                }
+            }
+            THIS = { release_vassal = GXI }
+        }
+        any_owned = {
+            limit = { is_core = GXI NOT = { is_core = TZ3 } }
+            secede_province = GXI
+        }
+        random_country = {
+            limit = {
+                tag = HNN
+                OR = {
+                    vassal_of = THIS
+                    substate_of = THIS
+                }
+            }
+            THIS = { release_vassal = HNN }
+        }
+        any_owned = {
+            limit = { is_core = HNN NOT = { is_core = TZ3 } }
+            secede_province = HNN
+        }
+        random_country = {
+            limit = {
+                tag = HUI
+                OR = {
+                    vassal_of = THIS
+                    substate_of = THIS
+                }
+            }
+            THIS = { release_vassal = HUI }
+        }
+        any_owned = {
+            limit = { is_core = HUI NOT = { is_core = TZ3 } }
+            secede_province = HUI
+        }
+        random_country = {
+            limit = {
+                tag = MCK
+                OR = {
+                    vassal_of = THIS
+                    substate_of = THIS
+                }
+            }
+            government = presidential_dictatorship
+            ruling_party_ideology = reactionary
+            political_reform = none_voting
+            political_reform = party_appointed
+            political_reform = no_meeting
+            political_reform = state_press
+            political_reform = no_trade_unions
+            political_reform = underground_parties
+            THIS = { release_vassal = MCK }
+        }
+        any_owned = {
+            limit = { is_core = MCK NOT = { is_core = TZ3 } }
+            secede_province = MCK
+        }
+
+        random_country = {
+            limit = {
+                tag = MGL
+                vassal_of = THIS
+            }
+            THIS = { release_vassal = MGL }
+        }
+        random_country = {
+            limit = {
+                tag = SXI
+                OR = {
+                    vassal_of = THIS
+                    substate_of = THIS
+                }
+            }
+            THIS = { release_vassal = SXI }
+        }
+        any_owned = {
+            limit = { is_core = SXI NOT = { is_core = TZ3 } }
+            secede_province = SXI
+        }
+        random_country = {
+            limit = {
+                tag = SZC
+                OR = {
+                    vassal_of = THIS
+                    substate_of = THIS
+                }
+            }
+            THIS = { release_vassal = SZC }
+        }
+        any_owned = {
+            limit = { is_core = SZC NOT = { is_core = TZ3 } }
+            secede_province = SZC
+        }
+        random_country = {
+            limit = {
+                tag = TIB
+                vassal_of = THIS
+            }
+            THIS = { release_vassal = TIB }
+        }
+        random_country = {
+            limit = {
+                tag = XBI
+                OR = {
+                    vassal_of = THIS
+                    substate_of = THIS
+                }
+            }
+            government = presidential_dictatorship
+            ruling_party_ideology = reactionary
+            political_reform = none_voting
+            political_reform = party_appointed
+            political_reform = no_meeting
+            political_reform = state_press
+            political_reform = no_trade_unions
+            political_reform = underground_parties
+            THIS = { release_vassal = XBI }
+        }
+        any_owned = {
+            limit = { is_core = XBI NOT = { is_core = TZ3 } }
+            secede_province = XBI
+        }
+
+        random_country = {
+            limit = {
+                tag = XIN
+                OR = {
+                    vassal_of = THIS
+                    substate_of = THIS
+                }
+            }
+            government = presidential_dictatorship
+            ruling_party_ideology = reactionary
+            political_reform = none_voting
+            political_reform = party_appointed
+            political_reform = no_meeting
+            political_reform = state_press
+            political_reform = no_trade_unions
+            political_reform = underground_parties
+            THIS = { release_vassal = XIN }
+        }
+        any_owned = {
+            limit = { is_core = XIN NOT = { is_core = TZ3 } }
+            secede_province = XIN
+        }
+        random_country = {
+            limit = {
+                tag = YNN
+                OR = {
+                    vassal_of = THIS
+                    substate_of = THIS
+                }
+            }
+            THIS = { release_vassal = YNN }
+        }
+        any_owned = {
+            limit = { is_core = YNN NOT = { is_core = TZ3 } }
+            secede_province = YNN
+        }
+        random_owned = {
+            limit = {
+                province_id = 1485
+                owner = { NOT = { owns = 1482 } }
+            }
+            1485 = {
+                remove_core = FJN
+                add_core = TAI
+            }
+            2562 = {
+                remove_core = FJN
+                add_core = TAI
+            }
+            2406 = {
+                remove_core = FJN
+                add_core = TAI
+            }
+            2681 = {
+                remove_core = FJN
+                add_core = TAI
+            }
+            owner = {
+                any_owned = {
+                    limit = { is_core = TAI }
+                    secede_province = TAI
+                }
+            }
+        }
+        random_country = {
+            limit = {
+                tag = FJN
+                OR = {
+                    vassal_of = THIS
+                    substate_of = THIS
+                }
+            }
+            THIS = { release_vassal = FJN }
+        }
+        any_owned = {
+            limit = { is_core = FJN NOT = { is_core = TZ3 } }
+            secede_province = FJN
+        }
+
+
+        random_country = { #release Beiyang China if you're TPG/RTR/TPG
+            limit = {
+                NOT = { THIS = { tag = CHI } }
+                NOT = { THIS = { tag = QNG } }
+                tag = CHI
+                OR = {
+                    vassal_of = THIS
+                    substate_of = THIS
+                }
+            }
+            civilized = yes
+            government = presidential_dictatorship
+            ruling_party_ideology = reactionary
+            political_reform = none_voting
+            political_reform = party_appointed
+            political_reform = no_meeting
+            political_reform = state_press
+            political_reform = no_trade_unions
+            political_reform = underground_parties
+            THIS = { release_vassal = CHI }
+        }
+        any_owned = { #release Beiyang China if no other warlord claimed it yet and you're not Qing
+            limit = {
+                is_core = CHI
+                OR = { region = CHI_1612 region = CHI_1616 }
+                NOT = { is_core = TZ3 }
+                NOT = { THIS = { tag = CHI } }
+                NOT = { THIS = { tag = QNG } }
+            }
+
+            secede_province = CHI
+            CHI = {
+                civilized = yes
+                government = presidential_dictatorship
+                ruling_party_ideology = reactionary
+                political_reform = none_voting
+                political_reform = party_appointed
+                political_reform = no_meeting
+                political_reform = state_press
+                political_reform = no_trade_unions
+                political_reform = underground_parties
+            }
+        }
+
+        any_owned = {
+            limit = {
+                is_core = TZ3
+            }
+            remove_core = TZ3
+        }
+
+
+        any_pop = {
+            militancy = -6
+            dominant_issue = {
+                factor = 0.10
+                value = jingoism
+            }
+        }
+        random_owned = {
+            limit = {
+                owner = { NOT = { num_of_cities = 40 } }
+            }
+            owner = {
+                add_country_modifier = {
+                    name = drive_to_reunify
+                    duration = 730
+                }
+            }
+        }
+        any_country = {
+            limit = { is_greater_power = yes }
+            diplomatic_influence = { who = THIS value = -200 }
+        }
+
+        any_country = {
+            limit = {
+                OR = {
+                    tag = FJN
+                    tag = GMJ
+                    tag = GNG
+                    tag = GXI
+                    tag = HNN
+                    tag = HUI
+                    tag = MCK
+                    tag = SXI
+                    tag = SZC
+                    tag = TAI
+                    tag = XBI
+                    tag = XIN
+                    tag = YNN
+                    tag = MAO
+                }
+                civilized = no
+            }
+            civilized = yes
+        }
+
+    }
+}

@@ -1,0 +1,632 @@
+#Sphere of Influence
+#Asia
+PER = {
+    value = 150        #relation
+    level = 3        #3=cordial, 4 = friendly, 5 sphere
+    influence_value = 0
+}
+
+QNG ={
+    level = 0
+}
+
+KWT = {
+    value = 125        #relation
+    level = 5        #3=cordial, 4 = friendly, 5 sphere
+    influence_value = 0
+}
+
+#Middle East
+HAL = {
+    value = 150
+    level = 4
+    influence_value = 0
+}
+NEJ = {
+    value = -25
+    level = 0
+}
+HDJ = {
+    value = 125        #relation
+    level = 5        #3=cordial, 4 = friendly, 5 = sphere
+    influence_value = 0
+}
+NYE = {
+    value = -100
+}
+
+BHR = {
+    value = 125        #relation
+    level = 5        #3=cordial, 4 = friendly, 5 = sphere
+    influence_value = 0
+}
+
+QAT = {
+    value = 125        #relation
+    level = 5        #3=cordial, 4 = friendly, 5 = sphere
+    influence_value = 0
+}
+
+#Africa
+EGY = {
+    value = -50        #relation
+    level = 1        #3=cordial, 4 = friendly, 5 sphere
+    influence_value = 0
+}
+TUN = {
+    value = 125        #relation
+    level = 5        #3=cordial, 4 = friendly, 5 sphere
+    influence_value = 0
+}
+MOR = {
+    value = 100
+}
+
+#Europe
+SER = {
+    value = 0        #relation
+    level = 5        #3=cordial, 4 = friendly, 5 sphere
+    influence_value = 0
+}
+MOL = {
+    value = 125
+    level = 4
+    influence_value = 0
+}
+WAL = {
+    value = 125
+    level = 4
+    influence_value = 0
+}
+
+#Other GP's
+USA = { value = 0 }
+PRU = { value = 25 }
+SPA = { value = 25 }
+AUS = { value = 25 }
+RUS = { value = 75 }
+BRI = { value = 125 }
+FRA = { value = -75 }
+
+army = {
+    name = "Mansure Army"
+    location = 860
+    regiment = {
+        name= "1. T�meni Firkasi"
+        type = infantry
+        home = 860
+    }
+
+    regiment = {
+        name= "2. T�meni Firkasi"
+        type = infantry
+        home = 828
+    }
+
+    regiment = {
+        name= "3. T�meni Firkasi"
+        type = infantry
+        home = 859
+    }
+
+    regiment = {
+        name= "4. T�meni Firkasi"
+        type = infantry
+        home = 802
+    }
+
+    regiment = {
+        name= "5. T�meni Firkasi"
+        type = infantry
+        home = 803
+    }
+
+    regiment = {
+        name= "6. T�meni Firkasi"
+        type = infantry
+        home = 860
+    }
+
+    regiment = {
+        name= "1. S�vari Firkasi"
+        type = cuirassier
+        home = 798
+    }
+
+    regiment = {
+        name= "2. S�vari Firkasi"
+        type = cuirassier
+        home = 799
+    }
+
+    regiment = {
+        name= "3. S�vari Firkasi"
+        type = cuirassier
+        home = 853
+    }
+
+    regiment = {
+        name= "1. Top�u Firkas"
+        type = artillery
+        home = 861
+    }
+
+}
+
+army = {
+    name = "1st Army"
+    location = 810
+
+    regiment = {
+        name= "7. T�meni Firkasi"
+        type = infantry
+        home = 807
+    }
+
+    regiment = {
+        name= "8. T�meni Firkasi"
+        type = infantry
+        home = 807
+    }
+
+    regiment = {
+        name= "9. T�meni Firkasi"
+        type = infantry
+        home = 849
+    }
+
+    regiment = {
+        name= "10. T�meni Firkasi"
+        type = infantry
+        home = 850
+    }
+
+    regiment = {
+        name= "11. T�meni Firkasi"
+        type = infantry
+        home = 851
+    }
+
+    regiment = {
+        name= "12. T�meni Firkasi"
+        type = infantry
+        home = 882
+    }
+
+    regiment = {
+        name= "4. S�vari Firkasi"
+        type = cuirassier
+        home = 783
+    }
+
+    regiment = {
+        name= "5. S�vari Firkasi"
+        type = cuirassier
+        home = 806
+    }
+
+    regiment = {
+        name= "6. S�vari Firkasi"
+        type = cuirassier
+        home = 884
+    }
+
+    regiment = {
+        name = "2. Top�u Firkas"
+        type = artillery
+        home = 804
+    }
+}
+
+army = {
+    name = "2nd Army"
+    location = 878
+
+    regiment = {
+        name= "13. T�meni Firkasi"
+        type = infantry
+        home = 879
+    }
+
+    regiment = {
+        name= "14. T�meni Firkasi"
+        type = infantry
+        home = 1780
+    }
+
+    regiment = {
+        name= "15. T�meni Firkasi"
+        type = infantry
+        home = 813
+    }
+
+    regiment = {
+        name= "1. Timariot"
+        type = irregular
+        home = 887
+    }
+
+    regiment = {
+        name= "2. Timariot"
+        type = irregular
+        home = 887
+    }
+
+    regiment = {
+        name= "3. Timariot"
+        type = irregular
+        home = 675
+    }
+
+    regiment = {
+        name= "7. S�vari Firkasi"
+        type = cuirassier
+        home = 806
+    }
+
+    regiment = {
+        name= "8. S�vari Firkasi"
+        type = cuirassier
+        home = 811
+    }
+
+    regiment = {
+        name= "3. Top�u Firkas"
+        type = artillery
+        home = 888
+    }
+
+}
+
+army = {
+    name = "3rd Army"
+    location = 818
+
+
+    regiment = {
+        name= "16. T�meni Firkasi"
+        type = infantry
+        home = 818
+    }
+
+    regiment = {
+        name= "4. Timariot"
+        type = irregular
+        home = 809
+    }
+
+    regiment = {
+        name= "5. Timariot"
+        type = irregular
+        home = 814
+    }
+
+    regiment = {
+        name= "9. S�vari Firkasi"
+        type = cuirassier
+        home = 812
+    }
+
+    regiment = {
+        name= "1. Sipahis"
+        type = cavalry
+        home = 876
+    }
+
+}
+
+army = {
+    name = "4th Army"
+    location = 923
+
+    regiment = {
+        name= "17. T�meni Firkasi"
+        type = infantry
+        home = 860
+    }
+
+    regiment = {
+        name= "6. Timariot"
+        type = irregular
+        home = 863
+    }
+
+    regiment = {
+        name= "7. Timariot"
+        type = irregular
+        home = 923
+    }
+
+    regiment = {
+        name= "2. Sipahis"
+        type = cavalry
+        home = 883
+    }
+
+    regiment = {
+        name= "3. Sipahis"
+        type = cavalry
+        home = 873
+    }
+
+}
+
+army = {
+    name = "5th Army"
+    location = 1096
+
+    regiment = {
+        name= "18. T�meni Firkasi"
+        type = infantry
+        home = 923
+    }
+
+    regiment = {
+        name= "2. Timariot"
+        type = irregular
+        home = 824
+    }
+
+    regiment = {
+        name= "4. Sipahis"
+        type = cavalry
+        home = 824
+    }
+
+    regiment = {
+        name= "5. Sipahis"
+        type = cavalry
+        home = 926
+    }
+}
+
+army = {
+    name = "Pashalik of Tripoli Army"
+    location = 1736
+    regiment = {
+        name= "1. Ask�ris"
+        type = irregular
+        home = 1735
+    }
+    regiment = {
+        name= "6. Sipahis"
+        type = cavalry
+        home = 805
+    }
+}
+
+navy = {
+    name = "Ottoman Navy"
+    location = 860
+    ship = {
+        name= "Selimiye"
+        type = manowar
+    }
+
+    ship = {
+        name= "Mahmudiye"
+        type = manowar
+    }
+
+    ship = {
+        name= "Mesudiye"
+        type = manowar
+    }
+
+    ship = {
+        name= "Fethiye"
+        type = manowar
+    }
+
+    ship = {
+        name= "Memduhiye"
+        type = manowar
+    }
+
+    ship = {
+        name= "Tesrifiye"
+        type = manowar
+    }
+
+    ship = {
+        name= "Mukaddeme i Hayir"
+        type = manowar
+    }
+
+    ship = {
+        name= "Rehber i Nusret"
+        type = manowar
+    }
+
+    ship = {
+        name= "Burc i Zafer"
+        type = manowar
+    }
+
+    ship = {
+        name= "Fevziye"
+        type = manowar
+    }
+
+    ship = {
+        name= "Tevfikiye"
+        type = manowar
+    }
+
+    ship = {
+        name= "Peyk i Mesiret"
+        type = manowar
+    }
+	
+	ship = {
+        name= "Necm i Sevket"
+        type = manowar
+    }
+	
+	ship = {
+        name= "Feyz i Memduh"
+        type = manowar
+    }
+	
+	ship = {
+        name= "Mukaddime i Seref"
+        type = manowar
+    }
+
+    ship = {
+        name= "Nusretiye"
+        type = frigate
+    }
+
+    ship = {
+        name= "Hifz ur Rahman"
+        type = frigate
+    }
+
+    ship = {
+        name= "Kaaid i Zafer"
+        type = frigate
+    }
+
+    ship = {
+        name= "Nesim i Zafer"
+        type = frigate
+    }
+
+    ship = {
+        name= "Serefresan"
+        type = frigate
+    }
+
+    ship = {
+        name= "AvniIlah"
+        type = frigate
+    }
+
+    ship = {
+        name= "Yaveri Tevfik"
+        type = frigate
+    }
+
+    ship = {
+        name= "Fazlullah"
+        type = frigate
+    }
+
+    ship = {
+        name= "Mazhar i Tevfik"
+        type = frigate
+    }
+
+    ship = {
+        name= "Pertev Fesan"
+        type = frigate
+    }
+
+    ship = {
+        name= "Sadiye"
+        type = frigate
+    }
+
+    ship = {
+        name= "Tair i Bahri"
+        type = frigate
+    }
+
+    ship = {
+        name= "Suriye"
+        type = frigate
+    }
+	
+	ship = {
+        name= "Sihab i Bahri"
+        type = frigate
+    }
+	
+	ship = {
+        name= "Mirat i Zafer"
+        type = frigate
+    }
+
+}
+
+leader = {
+    name = "Omer Vrioni"
+    type = land
+    date = 1820.1.1
+    background = rising_star
+    personality = skilled
+    prestige = 0.1
+    }
+
+leader = {
+    name = "Husrev Pasha"
+    type = sea
+    date = 1820.1.1
+    background = politician
+    personality = smart_p
+    prestige = 0.15
+    }
+
+leader = {
+    name = "Resid Mehmed Pasha"
+    date = 1809.1.1
+    type = land
+    personality = inefficient
+    background = elderly
+    prestige = 0.2
+}
+
+leader = {
+    name = "Wojciech Chrzanowski"
+    date = 1836.1.1
+    type = land
+    personality = romantic
+    background = cartographer
+    prestige = 0.1
+}
+
+leader = {
+    name = "Abdi Pasha"
+    date = 1836.1.1
+    type = land
+    personality = merciless
+    background = old_school
+    prestige = 0.0
+}
+
+leader = {
+    name = "Hafiz Osman Pasha"
+    date = 1836.1.1
+    type = land
+    personality = inept
+    background = yesman
+    prestige = 0.0
+}
+
+leader = {
+    name = "Namik Pasha"
+    date = 1836.1.1
+    type = land
+    personality = expert
+    background = diplomat
+    prestige = 0.0
+}
+
+leader = {
+    name = "Abd�lkerim Pasha"
+    date = 1836.1.1
+    type = land
+    personality = active_p
+    background = war_college
+    prestige = 0.0
+}
+
+leader = {
+    name = "Yaver Pasha"
+    date = 1836.1.1
+    type = sea
+    personality = diplomatic
+    background = gifted_administrator
+    prestige = 0.1
+}

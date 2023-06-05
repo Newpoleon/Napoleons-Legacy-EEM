@@ -1,0 +1,148 @@
+country_event = {
+    id = 98261
+    title = "EVTNAME98261" #The Northern Cape Colony
+    desc = "EVTDESC98261"
+    picture = "pioneer_wagons"
+
+    trigger = {
+        tag = SAF
+        war = no
+        owns = 2087
+        year = 1840
+        OR = {
+            2092 = { empty = yes } #Beaufort
+            2093 = { empty = yes } #Calvinia
+            2558 = { empty = yes } #De Aar
+            2088 = { empty = yes } #Springbok
+        }
+        NOT = { has_country_flag = no_more_north_cape }
+        OR = {
+            ai = no
+            money = 10000
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 12
+        modifier = {
+            factor = 5
+            2092 = { empty = no } #Beaufort
+            2093 = { empty = no } #Calvinia
+            2558 = { empty = no } #De Aar
+        }
+        modifier = {
+            factor = 0.5
+            OR = {
+                2092 = { empty = yes } #Beaufort
+                2093 = { empty = yes } #Calvinia
+                2558 = { empty = yes } #De Aar
+            }
+            year = 1845
+        }
+        modifier = {
+            factor = 0.1
+            year = 1870
+        }
+    }
+
+    option = {
+        name = "EVT98261OPTA"
+        prestige = 2
+        treasury = -10000
+        random_owned = {
+            limit = {
+                2092 = { empty = no }
+                2093 = { empty = no }
+                2558 = { empty = no }
+                2088 = { empty = yes }
+            }
+            2088 = {
+                secede_province = SAF
+                add_core = SAF
+                any_pop = { limit = { NOT = { has_pop_culture = boer } } literacy = -0.99 }
+                change_province_name = "Springbok"
+                life_rating = 15
+            }
+        }
+        random_owned = {
+            limit = {
+                2092 = { empty = no }
+                2093 = { empty = no }
+                2558 = { empty = yes }
+            }
+            2558 = {
+                secede_province = SAF
+                add_core = SAF
+                any_pop = { limit = { has_pop_culture = boer } literacy = 0.2 }
+                any_pop = { limit = { NOT = { has_pop_culture = boer } } literacy = -0.99 }
+                change_province_name = "De Aar"
+                life_rating = 15
+            }
+        }
+        random_owned = {
+            limit = {
+                2092 = { empty = no }
+                2093 = { empty = yes }
+            }
+            2093 = {
+                secede_province = SAF
+                add_core = SAF
+                any_pop = { limit = { has_pop_culture = boer } literacy = 0.29 }
+                any_pop = { limit = { NOT = { has_pop_culture = boer } } literacy = -0.99 }
+                change_province_name = "Calvinia"
+                life_rating = 15
+            }
+        }
+        ai_chance = {
+            factor = 100
+        }
+    }
+
+    option = {
+        name = "EVT98261OPTB"
+        set_country_flag = no_more_north_cape
+        ai_chance = {
+            factor = 0
+        }
+    }
+}
+
+#Diamonds Discovered in Kimberley
+country_event = {
+    id = 98262
+    title = "EVTNAME98262"
+    desc = "EVTDESC98262"
+    picture = "diamonds_in_kimberley"
+
+    trigger = {
+    OR = {
+        owns = 2558
+        AND = {
+            owns = 2103
+            owns = 2101
+            }
+        }
+        year = 1864
+        civilized = yes
+        2094 = {
+            empty = yes
+            NOT = { trade_goods = precious_goods }
+        }
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen = { months = 36 }
+
+    option = {
+        name = "EVT98262OPTA"
+        set_country_flag = kimberley_goldrush
+        2094 = {
+            secede_province = THIS
+            change_province_name = "Kimberley"
+            trade_goods = precious_goods
+            add_province_modifier = { name = gold_rush duration = 5475 }
+            any_pop = { limit = { NOT = { has_pop_culture = boer } } literacy = -0.99 }
+        }
+    }
+}

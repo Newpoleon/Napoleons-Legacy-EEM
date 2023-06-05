@@ -1,0 +1,555 @@
+#Lithuania Region (1272000)
+#under the rule of Russia in 1836
+#Vilnius (168000/42000 POPS)
+360 = {
+    aristocrats = {
+        culture = lithuanian
+        religion = catholic
+        size = 600
+    }
+
+    officers = {
+        culture = lithuanian
+        religion = catholic
+        size = 250
+    }
+
+    bureaucrats = {
+        culture = lithuanian
+        religion = catholic
+        size = 150
+    }
+
+    clergymen = {
+        culture = lithuanian
+        religion = catholic
+        size = 250
+    }
+
+    artisans = {
+        culture = lithuanian
+        religion = catholic
+        size = 2600
+    }
+
+    soldiers = {
+        culture = lithuanian
+        religion = catholic
+        size = 1200
+    }
+
+    farmers = {
+        culture = lithuanian
+        religion = catholic
+        size = 18500
+    }
+
+    aristocrats = {
+        culture = polish
+        religion = catholic
+        size = 450
+    }
+
+    bureaucrats = {
+        culture = polish
+        religion = catholic
+        size = 225
+    }
+
+    officers = {
+        culture = polish
+        religion = catholic
+        size = 250
+    }
+
+    clergymen = {
+        culture = polish
+        religion = catholic
+        size = 100
+    }
+
+    artisans = {
+        culture = polish
+        religion = catholic
+        size = 3750
+    }
+
+    soldiers = {
+        culture = polish
+        religion = catholic
+        size = 100
+    }
+
+    farmers = {
+        culture = polish
+        religion = catholic
+        size = 4325
+    }
+
+    aristocrats = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    officers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    clergymen = {
+        culture = ashkenazi
+        religion = jewish
+        size = 150
+    }
+
+    artisans = {
+        culture = ashkenazi
+        religion = jewish
+        size = 3250
+    }
+
+    soldiers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 150
+    }
+
+    farmers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 6450
+    }
+}
+#Kaunas (204000/51000 POPS)
+361 = {
+    aristocrats = {
+        culture = lithuanian
+        religion = catholic
+        size = 950
+    }
+
+    clergymen = {
+        culture = lithuanian
+        religion = catholic
+        size = 500
+    }
+
+    artisans = {
+        culture = lithuanian
+        religion = catholic
+        size = 1250
+    }
+
+    soldiers = {
+        culture = lithuanian
+        religion = catholic
+        size = 2200
+    }
+
+    farmers = {
+        culture = lithuanian
+        religion = catholic
+        size = 36600
+    }
+
+    aristocrats = {
+        culture = polish
+        religion = catholic
+        size = 250
+    }
+
+    clergymen = {
+        culture = polish
+        religion = catholic
+        size = 100
+    }
+
+    artisans = {
+        culture = polish
+        religion = catholic
+        size = 150
+    }
+
+    soldiers = {
+        culture = polish
+        religion = catholic
+        size = 100
+    }
+
+    farmers = {
+        culture = polish
+        religion = catholic
+        size = 550
+    }
+
+    clergymen = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    artisans = {
+        culture = ashkenazi
+        religion = jewish
+        size = 1800
+    }
+
+    soldiers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    farmers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 7050
+    }
+
+    clergymen = {
+        culture = north_german
+        religion = protestant
+        size = 100
+    }
+}
+#Marjampole (240000/60000 POPS)
+362 = {
+    clergymen = {
+        culture = lithuanian
+        religion = catholic
+        size = 350
+    }
+
+    artisans = {
+        culture = lithuanian
+        religion = catholic
+        size = 1700
+    }
+
+    soldiers = {
+        culture = lithuanian
+        religion = catholic
+        size = 2350
+    }
+
+    farmers = {
+        culture = lithuanian
+        religion = catholic
+        size = 26675
+    }
+
+    aristocrats = {
+        culture = polish
+        religion = catholic
+        size = 1950
+    }
+
+    clergymen = {
+        culture = polish
+        religion = catholic
+        size = 275
+    }
+
+    artisans = {
+        culture = polish
+        religion = catholic
+        size = 1200
+    }
+
+    soldiers = {
+        culture = polish
+        religion = catholic
+        size = 300
+    }
+
+    farmers = {
+        culture = polish
+        religion = catholic
+        size = 13225
+    }
+
+    clergymen = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    artisans = {
+        culture = ashkenazi
+        religion = jewish
+        size = 1400
+    }
+
+    soldiers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    farmers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 8425
+    }
+}
+#Panevezys (204000/51000 POPS)
+363 = {
+    aristocrats = {
+        culture = lithuanian
+        religion = catholic
+        size = 1025
+    }
+
+    clergymen = {
+        culture = lithuanian
+        religion = catholic
+        size = 575
+    }
+
+    artisans = {
+        culture = lithuanian
+        religion = catholic
+        size = 2050
+    }
+
+    soldiers = {
+        culture = lithuanian
+        religion = catholic
+        size = 575
+    }
+
+    farmers = {
+        culture = lithuanian
+        religion = catholic
+        size = 37050
+    }
+
+    clergymen = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    artisans = {
+        culture = ashkenazi
+        religion = jewish
+        size = 3000
+    }
+
+    soldiers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    farmers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 6825
+    }
+}
+#Siauliai (200000/50000 POPS)
+364 = {
+    aristocrats = {
+        culture = lithuanian
+        religion = catholic
+        size = 900
+    }
+
+    clergymen = {
+        culture = lithuanian
+        religion = catholic
+        size = 500
+    }
+
+    artisans = {
+        culture = lithuanian
+        religion = catholic
+        size = 1350
+    }
+
+    soldiers = {
+        culture = lithuanian
+        religion = catholic
+        size = 2300
+    }
+
+    farmers = {
+        culture = lithuanian
+        religion = catholic
+        size = 38350
+    }
+
+    clergymen = {
+        culture = ashkenazi
+        religion = jewish
+        size = 125
+    }
+
+    artisans = {
+        culture = ashkenazi
+        religion = jewish
+        size = 1400
+    }
+
+    soldiers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    farmers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 5400
+    }
+}
+#Palanga (84000/21000 POPS)
+365 = {
+    aristocrats = {
+        culture = lithuanian
+        religion = catholic
+        size = 350
+    }
+
+    clergymen = {
+        culture = lithuanian
+        religion = catholic
+        size = 250
+    }
+
+    artisans = {
+        culture = lithuanian
+        religion = catholic
+        size = 600
+    }
+
+    soldiers = {
+        culture = lithuanian
+        religion = catholic
+        size = 275
+    }
+
+    farmers = {
+        culture = lithuanian
+        religion = catholic
+        size = 16675
+    }
+
+    clergymen = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    artisans = {
+        culture = ashkenazi
+        religion = jewish
+        size = 600
+    }
+
+    soldiers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    farmers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 2325
+    }
+}
+#East Prussia Region (172000) #see Poland.txt and Lithuania.txt for balance of region
+#under the rule of Prussia in 1836
+#Memel (172000/43000 POPS) #now part of Lithuania
+698 = {
+    aristocrats = {
+        culture = north_german
+        religion = protestant
+        size = 750
+    }
+
+    clergymen = {
+        culture = north_german
+        religion = protestant
+        size = 200
+    }
+
+    artisans = {
+        culture = north_german
+        religion = protestant
+        size = 2400
+    }
+
+    soldiers = {
+        culture = north_german
+        religion = protestant
+        size = 1100
+    }
+
+    farmers = {
+        culture = north_german
+        religion = protestant
+        size = 19500
+    }
+
+    ######Jews
+
+    soldiers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    clergymen = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    artisans = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+
+    farmers = {
+        culture = ashkenazi
+        religion = jewish
+        size = 100
+    }
+    ########
+
+    clergymen = {
+        culture = lithuanian
+        religion = catholic
+        size = 150
+    }
+
+    artisans = {
+        culture = lithuanian
+        religion = catholic
+        size = 950
+    }
+
+    soldiers = {
+        culture = lithuanian
+        religion = catholic
+        size = 1100
+    }
+
+    farmers = {
+        culture = lithuanian
+        religion = catholic
+        size = 16100
+    }
+
+    farmers = {
+        culture = lithuanian
+        religion = protestant
+        size = 1000
+    }
+}

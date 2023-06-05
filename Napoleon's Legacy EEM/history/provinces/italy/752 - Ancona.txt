@@ -1,0 +1,5 @@
+owner = KOI
+controller = KOI
+add_core = KOI
+trade_goods = fruit
+life_rating = 35

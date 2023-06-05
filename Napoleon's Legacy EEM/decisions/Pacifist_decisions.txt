@@ -1,0 +1,88 @@
+#political_decisions = {
+#    found_league_of_nations = {
+#        #picture = league_of_nations_logo
+#        potential = {
+#            has_country_flag = new_world_nation
+#            is_greater_power = yes
+#            great_wars_enabled = yes
+#            mass_politics = 1
+#            government = democracy
+#            NOT = { has_global_flag = league_of_nations_founded }
+#        }
+#
+#        allow = {
+#            rank = 4
+#            war = no
+#            is_disarmed = no
+#            has_recently_lost_war = no
+#            has_country_modifier = no_more_war
+#            has_country_modifier = signed_the_geneva_convention
+#            badboy = 0.5
+#            NOT = {
+#                OR = {
+#                    ruling_party_ideology = reactionary
+#                    ruling_party_ideology = anarcho_liberal
+#                    ruling_party_ideology = fascist
+#                }
+#            }
+#        }
+#
+#        effect = {
+#            set_global_flag = league_of_nations_founded
+#            set_country_flag = league_of_nations_member
+#            prestige = 10
+#        }
+#
+#        ai_will_do = { 
+#            factor = 1 
+#        }
+#    }
+#
+#    racial_equality_proposal = {
+#        #picture = league_of_nations_logo
+#        potential = {
+#            has_country_flag = league_of_nations_member
+#            NOT = { has_global_flag = racial_equality_proposal_proposed }
+#            NOT = {
+#                is_culture_group = germanic
+#                is_culture_group = jewish_cultures 
+#                is_culture_group = beneluxian 
+#                is_culture_group = pan_swiss
+#                is_culture_group = scandinavian 
+#                is_culture_group = finnougric 
+#                is_culture_group = british 
+#                is_culture_group = italian 
+#                is_culture_group = iberian 
+#                is_culture_group = french 
+#                is_culture_group = south_slavic 
+#                is_culture_group = pan_albanian 
+#                is_culture_group = pan_romanian 
+#                is_culture_group = hungarian_culture_group 
+#                is_culture_group = polish_culture_group 
+#                is_culture_group = czecho_slovak_culture_group 
+#                is_culture_group = east_slavic 
+#                is_culture_group = baltic 
+#                is_culture_group = levantine 
+#                is_culture_group = american_cultures 
+#                is_culture_group = neo_european_cultures 
+#                is_culture_group = latin_american_cultures 
+#            }
+#        }
+#
+#        allow = {
+#            is_greater_power = yes
+#            mass_politics = 1
+#        }
+#
+#        effect = {
+#            set_global_flag = racial_equality_proposal_proposed
+#            set_country_flag = racial_equality_proposal_proposer
+#            prestige = 10
+#        }
+#
+#        ai_will_do = { 
+#            factor = 1 
+#        }
+#    }
+#
+#}

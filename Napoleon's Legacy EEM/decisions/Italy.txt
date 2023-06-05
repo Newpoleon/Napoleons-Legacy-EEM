@@ -1,0 +1,387 @@
+political_decisions = {
+    accademia_della_crusca = {
+        potential = {
+    	    tag = PAP
+            NOT = { has_country_flag = accademia_della_crusca }
+        }
+
+        allow = {
+            romanticism = 1
+            idealism = 1
+            money = 80000
+        }
+
+        effect = {
+            treasury = -80000
+            prestige = 15
+            political_reform = free_press
+            set_country_flag = accademia_della_crusca
+        }
+    }
+
+    award_order_of_st_francis = {
+        picture = award_order_of_st_francis
+        potential = {
+            tag = SIC
+            government = absolute_monarchy
+            NOT = { has_country_flag = order_awarded }
+        }
+
+        allow = {
+            prestige = 25
+        }
+
+        effect = {
+            years_of_research = 0.2
+            prestige = 2
+            set_country_flag = order_awarded
+        }
+    }
+
+    statuto_albertino = {
+        potential = {
+            OR = {
+                tag = SAR
+                tag = SVY
+            }
+            government = absolute_monarchy
+            OR = {
+                has_country_flag = liberal_revolution_in_progress
+                has_country_flag = liberal_revolution_fired
+            }
+            NOT = { has_country_flag = get_your_statuto_albertino_here }
+        }
+
+        allow = {
+            state_n_government = 1
+            average_militancy = 2
+        }
+
+        effect = {
+            any_pop = { militancy = -2 }
+            any_pop = { scaled_militancy = { factor = 3 ideology = reactionary  } }
+            political_reform = universal_weighted_voting
+            political_reform = proportional_representation
+            political_reform = harassment
+            political_reform = censored_press
+            political_reform = yes_meeting
+            social_reform = incarceration
+            prestige = 5
+            set_country_flag = get_your_statuto_albertino_here
+        }
+
+        ai_will_do = {
+            factor = 0.9
+        }
+    }
+
+    the_case_of_edgardo_mortara = {
+        potential = {
+            tag = PAP
+            government = theocracy
+            NOT = { has_country_flag = edgardo_mortara }
+            year = 1858
+            owns = 741
+        }
+
+        allow = {
+            idealism = 1
+        }
+
+        effect = {
+            prestige = 15
+            badboy = 1
+            any_greater_power = {
+                relation = {
+                    value = -20
+                    who = THIS
+                }
+            }
+            set_country_flag = edgardo_mortara
+        }
+    }
+
+    the_first_vatican_council = {
+        potential = {
+            tag = PAP
+            government = theocracy
+            NOT = { has_country_flag = first_vatican_council_held }
+        }
+
+        allow = {
+            empiricism = 1
+        }
+
+        effect = {
+            prestige = 10
+            badboy = 1
+            any_country = {
+                limit = {
+                    has_country_flag = catholic_country
+                }
+                relation = {
+                    who = THIS
+                    value = 10
+                }
+            }
+            set_country_flag = first_vatican_council_held
+        }
+    }
+
+    law_of_guarantees = {
+        picture = law_of_guarantees
+        potential = {
+            has_country_flag = italian_country
+            NOT = { has_country_flag = law_of_guarantees }
+        }
+
+        allow = {
+            owns = 749
+        }
+
+        effect = {
+            set_country_flag = law_of_guarantees
+            capital = 749
+            prestige = 5
+            badboy = -2
+            KOI = { all_core = { remove_core = KOI } }
+            SIC = { all_core = { remove_core = SIC } }
+            SYC = { all_core = { remove_core = SYC } }
+            PAP = { all_core = { remove_core = PAP } }
+            LUC = { all_core = { remove_core = LUC } }
+            SAR = { all_core = { remove_core = SAR } }
+        }
+    }
+
+    italia_irredenta = {
+        picture = italia_irredenta
+        potential = {
+            has_country_flag = italian_country
+            NOT = {
+                has_global_flag = italia_ulterior
+            }
+        }
+
+        allow = {
+            OR = {
+                invention = national_fraternity
+                is_greater_power = yes
+            }
+        }
+
+        effect = {
+            set_global_flag = italia_ulterior
+            AUS_733 = { add_core = THIS } #Friuli
+            AUS_736 = { add_core = THIS } #Istria
+        }
+    }
+
+    conquest_of_the_adriatic = {
+    picture = conquest_adriatic
+        potential = {
+            has_country_flag = italian_country
+            NOT = { has_country_flag = conquest_adriatic_happened }
+        }
+
+        allow = {
+			OR = {
+				AND = {
+					is_greater_power = yes
+					revolution_n_counterrevolution = 1
+					machine_guns = 1
+					invention = biased_multiculturalism
+					invention = national_fraternity
+					invention = manifest_destiny
+					invention = expansionism
+					invention = nostalgic_romanticism
+					invention = rhetoric_of_hate
+				}
+				mass_politics = 1
+			}
+			OR = {
+				ruling_party_ideology = reactionary
+				war_policy = jingoism
+			}
+            OR = {
+                government = absolute_monarchy
+                government = fascist_dictatorship
+            }
+        }
+
+        effect = {
+            badboy = 2
+            set_country_flag = conquest_adriatic_happened
+            AUS_780 = { add_core = THIS }
+            2582 = { add_core = THIS }
+            #774 = { add_core = THIS }
+        }
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+	
+	 italians_in_balkans = {
+        picture = italia_irredenta
+        potential = {
+            has_country_flag = italian_country
+            NOT = { has_country_flag = italian_balkans }
+        }
+        allow = {
+            OR = {
+                AND = {
+                    is_greater_power = yes
+                    revolution_n_counterrevolution = 1
+                }
+				AND = {
+					is_greater_power = yes
+					nationalism_n_imperialism = 1
+					invention = national_fraternity
+					invention = manifest_destiny
+					invention = expansionism
+				}
+                mass_politics = 1
+            }
+            war_policy = jingoism
+			OR = {
+				ruling_party_ideology = reactionary
+				war_policy = jingoism
+			}
+            OR = {
+                government = absolute_monarchy
+                government = fascist_dictatorship
+            }
+        }
+        effect = {
+            set_country_flag = italian_balkans
+            734 = { add_core = THIS } #South Tirol
+			735 = { add_core = THIS } 
+            AUS_736 = { add_core = THIS } #Istria
+            AUS_733 = { add_core = THIS } #Friuli
+            781 = { add_core = THIS } #Zadar
+        }
+    }
+
+    reclaim_italian_lands = {
+        picture = reclaim_italian_lands
+        potential = {
+            has_country_flag = italian_country
+            NOT = { has_country_flag = reclaim_italian_lands }
+            has_country_flag = conquest_adriatic_happened
+            government = fascist_dictatorship
+        }
+
+        allow = {
+            is_greater_power = yes
+        }
+
+        effect = {
+            badboy = 10
+            set_country_flag = reclaim_italian_lands
+            826 = { add_core = THIS }
+            852 = { add_core = THIS }
+            853 = { add_core = THIS }
+            854 = { add_core = THIS }
+            473 = { add_core = THIS }
+        }
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    fatherland_altar = {
+        picture = build_vittoriano
+        potential = {
+            owns = 749
+            NOT = { has_country_flag = vittoriano_built }
+            has_country_flag = italian_country
+            OR = {
+                government = absolute_monarchy
+                government = prussian_constitutionalism
+                government = hms_government
+                government = fascist_dictatorship
+            }
+            NOT = { has_country_flag = vittoriano_built }
+        }
+
+        allow = {
+            money = 10000
+            realism = 1
+        }
+
+        effect = {
+            treasury = -10000
+            prestige = 20
+            any_pop = { militancy = -1 }
+            set_country_flag = vittoriano_built
+            random_list = {
+                25 = {
+                add_country_modifier = {
+                name = monument_under_construction
+                duration = 3285
+                    }
+                }
+                25 = {
+                add_country_modifier = {
+                name = monument_under_construction
+                duration = 3650
+                    }
+                }
+                25 = {
+                add_country_modifier = {
+                name = monument_under_construction
+                duration = 4380
+                    }
+                }
+                25 = {
+                add_country_modifier = {
+                name = monument_under_construction
+                duration = 5110
+                    }
+                }
+            }
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+
+    #Add Maltese as Accepted
+    accept_the_maltese = {
+        picture = map_malta
+        potential = {
+            tag = ITA
+            owns = 854
+            NOT = { accepted_culture = maltese }
+            OR = {
+                government = hms_government
+                government = democracy
+            }
+        }
+
+        allow = {
+            war = no
+            is_greater_power = yes
+            social_science = 1
+            citizenship_policy = full_citizenship
+            citizens_rights = all_voting_pops
+            854 = {
+                literacy = 0.5
+                NOT = {
+                    average_consciousness = 4
+                    average_militancy = 3
+                }
+            }
+            OR = {
+                school_reforms = acceptable_schools
+                school_reforms = good_schools
+            }
+        }
+
+        effect = {
+            add_accepted_culture = maltese
+            854 = { add_core = ITA }
+        }
+    }
+}

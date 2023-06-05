@@ -1,0 +1,10 @@
+owner = REI
+controller = REI
+add_core = REI
+add_core = POR
+add_core = CHI
+add_core = GNG
+trade_goods = precious_goods
+terrain = urban
+life_rating = 35
+colonial = 2

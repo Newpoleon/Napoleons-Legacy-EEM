@@ -1,0 +1,205 @@
+motorized_infantry_activation = {
+    limit = { military_science_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = interwar_cavalry
+        }
+        modifier = {
+            factor = 2
+            invention = firepower_vs_mobility
+        }
+        modifier = {
+            factor = 2
+            invention = armoured_cars
+        }
+        modifier = {
+            factor = -4
+            NOT = { invention = army_motorization }
+        }
+        modifier = {
+            factor = 2
+            war = yes
+            war_countries = { invention = motorized_infantry_activation }
+        }
+    }
+    effect = {
+        activate_unit = motorized_infantry
+    }
+}
+
+
+#direct_petrol_injection
+
+#Norden was initially unconvinced this was workable, but the Navy persisted and offered him a development contract in June 1929.[11] Norden retreated to his mother's house in Zurich and returned in 1930 with a working prototype. Lieutenant Frederick Entwistle, the Navy's chief of bombsight development, judged it revolutionary.[2]
+#It was an early tachometric design that directly measured the aircraft's ground speed and direction, which older bombsights could only estimate with lengthy manual procedures
+#Between 1932 and 1938, the company produced only 121 bombsights per year. During the first year after the Attack on Pearl Harbor (1941), Norden produced 6,900 bombsights
+#The Lotfe 7C, appearing in January 1941,
+#Small numbers of SABS became available in early 1943 
+#tachometric_bombsight
+#In 1936 Royal Aircraft Establishment scientist Leslie Bennet Craigie Cunningham suggested using a gyroscope's resistance to rotation to modify the aiming point in a gun sight to compensate for deflection caused by a turning aircraft
+#the first production gyro gunsight was the British Mark I Gyro Sight, developed at Farnborough in 1941.
+#gyro_gunsight
+gun_and_bomb_sights = {
+    limit = { military_science_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = industrial_plastics_production
+        }
+        modifier = {
+            factor = 2
+            invention = electronic_fire_control
+        }
+    }
+    effect = {
+        plane = {
+            attack = 0.5
+            defence = 0.5
+            supply_consumption = 0.20
+        }
+    }
+}
+
+
+#Guided weapons (by radio or trailing wires): glide bombs, crawling bombs and rockets – the precursors of today's precision-guided munitions existed between 1942–45, in the German Fritz X and Henschel Hs 293 anti-ship ordnance designs, which along with the American Azon, were all MCLOS radio-guided ordnance designs in World War II service.
+
+#tracked bomb: France, June 1916. However, it performed poorly, wired guided
+#The Wickersham Land Torpedo was patented by American inventor Elmer Wickersham in 1918[5] and in the 1930s, a similar vehicle was developed by the French vehicle designer Adolphe Kégresse. 
+#Goliaths were used on all fronts where the Wehrmacht fought, beginning in early 1942
+#Teletanks were a series of wireless remotely controlled unmanned tanks produced in the Soviet Union in the 1930s and early 1940s 
+
+remote_control = {
+    limit = { military_science_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = -6
+            NOT = { heavy_armament_7 = 1 }
+        }
+        modifier = {
+            factor = 2
+            invention = air_to_air_radar
+        }
+        modifier = {
+            factor = 2
+            invention = miniature_vacuum_tube
+        }
+        modifier = {
+            factor = 2
+            invention = portable_radio
+        }
+    }
+    effect = {
+        plane = {
+            attack = 0.1
+            supply_consumption = 0.20
+        }
+        engineer = {
+            siege = 1
+            supply_consumption = 0.20
+        }
+        tank = {
+            siege = 1
+            supply_consumption = 0.20
+        }
+    }
+}
+
+#The Heinkel He 176 was the world's first aircraft to be propelled solely by a liquid-propellant rocket engine, making its first powered flight on 20 June 1939 with Erich Warsitz at the controls.[4][page needed] The first rocket plane ever to be mass-produced was the Messerschmitt Me 163 Komet interceptor in 1944,
+rocket_powered_aircraft = {
+    limit = { military_science_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            metallurgy_7 = 1
+        }
+        modifier = {
+            factor = 2
+            invention = rocket_artillery 
+        }
+        modifier = {
+            factor = -6
+            NOT = { invention = rocket_experiments }
+        }
+    }
+    effect = {
+        plane = {
+            defence = 0.5
+            maximum_speed = 1
+            supply_consumption = 0.25
+        }
+    }
+}
+
+
+#The Heinkel He 178 was the world's first aircraft to fly under turbojet power, and the first practical jet aircraft. It was a private venture by the German Heinkel company in accordance with director Ernst Heinkel's emphasis on developing technology for high-speed flight. It first flew on 27 August 1939
+#The Messerschmitt Me 262, nicknamed Schwalbe (German: "Swallow") in fighter versions, or Sturmvogel (German: "Storm Bird") in fighter-bomber versions, was the world's first operational jet-powered fighter aircraft. Design work started before World War II began, but problems with engines, metallurgy and top-level interference kept the aircraft from operational status with the Luftwaffe until mid-1944.
+turbojet = {
+    limit = { military_science_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = rocket_experiments
+        }
+        modifier = {
+            factor = 2
+            invention = rocket_powered_aircraft
+        }
+        modifier = {
+            factor = -4
+            NOT = { invention = gas_turbine }
+        }
+    }
+    effect = {
+        plane = {
+            maximum_speed = 1
+            attack = 0.1
+            supply_consumption = 0.75
+        }
+    }
+}
+
+#1942 - Wernher von Braun and Walter Dornberger launch the first V-2 rocket at Peenemünde in northern Germany.
+strategic_rocket = {
+    limit = { military_science_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = rocket_powered_aircraft 
+        }
+        modifier = {
+            factor = -4
+            NOT = { invention = rocket_artillery }
+        }
+    }
+    effect = {
+        artillery = {
+            attack = 0.1
+            supply_consumption = 0.10
+        }
+    }
+}
+
+#Helicopter 1942, 1946
+helicopter = {
+    limit = { military_science_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = stainless_steel
+        }
+    }
+    effect = {
+        plane = {
+            reconnaissance = 1
+            supply_consumption = 0.25
+        }
+    }
+}

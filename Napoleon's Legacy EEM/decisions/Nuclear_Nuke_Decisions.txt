@@ -1,0 +1,338 @@
+political_decisions = {
+
+	sign_non_proliferation_treaty = {
+		picture = "non_proliferation_treaty"
+		potential = {
+			year = 1968
+			civilized = yes
+			NOT = { has_country_modifier = non_proliferation_treaty }
+			NOT = { has_country_flag = nuclear_weapons_program }
+		}
+
+		allow = {
+			war = no
+			is_vassal = no
+			election = no
+			war_policy = pacifism
+
+			#AI will not take NPT if neighbouring states are hostile
+			OR = { 
+				ai = no
+				is_disarmed = yes
+				part_of_sphere = yes
+				NOT = {
+					any_neighbor_country = {
+							has_country_flag = has_f_bomb
+							badboy = 0.5
+							NOT = { relation = { who = THIS value = -150 } } 
+					}
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = non_proliferation_treaty
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_greater_power = yes
+				OR = {
+					tag = FRA
+					tag = CAN
+					tag = BRI
+					tag = NEN
+					tag = USA
+					tag = HND
+					tag = PAK
+					#tag = NKO
+					tag = CHI
+					has_country_flag = russian_country
+				}
+			}
+		}
+	}
+
+	remove_non_proliferation_treaty = {
+		picture = "non_proliferation_treaty"
+		potential = {
+			has_country_modifier = non_proliferation_treaty
+		}
+
+		alert = no
+
+		allow = {
+			war = no
+			is_vassal = no
+			election = no
+			NOT = { war_policy = pacifism }
+
+			OR = { ai = no war_policy = jingoism }
+
+			NOT = { is_disarmed = yes }
+
+			#AI will end NPT if neighbouring nuclear states are hostile
+			OR = { 
+				ai = no
+				any_neighbor_country = {
+					has_country_flag = has_f_bomb
+					badboy = 0.5
+					NOT = { relation = { who = THIS value = -150 } } 
+				}
+			}
+		}
+
+		effect = {
+			remove_country_modifier = non_proliferation_treaty
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+
+	begin_nuclear_weapons_program = {
+		alert = yes
+		picture = "atomic_bomb"
+		
+		potential = {
+            invention = nuclear_theory
+			is_vassal = no
+			NOT = { has_country_modifier = non_proliferation_treaty }
+			NOT = { has_country_flag = nuclear_weapons_program }
+			NOT = { has_country_flag = has_f_bomb }
+
+			OR = {
+				#For the player
+				AND = { ai = no }
+				
+				#Historical nuclear powers
+				AND = { tag = USA ai = yes year = 1942 }
+				AND = { has_country_flag = russian_country ai = yes year = 1943 }
+				AND = { tag = BRI ai = yes year = 1945 }
+				AND = { tag = CAN ai = yes year = 1945 }
+				AND = { tag = NEN ai = yes year = 1945 }
+				AND = { tag = FRA ai = yes year = 1954 }
+				AND = { tag = CHI ai = yes year = 1955 }
+				AND = { tag = HND ai = yes year = 1954 }
+				AND = { tag = PAK ai = yes year = 1972 }
+				AND = { tag = KOR ai = yes year = 2006 government = proletarian_dictatorship } #North Korea
+				AND = { tag = ISR ai = yes year = 1956 }
+				AND = { tag = SAF ai = yes year = 1969 }
+
+				#Superpower
+				rank = 4
+				
+				#Potential nuclear powers
+				AND = { tag = KMT ai = yes year = 1967 NOT = { government = democracy } }
+
+				#When a neighbour have nukes
+				AND = {
+					ai = yes
+					year = 1969
+
+					any_neighbor_country = { 
+						has_country_flag = has_f_bomb
+						NOT = { relation = { who = THIS value = -190 } } 
+					}
+				}
+			}
+		}
+		
+		allow = {
+			election = no
+			is_disarmed = no
+			part_of_sphere = no
+			NOT = { has_country_modifier = wmd_removed }
+			NOT = { has_country_modifier = academic_confusion }
+
+			OR = {
+				is_greater_power = yes 
+				is_secondary_power = yes 
+				military_score = 600 
+			}
+
+			OR = { war_policy = jingoism war_policy = pro_military }
+			money = 2000000
+		}
+
+		effect = {
+			money = -2000000
+            badboy = 5
+			set_country_flag = nuclear_program
+			set_country_flag = nuclear_weapons_program
+			add_country_modifier = { name = nuke_tier_0 duration = -1 }
+			add_country_modifier = { name = academic_confusion duration = 365 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				#Superpowers will want nukes no matter the infamy cost
+				NOT = { rank = 2 }
+				#Non-superpowers will not take the decision unless less than 12.5 infamy
+				badboy = 0.5 
+			}
+		}
+	}
+
+
+	end_nuclear_weapons_program = {
+		picture = "disarm_bomb"
+		alert = no
+		potential = {
+			has_country_flag = nuclear_weapons_program
+			OR = { 
+				ai = no 
+				is_disarmed = yes 
+				AND = { badboy = 0.75 war_policy = pacifism } 
+				is_vassal = yes
+			}
+		}
+
+		allow = {
+			war = no
+			election = no
+		}
+
+		effect = {
+			any_greater_power = { relation = { who = THIS value = 100 } }
+			prestige_factor = -0.10
+			add_country_modifier = { name = non_proliferation_treaty duration = -1 }
+            badboy = -5
+
+			clr_country_flag = first_nuclear_bombing_campaign
+			clr_country_flag = disarm_wmds
+			clr_country_flag = nuclear_program
+			clr_country_flag = nuclear_weapons_program
+			clr_country_flag = has_f_bomb
+			clr_country_flag = has_lotsa_bomb
+
+			remove_country_modifier = nuclear_system_down
+			remove_country_modifier = nuke_tier_0
+			remove_country_modifier = nuke_tier_1
+			remove_country_modifier = nuke_tier_2
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	nuclear_second_strike = {
+		picture = "nuclear_strike"
+		alert = yes
+		potential = {
+			has_country_flag = has_f_bomb
+			has_country_modifier = recently_attacked_nuke
+			war = yes
+		}
+
+		allow = {
+			NOT = { has_country_modifier = nuclear_system_down }
+			NOT = { has_country_modifier = nukes_used_recently }
+
+			#Have some form of delivery platform
+			#OR = {
+				has_country_modifier = strat_bombers
+			#	ICBM
+			#	BMS
+			#}
+
+		}
+
+		effect = {
+			change_variable = { which = nuclear_second_strike_counter value = 1 }
+			NWO = { change_variable = { which = nuclear_second_strike_counter value = 1 } }
+
+			set_country_flag = nukes_used_country
+			remove_country_modifier = recently_attacked_nuke
+			add_country_modifier = { name = nukes_used_recently duration = 365 }
+			#Inform of retaliatory strike
+			any_country = { 
+				limit = { war_with = THIS has_country_modifier = nukes_used_recently } 
+				country_event = 6001201
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	prepare_nuclear_strike = {
+		picture = "nuclear_launch"
+		alert = yes
+		potential = {
+			has_country_flag = has_f_bomb
+			war = yes
+			OR = {
+				ai = no
+				has_country_modifier = recently_attacked_limited_nuke #escalation
+				AND = {
+					OR = {
+						#has_country_modifier = great_war
+						has_country_modifier = great_war2
+						has_country_modifier = great_war3
+					}
+					AND = {
+						war_policy = jingoism
+						national_provinces_occupied = 0.20
+					}
+				}
+
+				AND = {
+					OR = {
+						has_country_modifier = great_war
+						has_country_modifier = great_war2
+						has_country_modifier = great_war3
+					}
+					OR = {
+						NOT = { has_global_flag = nukes_used_global }
+						has_country_flag = first_nuclear_bombing_campaign
+						national_provinces_occupied = 0.40
+					}
+					NOT = { war_policy = anti_military }
+				}
+
+				AND = {
+					war_policy = jingoism
+					national_provinces_occupied = 0.40
+				}
+			}
+			NOT = { has_global_flag = someone_is_firing_nukes }
+		}
+
+		allow = {
+			#Have a delivery platform
+			#OR = {
+				has_country_modifier = strat_bombers
+			#	ICBM
+			#	BMS
+			#}
+			NOT = { has_country_modifier = nuclear_system_down }
+			NOT = { has_country_modifier = nukes_used_recently }
+			NOT = { has_country_modifier = recently_consulted_nuclear_plans }
+
+			#Pacifists will never choose to blow up the world
+			NOT = { war_policy = pacifism }
+		}
+
+		effect = {
+			set_global_flag = someone_is_firing_nukes
+
+			country_event = 6001201
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

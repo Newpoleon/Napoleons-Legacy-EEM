@@ -1,0 +1,8 @@
+owner = USA
+controller = USA
+add_core = USA
+add_core = LOU
+trade_goods = timber
+terrain = steppe
+life_rating = 31
+colonial = 2

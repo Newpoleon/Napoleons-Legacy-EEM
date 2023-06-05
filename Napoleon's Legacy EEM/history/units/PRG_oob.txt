@@ -1,0 +1,54 @@
+SPA = {
+    value = 100
+}
+USA = {
+    value = -400
+}
+BRZ = {
+    value = -250
+}
+URU = {
+    value = -250
+}
+LPL = {
+    value = -250
+}
+CHL = {
+    value = -250
+}
+BOL = {
+    value = -250
+}
+REI = {
+    value = -400
+}
+
+army = {
+    name = "Ej�rcito del Paraguay"
+    location = 2339
+    regiment = {
+        name= "1.1ra Divisi�n de Infanter�a"
+        type = infantry
+        home = 2339
+    }
+
+    regiment = {
+        name= "2.2ra Divisi�n de Infanter�a"
+        type = infantry
+        home = 2339
+    }
+
+    regiment = {
+        name= "3.3ra Divisi�n de Infanter�a"
+        type = infantry
+        home = 2339
+    }
+
+}
+leader = {
+    name = "Domingo Francisco S�nchez"
+    type = land
+    date = 1836.1.1
+    background = school_of_the_bayonet
+    personality = impetuous
+}

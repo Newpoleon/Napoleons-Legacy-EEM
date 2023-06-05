@@ -1,0 +1,3324 @@
+#################################################################################################################
+#                                                                                                                #
+#                                                   China Events                                                #
+#                                                                                                                #
+#################################################################################################################
+
+
+
+country_event = {
+    id = 1645092
+    title = "EVTNAME1645092"
+    desc = "EVTDESC1645092"
+    fire_only_once = yes
+    trigger = {
+         tag = QNG
+        has_global_flag = taiping_has_happened
+        has_country_flag = mandate
+        NOT = { has_country_flag = has_lost_mandate }
+    }
+
+    mean_time_to_happen = {
+        months = 24
+        modifier = {
+            factor = 0.5
+            has_global_flag = dungan_rebellion
+        }
+        modifier = {
+            factor = 0.5
+            has_global_flag = panthay_rebellion
+        }
+        modifier = {
+            factor = 0.75
+            has_recently_lost_war = yes
+        }
+    }
+
+    option = {
+        name = "EVT1645092OPTA"
+        clr_country_flag = mandate
+        set_country_flag = has_lost_mandate
+        any_pop = {
+            limit = {
+                is_primary_culture = no
+                is_accepted_culture = no
+            }
+            militancy = 4
+        }
+    }
+}
+
+country_event = {
+    id = 1316175
+    title = "EVTNAME1316180" #Empire of the Great Qing
+    desc = "EVTDESC1316175"
+    picture = "qing_emperor"
+
+    trigger = {
+        tag = QNG
+        war = no
+        is_disarmed = no
+        part_of_sphere = yes
+        civilized = no
+        sphere_owner = {
+            NOT = { truce_with = THIS }
+            NOT = { relation = { who = THIS value = -100 } }
+        }
+        NOT = { war_exhaustion = 10 }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+        modifier = {
+            factor = 0.5
+            has_country_flag = mandate
+        }
+    }
+
+    option = {
+        name = "EVT1316175OPTA"
+        any_pop = { militancy = -1 }
+        random_country = {
+            limit = { is_sphere_leader_of = THIS }
+            diplomatic_influence = { who = THIS value = -200 }
+            leave_alliance = THIS
+            casus_belli = {
+                target = THIS
+                type = cut_down_to_size
+                months = 24
+            }
+            country_event = 1316176
+        }
+        ai_chance = { factor = 90 }
+    }
+
+    option = {
+        name = "EVT1316175OPTB"
+        prestige = -5
+        any_pop = {
+            militancy = 2
+            consciousness = 2
+        }
+        ai_chance = {
+            factor = 10
+        }
+    }
+}
+
+country_event = {
+    id = 1316176
+    title = "EVTNAME1316176" # $COUNTRY_ADJ$ Envoy Ejected
+    desc = "EVTDESC1316176"
+    picture = "qing_emperor"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT1316176OPTA"
+        random_owned = {
+            limit = { owner = { ai = no } }
+            owner = {
+                war = {
+                    target = FROM
+                    attacker_goal = { casus_belli = treaty_port_casus_belli }
+                }
+            }
+        }
+        random_owned = {
+            limit = { owner = { ai = yes } }
+            owner = {
+                war = {
+                    target = FROM
+                    attacker_goal = { casus_belli = treaty_port_casus_belli }
+                    call_ally = yes
+                }
+            }
+        }
+        ai_chance = {
+            factor = 50
+            modifier = {
+                factor = 0.5
+                any_greater_power = { war_with = THIS }
+            }
+            modifier = {
+                factor = 0.75
+                NOT = { any_greater_power = { war_with = THIS } }
+                war = yes
+            }
+            modifier = {
+                factor = 0.5
+                war_exhaustion = 20
+            }
+            modifier = {
+                factor = 1.25
+                war_policy = jingoism
+            }
+            modifier = {
+                factor = 0.5
+                war_policy = anti_military
+            }
+            modifier = {
+                factor = 0
+                war_policy = pacifism
+            }
+            modifier = {
+                factor = 0
+                FROM = {
+                    NOT = { neighbour = THIS }
+                    NOT = { any_owned_province = { port = yes } }
+                    NOT = {    any_neighbor_country = { alliance_with = THIS } }
+                }
+            }
+            modifier = {
+                factor = 0.5
+                FROM = { brigades_compare = 5 }
+            }
+        }
+    }
+
+    option = {
+        name = "EVT1316176OPTB"
+        relation = { who = FROM value = 50 }
+        prestige = -25
+        ai_chance = {
+            factor = 50
+            modifier = {
+                factor = 0.5
+                neighbour = FROM
+            }
+            modifier = {
+                factor = 0.5
+                FROM = {
+                    NOT = { brigades_compare = 2 }
+                }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = 1316180
+    title = "EVTNAME1316180" #Empire of the Great Qing
+    desc = "EVTDESC1316180"
+    picture = "qing_emperor"
+
+    trigger = {
+        tag = QNG
+        war = no
+        part_of_sphere = yes
+        civilized = no
+        OR = {
+            has_country_modifier = uncivilized_isolationism
+            has_country_modifier = trade_restrictions
+        }
+        sphere_owner = {
+            NOT = { truce_with = THIS }
+            relation = { who = THIS value = -100 }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 24
+        modifier = {
+            factor = 2
+            NOT = { has_country_flag = mandate }
+        }
+    }
+
+    option = {
+        name = "EVT1316180OPTA"
+        prestige = 5
+        random_country = {
+            limit = { is_sphere_leader_of = THIS }
+            relation = { who = THIS value = -100 }
+        }
+        ai_chance = { factor = 75 }
+    }
+
+    option = {
+        name = "EVT1316180OPTB"
+        prestige = -5
+        any_pop = {
+            consciousness = 2
+        }
+        ai_chance = {
+            factor = 25
+            modifier = {
+                factor = 3
+                war_exhaustion = 20
+            }
+            modifier = {
+                factor = 0.5
+                has_country_flag = mandate
+            }
+        }
+    }
+}
+
+
+
+#################################################################################################################
+#                                                                                                                #
+#                                               Warlord Era Events                                                #
+#                                                                                                                #
+#################################################################################################################
+
+#The New Army
+
+province_event = {
+    id = 131720
+    title = "EVTNAME131720" #Spread of Warlord Influence - Anhui
+    desc = "EVTDESC131720"
+
+    trigger = {
+        owner = {
+            has_global_flag = spread_warlord_influence
+            OR = {
+                tag = CHI
+                tag = KMT
+                tag = TPG
+                tag = QNG
+                tag = RTR
+            }
+        }
+        NOT = {
+            is_core = GNG
+            is_core = GXI
+            is_core = HNN
+            is_core = HUI
+            is_core = KMT
+            is_core = MCK
+            is_core = SXI
+            is_core = SZC
+            is_core = TIB
+            is_core = XBI
+            is_core = XIN
+            is_core = YNN
+            state_scope = { any_owned_province = { is_capital = yes } }
+            region = CHI_1468
+            region = CHI_1465
+        }
+        any_neighbor_province = {
+            is_core = HUI
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 80
+        modifier = {
+            factor = 1.5
+            NOT = { culture = beifaren }
+        }
+        modifier = {
+            factor = 0.8
+            year = 1900
+        }
+        modifier = {
+            factor = 0.8
+            year = 1905
+        }
+        modifier = {
+            factor = 0.8
+            year = 1910
+        }
+        modifier = {
+            factor = 0.8
+            year = 1915
+        }
+    }
+
+    option = {
+        name = "EVT131720OPTA"
+        state_scope = {
+            any_owned = { add_core = HUI }
+        }
+    }
+}
+
+province_event = {
+    id = 131721
+    title = "EVTNAME131721" #Spread of Warlord Influence - Guangdong
+    desc = "EVTDESC131720"
+
+    trigger = {
+        owner = {
+            has_global_flag = spread_warlord_influence
+            OR = {
+                tag = CHI
+                tag = KMT
+                tag = TPG
+                tag = QNG
+                tag = RTR
+            }
+        }
+        NOT = {
+            is_core = GNG
+            is_core = GXI
+            is_core = HNN
+            is_core = HUI
+            is_core = KMT
+            is_core = MCK
+            is_core = SXI
+            is_core = SZC
+            is_core = TIB
+            is_core = XBI
+            is_core = XIN
+            is_core = YNN
+            state_scope = { any_owned_province = { is_capital = yes } }
+            region = CHI_1468
+            region = CHI_1465
+        }
+        any_neighbor_province = {
+            is_core = GNG
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 80
+        modifier = {
+            factor = 2
+            culture = beifaren
+        }
+        modifier = {
+            factor = 0.8
+            year = 1900
+        }
+        modifier = {
+            factor = 0.8
+            year = 1905
+        }
+        modifier = {
+            factor = 0.8
+            year = 1910
+        }
+        modifier = {
+            factor = 0.8
+            year = 1915
+        }
+    }
+
+    option = {
+        name = "EVT131720OPTA"
+        state_scope = {
+            any_owned = { add_core = GNG }
+        }
+    }
+}
+
+province_event = {
+    id = 131722
+    title = "EVTNAME131722" #Spread of Warlord Influence - Guangxi
+    desc = "EVTDESC131720"
+
+    trigger = {
+        owner = {
+            has_global_flag = spread_warlord_influence
+            OR = {
+                tag = CHI
+                tag = KMT
+                tag = TPG
+                tag = QNG
+                tag = RTR
+            }
+        }
+        NOT = {
+            is_core = GNG
+            is_core = GXI
+            is_core = HNN
+            is_core = HUI
+            is_core = KMT
+            is_core = MCK
+            is_core = SXI
+            is_core = SZC
+            is_core = TIB
+            is_core = XBI
+            is_core = XIN
+            is_core = YNN
+            state_scope = { any_owned_province = { is_capital = yes } }
+            region = CHI_1468
+            region = CHI_1465
+        }
+        any_neighbor_province = {
+            is_core = GXI
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 100
+        modifier = {
+            factor = 0.8
+            year = 1900
+        }
+        modifier = {
+            factor = 0.8
+            year = 1905
+        }
+        modifier = {
+            factor = 0.8
+            year = 1910
+        }
+        modifier = {
+            factor = 0.8
+            year = 1915
+        }
+    }
+
+    option = {
+        name = "EVT131720OPTA"
+        state_scope = {
+            any_owned = { add_core = GXI }
+        }
+    }
+}
+
+province_event = {
+    id = 131723
+    title = "EVTNAME131723" #Spread of Warlord Influence - Hunan
+    desc = "EVTDESC131720"
+
+    fire_only_once = yes
+
+    trigger = {
+        owner = {
+            has_global_flag = spread_warlord_influence
+            OR = {
+                tag = CHI
+                tag = KMT
+                tag = TPG
+                tag = QNG
+                tag = RTR
+            }
+        }
+        NOT = {
+            is_core = GNG
+            is_core = GXI
+            is_core = HNN
+            is_core = HUI
+            is_core = KMT
+            is_core = MCK
+            is_core = SXI
+            is_core = SZC
+            is_core = TIB
+            is_core = XBI
+            is_core = XIN
+            is_core = YNN
+            state_scope = { any_owned_province = { is_capital = yes } }
+            region = CHI_1468
+            region = CHI_1465
+        }
+        any_neighbor_province = {
+            is_core = HNN
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 100
+        modifier = {
+            factor = 1.5
+            NOT = { culture = nanfaren }
+        }
+        modifier = {
+            factor = 0.8
+            year = 1900
+        }
+        modifier = {
+            factor = 0.8
+            year = 1905
+        }
+        modifier = {
+            factor = 0.8
+            year = 1910
+        }
+        modifier = {
+            factor = 0.8
+            year = 1915
+        }
+    }
+
+    option = {
+        name = "EVT131720OPTA"
+        state_scope = {
+            any_owned = { add_core = HNN }
+        }
+    }
+}
+
+province_event = {
+    id = 131724
+    title = "EVTNAME131724" #Spread of Warlord Influence - Fengtian
+    desc = "EVTDESC131720"
+
+    trigger = {
+        owner = {
+            has_global_flag = spread_warlord_influence
+            OR = {
+                tag = CHI
+                tag = KMT
+                tag = TPG
+                tag = QNG
+                tag = RTR
+            }
+        }
+        NOT = {
+            is_core = GNG
+            is_core = GXI
+            is_core = HNN
+            is_core = HUI
+            is_core = KMT
+            is_core = MCK
+            is_core = SXI
+            is_core = SZC
+            is_core = TIB
+            is_core = XBI
+            is_core = XIN
+            is_core = YNN
+            state_scope = { any_owned_province = { is_capital = yes } }
+            region = CHI_1468
+            region = CHI_1465
+        }
+        any_neighbor_province = {
+            is_core = MCK
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 240
+        modifier = {
+            factor = 2
+            NOT = { culture = manchu }
+        }
+        modifier = {
+            factor = 0.5
+            culture = manchu
+        }
+        modifier = {
+            factor = 0.8
+            year = 1900
+        }
+        modifier = {
+            factor = 0.8
+            year = 1905
+        }
+        modifier = {
+            factor = 0.8
+            year = 1910
+        }
+        modifier = {
+            factor = 0.8
+            year = 1915
+        }
+    }
+
+    option = {
+        name = "EVT131720OPTA"
+        state_scope = {
+            any_owned = { add_core = MCK }
+        }
+    }
+}
+
+province_event = {
+    id = 131725
+    title = "EVTNAME131725" #Spread of Warlord Influence - Xibei San Ma
+    desc = "EVTDESC131720"
+
+    trigger = {
+        owner = {
+            has_global_flag = spread_warlord_influence
+            OR = {
+                tag = CHI
+                tag = KMT
+                tag = TPG
+                tag = QNG
+                tag = RTR
+            }
+        }
+        NOT = {
+            is_core = GNG
+            is_core = GXI
+            is_core = HNN
+            is_core = HUI
+            is_core = KMT
+            is_core = MCK
+            is_core = SXI
+            is_core = SZC
+            is_core = TIB
+            is_core = XBI
+            is_core = XIN
+            is_core = YNN
+            state_scope = { any_owned_province = { is_capital = yes } }
+            region = CHI_1468
+            region = CHI_1465
+        }
+        any_neighbor_province = {
+            is_core = XBI
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 100
+        modifier = {
+            factor = 1.5
+            NOT = { culture = beifaren }
+        }
+        modifier = {
+            factor = 2
+            NOT = { any_pop = { has_pop_religion = sunni } }
+        }
+        modifier = {
+            factor = 0.5
+            region = CHI_1532
+        }
+        modifier = {
+            factor = 0.8
+            year = 1900
+        }
+        modifier = {
+            factor = 0.8
+            year = 1905
+        }
+        modifier = {
+            factor = 0.8
+            year = 1910
+        }
+        modifier = {
+            factor = 0.8
+            year = 1915
+        }
+    }
+
+    option = {
+        name = "EVT131720OPTA"
+        state_scope = {
+            any_owned = { add_core = XBI }
+        }
+    }
+}
+
+province_event = {
+    id = 131726
+    title = "EVTNAME131726" #Spread of Warlord Influence - Yunnan
+    desc = "EVTDESC131720"
+
+    trigger = {
+        owner = {
+            has_global_flag = spread_warlord_influence
+            OR = {
+                tag = CHI
+                tag = KMT
+                tag = TPG
+                tag = QNG
+                tag = RTR
+            }
+        }
+        NOT = {
+            is_core = GNG
+            is_core = GXI
+            is_core = HNN
+            is_core = HUI
+            is_core = KMT
+            is_core = MCK
+            is_core = SXI
+            is_core = SZC
+            is_core = TIB
+            is_core = XBI
+            is_core = XIN
+            is_core = YNN
+            state_scope = { any_owned_province = { is_capital = yes } }
+            region = CHI_1468
+            region = CHI_1465
+        }
+        any_neighbor_province = {
+            is_core = YNN
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 100
+        modifier = {
+            factor = 2
+            NOT = { culture = nanfaren }
+        }
+        modifier = {
+            factor = 0.25
+            region = CHI_1505
+        }
+        modifier = {
+            factor = 0.8
+            year = 1900
+        }
+        modifier = {
+            factor = 0.8
+            year = 1905
+        }
+        modifier = {
+            factor = 0.8
+            year = 1910
+        }
+        modifier = {
+            factor = 0.8
+            year = 1915
+        }
+    }
+
+    option = {
+        name = "EVT131720OPTA"
+        state_scope = {
+            any_owned = { add_core = YNN }
+        }
+    }
+}
+
+province_event = {
+    id = 131727
+    title = "EVTNAME131727" #Spread of Warlord Influence - Shanxi
+    desc = "EVTDESC131720"
+
+    fire_only_once = yes
+
+    trigger = {
+        owner = {
+            has_global_flag = spread_warlord_influence
+            OR = {
+                tag = CHI
+                tag = KMT
+                tag = TPG
+                tag = QNG
+                tag = RTR
+            }
+        }
+        NOT = {
+            is_core = GNG
+            is_core = GXI
+            is_core = HNN
+            is_core = HUI
+            is_core = KMT
+            is_core = MCK
+            is_core = MGL
+            is_core = SXI
+            is_core = SZC
+            is_core = TIB
+            is_core = XBI
+            is_core = XIN
+            is_core = YNN
+            region = CHI_1468
+            region = CHI_1465
+            state_scope = { any_owned_province = { is_capital = yes } }
+        }
+        any_neighbor_province = {
+            is_core = SXI
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 160
+        modifier = {
+            factor = 2
+            NOT = { culture = beifaren }
+        }
+        modifier = {
+            factor = 0.8
+            year = 1900
+        }
+        modifier = {
+            factor = 0.8
+            year = 1905
+        }
+        modifier = {
+            factor = 0.8
+            year = 1910
+        }
+        modifier = {
+            factor = 0.8
+            year = 1915
+        }
+    }
+
+    option = {
+        name = "EVT131720OPTA"
+        state_scope = {
+            any_owned = { add_core = SXI }
+        }
+    }
+}
+
+province_event = {
+    id = 131728
+    title = "EVTNAME131728" #Spread of Warlord Influence - Sichuan
+    desc = "EVTDESC131720"
+
+    fire_only_once = yes
+
+    trigger = {
+        owner = {
+            has_global_flag = spread_warlord_influence
+            OR = {
+                tag = CHI
+                tag = KMT
+                tag = TPG
+                tag = QNG
+                tag = RTR
+            }
+        }
+        NOT = {
+            is_core = GNG
+            is_core = GXI
+            is_core = HNN
+            is_core = HUI
+            is_core = KMT
+            is_core = MCK
+            is_core = MGL
+            is_core = SXI
+            is_core = SZC
+            is_core = TIB
+            is_core = XBI
+            is_core = XIN
+            is_core = YNN
+            region = CHI_1468
+            region = CHI_1465
+            state_scope = { any_owned_province = { is_capital = yes } }
+        }
+        any_neighbor_province = {
+            is_core = SZC
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 160
+        modifier = {
+            factor = 2
+            NOT = { culture = nanfaren }
+        }
+        modifier = {
+            factor = 0.8
+            year = 1900
+        }
+        modifier = {
+            factor = 0.8
+            year = 1905
+        }
+        modifier = {
+            factor = 0.8
+            year = 1910
+        }
+        modifier = {
+            factor = 0.8
+            year = 1915
+        }
+    }
+
+    option = {
+        name = "EVT131720OPTA"
+        state_scope = {
+            any_owned = { add_core = SZC }
+        }
+    }
+}
+
+province_event = {
+    id = 131729
+    title = "EVTNAME131729" #Spread of Warlord Influence - Xinjiang
+    desc = "EVTDESC131720"
+
+    trigger = {
+        owner = {
+            has_global_flag = spread_warlord_influence
+            OR = {
+                tag = CHI
+                tag = KMT
+                tag = TPG
+                tag = QNG
+                tag = RTR
+            }
+        }
+        NOT = {
+            is_core = GNG
+            is_core = GXI
+            is_core = HNN
+            is_core = HUI
+            is_core = KMT
+            is_core = MCK
+            is_core = MGL
+            is_core = SXI
+            is_core = SZC
+            is_core = TIB
+            is_core = XBI
+            is_core = XIN
+            is_core = YNN
+            region = CHI_1468
+            region = CHI_1465
+            state_scope = { any_owned_province = { is_capital = yes } }
+        }
+        any_neighbor_province = {
+            is_core = XIN
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 100
+        modifier = {
+            factor = 2
+            NOT = { culture = beifaren }
+        }
+        modifier = {
+            factor = 0.8
+            year = 1900
+        }
+        modifier = {
+            factor = 0.8
+            year = 1905
+        }
+        modifier = {
+            factor = 0.8
+            year = 1910
+        }
+        modifier = {
+            factor = 0.8
+            year = 1915
+        }
+    }
+
+    option = {
+        name = "EVT131720OPTA"
+        state_scope = {
+            any_owned = { add_core = XIN }
+        }
+    }
+}
+
+#This event will fire for each warlord country after it separates
+country_event = {
+    id = 131735
+    title = "EVTNAME131735" #The Struggle for China
+    desc = "EVTDESC131735"
+    picture = "administration"
+
+    trigger = {
+        OR = {
+            tag = FJN
+            tag = GMJ
+            tag = GNG
+            tag = GXI
+            tag = HNN
+            tag = HUI
+            tag = MCK
+            tag = SXI
+            tag = SZC
+            tag = TAI
+            tag = XBI
+            tag = XIN
+            tag = YNN
+        }
+        exists = yes
+        has_global_flag = warlord_era_has_begun
+        NOT = { is_ideology_enabled = communist }
+        NOT = { is_ideology_enabled = fascist }
+        NOT = {
+            has_country_flag = kuomintang_faction
+            has_country_flag = beiyang_faction
+            has_country_flag = neutral_faction
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    option = {
+        name = "EVT131735OPTA"
+        set_country_flag = kuomintang_faction
+        add_country_modifier = {
+            name = drive_to_reunify
+            duration = 730
+        }
+        leadership = 40
+        random_owned = {
+            limit = {
+                owner = { civilized = no }
+            }
+            owner = { civilized = yes }
+        }
+        random_owned = {
+            limit = {
+                owner = { NOT = { num_of_cities = 40 } }
+            }
+            owner = {
+                add_country_modifier = {
+                    name = taiping_draft
+                    duration = 90
+                }
+            }
+        }
+        any_pop = {
+            militancy = -6
+            dominant_issue = {
+                factor = 0.10
+                value = jingoism
+            }
+        }
+        any_country = {
+            limit = {
+                NOT = { is_culture_group = east_asian }
+            }
+            relation = { who = THIS value = 50 }
+        }
+        ruling_party_ideology = conservative
+        political_reform = appointed 
+        random_country = {
+            limit = { tag = KMT }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        random_country = {
+            limit = {
+                OR = {
+                    tag = CHI
+                    tag = TPG
+                }
+                exists = yes
+            }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = beiyang_faction }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = kuomintang_faction }
+            relation = { who = THIS value = 50 }
+            military_access = THIS
+        }
+        ai_chance = {
+            factor = 40
+            modifier = {
+                factor = 0
+                tag = HUI
+            }
+            modifier = {
+                factor = 4
+                OR = { tag = GMJ tag = GNG tag = YNN }
+                NOT = { exists = KMT }
+            }
+            modifier = {
+                factor = 0.25
+                exists = KMT
+            }
+            modifier = {
+                factor = 0.25
+                ruling_party_ideology = reactionary
+            }
+            modifier = {
+                factor = 2.5
+                ruling_party_ideology = conservative
+            }
+            modifier = {
+                factor = 0.25
+                NOT = { government = presidential_dictatorship }
+            }
+        }
+    }
+
+    option = {
+        name = "EVT131735OPTB"
+        set_country_flag = beiyang_faction
+        add_country_modifier = {
+            name = drive_to_reunify
+            duration = 730
+        }
+        leadership = 40
+        random_owned = {
+            limit = {
+                owner = { civilized = no }
+            }
+            owner = { civilized = yes }
+        }
+        random_owned = {
+            limit = {
+                owner = { NOT = { num_of_cities = 40 } }
+            }
+            owner = {
+                add_country_modifier = {
+                    name = taiping_draft
+                    duration = 90
+                }
+            }
+        }
+        any_pop = {
+            militancy = -6
+            dominant_issue = {
+                factor = 0.10
+                value = jingoism
+            }
+        }
+        any_country = {
+            limit = {
+                NOT = { is_culture_group = east_asian }
+            }
+            relation = { who = THIS value = 50 }
+        }
+        ruling_party_ideology = reactionary
+        any_country = {
+            limit = {
+                OR = {
+                    tag = CHI
+                    tag = KMT
+                    tag = TPG
+                }
+                exists = yes
+            }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = kuomintang_faction }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = beiyang_faction }
+            military_access = THIS
+        }
+        ai_chance = {
+            factor = 40
+            modifier = {
+                factor = 0
+                OR = { tag = GMJ tag = GNG tag = YNN }
+                NOT = { exists = KMT }
+            }
+            modifier = {
+                factor = 0.25
+                ruling_party_ideology = conservative
+            }
+            modifier = {
+                factor = 2.5
+                ruling_party_ideology = reactionary
+            }
+            modifier = {
+                factor = 0.25
+                NOT = { government = presidential_dictatorship }
+            }
+        }
+    }
+
+    option = {
+        name = "EVT131735OPTC"
+        set_country_flag = neutral_faction
+        add_country_modifier = {
+            name = drive_to_reunify
+            duration = 730
+        }
+        leadership = 40
+        random_owned = {
+            limit = {
+                owner = { civilized = no }
+            }
+            owner = { civilized = yes }
+        }
+        random_owned = {
+            limit = {
+                owner = { NOT = { num_of_cities = 40 } }
+            }
+            owner = {
+                add_country_modifier = {
+                    name = taiping_draft
+                    duration = 90
+                }
+            }
+        }
+        any_pop = {
+            militancy = -6
+            dominant_issue = {
+                factor = 0.10
+                value = jingoism
+            }
+        }
+        any_country = {
+            limit = {
+                NOT = { is_culture_group = east_asian }
+            }
+            relation = { who = THIS value = 50 }
+        }
+        any_country = {
+            limit = {
+                OR = {
+                    tag = CHI
+                    tag = KMT
+                    tag = TPG
+                }
+                exists = yes
+            }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = beiyang_faction }
+            relation = { who = THIS value = 25 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = kuomintang_faction }
+            relation = { who = THIS value = 25 }
+            military_access = THIS
+        }
+        ai_chance = {
+            factor = 20
+            modifier = {
+                factor = 0
+                tag = GNG
+                NOT = { exists = KMT }
+            }
+            modifier = {
+                factor = 0
+                tag = HUI
+            }
+            modifier = {
+                factor = 5
+                OR = {
+                    tag = XIN
+                    tag = TAI
+                    tag = SXI
+                }
+            }
+            modifier = {
+                factor = 4
+                OR = {
+                    tag = FJN
+                    tag = SZC
+                    tag = XBI
+                }
+            }
+            modifier = {
+                factor = 2
+                exists = KMT
+            }
+            modifier = {
+                factor = 2
+                NOT = { ruling_party_ideology = reactionary }
+                NOT = { ruling_party_ideology = conservative }
+            }
+            modifier = {
+                factor = 2
+                NOT = { government = presidential_dictatorship }
+            }
+        }
+    }
+}
+
+#This event will fire for each warlord country after it separates
+country_event = {
+    id = 131736
+    title = "EVTNAME131735" #The Struggle for China
+    desc = "EVTDESC131735"
+    picture = "administration"
+
+    trigger = {
+        OR = {
+            tag = FJN
+            tag = GMJ
+            tag = GNG
+            tag = GXI
+            tag = HNN
+            tag = HUI
+            tag = MCK
+            tag = SXI
+            tag = SZC
+            tag = TAI
+            tag = XBI
+            tag = XIN
+            tag = YNN
+        }
+        exists = yes
+        has_global_flag = warlord_era_has_begun
+        is_ideology_enabled = communist
+        NOT = { is_ideology_enabled = fascist }
+        NOT = {
+            has_country_flag = kuomintang_faction
+            has_country_flag = beiyang_faction
+            has_country_flag = neutral_faction
+            has_country_flag = communist_faction
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    option = {
+        name = "EVT131735OPTA"
+        set_country_flag = kuomintang_faction
+        add_country_modifier = {
+            name = drive_to_reunify
+            duration = 730
+        }
+        leadership = 40
+        random_owned = {
+            limit = {
+                owner = { civilized = no }
+            }
+            owner = { civilized = yes }
+        }
+        random_owned = {
+            limit = {
+                owner = { NOT = { num_of_cities = 40 } }
+            }
+            owner = {
+                add_country_modifier = {
+                    name = taiping_draft
+                    duration = 90
+                }
+            }
+        }
+        any_pop = {
+            militancy = -6
+            dominant_issue = {
+                factor = 0.10
+                value = jingoism
+            }
+        }
+        ruling_party_ideology = conservative
+        political_reform = appointed 
+        random_country = {
+            limit = { tag = KMT }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        random_country = {
+            limit = {
+                OR = {
+                    tag = CHI
+                    tag = TPG
+                }
+                exists = yes
+            }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = beiyang_faction }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = kuomintang_faction }
+            relation = { who = THIS value = 50 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = communist_faction }
+            relation = { who = THIS value = 25 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = {
+                NOT = { is_culture_group = east_asian }
+            }
+            relation = { who = THIS value = 50 }
+        }
+        ai_chance = {
+            factor = 30
+            modifier = {
+                factor = 0
+                tag = HUI
+            }
+            modifier = {
+                factor = 4
+                OR = { tag = GMJ tag = GNG tag = YNN }
+                NOT = { exists = KMT }
+            }
+            modifier = {
+                factor = 0.25
+                exists = KMT
+            }
+            modifier = {
+                factor = 0.25
+                ruling_party_ideology = reactionary
+            }
+            modifier = {
+                factor = 2.5
+                ruling_party_ideology = conservative
+            }
+            modifier = {
+                factor = 0.25
+                NOT = { government = presidential_dictatorship }
+            }
+        }
+    }
+
+    option = {
+        name = "EVT131735OPTB"
+        set_country_flag = beiyang_faction
+        add_country_modifier = {
+            name = drive_to_reunify
+            duration = 730
+        }
+        leadership = 40
+        random_owned = {
+            limit = {
+                owner = { civilized = no }
+            }
+            owner = { civilized = yes }
+        }
+        random_owned = {
+            limit = {
+                owner = { NOT = { num_of_cities = 40 } }
+            }
+            owner = {
+                add_country_modifier = {
+                    name = taiping_draft
+                    duration = 90
+                }
+            }
+        }
+        any_pop = {
+            militancy = -6
+            dominant_issue = {
+                factor = 0.10
+                value = jingoism
+            }
+        }
+        ruling_party_ideology = reactionary
+        random_country = {
+            limit = {
+                OR = {
+                    tag = CHI
+                    tag = KMT
+                    tag = TPG
+                }
+                exists = yes
+            }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = kuomintang_faction }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = communist_faction }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = beiyang_faction }
+            military_access = THIS
+        }
+        any_country = {
+            limit = {
+                NOT = { is_culture_group = east_asian }
+            }
+            relation = { who = THIS value = 50 }
+        }
+        ai_chance = {
+            factor = 30
+            modifier = {
+                factor = 0
+                OR = { tag = GMJ tag = GNG tag = YNN }
+                NOT = { exists = KMT }
+            }
+            modifier = {
+                factor = 0.25
+                ruling_party_ideology = conservative
+            }
+            modifier = {
+                factor = 2.5
+                ruling_party_ideology = reactionary
+            }
+            modifier = {
+                factor = 0.25
+                NOT = { government = presidential_dictatorship }
+            }
+        }
+    }
+
+    option = {
+        name = "EVT131736OPTA"
+        set_country_flag = communist_faction
+        add_country_modifier = {
+            name = drive_to_reunify
+            duration = 730
+        }
+        leadership = 40
+        random_owned = {
+            limit = {
+                owner = { civilized = no }
+            }
+            owner = { civilized = yes }
+        }
+        random_owned = {
+            limit = {
+                owner = { NOT = { num_of_cities = 40 } }
+            }
+            owner = {
+                add_country_modifier = {
+                    name = taiping_draft
+                    duration = 90
+                }
+            }
+        }
+        any_pop = {
+            militancy = -6
+            dominant_issue = {
+                factor = 0.10
+                value = jingoism
+            }
+        }
+        ruling_party_ideology = communist
+        government = proletarian_dictatorship
+        political_reform = none_voting
+        political_reform = party_appointed
+        political_reform = no_meeting
+        political_reform = state_press
+        political_reform = state_controlled
+        political_reform = underground_parties
+        social_reform = good_minimum_wage
+        social_reform = eight_hours
+        social_reform = good_subsidies
+        social_reform = good_pensions
+        social_reform = good_health_care
+        nationalize = yes
+        random_country = {
+            limit = {
+                OR = {
+                    tag = CHI
+                    tag = KMT
+                    tag = TPG
+                }
+                exists = yes
+            }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = beiyang_faction }
+            relation = { who = THIS value = -50 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = kuomintang_faction }
+            relation = { who = THIS value = 25 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = {
+                NOT = { is_culture_group = east_asian }
+            }
+            relation = { who = THIS value = 50 }
+        }
+        add_country_modifier = {
+            name = national_confusion
+            duration = 365
+        }
+        country_event = 800052
+        ai_chance = {
+            factor = 20
+            modifier = {
+                factor = 0
+                NOT = { communist = 10 }
+            }
+            modifier = {
+                factor = 1.5
+                communist = 30
+            }
+            modifier = {
+                factor = 1.5
+                communist = 40
+            }
+            modifier = {
+                factor = 1.5
+                socialist = 30
+                NOT = { liberal = 30 }
+            }
+            modifier = {
+                factor = 2
+                exists = KMT
+            }
+        }
+    }
+
+    option = {
+        name = "EVT131735OPTC"
+        set_country_flag = neutral_faction
+        random_country = {
+            limit = {
+                OR = {
+                    tag = CHI
+                    tag = KMT
+                    tag = TPG
+                }
+                exists = yes
+            }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = beiyang_faction }
+            relation = { who = THIS value = 25 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = kuomintang_faction }
+            relation = { who = THIS value = 25 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = communist_faction }
+            relation = { who = THIS value = 25 }
+            military_access = THIS
+        }
+        ai_chance = {
+            factor = 20
+            modifier = {
+                factor = 0
+                tag = GNG
+                NOT = { exists = KMT }
+            }
+            modifier = {
+                factor = 0
+                tag = HUI
+            }
+            modifier = {
+                factor = 5
+                OR = {
+                    tag = XIN
+                    tag = TAI
+                    tag = SXI
+                }
+            }
+            modifier = {
+                factor = 4
+                OR = {
+                    tag = FJN
+                    tag = SZC
+                    tag = XBI
+                }
+            }
+            modifier = {
+                factor = 2
+                exists = KMT
+            }
+            modifier = {
+                factor = 2
+                NOT = { ruling_party_ideology = reactionary }
+                NOT = { ruling_party_ideology = conservative }
+            }
+            modifier = {
+                factor = 2
+                NOT = { government = presidential_dictatorship }
+            }
+        }
+    }
+}
+
+#This event will fire for each warlord country after it separates
+country_event = {
+    id = 131737
+    title = "EVTNAME131735" #The Struggle for China
+    desc = "EVTDESC131735"
+    picture = "administration"
+
+    trigger = {
+        OR = {
+            tag = FJN
+            tag = GMJ
+            tag = GNG
+            tag = GXI
+            tag = HNN
+            tag = HUI
+            tag = MCK
+            tag = SXI
+            tag = SZC
+            tag = TAI
+            tag = XBI
+            tag = XIN
+            tag = YNN
+        }
+        exists = yes
+        has_global_flag = warlord_era_has_begun
+        is_ideology_enabled = communist
+        is_ideology_enabled = fascist
+        NOT = {
+            has_country_flag = kuomintang_faction
+            has_country_flag = beiyang_faction
+            has_country_flag = neutral_faction
+            has_country_flag = communist_faction
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    option = {
+        name = "EVT131735OPTA"
+        set_country_flag = kuomintang_faction
+        add_country_modifier = {
+            name = drive_to_reunify
+            duration = 730
+        }
+        leadership = 40
+        random_owned = {
+            limit = {
+                owner = { civilized = no }
+            }
+            owner = { civilized = yes }
+        }
+        random_owned = {
+            limit = {
+                owner = { NOT = { num_of_cities = 40 } }
+            }
+            owner = {
+                add_country_modifier = {
+                    name = taiping_draft
+                    duration = 90
+                }
+            }
+        }
+        any_pop = {
+            militancy = -6
+            dominant_issue = {
+                factor = 0.10
+                value = jingoism
+            }
+        }
+        ruling_party_ideology = conservative
+        political_reform = appointed 
+        random_country = {
+            limit = { tag = KMT }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        random_country = {
+            limit = {
+                OR = {
+                    tag = CHI
+                    tag = TPG
+                }
+                exists = yes
+            }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = beiyang_faction }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = kuomintang_faction }
+            relation = { who = THIS value = 50 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = communist_faction }
+            relation = { who = THIS value = 25 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = {
+                NOT = { is_culture_group = east_asian }
+            }
+            relation = { who = THIS value = 50 }
+        }
+        ai_chance = {
+            factor = 25
+            modifier = {
+                factor = 0
+                tag = HUI
+            }
+            modifier = {
+                factor = 4
+                OR = { tag = GMJ tag = GNG tag = YNN }
+                NOT = { exists = KMT }
+            }
+            modifier = {
+                factor = 0.25
+                exists = KMT
+            }
+            modifier = {
+                factor = 0.25
+                ruling_party_ideology = reactionary
+            }
+            modifier = {
+                factor = 3
+                ruling_party_ideology = conservative
+            }
+            modifier = {
+                factor = 0.25
+                NOT = { government = presidential_dictatorship }
+            }
+        }
+    }
+
+    option = {
+        name = "EVT131735OPTB"
+        set_country_flag = beiyang_faction
+        add_country_modifier = {
+            name = drive_to_reunify
+            duration = 730
+        }
+        leadership = 40
+        random_owned = {
+            limit = {
+                owner = { civilized = no }
+            }
+            owner = { civilized = yes }
+        }
+        random_owned = {
+            limit = {
+                owner = { NOT = { num_of_cities = 40 } }
+            }
+            owner = {
+                add_country_modifier = {
+                    name = taiping_draft
+                    duration = 90
+                }
+            }
+        }
+        any_pop = {
+            militancy = -6
+            dominant_issue = {
+                factor = 0.10
+                value = jingoism
+            }
+        }
+        ruling_party_ideology = reactionary
+        random_country = {
+            limit = {
+                OR = {
+                    tag = CHI
+                    tag = KMT
+                    tag = TPG
+                }
+                exists = yes
+            }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = kuomintang_faction }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = communist_faction }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = beiyang_faction }
+            military_access = THIS
+        }
+        any_country = {
+            limit = {
+                NOT = { is_culture_group = east_asian }
+            }
+            relation = { who = THIS value = 50 }
+        }
+        ai_chance = {
+            factor = 25
+            modifier = {
+                factor = 0
+                OR = { tag = GMJ tag = GNG tag = YNN }
+                NOT = { exists = KMT }
+            }
+            modifier = {
+                factor = 0.25
+                ruling_party_ideology = conservative
+            }
+            modifier = {
+                factor = 3
+                ruling_party_ideology = reactionary
+            }
+            modifier = {
+                factor = 0.25
+                NOT = { government = presidential_dictatorship }
+            }
+        }
+    }
+
+    option = {
+        name = "EVT131737OPTA"
+        set_country_flag = beiyang_faction
+        add_country_modifier = {
+            name = drive_to_reunify
+            duration = 730
+        }
+        leadership = 40
+        random_owned = {
+            limit = {
+                owner = { civilized = no }
+            }
+            owner = { civilized = yes }
+        }
+        random_owned = {
+            limit = {
+                owner = { NOT = { num_of_cities = 40 } }
+            }
+            owner = {
+                add_country_modifier = {
+                    name = taiping_draft
+                    duration = 90
+                }
+            }
+        }
+        any_pop = {
+            militancy = -6
+            dominant_issue = {
+                factor = 0.10
+                value = jingoism
+            }
+        }
+        ruling_party_ideology = fascist
+        government = fascist_dictatorship
+        political_reform = none_voting
+        political_reform = party_appointed
+        political_reform = no_meeting
+        political_reform = state_press
+        political_reform = state_controlled
+        political_reform = underground_parties
+
+        random_country = {
+            limit = {
+                OR = {
+                    tag = CHI
+                    tag = KMT
+                    tag = TPG
+                }
+                exists = yes
+            }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = kuomintang_faction }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = communist_faction }
+            relation = { who = THIS value = -100 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = beiyang_faction }
+            military_access = THIS
+        }
+        add_country_modifier = {
+            name = national_confusion
+            duration = 365
+        }
+        any_country = {
+            limit = {
+                NOT = { is_culture_group = east_asian }
+            }
+            relation = { who = THIS value = 50 }
+        }
+        country_event = 800051
+        ai_chance = {
+            factor = 10
+            modifier = {
+                factor = 0
+                NOT = { fascist = 10 }
+            }
+            modifier = {
+                factor = 2
+                fascist = 20
+            }
+            modifier = {
+                factor = 2
+                fascist = 30
+            }
+            modifier = {
+                factor = 1.5
+                NOT = { liberal = 30 }
+            }
+            modifier = {
+                factor = 2
+                exists = KMT
+            }
+            modifier = {
+                factor = 2
+                exists = TPG
+            }
+        }
+    }
+
+    option = {
+        name = "EVT131736OPTA"
+        set_country_flag = communist_faction
+        add_country_modifier = {
+            name = drive_to_reunify
+            duration = 730
+        }
+        leadership = 40
+        random_owned = {
+            limit = {
+                owner = { civilized = no }
+            }
+            owner = { civilized = yes }
+        }
+        random_owned = {
+            limit = {
+                owner = { NOT = { num_of_cities = 40 } }
+            }
+            owner = {
+                add_country_modifier = {
+                    name = taiping_draft
+                    duration = 90
+                }
+            }
+        }
+        any_pop = {
+            militancy = -6
+            dominant_issue = {
+                factor = 0.10
+                value = jingoism
+            }
+        }
+        ruling_party_ideology = communist
+        government = proletarian_dictatorship
+        political_reform = none_voting
+        political_reform = party_appointed
+        political_reform = no_meeting
+        political_reform = state_press
+        political_reform = state_controlled
+        political_reform = underground_parties
+        social_reform = good_minimum_wage
+        social_reform = eight_hours
+        social_reform = good_subsidies
+        social_reform = good_pensions
+        social_reform = good_health_care
+        nationalize = yes
+
+        random_country = {
+            limit = {
+                OR = {
+                    tag = CHI
+                    tag = KMT
+                    tag = TPG
+                }
+                exists = yes
+            }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = beiyang_faction }
+            relation = { who = THIS value = -50 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = kuomintang_faction }
+            relation = { who = THIS value = 25 }
+            military_access = THIS
+        }
+        add_country_modifier = {
+            name = national_confusion
+            duration = 365
+        }
+        any_country = {
+            limit = {
+                NOT = { is_culture_group = east_asian }
+            }
+            relation = { who = THIS value = 50 }
+        }
+        country_event = 800052
+        ai_chance = {
+            factor = 20
+            modifier = {
+                factor = 0
+                NOT = { communist = 10 }
+            }
+            modifier = {
+                factor = 1.5
+                communist = 30
+            }
+            modifier = {
+                factor = 1.5
+                communist = 40
+            }
+            modifier = {
+                factor = 1.5
+                socialist = 30
+                NOT = { liberal = 30 }
+            }
+            modifier = {
+                factor = 2
+                exists = KMT
+            }
+        }
+    }
+
+    option = {
+        name = "EVT131735OPTC"
+        set_country_flag = neutral_faction
+        add_country_modifier = {
+            name = drive_to_reunify
+            duration = 730
+        }
+        leadership = 40
+        random_owned = {
+            limit = {
+                owner = { civilized = no }
+            }
+            owner = { civilized = yes }
+        }
+        random_owned = {
+            limit = {
+                owner = { NOT = { num_of_cities = 40 } }
+            }
+            owner = {
+                add_country_modifier = {
+                    name = taiping_draft
+                    duration = 90
+                }
+            }
+        }
+        any_pop = {
+            militancy = -6
+            dominant_issue = {
+                factor = 0.10
+                value = jingoism
+            }
+        }
+        random_country = {
+            limit = {
+                OR = {
+                    tag = CHI
+                    tag = KMT
+                    tag = TPG
+                }
+                exists = yes
+            }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = beiyang_faction }
+            relation = { who = THIS value = 25 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = kuomintang_faction }
+            relation = { who = THIS value = 25 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = { has_country_flag = communist_faction }
+            relation = { who = THIS value = 25 }
+            military_access = THIS
+        }
+        any_country = {
+            limit = {
+                NOT = { is_culture_group = east_asian }
+            }
+            relation = { who = THIS value = 50 }
+        }
+        ai_chance = {
+            factor = 20
+            modifier = {
+                factor = 0
+                tag = GNG
+                NOT = { exists = KMT }
+            }
+            modifier = {
+                factor = 0
+                tag = HUI
+            }
+            modifier = {
+                factor = 5
+                OR = {
+                    tag = XIN
+                    tag = TAI
+                    tag = SXI
+                }
+            }
+            modifier = {
+                factor = 4
+                OR = {
+                    tag = FJN
+                    tag = SZC
+                    tag = XBI
+                }
+            }
+            modifier = {
+                factor = 2
+                exists = KMT
+            }
+            modifier = {
+                factor = 2
+                NOT = { ruling_party_ideology = reactionary }
+                NOT = { ruling_party_ideology = conservative }
+            }
+            modifier = {
+                factor = 2
+                NOT = { government = presidential_dictatorship }
+            }
+        }
+    }
+}
+
+#The Guominjun
+country_event = {
+    id = 131739
+    title = "EVTNAME131736" #The Guominjun Clique
+    desc = "EVTDESC131736"
+    picture = "warlords"
+
+    fire_only_once = yes
+
+    trigger = {
+        has_global_flag = warlord_era_has_begun
+        OR = {
+            tag = CHI
+            tag = TPG
+            tag = KMT
+            tag = RTR
+        }
+        OR = {
+            owns = 1559
+            owns = 1508
+            owns = 1510
+            owns = 1522
+            owns = 1519
+        }
+        number_of_states = 4
+    }
+
+    mean_time_to_happen = {
+        months = 24
+        modifier = {
+            factor = 1.5
+            war = yes
+        }
+        modifier = {
+            factor = 0.5
+            number_of_states = 7
+        }
+    }
+
+    option = {
+        name = "EVT131739OPTA"
+        random_owned = {
+            limit = {
+                OR = {
+                    region = CHI_1559
+                    region = CHI_1508
+                    region = CHI_1510
+                    region = CHI_1522
+                    region = CHI_1519
+                }
+            }
+            state_scope = {
+                any_owned = {
+                    add_core = GMJ
+                    secede_province = GMJ
+                }
+            }
+        }
+        random_owned = {
+            limit = {
+                OR = {
+                    region = CHI_1559
+                    region = CHI_1508
+                    region = CHI_1510
+                    region = CHI_1522
+                    region = CHI_1519
+                }
+                any_neighbor_province = { owned_by = GMJ }
+            }
+            state_scope = {
+                any_owned = {
+                    add_core = GMJ
+                    secede_province = GMJ
+                }
+            }
+        }
+
+        random_owned = {
+            limit = {
+                NOT = { owner = { tag = KMT } }
+            }
+            random = {
+                chance = 50
+                GMJ = {
+                    ruling_party_ideology = conservative
+                    political_reform = appointed 
+                }
+            }
+        }
+
+        random_owned = {
+            limit = {
+                owner = { tag = KMT }
+            }
+            GMJ = {
+                ruling_party_ideology = reactionary
+                political_reform = party_appointed
+            }
+        }
+
+    }
+}
+
+#uniting with the KMT when it arises
+country_event = {
+    id = 131740
+    title = "EVTNAME131740" #Leader of the Kuomintang
+    desc = "EVTDESC131740"
+    picture = "warlords"
+
+    trigger = {
+        has_country_flag = kuomintang_faction
+        NOT = {
+            tag = KMT
+            has_country_modifier = drive_to_reunify
+        }
+        KMT = {
+            exists = yes
+            neighbour = THIS
+            has_country_flag = center_of_the_kuomintang
+        }
+        war = no
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    option = {
+        name = "EVT131740OPTA"
+        KMT = { country_event = 131741 }
+        ai_chance = {
+            factor = 30
+            modifier = {
+                factor = 0
+                OR = {
+                    ruling_party_ideology = reactionary
+                    ruling_party_ideology = fascist
+                }
+            }
+            modifier = {
+                factor = 3
+                ruling_party_ideology = conservative
+            }
+        }
+    }
+
+    option = {
+        name = "EVT131740OPTB"
+        clr_country_flag = kuomintang_faction
+        random_owned = {
+            limit = {
+                owner = {
+                    OR = {
+                        ruling_party_ideology = reactionary
+                        ruling_party_ideology = fascist
+                    }
+                }
+            }
+            owner = {
+                set_country_flag = beiyang_faction
+            }
+        }
+        random_owned = {
+            limit = {
+                owner = {
+                    NOT = {
+                        OR = {
+                            ruling_party_ideology = reactionary
+                            ruling_party_ideology = fascist
+                        }
+                    }
+                }
+            }
+            owner = {
+                set_country_flag = neutral_faction
+            }
+        }
+        relation = { who = KMT value = -100 }
+        leave_alliance = KMT
+        ai_chance = {
+            factor = 10
+            modifier = {
+                factor = 3
+                OR = {
+                    ruling_party_ideology = reactionary
+                    ruling_party_ideology = fascist
+                }
+            }
+            modifier = {
+                factor = 0
+                any_owned_province = {
+                    is_core = CHI
+                    NOT = { is_core = THIS }
+                }
+                NOT = {
+                    OR = {
+                        ruling_party_ideology = reactionary
+                        ruling_party_ideology = fascist
+                    }
+                }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = 131741
+    title = "EVTNAME131741" #Joining the Kuomintang
+    desc = "EVTDESC131741"
+    picture = "warlords"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT131741OPTA"
+        random_country = {
+            limit = {
+                is_sphere_leader_of = FROM
+                NOT = { is_sphere_leader_of = KMT }
+                NOT = { is_culture_group = east_asian }
+            }
+            relation = { who = THIS value = -50 }
+            casus_belli = {
+                target = THIS
+                type = free_peoples
+                months = 36
+            }
+            casus_belli = {
+                target = THIS
+                type = cut_down_to_size
+                months = 36
+            }
+        }
+        FROM = {
+            all_core = { add_core = KMT }
+            any_owned = { secede_province = THIS }
+        }
+    }
+}
+
+country_event = {
+    id = 131742
+    title = "EVTNAME131742" #The War of Reunification
+    desc = "EVTDESC131742"
+    picture = "rebellion"
+
+    trigger = {
+        war = no
+        has_global_flag = warlord_era_has_begun
+        is_culture_group = east_asian
+        NOT = { tag = LAN }
+        #NOT = { tag = MAO }
+        is_vassal = no
+        any_neighbor_country = {
+            is_culture_group = east_asian
+            NOT = { tag = LAN }
+            #NOT = { tag = MAO }
+            NOT = { war_with = THIS }
+            NOT = { brigades_compare = 1 }
+            NOT = { has_country_flag = neutral_faction }
+        }
+        NOT = {
+            has_country_modifier = drive_to_reunify
+            num_of_revolts = 1
+            badboy = 0.6
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+        modifier = {
+            factor = 0.5
+            any_neighbor_country = {
+                is_culture_group = east_asian
+                NOT = { war_with = THIS }
+                NOT = { brigades_compare = 0.5 }
+                NOT = { has_country_flag = neutral_faction }
+            }
+        }
+    }
+
+    option = {
+        name = "EVT131742OPTA"
+        any_pop = {
+            militancy = -3
+            dominant_issue = {
+                factor = 0.05
+                value = jingoism
+            }
+        }
+        add_country_modifier = {
+            name = drive_to_reunify
+            duration = 1825
+        }
+        random_country = {
+            limit = {
+                is_culture_group = east_asian
+                neighbour = THIS
+                NOT = { tag = LAN }
+                #NOT = { tag = MAO }
+                NOT = { war_with = THIS }
+                NOT = { brigades_compare = 1 }
+                NOT = { has_country_flag = neutral_faction }
+            }
+            country_event = 131743
+        }
+        ai_chance = { factor = 80 }
+    }
+
+    option = {
+        name = "EVT131742OPTB"
+        prestige = -10
+        ai_chance = {
+            factor = 20
+            modifier = {
+                factor = 0
+                is_greater_power = yes
+            }
+        }
+    }
+}
+
+country_event = {
+    id = 131743
+    title = "EVTNAME131743" #War with $FROMCOUNTRY$!
+    desc = "EVTDESC131743"
+    picture = "rebellion"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT97161OPTA"
+        leave_alliance = FROM
+        relation = { who = FROM value = -100 }
+        add_country_modifier = {
+            name = drive_to_reunify
+            duration = 365
+        }
+        any_pop = {
+            militancy = -3
+            dominant_issue = {
+                factor = 0.1
+                value = jingoism
+            }
+        }
+        FROM = {
+            war = {
+                target = THIS
+                call_ally = yes
+                attacker_goal = {
+                    casus_belli = civil_war
+                }
+                defender_goal = {
+                    casus_belli = civil_war
+                }
+            }
+        }
+    }
+}
+
+#Once a country has reunified China, all other warlords have a chance of rejoining it
+country_event = {
+    id = 131745
+    title = "EVTNAME131745" #Chinese Reunification
+    desc = "EVTDESC131745"
+    news = yes
+    news_desc_long = "EVTDESC131745_NEWS_LONG"
+    news_desc_medium = "EVTDESC131745_NEWS_MEDIUM"
+    news_desc_short = "EVTDESC131745_NEWS_SHORT"
+    picture = "unite"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT131745OPTA"
+        random_owned = {
+            limit = {
+                owner = {
+                    OR = {
+                        tag = SXI
+                        tag = HUI
+                        tag = SZC
+                        tag = XIN
+                        tag = HNN
+                    }
+                }
+            }
+            owner = {
+                all_core = { remove_core = THIS }
+            }
+        }
+        FROM = { inherit = THIS }
+        ai_chance = {
+            factor = 60
+            modifier = {
+                factor = 0
+                is_greater_power = yes
+            }
+            modifier = {
+                factor = 0.5
+                FROM = { tag = TPG }
+            }
+            modifier = {
+                factor = 0.25
+                FROM = { tag = QNG }
+            }
+
+            modifier = {
+                factor = 2
+                has_country_flag = kuomintang_faction
+                FROM = { tag = KMT }
+            }
+            modifier = {
+                factor = 0.5
+                government = proletarian_dictatorship
+                FROM = { NOT = { government = proletarian_dictatorship }  }
+            }
+            modifier = {
+                factor = 0.5
+                government = bourgeois_dictatorship
+                FROM = { NOT = { government = bourgeois_dictatorship }  }
+            }
+            modifier = {
+                factor = 0
+                government = fascist_dictatorship
+                FROM = { NOT = { government = fascist_dictatorship }  }
+            }
+            modifier = {
+                factor = 0.5
+                government = democracy
+                FROM = { NOT = { government = democracy }  }
+            }
+        }
+    }
+
+    option = {
+        name = "EVT131745OPTB"
+        clr_country_flag = kuomintang_faction
+        clr_country_flag = neutral_faction
+        prestige = -20
+        create_alliance = FROM
+        relation = { who = FROM value = 200 }
+        FROM = { create_vassal = THIS }
+        ai_chance = {
+            factor = 30
+            modifier = {
+                factor = 1.5
+                NOT = { neighbour = FROM }
+            }
+        modifier = {
+                factor = 0.5
+                FROM = { tag = QNG }
+            }
+            modifier = {
+                factor = 0
+                NOT = {
+                    OR = {
+                        any_owned_province = { port = yes }
+                        any_neighbor_country = { NOT = { is_culture_group = east_asian } }
+                    }
+                }
+            }
+            modifier = {
+                factor = 0
+                is_greater_power = yes
+            }
+            modifier = {
+                factor = 0
+                government = proletarian_dictatorship
+                FROM = { NOT = { government = proletarian_dictatorship }  }
+            }
+            modifier = {
+                factor = 0
+                FROM = { government = proletarian_dictatorship }
+                NOT = { government = proletarian_dictatorship }
+            }
+            modifier = {
+                factor = 2
+                government = bourgeois_dictatorship
+                FROM = { NOT = { government = bourgeois_dictatorship }  }
+            }
+            modifier = {
+                factor = 0
+                government = fascist_dictatorship
+                FROM = { NOT = { government = fascist_dictatorship }  }
+            }
+            modifier = {
+                factor = 0
+                FROM = { government = fascist_dictatorship }
+                NOT = { government = fascist_dictatorship }
+            }
+            modifier = {
+                factor = 2
+                government = democracy
+                FROM = { NOT = { government = democracy }  }
+            }
+        }
+    }
+
+    option = {
+        name = "EVT131745OPTC"
+        clr_country_flag = kuomintang_faction
+        clr_country_flag = neutral_faction
+        leave_alliance = FROM
+        relation = { who = FROM value = -200 }
+        ai_chance = {
+            factor = 10
+            modifier = {
+                factor = 0
+                has_country_flag = kuomintang_faction
+                FROM = { tag = KMT }
+            }
+            modifier = {
+                factor = 2
+                NOT = { neighbour = FROM }
+            }
+            modifier = {
+                factor = 3
+                government = proletarian_dictatorship
+                FROM = { NOT = { government = proletarian_dictatorship }  }
+            }
+            modifier = {
+                factor = 3
+                government = bourgeois_dictatorship
+                FROM = { NOT = { government = bourgeois_dictatorship }  }
+            }
+            modifier = {
+                factor = 3
+                government = fascist_dictatorship
+                FROM = { NOT = { government = fascist_dictatorship }  }
+            }
+            modifier = {
+                factor = 3
+                FROM = { government = fascist_dictatorship }
+                NOT = { government = fascist_dictatorship }
+            }
+            modifier = {
+                factor = 3
+                FROM = { government = proletarian_dictatorship }
+                NOT = { government = proletarian_dictatorship }
+            }
+            modifier = {
+                factor = 5
+                FROM = { tag = QNG }
+            }
+            modifier = {
+                factor = 3
+                FROM = { tag = TPG }
+            }
+        }
+    }
+}
+
+#Creation of Formosa, if it is owned by an outside country
+country_event = {
+    id = 131746
+    title = "EVTNAME131746" #The Island of Formosa
+    desc = "EVTDESC131746"
+    picture = "rebellion"
+
+    trigger = {
+        owns = 2681
+        NOT = {
+            is_culture_group = east_asian
+            TAI = { exists = yes }
+            2681 = { is_core = TAI }
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 7
+    }
+
+    option = {
+        name = "EVT131746OPTA"
+        1485 = {
+            add_core = TAI
+            remove_core = FJN
+        }
+        2562 = {
+            add_core = TAI
+            remove_core = FJN
+        }
+        2406 = {
+                remove_core = FJN
+                add_core = TAI
+        }
+        2681 = {
+            remove_core = FJN
+            add_core = TAI
+        }
+        any_pop = {
+            limit = { has_pop_culture = min }
+            militancy = 4
+        }
+    }
+}
+
+#Event for KMT retreating to Taiwan
+country_event = {
+    id = 16050214
+    title = "EVTNAME16050214" #Retreat to Taiwan
+    desc = "EVTDESC16050214"
+    major = yes
+
+    fire_only_once = yes
+
+    trigger = {
+        tag = KMT
+        any_neighbor_country = {
+            war_with = THIS
+            is_culture_group = east_asian
+            NOT = { tag = LAN }
+            #NOT = { tag = MAO }
+        }
+        1485 = {
+            owned_by = THIS
+            controlled_by = THIS
+        }
+        2562 = {
+            owned_by = THIS
+            controlled_by = THIS
+        }
+        2406 = {
+            owned_by = THIS
+            controlled_by = THIS
+        }
+        2681 = {
+            owned_by = THIS
+            controlled_by = THIS
+        }
+        NOT = {
+            any_owned_province = {
+                NOT = { province_id = 1485 }
+                NOT = { province_id = 2562 }
+                NOT = { province_id = 2681 }
+                NOT = { province_id = 2406 }
+                OR = {
+                    controlled_by = THIS
+                    controlled_by = REB
+                }
+            }
+        }
+        NOT = {
+            exists = TAI
+            has_global_flag = kmt_has_lost
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 10
+    }
+
+    option = {
+        name = "EVT16050214OPTA"
+        set_global_flag = kmt_has_lost
+        clr_country_flag = kuomintang_faction
+        clr_country_flag = neutral_faction
+        clr_country_flag = communist_faction
+        clr_country_flag = beiyang_faction
+
+        random_owned = {
+            limit = { owner = { civilized = no land_reform = yes_land_reform } }
+            TAI = { economic_reform = yes_land_reform }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no admin_reform = yes_admin_reform } }
+            TAI = { economic_reform = yes_admin_reform }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no finance_reform = yes_finance_reform } }
+            TAI = { economic_reform = yes_finance_reform }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no finance_reform = finance_reform_two } }
+            TAI = { economic_reform = finance_reform_two }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no monetary_reform = yes_monetary_reform } }
+            TAI = { economic_reform = yes_monetary_reform }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no monetary_reform = monetary_reform_two } }
+            TAI = { economic_reform = monetary_reform_two activate_technology = no_standard }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no education_reform = yes_education_reform } }
+            TAI = { economic_reform = yes_education_reform }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no research_reform = yes_research_reform } }
+            TAI = { economic_reform = yes_research_reform activate_technology = late_enlightenment_philosophy }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no foreign_training = yes_foreign_training } }
+            TAI = { military_reform = yes_foreign_training }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no foreign_weapons = yes_foreign_weapons } }
+            TAI = { military_reform = yes_foreign_weapons activate_technology = flintlock_rifles }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no foreign_officers = yes_foreign_officers } }
+            TAI = { military_reform = yes_foreign_officers activate_technology = military_staff_system }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no army_schools = yes_army_schools } }
+            TAI = { military_reform = yes_army_schools }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no foreign_naval_officers = yes_foreign_naval_officers } }
+            TAI = { military_reform = yes_foreign_naval_officers }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no naval_schools = yes_naval_schools } }
+            TAI = { military_reform = yes_naval_schools }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no foreign_navies = yes_foreign_navies } }
+            TAI = { military_reform = yes_foreign_navies activate_technology = clipper_design activate_technology = steamers }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no western_shipyards = yes_western_shipyards } }
+            TAI = { military_reform = yes_western_shipyards activate_technology = post_nelsonian_thought }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no foreign_artillery = yes_foreign_artillery } }
+            TAI = { military_reform = yes_foreign_artillery activate_technology = bronze_muzzle_loaded_artillery }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no slavery = yes_slavery } }
+            TAI = { political_reform = yes_slavery }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no slavery = freedom_of_womb } }
+            TAI = { political_reform = freedom_of_womb }
+        }
+
+        random_owned = {
+            limit = { owner = { civilized = no slavery = no_slavery } }
+            TAI = { political_reform = no_slavery }
+        }
+
+        1485 = {
+            add_core = KMT
+            fort = 3
+        }
+        2562 = {
+            add_core = KMT
+            fort = 3
+        }
+        2406 = {
+            add_core = KMT
+            fort = 3
+        }
+        2681 = {
+            add_core = KMT
+            fort = 3
+        }
+        capital_scope = {
+            aristocrats = {
+                limit = { is_primary_culture = yes }
+                money = 300
+                move_pop = 2681
+            }
+            bureaucrats = {
+                limit = { is_primary_culture = yes }
+                money = 100
+                move_pop = 2681
+            }
+            officers = {
+                limit = { is_primary_culture = yes }
+                move_pop = 2681
+            }
+            soldiers = {
+                limit = { is_primary_culture = yes }
+                move_pop = 2681
+            }
+            capitalists = {
+                limit = { is_primary_culture = yes }
+                money = 300
+                move_pop = 2681
+            }
+            any_neighbor_province = {
+                limit = { owned_by = THIS }
+                aristocrats = {
+                    limit = { is_primary_culture = yes }
+                    money = 300
+                    move_pop = 2681
+                }
+                bureaucrats = {
+                    limit = { is_primary_culture = yes }
+                    money = 100
+                    move_pop = 2681
+                }
+                officers = {
+                    limit = { is_primary_culture = yes }
+                    move_pop = 2681
+                }
+                soldiers = {
+                    limit = { is_primary_culture = yes }
+                    move_pop = 2681
+                }
+                capitalists = {
+                    limit = { is_primary_culture = yes }
+                    money = 300
+                    move_pop = 2681
+                }
+            }
+        }
+        capital = 2681
+        money = 100000
+        leadership = 40
+        add_accepted_culture = min
+        random_country = {
+            limit = {
+                war_with = THIS
+                neighbour = THIS
+                is_culture_group = east_asian
+                NOT = { tag = LAN }
+                #NOT = { tag = MAO }
+            }
+            country_event = 16050215
+        }
+    }
+}
+
+country_event = {
+    id = 16050215
+    title = "EVTNAME16050215" #We have won
+    desc = "EVTDESC16050215"
+    picture = "celebration"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT16050215OPTA"
+        any_country = {
+            limit = {
+                is_culture_group = east_asian
+                NOT = { tag = LAN }
+                #NOT = { tag = MAO }
+                war_with = FROM
+            }
+            end_war = FROM
+        }
+        FROM = {
+            any_owned = {
+                limit = {
+                    NOT = {
+                        province_id = 1485
+                        province_id = 2562
+                        province_id = 2681
+                        province_id = 2406
+                    }
+                }
+                secede_province = THIS
+            }
+        }
+    }
+}
+
+# surrender event for warlords
+country_event = {
+    id = 16050220
+    title = "EVTNAME16050220"
+    desc = "EVTDESC16050220"
+    picture = "warlords"
+
+    trigger = {
+        is_culture_group = east_asian
+        NOT = { tag = LAN }
+        #NOT = { tag = MAO }
+        war = yes
+        ai = yes
+        any_owned_province = {
+            is_capital = yes
+            NOT = { controlled_by = THIS }
+            NOT = { controlled_by_rebels = yes }
+            NOT = { country_units_in_province = THIS }
+        }
+        national_provinces_occupied = 0.75
+        war_exhaustion = 50
+    }
+
+    mean_time_to_happen = {
+        months = 3
+        modifier = {
+            factor = 3
+            has_country_flag = warlord_surrendered
+        }
+    }
+
+    option = {
+        name = "EVT16050220OPTA"
+        set_country_flag = warlord_surrendered
+        any_country = {
+            limit = {
+                NOT = { tag = LAN }
+                #NOT = { tag = MAO }
+                is_culture_group = east_asian
+                war_with = THIS
+                ai = yes
+            }
+            country_event = 16050221
+        }
+    }
+}
+
+country_event = {
+    id = 16050221
+    title = "EVTNAME16050221"
+    desc = "EVTDESC16050221"
+    picture = "warlords"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT16050221OPTA"
+        war_exhaustion = -10
+        random_country = {
+            limit = {
+                tag = FROM
+                capital_scope = { NOT = { controlled_by = THIS } }
+            }
+            any_owned = {
+                limit = {
+                    controlled_by = THIS
+                    NOT = { province_id = 1485 }
+                    NOT = { province_id = 2562 }
+                    NOT = { province_id = 2681 }
+                    NOT = { province_id = 2406 }
+                    any_neighbor_province = { owned_by = THIS }
+                }
+                secede_province = THIS
+            }
+        }
+        random_country = {
+            limit = {
+                tag = FROM
+                capital_scope = { controlled_by = THIS }
+            }
+            any_owned = {
+                limit = {
+                    OR = {
+                        controlled_by = THIS
+                        controlled_by = FROM
+                        NOT = {
+                            any_neighbor_province = {
+                                owner = {
+                                    is_culture_group = east_asian
+                                    ai = yes
+                                    war_with = FROM
+                                }
+                            }
+                        }
+                    }
+                    NOT = { province_id = 1485 }
+                    NOT = { province_id = 2562 }
+                    NOT = { province_id = 2681 }
+                    NOT = { province_id = 2406 }
+                }
+                change_controller = THIS
+            }
+        }
+    }
+}
+
+# ending really long wars between warlords
+
+country_event = {
+    id = 16050222
+    title = "EVTNAME16050222"
+    desc = "EVTDESC16050222"
+    picture = "warlords"
+
+    trigger = {
+        is_culture_group = east_asian
+        NOT = { tag = LAN }
+        #NOT = { tag = MAO }
+        has_global_flag = warlord_era_has_begun
+        war = yes
+        ai = yes
+        any_owned_province = {
+            is_capital = yes
+            controlled_by = THIS
+        }
+        NOT = { national_provinces_occupied = 0.10 }
+    }
+
+    mean_time_to_happen = {
+        months = 30
+        modifier = {
+            factor = 0.5
+            NOT = { national_provinces_occupied = 0.01 }
+        }
+    }
+
+    option = {
+        name = "EVT97161OPTA"
+        any_country = {
+            limit = {
+                is_culture_group = east_asian
+                NOT = { tag = LAN }
+                #NOT = { tag = MAO }
+                war_with = THIS
+                ai = yes
+                NOT = { any_owned_province = { controlled_by = THIS } }
+            }
+            country_event = 16050223
+        }
+    }
+}
+
+country_event = {
+    id = 16050223
+    title = "EVTNAME16050223"
+    desc = "EVTDESC16050223"
+    picture = "warlords"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT16050223OPTA"
+        random_country = {
+            limit = {
+                tag = FROM
+                OR = {
+                    NOT = { any_owned_province = { controlled_by = THIS } }
+                    NOT = { neighbour = THIS }
+                }
+            }
+            end_war = THIS
+            THIS = { set_country_flag = ending_war_now }
+        }
+        any_country = {
+            limit = {
+                alliance_with = THIS
+                war_with = FROM
+                NOT = { is_culture_group = east_asian }
+                THIS = { has_country_flag = ending_war_now }
+            }
+            end_war = FROM
+        }
+        THIS = { clr_country_flag = ending_war_now }
+    }
+}

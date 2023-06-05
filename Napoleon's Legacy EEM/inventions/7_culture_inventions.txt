@@ -1,0 +1,447 @@
+##################################################aesthetics_7
+modern_literature = {
+    limit = { aesthetics_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = -2
+            OR = {
+                invention = modern_art
+                invention = modern_music
+            }
+        }
+        modifier = {
+            factor = 2
+            philosophy_7 = 1
+        }
+    }
+    effect = {
+        shared_prestige = 60
+    }
+}
+
+modern_art = {
+    limit = { aesthetics_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = -2
+            OR = {
+                invention = modern_literature
+                invention = modern_music
+            }
+        }
+        modifier = {
+            factor = 2
+            social_thought_7 = 1
+        }
+    }
+    effect = {
+        shared_prestige = 60
+    }
+}
+
+modern_music = {
+    limit = { aesthetics_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = -2
+            OR = {
+                invention = modern_art
+                invention = modern_literature
+            }
+        }
+        modifier = {
+            factor = 2
+            psychology_7 = 1
+        }
+    }
+    effect = {
+        shared_prestige = 60
+    }
+}
+
+#international_architecture 
+modern_architecture = {
+    limit = { aesthetics_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            social_science = 1
+        }
+        modifier = {
+            factor = 2
+            invention = sociology
+        }
+    }
+    effect = {
+        shared_prestige = 60
+    }
+}
+
+television_networks = { #previously "movies"
+    limit = { aesthetics_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = national_radio_networks 
+        }
+        modifier = {
+            factor = -6
+            NOT = { invention = the_talkies }
+        }
+     }
+    effect = {
+        shared_prestige = 60
+    }
+}
+
+#neoclassical_music = {
+#    limit = { aesthetics_7 = 1 }
+#    news = no
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = 2
+#            OR = {
+#                nationalvalue = nv_order
+#                nationalvalue = nv_autocracy
+#            }
+#        }
+#        modifier = {
+#            factor = 2
+#            ruling_party_ideology = conservative
+#        }
+#    }
+#    effect = {
+#        shared_prestige = 30
+#    }
+#}
+
+#brutalism = {
+#    limit = { aesthetics_7 = 1 }
+#    news = no
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = 3
+#            government = proletarian_dictatorship
+#        }
+#        modifier = {
+#            factor = 2
+#            ruling_party_ideology = socialist
+#        }
+#        modifier = {
+#            factor = 1
+#            invention = mass_surveillance
+#        }
+#    }
+#    effect = {
+#        shared_prestige = 30
+#    }
+#}
+
+#graphic_design = {
+#    limit = { aesthetics_7 = 1 }
+#    news = no
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = 2
+#            behaviorism = 1
+#        }
+#        modifier = {
+#            factor = 2
+#            psychology_7 = 1
+#        }
+#    }
+#    effect = {
+#        shared_prestige = 30
+#    }
+#}
+
+#electronic_music = {
+#    limit = { aesthetics_7 = 1 }
+#    news = no
+#    chance = {
+#        base = 0
+#        modifier = {
+#            factor = 2
+#            invention = oscilloscope
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = vacuum_tube
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = general_computer_programming #modern_tape_record
+#        }
+#    }
+#    effect = {
+#        shared_prestige = 30
+#    }
+#}
+
+#neo_romanticism = {
+#    limit = { aesthetics_7 = 1 }
+#    news = no
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = 2
+#            psychology_7 = 1
+#        }
+#        modifier = {
+#            factor = 2
+#            ruling_party_ideology = liberal
+#        }
+#    }
+#    effect = {
+#        shared_prestige = 30
+#    }
+#}
+
+##################################################philosophy_7 
+logical_empiricism = {
+    limit = { philosophy_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            social_thought_7 = 1
+        }
+        modifier = {
+            factor = 2
+            chemistry_and_electricity_7 = 1
+        }
+    }
+    effect = {
+        shared_prestige = 30
+    }
+}
+
+being_and_nothingness = {
+    limit = { philosophy_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = modern_literature
+        }
+        modifier = {
+            factor = 2
+            social_thought_7 = 1
+        }
+    }
+    effect = {
+        shared_prestige = 30
+    }
+}
+
+absurdism = {
+    limit = { philosophy_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = modern_literature
+        }
+        modifier = {
+            factor = 2
+            invention = anticolonialism
+        }
+    }
+    effect = {
+        shared_prestige = 30
+    }
+}
+
+#should actually occur in 1967 
+#deconstrutionism = {
+#    limit = { philosophy_7 = 1 }
+#    news = no
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = 2
+#            average_consciousness = 5
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = phenomenology
+#        }
+#    }
+#    effect = {
+#        shared_prestige = 30
+#    }
+#}
+
+#nuclear_theory (in own file)
+
+###########################################political_thought_7
+mass_surveillance = {
+    limit = { political_thought_7 = 1 }
+    news = no
+    chance = {
+        base = 0
+        modifier = {
+            factor = 3
+            OR = {
+                ruling_party_ideology = fascist
+                ruling_party_ideology = communist
+            }
+        }
+        modifier = {
+            factor = 2
+            OR = {
+                nationalvalue = nv_order
+                nationalvalue = nv_autocracy
+            }
+        }
+        modifier = {
+            factor = 1
+            ruling_party_ideology = reactionary
+        }
+        modifier = {
+            factor = 1
+            invention = national_radio_networks
+        }
+        modifier = {
+            factor = 2
+            invention = telephone_switchboard
+        }
+        modifier = {
+            factor = 2
+            invention = general_computer_programming
+        }
+    }
+
+    effect = {
+        suppression_points_modifier = 0.25
+    }
+}
+
+national_liberation = {
+    limit = { political_thought_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            average_militancy = 2
+        }
+        modifier = {
+            factor = 2
+            average_consciousness = 4
+        }
+    }
+    effect = {
+        seperatism = 0.5
+    }
+}
+
+#finest_hour = {
+#    limit = { political_thought_7 = 1 }
+#    news = no
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = 2
+#            invention = national_liberation
+#        }
+#        modifier = {
+#            factor = 2
+#            OR = {
+#                government = hms_government
+#                government = democracy
+#            }
+#        }
+#    }
+#    effect = {
+#        war_exhaustion = -0.05
+#    }
+#}
+
+##########################################psychology_7
+#television_networks = {
+#    limit = { psychology_7 = 1 }
+#    news = no
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = 2
+#            nationalvalue = nv_liberty
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = movies
+#        }
+#        modifier = {
+#            factor = -6
+#            NOT = { invention = television }
+#        }
+#	modifier = {
+#            factor = -1
+#            NOT = { press_rights = free_press }
+#        }
+#    }
+#    effect = {
+#        suppression_points_modifier = -0.05
+#        education_efficiency = 0.1
+#    }
+#}
+
+##########################################social_thought_7
+anticolonialism = {
+    limit = { social_thought_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            political_thought_7 = 1
+        }
+        modifier = {
+            factor = 2
+            OR = {
+                nationalvalue = nv_liberty
+                nationalvalue = nv_equality
+            }
+        }
+        modifier = {
+            factor = -2
+            OR = {
+                nationalvalue = nv_order
+                nationalvalue = nv_autocracy
+            }
+        }
+        modifier = {
+            factor = -4
+            OR = {
+                ruling_party_ideology = reactionary
+                ruling_party_ideology = fascist
+            }
+        }
+        modifier = {
+            factor = 2
+            invention = national_liberation
+        }
+    }
+
+    non_accepted_pop_consciousness_modifier = 0.01
+    effect = {
+        plurality = 0.05
+    }
+}

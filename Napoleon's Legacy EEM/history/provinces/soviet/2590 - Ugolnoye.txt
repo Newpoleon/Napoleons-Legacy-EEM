@@ -1,0 +1,7 @@
+owner = MOR
+controller = MOR
+add_core = MOR
+add_core = SPA
+trade_goods = fish
+terrain = urban
+life_rating = 35

@@ -1,0 +1,347 @@
+political_decisions = {
+
+    trade_zone_1_0 = {
+        picture = weihaiwei_china
+        potential = {
+            owns = 1569
+            NOT = { is_culture_group = east_asian }
+            NOT = { exists = TZ1 }
+            1565 = {
+                owner = {
+                    civilized = no
+                    OR = { tag = QNG tag = CHI tag = TPG tag = RTR }
+                    is_vassal = no
+                    is_substate = no
+                    part_of_sphere = no
+                    NOT = { has_country_flag = tore_up_unequal_treaties }
+                    NOT = { tag = TZ1 }
+                    number_of_states = 5
+                }
+            }
+            steamers = 1 #1836
+            num_of_ports = 2
+        }
+
+        allow = {
+            is_greater_power = yes
+            war = no
+            1565 = { owner = { war = no } }
+            invention = steamer_transports    #1836
+            invention = commerce_raiders      #1836
+            OR = {
+                invention = protected_cruisers
+                has_global_flag = taiping_has_happened
+            }
+            total_amount_of_ships = 10
+            NOT = { has_country_modifier = international_negotiations }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = international_negotiations
+                duration = 31
+            }
+            1565 = { owner = { country_event = 166710 } } 
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+
+####################
+
+    trade_zone_2_0 = {
+        picture = qingdao_china
+        potential = {
+            owns = 1566
+            NOT = { is_culture_group = east_asian }
+            NOT = { exists = TZ2 }
+            1571 = {
+                owner = {
+                    civilized = no
+                    OR = { tag = QNG tag = CHI tag = TPG tag = RTR }
+                    is_vassal = no
+                    is_substate = no
+                    part_of_sphere = no
+                    NOT = { has_country_flag = tore_up_unequal_treaties }
+                    NOT = { tag = TZ2 }
+                    number_of_states = 5
+                }
+            }
+            steamers = 1 #1836
+            num_of_ports = 2
+        }
+
+        allow = {
+            is_greater_power = yes
+            war = no
+            1571 = { owner = { war = no } }
+            invention = steamer_transports    #1836
+            invention = commerce_raiders      #1836
+            OR = {
+                invention = protected_cruisers
+                has_global_flag = taiping_has_happened
+            }
+            total_amount_of_ships = 10
+            NOT = { has_country_modifier = international_negotiations }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = international_negotiations
+                duration = 31
+            }
+            1571 = { owner = { country_event = 166720 } } 
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+
+#################### TZ3 Nantong is not an implemented treaty port
+
+####################
+
+    trade_zone_4_0 = {
+        picture = shanghai_china
+        potential = {
+            owns = 1538
+            NOT = { is_culture_group = east_asian }
+            NOT = { exists = TZ4 }
+            1539 = {
+                owner = {
+                    civilized = no
+                    OR = { tag = QNG tag = CHI tag = TPG tag = RTR }
+                    is_vassal = no
+                    is_substate = no
+                    part_of_sphere = no
+                    NOT = { has_country_flag = tore_up_unequal_treaties }
+                    NOT = { tag = TZ4 }
+                    number_of_states = 5
+                }
+            }
+            steamers = 1 #1836
+            num_of_ports = 2
+        }
+
+        allow = {
+            is_greater_power = yes
+            war = no
+            1539 = { owner = { war = no } }
+            invention = steamer_transports    #1836
+            invention = commerce_raiders      #1836
+            OR = {
+                invention = protected_cruisers
+                has_global_flag = taiping_has_happened
+            }
+            total_amount_of_ships = 10
+            NOT = { has_country_modifier = international_negotiations }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = international_negotiations
+                duration = 31
+            }
+            1539 = { owner = { country_event = 166740 } } 
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+
+####################
+
+    trade_zone_5_0 = {
+        picture = jiaxing_china
+        potential = {
+            owns = 1606
+            NOT = { is_culture_group = east_asian }
+            NOT = { exists = TZ5 }
+            1605 = {
+                owner = {
+                    civilized = no
+                    OR = { tag = QNG tag = CHI tag = TPG tag = RTR }
+                    is_vassal = no
+                    is_substate = no
+                    part_of_sphere = no
+                    NOT = { has_country_flag = tore_up_unequal_treaties }
+                    NOT = { tag = TZ5 }
+                    number_of_states = 5
+                }
+            }
+            steamers = 1 #1836
+            num_of_ports = 2
+        }
+
+        allow = {
+            is_greater_power = yes
+            war = no
+            1605 = { owner = { war = no } }
+            invention = steamer_transports    #1836
+            invention = commerce_raiders      #1836
+            OR = {
+                invention = protected_cruisers
+                has_global_flag = taiping_has_happened
+            }
+            total_amount_of_ships = 10
+            NOT = { has_country_modifier = international_negotiations }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = international_negotiations
+                duration = 31
+            }
+            1605 = { owner = { country_event = 166750 } } 
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+
+####################
+
+    trade_zone_6_0 = {
+        picture = ningbo_china
+        potential = {
+            owns = 1608
+            NOT = { is_culture_group = east_asian }
+            NOT = { exists = TZ6 }
+            1610 = {
+                owner = {
+                    civilized = no
+                    OR = { tag = QNG tag = CHI tag = TPG tag = RTR }
+                    is_vassal = no
+                    is_substate = no
+                    part_of_sphere = no
+                    NOT = { has_country_flag = tore_up_unequal_treaties }
+                    NOT = { tag = TZ6 }
+                    number_of_states = 5
+                }
+            }
+            steamers = 1 #1836
+            num_of_ports = 2
+        }
+
+        allow = {
+            is_greater_power = yes
+            war = no
+            1610 = { owner = { war = no } }
+            invention = steamer_transports    #1836
+            invention = commerce_raiders      #1836
+            OR = {
+                invention = protected_cruisers
+                has_global_flag = taiping_has_happened
+            }
+            total_amount_of_ships = 10
+            NOT = { has_country_modifier = international_negotiations }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = international_negotiations
+                duration = 31
+            }
+            1610 = { owner = { country_event = 166760 } } 
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+
+####################
+
+    trade_zone_7_0 = {
+        picture = hong_kong_china
+        potential = {
+            OR = { owns = 1496 owns = 1498 }
+            NOT = { is_culture_group = east_asian }
+            NOT = { exists = TZ7 }
+            NOT = { exists = GNG }
+            1493 = {
+                owner = {
+                    civilized = no
+                    OR = { tag = QNG tag = CHI tag = TPG tag = RTR }
+                    is_vassal = no
+                    is_substate = no
+                    part_of_sphere = no
+                    NOT = { has_country_flag = tore_up_unequal_treaties }
+                    NOT = { tag = TZ7 }
+                    number_of_states = 5
+                }
+            }
+            steamers = 1 #1836
+            num_of_ports = 2
+        }
+
+        allow = {
+            is_greater_power = yes
+            war = no
+            1493 = { owner = { war = no } }
+            invention = steamer_transports    #1836
+            invention = commerce_raiders      #1836
+            OR = {
+                invention = protected_cruisers
+                has_global_flag = taiping_has_happened
+            }
+            total_amount_of_ships = 10
+            NOT = { has_country_modifier = international_negotiations }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = international_negotiations
+                duration = 31
+            }
+            1493 = { owner = { country_event = 166770 } } 
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+
+####################
+
+    trade_zone_8_0 = {
+        picture = kwangchowan_china
+        potential = {
+            OR = { owns = 2632 owns = 1499 }
+            NOT = { is_culture_group = east_asian }
+            NOT = { exists = TZ8 }
+            NOT = { exists = GNG }
+            1495 = {
+                owner = {
+                    civilized = no
+                    OR = { tag = QNG tag = CHI tag = TPG tag = RTR }
+                    is_vassal = no
+                    is_substate = no
+                    part_of_sphere = no
+                    NOT = { has_country_flag = tore_up_unequal_treaties }
+                    NOT = { tag = TZ8 }
+                    number_of_states = 5
+                }
+            }
+            steamers = 1 #1836
+            num_of_ports = 2
+        }
+
+        allow = {
+            is_greater_power = yes
+            war = no
+            1495 = { owner = { war = no } }
+            invention = steamer_transports    #1836
+            invention = commerce_raiders      #1836
+            OR = {
+                invention = protected_cruisers
+                has_global_flag = taiping_has_happened
+            }
+            total_amount_of_ships = 10
+            NOT = { has_country_modifier = international_negotiations }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = international_negotiations
+                duration = 31
+            }
+            1495 = { owner = { country_event = 166780 } } 
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+}

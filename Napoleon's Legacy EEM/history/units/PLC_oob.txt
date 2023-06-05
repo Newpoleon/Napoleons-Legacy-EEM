@@ -1,0 +1,140 @@
+#Sphere of Influence
+
+FRA = {
+    value = 150
+}
+
+PRU = {
+    value = -100
+}
+
+AUS = {
+    value = -100
+}
+
+RUS = {
+    value = -100
+}
+
+BRI = {
+    value = -50
+}
+
+DZG = {
+    value = 100
+}
+
+# Can't use Polish glyphs, so no glyphs added
+leader = {
+    name = "Jozef Chlopicki"
+    date = 1809.1.1
+    type = land
+    personality = charismatic
+    background = adventurer
+    prestige = 0.3
+}
+
+leader = {
+    name = "Dezydery Chlapowski"
+    date = 1830.1.1
+    type = land
+    personality = intelligent
+    background = war_college
+    prestige = 0.2
+}
+
+leader = {
+    name = "Ignacy Pradzynski"
+    date = 1831.1.1
+    type = land
+    personality = brilliant
+    background = natural_born_leader
+    prestige = 0.4
+}
+
+army = {
+    name = "1st Army"
+    location = 706
+    regiment = {
+        name= "1.1st Division"
+        type = infantry
+        home = 706
+    }
+
+    regiment = {
+        name= "2.1st Division"
+        type = infantry
+        home = 704
+    }
+
+    regiment = {
+        name= "3.1st Division"
+        type = infantry
+        home = 701
+    }
+
+    regiment = {
+        name= "4.1st Cavalry Division"
+        type = hussar
+        home = 362
+    }
+
+    regiment = {
+        name= "5.1st Division"
+        type = artillery
+        home = 699
+    }
+
+    regiment = {
+        name= "4.1st Division"
+        type = artillery
+        home = 701
+    }
+
+}
+
+army = {
+    name = "2nd Army"
+    location = 699
+
+    regiment = {
+        name= "1.1st Division"
+        type = infantry
+        home = 714
+    }
+
+    regiment = {
+        name= "2.1st Cavalry Division"
+        type = hussar
+        home = 360
+    }
+
+    regiment = {
+        name= "3.1st Cavalry Division"
+        type = hussar
+        home = 703
+    }
+}
+
+army = {
+    name = "3rd Army"
+    location = 703
+    regiment = {
+        name= "1.1st Cavalry Division"
+        type = hussar
+        home = 705
+    }
+
+    regiment = {
+        name= "2.1st Cavalry Division"
+        type = hussar
+        home = 364
+    }
+
+    regiment = {
+        name= "3.1st Cavalry Division"
+        type = hussar
+        home = 702
+    }
+
+}

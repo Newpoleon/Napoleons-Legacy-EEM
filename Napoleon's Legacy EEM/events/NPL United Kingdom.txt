@@ -1,0 +1,475 @@
+# British Union claims Ulster
+country_event = {
+    id = 66649
+    title = "EVTNAME66649"
+    desc = "EVTDESC66649"
+    picture = "administration"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA66649"
+    }
+}
+
+# Treaty with British Empire over Westport
+country_event = {
+    id = 66650
+    title = "EVTNAME66650"
+    desc = "EVTDESC66650"
+    picture = "meeting"
+
+    is_triggered_only = yes
+
+    #B1
+    option = {
+        name = "EVTOPTA66650"
+        any_owned = {
+            limit = { is_core = IRE }
+            remove_core = CAN
+        }
+        IRE = {
+            government = hms_government
+            political_reform = appointed
+            political_reform = wealth_voting
+        }
+        BRI = { country_event = 66651 }
+        CAN = { country_event = 66652 }
+
+        2657 = {
+            remove_core = IRE
+            add_core = CAN
+            secede_province = CAN
+        }
+
+        set_global_flag = irish_chain_done
+        set_global_flag = empire_wins_ireland
+
+        ai_chance = {
+            factor = 35
+        }
+    }
+
+    #B2
+    option = {
+        name = "EVTOPTB66650"
+        CAN = {
+            country_event = 66653
+        }
+
+        ai_chance = {
+            factor = 65
+        }
+    }
+}
+
+# British Union Reaction
+country_event = {
+    id = 66651
+    title = "EVTNAME66651"
+    desc = "EVTDESC66651"
+    picture = "administration"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA66651"
+    }
+}
+
+#British Empire relations boost
+country_event = {
+    id = 66652
+    title = "EVTNAME66652"
+    desc = "EVTDESC66652"
+    picture = "meeting3"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA66652"
+        relation = { who = IRE value = 400 }
+        diplomatic_influence = { who = IRE value = 200 }
+        create_alliance = CAN
+    }
+}
+
+#B2
+country_event = {
+    id = 66653
+    title = "EVTNAME66653"
+    desc = "EVTDESC66653"
+    picture = "Travel"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA66653"
+        IRE = {
+            set_country_flag = ireland_no_response
+        }
+    }
+}
+
+#E
+country_event = {
+    id = 66654
+    title = "EVTNAME66654"
+    desc = "EVTDESC66654"
+    picture = "slavepower"
+
+    is_triggered_only = yes
+
+    #sends event F
+    option = {
+        name = "EVTOPTA66654"
+        IRE = { country_event = 66655 }
+
+        ai_chance = {
+            factor = 70
+        }
+    }
+
+    #sends event G
+    option = {
+        name = "EVTOPTB66654"
+            IRE = { country_event = 66656 }
+
+        ai_chance = {
+            factor = 30
+        }
+    }
+}
+
+#F
+country_event = {
+    id = 66655
+    title = "EVTNAME66655"
+    desc = "EVTDESC66655"
+    picture = "Sturt"
+
+    is_triggered_only = yes
+
+    #F1
+    option = {
+        name = "EVTOPTA66655"
+        any_owned = {
+            limit = { is_core = IRE }
+            remove_core = BRI
+        }
+
+        government = democracy
+        political_reform = state_equal_weight
+        political_reform = universal_weighted_voting
+
+        relation = { who = CAN value = -400 }
+        relation = { who = BRI value = 400 }
+
+        BRI = { country_event = 66658 }
+        CAN = { country_event = 66659 }
+
+        set_global_flag = irish_chain_done
+        set_global_flag = union_wins_ireland
+
+        ai_chance = {
+            factor = 100
+        }
+    }
+
+    #F2
+    option = {
+        name = "EVTOPTB66655"
+        set_global_flag = irish_chain_done
+        set_global_flag = union_wins_ireland
+
+        BRI = { country_event = 66657 }
+
+        ai_chance = {
+            factor = 0
+        }
+    }
+}
+
+#G
+country_event = {
+    id = 66656
+    title = "EVTNAME66656"
+    desc = "EVTDESC66656"
+    picture = "finepeople"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA66656"
+        set_global_flag = irish_chain_done
+        set_global_flag = union_wins_ireland
+    }
+}
+
+# H
+country_event = {
+    id = 66657
+    title = "EVTNAME66657"
+    desc = "EVTDESC66657"
+    picture = "finepeople"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA66657"
+    }
+}
+
+#I
+country_event = {
+    id = 66658
+    title = "EVTNAME66658"
+    desc = "EVTDESC66658"
+    picture = "finepeople"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA66658"
+        create_alliance = IRE
+        diplomatic_influence = { who = IRE value = 200 }
+        relation = { who = IRE value = 100 }
+    }
+}
+
+#J
+country_event = {
+    id = 66659
+    title = "EVTNAME66659"
+    desc = "EVTDESC66659"
+    picture = "finepeople"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA66659"
+    }
+}
+
+#The Emergency Irish Chain Starter
+country_event = {
+    id = 66660
+    title = "EVTNAME66660"
+    desc = "EVTDESC66660"
+    picture = "administration"
+
+    trigger = {
+        year = 1855
+        tag = BRI
+        NOT = {
+            has_global_flag = british_claim_on_ireland
+            has_global_flag = the_Britains_reunified
+        }
+
+        war = no
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "EVTOPTA66660"
+        set_global_flag = british_claim_on_ireland
+        ENG_254 = { add_core = BRI }
+
+        release_vassal = IRE
+        leave_alliance = IRE
+
+        diplomatic_influence = { who = IRE value = -200 }
+        relation = { who = IRE value = -100 }
+
+        IRE = { country_event = 66649 }
+    }
+}
+
+
+#CAN hears of the Final Battle
+country_event = {
+    id = 66625
+    title = "EVTNAME66625"
+    desc = "EVTDESC66625"
+    picture = "Riot"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA66625"
+    }
+}
+
+#BRI hears of the Final Battle
+country_event = {
+    id = 66626
+    title = "EVTNAME66626"
+    desc = "EVTDESC66626"
+    picture = "Riot"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA66626"
+    }
+}
+
+#WE Victory for BRI
+country_event = {
+    id = 66627
+    title = "EVTNAME86029"
+    desc = "EVTDESC86029"
+    picture = "Riot"
+
+    trigger = {
+        tag = CAN
+        war_with = BRI
+        war_exhaustion = 100
+        has_global_flag = the_final_battle
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "EVTOPTA86029"
+        BRI = {
+            inherit = CAN
+        }
+    }
+}
+
+#WE Victory for CAN
+country_event = {
+    id = 66628
+    title = "EVTNAME86029"
+    desc = "EVTDESC86029"
+    picture = "Riot"
+
+    trigger = {
+        tag = BRI
+        war_with = CAN
+        war_exhaustion = 100
+        has_global_flag = the_final_battle
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "EVTOPTA86029"
+        CAN = {
+            inherit = BRI
+        }
+    }
+}
+
+#Back to war with CAN
+country_event = {
+    id = 66629
+    title = "EVTNAME86034"
+    desc = "EVTDESC86034"
+    picture = "Riot"
+
+    trigger = {
+        tag = BRI
+        NOT = {
+            war_with = CAN
+        }
+        has_global_flag = the_final_battle
+        exists = BRI
+        exists = CAN
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    option = {
+        name = "EVTOPTA86034"
+        war = {
+            target = CAN
+            attacker_goal = {
+                casus_belli = civil_war
+            }
+            defender_goal = {
+                casus_belli = civil_war
+            }
+        }
+    }
+}
+
+#BRI wins the final battle
+country_event = {
+    id = 66630
+    title = "EVTNAME66630"
+    desc = "EVTDESC66630"
+    picture = "Celebration"
+
+    trigger = {
+        tag = BRI
+        NOT = {
+            exists = CAN
+        }
+        has_global_flag = the_final_battle
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    option = {
+        name = "EVTOPTA66630"
+        CAN = {
+            all_core = {
+                add_core = BRI
+                remove_core = CAN
+            }
+        }
+        prestige = 20
+        set_global_flag = the_Britains_reunified
+    }
+}
+
+#CAN wins the final battle
+country_event = {
+    id = 66631
+    title = "EVTNAME66631"
+    desc = "EVTDESC66631"
+    picture = "Celebration"
+
+    trigger = {
+        tag = CAN
+        NOT = {
+            exists = BRI
+        }
+        has_global_flag = the_final_battle
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    option = {
+        name = "EVTOPTA66631"
+        BRI = {
+            all_core = {
+                add_core = CAN
+                remove_core = BRI
+            }
+        }
+        prestige = 20
+        set_global_flag = the_Britains_reunified
+    }
+}

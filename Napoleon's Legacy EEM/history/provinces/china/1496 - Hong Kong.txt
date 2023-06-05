@@ -1,0 +1,7 @@
+owner = QNG
+controller = QNG
+add_core = CHI
+add_core = GNG
+trade_goods = tea
+terrain = urban
+life_rating = 35

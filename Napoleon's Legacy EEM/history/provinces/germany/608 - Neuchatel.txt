@@ -1,0 +1,6 @@
+owner = NEH
+controller = NEH
+add_core = NEH
+add_core = SWI
+trade_goods = coal
+life_rating = 32

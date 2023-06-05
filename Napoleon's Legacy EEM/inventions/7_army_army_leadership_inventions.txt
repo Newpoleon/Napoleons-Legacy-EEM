@@ -1,0 +1,186 @@
+computerized_army_intelligence = {
+    limit = { army_leadership_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = -6
+            NOT = { invention = telephone_switchboard }
+        }
+        modifier = {
+            factor = 2
+            psychology_7 = 1
+        }
+        modifier = {
+            factor = 2
+            invention = miniature_vacuum_tube
+        }
+        modifier = {
+            factor = 2
+            invention = general_computer_programming
+        }
+    }
+    effect = {
+        morale = 0.50
+    }
+}
+
+
+#The first device to be widely nicknamed a "walkie-talkie" was developed by the US military during World War II, the backpacked Motorola SCR-300. It was created by an engineering team in 1940 
+portable_radio = {
+    limit = { army_leadership_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = national_radio_networks
+        }
+        modifier = {
+            factor = 2
+            invention = miniature_vacuum_tube
+        }
+        modifier = {
+            factor = 2
+            invention = cavity_magnetron 
+        }
+    }
+    effect = {
+        army_base = {
+            default_organisation = 5
+            supply_consumption = 0.10
+        }
+    }
+}
+
+early_warning_radar = {
+    limit = { army_leadership_7 = 1 }
+    chance = {
+        base = -2
+        modifier = {
+            factor = 3
+            invention = oscilloscope
+        }
+        modifier = {
+            factor = 3
+            invention = cavity_magnetron
+        }
+        modifier = {
+            factor = 2
+            invention = miniature_vacuum_tube
+        }
+    }
+    effect = {
+        army_base = {
+            default_organisation = 5
+            supply_consumption = 0.10
+        }
+    }
+}
+
+#As a result, and out of necessity, the U.S. Army "embarked on one of the largest programs of basic adult education in human history" (Brandt, p. 487). Through the use of special training units -- well-funded, with qualified teachers, specially-designed course material, and small class sizes -- nearly 95% of illiterate recruits achieved minimum literacy within two months, a remarkable success rate. These soldiers were then able to go on to the standard basic training. Later research found that many of these men continued their education after leaving the military. 
+#literate_army_recruits = {
+#    limit = { army_leadership_7 = 1 }
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = -6
+#            NOT = { invention = army_literate_ncos }
+#        }
+#        modifier = {
+#            factor = 2
+#            social_alienation = 1
+#        }
+#        modifier = {
+#            factor = 2
+#            social_thought_7 = 1
+#        }
+#    }
+#    effect = {
+#        army_base = {
+#            default_organisation = 5
+#        }
+#    }
+#}
+
+motorized_recon = {
+    limit = { army_leadership_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = -6
+            NOT = { invention = motorized_infantry_activation }
+        }
+        modifier = {
+            factor = 2
+            invention = armoured_cars
+        }
+        modifier = {
+            factor = 2
+            invention = interwar_cavalry
+        }
+    }
+    effect = {
+        motorized_infantry = {
+            reconnaissance = 1
+            maximum_speed = 1
+            attack = 1
+            supply_consumption = 0.4
+        }
+        tank = {
+            attack = 2
+            supply_consumption = 0.25
+        }
+    }
+}
+
+operations_research = {
+    limit = { army_leadership_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            psychology_7 = 1
+        }
+        modifier = {
+            factor = 2
+            tech_organization_7 = 1
+        }
+        modifier = {
+            factor = 2
+            social_thought_7 = 1
+        }
+    }
+    effect = {
+        army_base = {
+            supply_consumption = -0.60
+        }
+    }
+}
+
+
+#Airborne Interception radar, Mark IV, or AI Mk. IV for short, was the world's first operational air-to-air radar system. Early Mk. III units appeared in July 1940 on converted Bristol Blenheim light bombers, while the definitive Mk. IV reached widespread availability on the Bristol Beaufighter heavy fighter by early 1941. On the Beaufighter, the Mk. IV arguably played a role in ending the Blitz, the Luftwaffe's night bombing campaign of late 1940 and early 1941. 
+air_to_air_radar = {
+    limit = { army_leadership_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = early_warning_radar
+        }
+        modifier = {
+            factor = 2
+            invention = naval_radar
+        }
+        modifier = {
+            factor = 2
+            invention = cavity_magnetron
+        }
+    }
+    effect = {
+        plane = {
+            defence = 1
+            supply_consumption = 0.25
+        }
+    }
+}
+
+#Identification, friend or foe (IFF) #for aircraft, after radar in ww2

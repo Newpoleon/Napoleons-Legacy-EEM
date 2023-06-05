@@ -1,0 +1,224 @@
+saturation_bombing_doctrine = {
+    limit = { army_doctrine_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = strategic_destruction_doctrine
+        }
+        modifier = {
+            factor = 2
+            invention = gun_and_bomb_sights
+        }
+        modifier = {
+            factor = -6
+            not = { invention = late_interwar_bombers }
+        }
+    }
+    effect = {
+        plane = {
+            attack = 0.1
+            supply_consumption = 0.20
+        }
+    }
+}
+
+army_motorization = {
+    limit = { army_doctrine_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = daimlers_automobile
+        }
+        modifier = {
+            factor = 2
+            invention = interwar_cavalry
+        }
+        modifier = {
+            factor = 2
+            limited_access_roads = 1
+        }
+    }
+    effect = {
+        army_base = {
+            maximum_speed = 1
+            supply_consumption = 0.20
+        }
+     
+        #ceremonial_cavalry
+        cuirassier = {
+            attack = 1
+            defence = 2
+            supply_consumption = -0.20
+        }
+        dragoon = {
+            defence = 2
+        }
+        hussar = {
+            defence = 2
+            supply_consumption = 0.10
+        }
+        cavalry = {
+            attack = 1
+            defence = 2
+            supply_consumption = 0.10
+        }
+    }
+}
+
+mechanized_assault_doctrine = {
+    limit = { army_doctrine_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = motorized_infantry_activation
+        }
+        modifier = {
+            factor = 2
+            war = yes
+            war_countries = { invention = mechanized_assault_doctrine }
+        }
+        modifier = {
+            factor = -6
+            not = { invention = army_motorization }
+        }
+    }
+    effect = {
+        tank = {
+            attack = 4
+            maximum_speed = 1
+            supply_consumption = 0.30
+        }
+        motorized_infantry = {
+            attack = 2
+            maximum_speed = 1
+            supply_consumption = 0.30
+        }
+        engineer = {
+            maximum_speed = 1
+            supply_consumption = 0.20
+        }
+    }
+}
+
+
+paratrooper_doctrine = {
+    limit = { army_doctrine_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = portable_radio
+        }
+        modifier = {
+            factor = 2
+            war = yes
+            war_countries = { invention = paratrooper_doctrine }
+        }
+        modifier = {
+            factor = -6
+            not = { invention = late_interwar_bombers }
+        }
+    }
+    effect = {
+        guard = {
+            attack = 1
+            supply_consumption = 0.05
+        }
+        plane = {
+            attack = 0.1
+            maximum_speed = 1
+            supply_consumption = 0.30
+        }
+    }
+}
+
+#civil_defense = {
+#    limit = {
+#        army_doctrine_7 = 1
+#        has_country_flag = existing_country
+#    }
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = 1
+#            psychology_7 = 1
+#        }
+#        modifier = {
+#            factor = 2
+#            army_leadership_7 = 1
+#        }
+#    }
+#    effect = {
+#        mobilisation_size = 0.01
+#    }
+#}
+
+
+combined_arms_offensive = {
+    limit = { army_doctrine_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = -6
+            NOT = { invention = motorized_infantry_activation }
+            NOT = { invention = military_aviation }
+        }
+        modifier = {
+            factor = 2
+            invention = self_propelled_artillery
+        }
+        modifier = {
+            factor = 1
+            invention = paratrooper_doctrine
+        }
+        modifier = {
+            factor = 1
+            war = yes
+            war_countries = { invention = combined_arms_offensive }
+        }
+    }
+    effect = {
+        infantry = {
+            attack = 2
+        }
+        guard = {
+            attack = 2
+        }
+        artillery = {
+            attack = 0.1
+        }
+        engineer = {
+            attack = 2
+        }
+        tank = {
+            attack = 2
+        }
+        plane = {
+            attack = 0.1
+        }
+        cuirassier = {
+            attack = 2
+        }
+        dragoon = {
+            attack = 2
+        }
+        hussar = {
+            attack = 2
+        }
+        motorized_infantry = {
+            attack = 2
+        }
+        cavalry = {
+            attack = 1
+        }
+        irregular = {
+            attack = 1
+        }
+        army_base = {
+            supply_consumption = 0.05
+        }
+    }
+}

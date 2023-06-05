@@ -1,0 +1,9 @@
+Key;English;French;German;Polish;Spanish;Italian;Swedish;Czech;Hungarian;Dutch;Portuguese;Russian;Finnish;
+pacific_islands_cb;Acquire Pacific Islands;;;;;;;;;;;;;
+pacific_islands_cb_desc;Acquire minor islands in the Pacific from the enemy.;;;;;;;;;;;;;
+pacific_islands_cb_short;Acquire Pacific Islands;;;;;;;;;;;;;
+pacific_islands_cb_setup;Acquire $STATE$ from $RECIPIENT$.;;;;;;;;;;;;;
+AGRESSION_CIVIL_WAR_NAME_QNG_RTR;$ORDER$Red Turban Rebellion;;;;;;;;;;;;;
+NORMAL_CIVIL_WAR_NAME_QNG_RTR;$ORDER$Red Turban Rebellion;;;;;;;;;;;;;
+AGRESSION_WAR_CONQUEST_ANY_NAME_QNG_MAO;$ORDER$Miao Rebellion;;;;;;;;;;;;;
+NORMAL_WAR_CONQUEST_ANY_NAME_QNG_MAO;$ORDER$Miao Rebellion;;;;;;;;;;;;;

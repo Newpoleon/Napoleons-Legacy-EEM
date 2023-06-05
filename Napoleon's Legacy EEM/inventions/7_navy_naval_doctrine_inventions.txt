@@ -1,0 +1,113 @@
+#naval_doctrine_7
+
+#1936
+fleet_auxiliary_carrier_doctrine = {
+    limit = { naval_doctrine_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 1
+            invention = light_air_carriers 
+        }
+        modifier = {
+            factor = 1
+            invention = converted_hulk_air_carriers
+        }
+        modifier = {
+            factor = 2
+            invention = fleet_air_carriers
+        }
+    }
+    effect = {
+        navy_base = {
+            default_organisation = 2
+        }
+    }
+}
+
+#1940
+#indirect_strike_doctrine = {
+#    limit = { naval_doctrine_7 = 1 }
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = -6
+#            NOT = {
+#                invention = fleet_auxiliary_carrier_doctrine
+#            }
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = fleet_air_carriers
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = naval_bombers
+#        }
+#    }
+#    effect = {
+#        aircraft_carrier = {
+#            gun_power = 2
+#            torpedo_attack = 5
+#        }
+#    }
+#}
+
+#1942
+carrier_task_force_doctrine = {
+    limit = { naval_doctrine_7 = 1 }
+    chance = {
+        base = 1
+        modifier = {
+            factor = -5
+            NOT = {
+                invention = fleet_auxiliary_carrier_doctrine #indirect_strike_doctrine
+            }
+        }
+        modifier = {
+            factor = 2
+            invention = nco_tactical_training
+        }
+        modifier = {
+            factor = 2
+            invention = wireless
+        }
+    }
+
+    effect = {
+        aircraft_carrier = {
+            maximum_speed = 2
+            torpedo_attack = 2
+            gun_power = 4
+        }
+    }
+}
+
+
+coordinated_strike_doctrine = {
+    limit = { naval_doctrine_7 = 1 }
+    chance = {
+        base = 1
+        modifier = {
+            factor = -5
+            NOT = {
+                invention = carrier_task_force_doctrine
+            }
+        }
+        modifier = {
+            factor = 2
+            invention = naval_radar
+        }
+        modifier = {
+            factor = 2
+            invention = sea_air_integration
+        }
+    }
+
+    effect = {
+        aircraft_carrier = {
+            torpedo_attack = 5
+            gun_power = 2
+        }
+    }
+}

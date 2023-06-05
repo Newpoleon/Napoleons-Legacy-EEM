@@ -1,0 +1,71 @@
+advanced_amphibious_warfare = {
+    limit = { naval_leadership_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            army_doctrine_7 = 1
+        }
+        modifier = {
+            factor = 2
+            naval_doctrine_7 = 1
+        }
+    }
+    effect = {
+        navy_base = {
+            default_organisation = 1
+        }
+    }
+}
+
+computerized_naval_intelligence = {
+    limit = { naval_leadership_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = -6
+            NOT = { invention = telephone_switchboard }
+        }
+        modifier = {
+            factor = 2
+            psychology_7 = 1
+        }
+        modifier = {
+            factor = 2
+            invention = miniature_vacuum_tube
+        }
+        modifier = {
+            factor = 2
+            invention = general_computer_programming
+        }
+    }
+    effect = {
+        navy_base = {
+            default_organisation = 1
+        }
+    }
+}
+
+improved_damage_control_training = { #literate_navy_recruits
+    limit = { naval_leadership_7 = 1 }
+    chance = {
+        base = -1
+        modifier = {
+            factor = 1
+            invention = literate_ncos
+        }
+        modifier = {
+            factor = 2
+            social_alienation = 1
+        }
+        modifier = {
+            factor = 4
+            social_thought_7 = 1
+        }
+    }
+    effect = {
+        navy_base = {
+            default_organisation = 1
+        }
+    }
+}

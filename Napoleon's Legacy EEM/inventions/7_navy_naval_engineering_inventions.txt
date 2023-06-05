@@ -1,0 +1,313 @@
+naval_radar = {
+    limit = { naval_engineering_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = oscilloscope
+        }
+        modifier = {
+            factor = 2
+            invention = early_warning_radar
+        }
+        modifier = {
+            factor = 2
+            invention = cavity_magnetron
+        }
+    }
+    effect = {
+        navy_base = {
+            default_organisation = 5
+        }
+    }
+}
+
+super_heavy_main_armament = { #16_inch_main_armament #18_inch_main_armament
+    limit = { naval_engineering_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = -6
+            NOT = {
+                invention = 15_inch_main_armament
+            }
+        }
+        modifier = {
+            factor = 2
+            invention = heavy_artillery
+        }
+        modifier = {
+            factor = 2
+            metallurgy_7 = 1
+        }
+        modifier = {
+            factor = 2
+            heavy_armament_7 = 1
+        }
+    }
+    effect = {
+        dreadnought = {
+            gun_power = 4 #2
+        }
+    }
+}
+
+electronic_fire_control = { #and blind_fire_radar_fire_control
+    limit = { naval_engineering_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = advanced_fire_control
+        }
+        modifier = {
+            factor = 2
+            invention = naval_radar #cavity_magnetron
+        }
+        modifier = {
+            factor = 2
+            invention = general_computer_programming
+        }
+    }
+    effect = {
+        dreadnought = {
+            gun_power = 4 #2
+        }
+        cruiser = {
+            gun_power = 1
+        }
+    }
+}
+
+dual_purpose_guns = {
+    limit = { naval_engineering_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = proximity_fuze
+        }
+        modifier = {
+            factor = 2
+            invention = improved_anti_aircraft_artillery
+        }
+        modifier = {
+            factor = 2
+            invention = electronic_fire_control
+        }
+    }
+    effect = {
+        cruiser = { 
+            gun_power = 2
+        }
+        dreadnought = { 
+            gun_power = 2
+        }
+        aircraft_carrier = { 
+            gun_power = 2
+        }
+    }
+}
+
+ducol_steel_armor = {
+    limit = { naval_engineering_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = steel_alloys
+        }
+        modifier = {
+            factor = 2
+            invention = stainless_steel
+        }
+        modifier = {
+            factor = 2
+            invention = basic_oxygen_steelmaking
+        }
+    }
+
+    effect = {
+        cruiser = {
+            hull = 5
+        }
+        dreadnought = {
+            hull = 5
+        }
+        aircraft_carrier = {
+            hull = 2
+        }
+    }
+}
+
+naval_plastic_armor = {
+    limit = { naval_engineering_7 = 1 }
+
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = ducol_steel_armor
+        }
+        modifier = {
+            factor = 2
+            tech_infrastructure_7 = 1
+        }
+    }
+
+    effect = {
+        cruiser = {
+            hull = 2
+        }
+        dreadnought = {
+            hull = 5
+        }
+        aircraft_carrier = {
+            hull = 2
+        }
+    }
+}
+
+acoustic_homing_torpedo = {
+    limit = { naval_engineering_7 = 1 }
+    chance = {
+        base = -2
+        modifier = {
+            factor = 2
+            invention = oscilloscope
+        }
+		modifier = {
+            factor = 2
+            invention = cavity_magnetron
+        }
+        modifier = {
+            factor = 2
+            invention = remote_control
+        }
+    }
+    effect = {
+	    cruiser = {
+            torpedo_attack = 5
+        }
+        aircraft_carrier = {
+            torpedo_attack = 5
+        }
+    }
+}
+
+hydraulic_aircraft_catapult = {
+    limit = { naval_engineering_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = naval_bombers
+        }
+		modifier = {
+            factor = 2
+            invention = refrigerator_technology
+        }
+        modifier = {
+            factor = 2
+            invention = rocket_experiments
+        }
+    }
+    effect = {
+        aircraft_carrier = {
+            torpedo_attack = 2
+            gun_power = 2
+            maximum_speed = 1 #because the ship no longer needs to be pointed with the wind to launch planes
+        }
+    }
+}
+
+################## modern_naval_design 1919
+naval_fighters = {
+    limit = { modern_naval_design = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = late_interwar_fighters
+        }
+        modifier = {
+            factor = 2
+            invention = t_air_superiority
+        }
+	    modifier = {
+            factor = 2
+            invention = flying_circus_doctrine
+        }
+        modifier = {
+            factor = -6
+            NOT = {
+                invention = purpose_built_air_carriers
+            }
+        }
+    }
+    effect = {
+        aircraft_carrier = {
+            hull = 2
+            gun_power = 1
+            torpedo_attack = 1
+        }
+    }
+}
+
+naval_bombers = {
+    limit = { modern_naval_design = 1 }
+    chance = {
+        base = 0
+	    modifier = {
+            factor = 2
+            invention = early_interwar_bombers
+        }
+        modifier = {
+            factor = 2
+            invention = late_interwar_bombers
+        }
+        modifier = {
+            factor = 2
+            invention = battlefield_destruction_doctrine
+        }
+        modifier = {
+            factor = -6
+            NOT = {
+                invention = purpose_built_air_carriers
+            }
+        }
+    }
+    effect = {
+        aircraft_carrier = {
+            gun_power = 2
+            torpedo_attack = 4
+        }
+    }
+}
+
+################
+improved_naval_aircraft = {
+    limit = { naval_engineering_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = gun_and_bomb_sights
+        }
+        modifier = {
+            factor = 2
+            invention = air_to_air_radar
+        }
+        modifier = {
+            factor = -6
+            NOT = { invention = fleet_air_carriers }
+        }
+   }
+    effect = {
+        aircraft_carrier = {
+            hull = 2
+            gun_power = 2
+            torpedo_attack = 4
+        }
+    }
+}

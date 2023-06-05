@@ -1,0 +1,382 @@
+hedge_funds = {
+    limit = {
+        financial_institutions_7 = 1
+        has_country_flag = existing_country
+    }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            nationalvalue = nv_liberty
+        }
+        modifier = {
+            factor = 2
+            trade_policy = free_trade
+        }
+    }
+    effect = {
+        factory_cost = -0.01
+    }
+}
+
+#Lindahl, Erik (1958) [1919], "Just taxation – A positive solution"
+#Lindahl's concepts to the anglophone world was accomplished by two of his most ardent supporters, John Hicks (1939, 1965) and Friedrich Hayek (1941).
+erik_lindahl = {
+    limit = { monetary_system_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            ruling_party_ideology = liberal
+        }
+        modifier = {
+            factor = 2
+            economic_policy = laissez_faire
+        }
+    }
+    effect = {
+        tax_eff = 1
+    }
+}
+
+#Howard R Bowen 1949
+howard_r_bowen = {
+    limit = { monetary_system_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            social_thought_7 = 1
+        }
+        modifier = {
+            factor = 2
+            philosophy_7 = 1
+        }
+    }
+    effect = {
+        tax_eff = 1
+    }
+}
+
+
+
+#economic_thought_and_critique_7
+ragnar_frisch = {
+    limit = {
+        economic_thought_and_critique_7 = 1
+        has_country_flag = existing_country
+    }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            ruling_party_ideology = liberal
+        }
+        modifier = {
+            factor = 2
+            NOT = {
+                ruling_party_ideology = reactionary
+                ruling_party_ideology = fascist
+                ruling_party_ideology = communist
+            }
+        }
+    }
+    effect = {
+        permanent_prestige = 1
+    }
+}
+
+jan_tinbergen = {
+    limit = {
+        economic_thought_and_critique_7 = 1
+        has_country_flag = existing_country
+    }
+    news = no
+    chance = {
+        base = 3
+        modifier = {
+            factor = 2
+            invention = ragnar_frisch
+        }
+        modifier = {
+            factor = 2
+            ruling_party_ideology = socialist
+        }
+    }
+    effect = {
+        permanent_prestige = 1
+    }
+}
+
+adolf_a_berle = {
+    limit = {
+        economic_thought_and_critique_7 = 1
+        has_country_flag = existing_country
+    }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            ruling_party_ideology = socialist
+        }
+        modifier = {
+            factor = 2
+            trade_policy = protectionism
+        }
+    }
+    effect = {
+        permanent_prestige = 1
+    }
+}
+
+leonid_kantorovich = {
+    limit = {
+        economic_thought_and_critique_7 = 1
+        has_country_flag = existing_country
+    }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            ruling_party_ideology = communist
+        }
+        modifier = {
+            factor = 2
+            economic_policy = state_capitalism
+        }
+    }
+    effect = {
+        permanent_prestige = 1
+    }
+}
+
+#The Theory of Wages is a book by the British economist John R. Hicks published in 1932 (2nd ed., 1963). It has been described as a classic microeconomic statement of wage determination in competitive markets. It anticipates a number of developments in distribution and growth theory and remains a standard work in labour economics
+#Value and Capital is a book by the British economist John Richard Hicks, published in 1939. It is considered a classic exposition of microeconomic theory.
+john_hicks = {
+    limit = {
+        economic_thought_and_critique_7 = 1
+        has_country_flag = existing_country
+    }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = distribution_channels
+        }
+        modifier = {
+            factor = 2
+            trade_policy = protectionism
+        }
+    }
+    effect = {
+        permanent_prestige = 1
+    }
+}
+
+#Samuelson considered mathematics to be the "natural language" for economists and contributed significantly to the mathematical foundations of economics with his book Foundations of Economic Analysis.[8] He was author of the best-selling economics textbook of all time: Economics: An Introductory Analysis, first published in 1948.[9] It was the second American textbook that attempted to explain the principles of Keynesian economics. It
+paul_samuelson = {
+    limit = {
+        economic_thought_and_critique_7 = 1
+        has_country_flag = existing_country
+    }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            economic_policy = interventionism
+        }
+        modifier = {
+            factor = 2
+            literacy = 0.95
+        }
+    }
+    effect = {
+        permanent_prestige = 1
+    }
+}
+
+
+#market_functionality_7
+quantitative_easing = {
+    limit = { market_functionality_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            economic_policy = interventionism
+        }
+        modifier = {
+            factor = 2
+            ruling_party_ideology = socialist
+        }
+    }
+    effect = {
+        factory_cost = -0.01
+    }
+}
+
+#Mayo, E. (1924). Revery and industrial fatigue. 
+#Mayo, E. (1933). The human problems of an industrial civilization.
+human_relations_theory = {
+    limit = { market_functionality_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            psychology_7 = 1
+        }
+        modifier = {
+            factor = 2
+            invention = hawthrone_study
+        }
+    }
+    effect = {
+        factory_cost = -0.01
+    }
+}
+
+rational_factory_layout = {
+    limit = { market_functionality_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            behaviorism = 1
+        }
+        modifier = {
+            factor = 2
+            psychology_7 = 1
+        }
+    }
+    effect = {
+        factory_cost = -0.01
+    }
+}
+
+closed_economy = {
+    limit = { market_functionality_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            economic_policy = planned_economy
+        }
+        modifier = {
+            factor = 2
+            OR = {
+                ruling_party_ideology = communist
+                ruling_party_ideology = fascist
+            }
+        }
+    }
+    effect = {
+        factory_cost = -0.01
+    }
+}
+
+#tech_organization_7
+hawthrone_study = {
+    limit = { tech_organization_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            behaviorism = 1
+        }
+        modifier = {
+            factor = 2
+            psychology_7 = 1
+        }
+    }
+    effect = {
+        factory_output = 0.01
+    }
+}
+
+#Handling goods on pallets was a significant improvement over using hand trucks or carrying sacks or boxes by hand and greatly speeded up loading and unloading of trucks, rail cars and ships. 
+#1930s and became widespread by the 1950s
+palletization = {
+    limit = { tech_organization_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = rational_factory_layout
+        }
+        modifier = {
+            factor = 2
+            mechanization_7 = 1
+        }
+    }
+    effect = {
+        factory_output = 0.01
+    }
+}
+
+
+#in 1935, the more powerful, faster, 21–32 passenger Douglas DC-3 appeared. DC-3s were produced in quantity for World War II and sold as surplus afterward. The Douglas DC-3 was a particularly important airplane, because it was the first airliner to be profitable without a government subsidy.[9]
+airliner = {
+    limit = { tech_organization_7 = 1 }
+    news = no
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            aeronautics = 1
+        }
+        modifier = {
+            factor = 2
+            invention = early_interwar_bombers
+        }
+        modifier = {
+            factor = 2
+            invention = late_interwar_bombers
+        }
+    }
+    effect = {
+        factory_output = 0.01
+    }
+}
+
+#The telex network was a customer-to-customer switched network of teleprinters similar to a telephone network, using telegraph-grade connecting circuits for two-way text-based messages.[1] Telex was a major method of sending written messages electronically between businesses in the post-World War II period. Its usage went into decline as the fax machine grew in popularity in the 1980s. 
+#Telex began in Germany as a research and development program in 1926 that became an operational teleprinter service in 1933. The service, operated by the Reichspost (Reich postal service)[3] had a speed of 50 baud – approximately 66 words per minute.
+#Telex service spread within Europe and (particularly after 1945) around the world.[4] By 1978, West Germany, including West Berlin, had 123,298 telex connections. Long before automatic telephony became available, most countries, even in central Africa and Asia, had at least a few high-frequency (shortwave) telex links
+#The Hellschreiber, Feldhellschreiber or Typenbildfeldfernschreiber (also Hell-Schreiber named after its inventor Rudolf Hell) is a facsimile-based teleprinter invented by Rudolf Hell. Compared to contemporary teleprinters that were based on typewriter systems and were mechanically complex and expensive, the Hellschreiber was much simpler and more robust, with far fewer moving parts
+#The device was first developed in the late 1920s, and saw use starting in the 1930s, chiefly being used for land-line press services. During WW2 it was sometimes used by the German military in conjunction with the Enigma encryption system. In the post-war era, it became increasingly common among newswire services, and was used in this role well into the 1980s. 
+#this invention represents the teletype network as it existed in between the telegraph and the fax machine ages
+telex = {
+    limit = { tech_organization_7 = 1 }
+    news = no
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = bell_n_greys_telephones
+        }
+        modifier = {
+            factor = 2
+            invention = telephone_switchboard
+        }
+        modifier = {
+            factor = 2
+            invention = general_computer_programming
+        }
+    }
+    effect = {
+        factory_output = 0.01
+    }
+}

@@ -1,0 +1,30 @@
+nuclear_theory = {
+    limit = { philosophy_7 = 1 }
+    news = no
+    chance = {
+        base = 0
+        modifier = {
+            factor = -5
+            NOT = { invention = saturation_bombing_doctrine }
+        }
+        modifier = {
+            factor = -5
+            NOT = { chemistry_and_electricity_7 = 1 }
+        }
+        modifier = {
+            factor = 2
+            electric_furnace = 1
+        }
+        modifier = {
+            factor = 2
+            social_thought_7 = 1
+        }
+        modifier = {
+            factor = 2
+            average_consciousness = 5
+        }
+    }
+    effect = {
+        shared_prestige = 30
+    }
+}

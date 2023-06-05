@@ -1,0 +1,6 @@
+owner = LPL
+controller = LPL
+add_core = LPL
+add_core = ARG
+trade_goods = tobacco
+life_rating = 34

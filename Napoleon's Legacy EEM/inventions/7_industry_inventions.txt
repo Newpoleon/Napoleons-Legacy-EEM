@@ -1,0 +1,749 @@
+######### electricity ##########
+##The initial patent for a closed-cycle gas turbine (CCGT) was issued in 1935 and they were first used commercially in 1939.
+#1939 The World’s First Industrial Gas Turbine Starts Commercial Operation in Switzerland
+gas_turbine = {
+    limit = { tech_power_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = air_preheater
+        }
+        modifier = {
+            factor = 2
+            invention = basic_oxygen_steelmaking
+        }
+    }
+    effect = {
+        rgo_output = 0.05
+        factory_throughput = 0.02
+    }
+}
+
+#Ljungström air preheater is an air preheater invented by the Swedish engineer Fredrik Ljungström (1875-1964). The patent was achieved in 1930.[1] 
+#With Fredrik Ljungström's technology of the air preheater implemented in a vast amount of modern power stations around the world until this day with total attributed worldwide fuel savings estimated to 4,960,000,000 tons of oil, "few inventions have been as successful in saving fuel as the Ljungström Air Preheater". 
+#"The first installation in a commercial boiler saved as much as 25% of the fuel consumption. In a modern utility boiler the Ljungström Air Preheater provides up to 20% of the total heat transfer in the boiler process, but the Ljungström Air Preheater only represents 2% of the investment." https://www.asme.org/wwwasmeorg/media/resourcefiles/aboutasme/who%20we%20are/engineering%20history/landmarks/185-ljungstrom-air-preheater.pdf
+air_preheater = {
+    limit = { tech_power_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = stainless_steel
+        }
+        modifier = {
+            factor = 2
+            invention = basic_oxygen_steelmaking
+        }
+    }
+    effect = {
+        #factory_throughput = 0.02
+        factory_goods_output = { fuel = 0.1 } #0.02
+        rgo_goods_output = { coal = 0.2 } #0
+    }
+}
+
+#fluid_catalytic_cracking: in 1936, Socony-Vacuum converted an older thermal cracking unit to the Houdry process to catalytically crack 2,000 barrels per day (320 m3/d) of petroleum oil. 
+#catalytic_reforming: Haensel's process was subsequently commercialized by UOP in 1949 for producing a high octane gasoline from low octane naphthas and the UOP process become known as the Platforming process.[2] The first Platforming unit was built in 1949 at the refinery of the Old Dutch Refining Company in Muskegon, Michigan. 
+catalytic_cracking = {
+    limit = { chemistry_and_electricity_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = -6
+            NOT = { invention = cracking }
+        }
+        modifier = {
+            factor = 2
+            invention = gas_turbine
+        }
+        modifier = {
+            factor = 2
+            invention = basic_oxygen_steelmaking
+        }
+    }
+    effect = {
+        factory_goods_output = {
+            fuel = 0.02
+        }
+    }
+}
+
+#developed in 1948 by Swiss engineer Robert Durrer 
+basic_oxygen_steelmaking = {
+    limit = { metallurgy_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            tech_power_7 = 1
+        }
+        modifier = {
+            factor = 2
+            mechanization_7 = 1
+        }
+    }
+    effect = {
+        factory_goods_output = {
+            steel = 0.05
+        }
+    }
+}
+
+#The kraft (Swedish for strong) pulping process was commercialized in the 1930s
+#The invention of the recovery boiler by G. H. Tomlinson in the early 1930s was a milestone in the advancement of the kraft process.[8] It enabled the recovery and reuse of the inorganic pulping chemicals such that a kraft mill is a nearly closed-cycle process with respect to inorganic chemicals, apart from those used in the bleaching process. For this reason, in the 1940s, the kraft process superseded the sulfite process as the dominant method for producing wood pulp.[7]
+kraft_pulping = {
+    limit = { mechanization_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            electricity = 1
+        }
+        modifier = {
+            factor = 2
+            tech_power_7 = 1
+        }
+    }
+    effect = {
+        factory_goods_output = {
+            paper = 0.02
+        }
+    }
+}
+
+#The Claus process is the most significant gas desulfurizing process, recovering elemental sulfur from gaseous hydrogen sulfide. First patented in 1883 by the chemist Carl Friedrich Claus, the Claus process has become the industry standard. 
+#In the mid-1950s, the first noble metal catalytic reforming process (the Platformer process) was commercialized.
+#starting in the 1970s, byproduct sulfur recovery from oil and natural gas lowered the price of sulfur and drove many Frasch-process mines out of business.
+#The vast majority of the 64,000,000 tonnes of sulfur produced worldwide in 2005 was byproduct sulfur from refineries and other hydrocarbon processing plants
+hydrodesulphurization = {
+    limit = { metallurgy_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = catalytic_cracking
+        }
+        modifier = {
+            factor = 2
+            chemistry_and_electricity_7 = 1
+        }
+    }
+    effect = {
+        activate_building = hydrodesulphurization_plant
+    }
+}
+
+####################agriculture
+#The first fully synthetic opioid was meperidine (later demerol), found serendipitously by German chemist Otto Eisleb (or Eislib) at IG Farben in 1932.[219] Meperidine was the first opiate to have a structure unrelated to morphine, but with opiate-like properties.
+synthetic_opioids = {
+    limit = { mechanization_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            synthetic_polymers = 1
+        }
+        modifier = {
+            factor = 2
+            invention = synthetic_dye
+        }
+    }
+    effect = {
+        rgo_goods_output = { opium = 0.2 }
+    }
+}
+
+#first modern herbicide, 2,4-D, was first discovered and synthesized by W. G. Templeman at Imperial Chemical Industries. In 1940
+#commercially released in 1946
+#It revolutionized weed control, as it was the first compound that, at low doses, could selectively control dicotyledons (broadleaf plants), but not most monocotyledons — narrowleaf crops, such as wheat, maize (corn), rice, and similar cereal grass crops.
+artificial_herbicides = {
+    limit = { chemistry_and_electricity_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = sulfa_antibiotics
+        }
+        modifier = {
+            factor = 2
+            invention = improved_antibiotics
+        }
+    }
+    effect = {
+        #factory_goods_output = { fertilizer = 0.05 }
+        rgo_goods_output = { grain = 0.2 }
+    }
+}
+
+
+############# plastics #############
+# converts a mixture of carbon monoxide and hydrogen into liquid hydrocarbons. Germany, in 1925
+#Fischer–Tropsch production accounted for an estimated 9% of German war production of fuels and 25% of the automobile fuel.
+#fischer_tropsch_process = {
+#    limit = { metallurgy_7 = 1 }
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = -6
+#            NOT = { invention = import_substitution_industrialization }
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = cracking
+#        }
+#        modifier = {
+#            factor = 2
+#            chemistry_and_electricity_7 = 1
+#        }
+#    }
+#    effect = {
+#        factory_goods_output = { oil = 0.1 }
+#    }
+#}
+
+#Studies published in 1930 written independently by Lebedev, the American Wallace Carothers and the German scientist Hermann Staudinger led in 1931 to one of the first successful synthetic rubbers, known as neoprene
+synthetic_rubber = {
+    limit = { chemistry_and_electricity_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = artificial_herbicides
+        }
+        modifier = {
+            factor = 2
+            invention = rayon
+        }
+    }
+    effect = {
+        activate_building = synthetic_rubber_factory
+    }
+}
+
+#1930s Polystyrene first produced by BASF
+polystyrene = {
+    limit = { chemistry_and_electricity_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = bakelite
+        }
+        modifier = {
+            factor = 2
+            time_saving_measures = 1
+        }
+    }
+    effect = {
+        factory_goods_output = { glass = 0.05 }
+    }
+}
+
+
+#1935 Nylon is invented and patented by DuPont
+#1938 Nylon is first used for bristles in toothbrushes. It features at the 1939 worlds fair and is famously used in stockings in 1940
+nylon = {
+    limit = { chemistry_and_electricity_7 = 1 }
+    chance = {
+        base = 1
+        modifier = {
+            factor = 2
+            invention = polystyrene
+        }
+        modifier = {
+            factor = 3
+            invention = rayon
+        }
+    }
+    effect = {
+        factory_goods_output = { fabric = 0.05 }
+    }
+}
+
+
+#1941 Polyethylene terephthalate (PET) is discovered at the Calico Printers' Association in Britain
+#The majority of the world's PET production is for synthetic fibres (in excess of 60%), with bottle production accounting for about 30% of global demand.
+#In the context of textile applications, PET is referred to by its common name, polyester
+
+#The polymer separated from the glass as a clear plastic sheet, which Röhm gave the trademarked name Plexiglas in 1933.[citation needed]
+#Both Perspex and Plexiglas were commercialized in the late 1930s. In the United States, E.I. du Pont de Nemours & Company (now DuPont Company) subsequently introduced its own product under the trademark Lucite. 
+#In 1936 ICI Acrylics (now Lucite International) began the first commercially viable production of acrylic safety glass. 
+
+industrial_plastics_production = {
+    limit = { chemistry_and_electricity_7 = 1 }
+    chance = {
+        base = -2
+        modifier = {
+            factor = 4
+            invention = polystyrene
+            invention = nylon
+        }
+        modifier = {
+            factor = 2
+            invention = synthetic_rubber
+        }
+    }
+    effect = {
+        factory_goods_output = { fabric = 0.05 }
+        factory_goods_output = { glass  = 0.05 }
+        #factory_goods_output = { rubber = 0.1 }
+    }
+}
+
+###### Rocketry
+#Today, hydrogen peroxide is manufactured almost exclusively by the anthraquinone process, which was formalized in 1936 and patented in 1939.
+#About 60% of the world's production of hydrogen peroxide is used for pulp- and paper-bleaching.[32] The second major industrial application is the manufacture of sodium percarbonate and sodium perborate, which are used as mild bleaches in laundry detergents. Sodium percarbonate, which is an adduct of sodium carbonate and hydrogen peroxide, is the active ingredient in such laundry products as OxiClean and Tide laundry detergent.
+#It is used in the production of various organic peroxides with dibenzoyl peroxide being a high volume example. It is used in polymerisations, as a flour bleaching agent, and as a treatment for acne. Peroxy acids, such as peracetic acid and meta-chloroperoxybenzoic acid also are produced using hydrogen peroxide. Hydrogen peroxide has been used for creating organic peroxide-based explosives, such as acetone peroxide. 
+#Hydrogen peroxide may be used for the sterilization of various surfaces
+
+#During World War II, high-test peroxide was used as an oxidizer in some German bipropellant rocket designs, such as the Walter HWK 509A rocket engine that powered the Messerschmitt Me 163 point defense interceptor fighter late in World War II, comprising 80% of the standardized mixture T-Stoff, and also in the German Type XVII submarine. 
+
+rocket_experiments = {
+    limit = { mechanization_7 = 1 }
+    chance = {
+        base = -2
+        modifier = {
+            factor = 2
+            invention = stainless_steel
+        }
+        modifier = {
+            factor = 2
+            tech_power_7 = 1
+        }
+        modifier = {
+            factor = 2
+            invention = kraft_pulping
+        }
+        modifier = {
+            factor = 2
+            chemistry_and_electricity_7 = 1
+        }
+    }
+    effect = {
+        factory_goods_output = { paper = 0.01 }
+    }
+}
+
+#################### iron, coal, sulfur, oil #######
+#During the 1930s steam shovels lost out to the simpler, cheaper diesel-powered excavating shovels 
+diesel_excavator = {
+    limit = { metallurgy_7 = 1 }
+    chance = {
+        base = 6
+        modifier = {
+            factor = -2
+            any_owned_province = {
+                controlled_by = THIS
+                trade_goods = iron
+                unemployment_by_type = { value = 0.05 type = labourers }
+                province_control_days = 1825
+            }
+        }
+        modifier = {
+            factor = -1
+            any_owned_province = {
+                controlled_by = THIS
+                trade_goods = iron
+                unemployment_by_type = { value = 0.01 type = labourers }
+            }
+        }
+        modifier = {
+            factor = -2
+            any_owned_province = {
+                controlled_by = THIS
+                trade_goods = iron
+                unemployment_by_type = { value = 0.03 type = labourers }
+            }
+        }
+    }
+    effect = {
+        rgo_goods_output = { iron = 0.25 }
+    }
+}
+
+#On 28 May 1937, Edwin Burton Royle applied for a patent as inventor of the "loading machine" and US Patent No. 2,134,582 was issued on October 25, 1938 
+#The first successful mining device to replace human labor in removing the rubble from underground hard-rock blasting. 
+#rocker_shovel_loader = {
+#    limit = { metallurgy_7 = 1 }
+#    chance = {
+#        base = 6
+#        modifier = {
+#            factor = -2
+#            any_owned_province = {
+#                controlled_by = THIS
+#                trade_goods = coal
+#                unemployment_by_type = { value = 0.05 type = labourers }
+#                province_control_days = 1825
+#            }
+#        }
+#        modifier = {
+#            factor = -1
+#            any_owned_province = {
+#                controlled_by = THIS
+#                trade_goods = coal
+#                unemployment_by_type = { value = 0.01 type = labourers }
+#            }
+#        }
+#        modifier = {
+#            factor = -2
+#            any_owned_province = {
+#                controlled_by = THIS
+#                trade_goods = coal
+#                unemployment_by_type = { value = 0.03 type = labourers }
+#            }
+#        }
+#    }
+#    effect = {
+#        rgo_goods_output = { coal = 0.5 }
+#    }
+#}
+
+#Ross Bassinger was developing hydraulic percussion tools in the 1940 with his company “Bassinger Tool Company”. 
+#The valve was placed around the hammer piston instead of being a valve head.
+#1946: Bassinger Tool
+#The rate of penetration was about 30 % higher while drilling in Oklahoma
+improved_hydraulic_drills = {
+    limit = { metallurgy_7 = 1 }
+    chance = {
+        base = 6
+        modifier = {
+            factor = -2
+            any_owned_province = {
+                controlled_by = THIS
+                trade_goods = oil
+                unemployment_by_type = { value = 0.05 type = labourers }
+                province_control_days = 1825
+            }
+        }
+        modifier = {
+            factor = -1
+            any_owned_province = {
+                controlled_by = THIS
+                trade_goods = oil
+                unemployment_by_type = { value = 0.01 type = labourers }
+            }
+        }
+        modifier = {
+            factor = -2
+            any_owned_province = {
+                controlled_by = THIS
+                trade_goods = oil
+                unemployment_by_type = { value = 0.03 type = labourers }
+            }
+        }
+    }
+    effect = {
+        rgo_goods_output = { oil = 0.5 }
+        rgo_goods_output = { coal = 0.1 }
+        rgo_goods_output = { iron = 0.1 }
+        rgo_goods_output = { precious_metal = 0.1 }
+        #rgo_goods_output = { sulphur = 0.1 }
+    }
+}
+
+#Hydraulic fracturing began as an experiment in 1947,[2] and the first commercially successful application followed in 1950.
+#Directional drilling 1934
+#Shale gas: first economical shale fracture in 1998
+
+#Room and pillar mining: original form
+#Longwall mining: Starting around 1900, mechanization was applied to this method. By 1940, some referred to longwall mining as "the conveyor method" of mining
+#Retreat mining: 
+    #Tunnels only make up about 15% of the reserve, so during advance mining, only about 15% of the coal or ore is removed. During retreat mining, an additional 75% of coal or ore may be removed because pillars make up much more of the reserve, bringing the total recovery of the resource to as much as 90%. 
+    #introduced in the 1960’s https://www.illawarracoal.com/images/resources/MINING_HISTORY_OF_THE_ILLAWARRA-Mould_Cairns.pdf
+
+############ Computer Science ##################
+# In 1938 a technique was developed to use an all-glass construction with the pins fused in the glass base of the envelope.
+miniature_vacuum_tube = {
+    limit = { tech_power_7 = 1 }
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = vacuum_tube
+        }
+        modifier = {
+            factor = 2
+            chemistry_and_electricity_7 = 1
+        }
+        modifier = {
+            factor = 2
+            invention = basic_oxygen_steelmaking
+        }
+    }
+    effect = {
+        factory_goods_output = { radio = 0.03 }
+        factory_goods_output = { telephones = 0.03 }
+    }
+}
+
+#V. K. Zworykin described a permanently sealed, high-vacuum cathode ray tube with a thermionic emitter in 1931. This stable and reproducible component allowed General Radio to manufacture an oscilloscope that was usable outside a laboratory setting
+oscilloscope = {
+    limit = { tech_power_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = vacuum_tube
+        }
+        modifier = {
+            factor = 2
+            invention = miniature_vacuum_tube
+        }
+    }
+    effect = {
+        factory_goods_output = { electric_gear = 0.02 }
+    }
+}
+
+#The first practical tape recorder from AEG was the Magnetophon K1, demonstrated in Germany in 1935.
+#modern_tape_record = {
+#    limit = { tech_power_7 = 1 }
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = 2
+#            invention = national_radio_networks
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = stainless_steel
+#        }
+#    }
+#    effect = {
+#        factory_goods_output = { telephones = 0.01 }
+#    }
+#}
+
+#The history of numerical control (NC) began when the automation of machine tools first incorporated concepts of abstractly programmable logic, and it continues today with the ongoing evolution of computer numerical control (CNC) technology.
+#The first NC machines were built in the 1940s and 1950s, based on existing tools that were modified with motors that moved the controls to follow points fed into the system on punched tape
+#Arma's first automated lathe was made in 1948, and announced in 1950
+numerical_control = {
+    limit = { tech_power_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = basic_oxygen_steelmaking #computerized_decryption
+        }
+        modifier = {
+            factor = -6
+            NOT = { invention = general_computer_programming }
+        }
+        modifier = {
+            factor = 2
+            tech_organization_7 = 1
+        }
+    }
+    effect = {
+        factory_goods_output = { machine_parts = 0.02 }
+    }
+}
+
+#The first commercially made electronic television sets with cathode-ray tubes were manufactured by Telefunken in Germany in 1934
+#The image iconoscope (Superikonoskop) became the industrial standard for public broadcasting in Europe from 1936 
+#television = {
+#    limit = { tech_power_7 = 1 }
+#    chance = {
+#        base = 0
+#        modifier = {
+#            factor = 2
+#            invention = vacuum_tube
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = national_radio_networks
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = oscilloscope
+#        }
+#    }
+#    effect = {
+#        factory_goods_output = { telephones = 0.01 }
+#    }
+#}
+
+
+#experimental_radar
+#Given all required funding and development support, the team produced working radar systems in 1935
+#most references replaced with oscilloscope
+#experimental_radar = {
+#    limit = { tech_power_7 = 1 }
+#    chance = {
+#        base = 0
+#        modifier = {
+#            factor = 2
+#            invention = oscilloscope
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = national_radio_networks
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = vacuum_tube
+#        }
+#    }
+#    effect = {
+#        factory_goods_output = { radio = 0.02 }
+#    }
+#}
+
+#The compact cavity magnetron tube drastically reduced the size of radar sets
+# In 1940, at the University of Birmingham in the UK, John Randall and Harry Boot produced a working prototype of a cavity magnetron that produced about 400 W.
+cavity_magnetron = {
+    limit = { tech_power_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = -6
+            NOT = {
+                invention = oscilloscope
+            }
+        }
+        modifier = {
+            factor = 2
+            metallurgy_7 = 1
+        }
+        modifier = {
+            factor = 2
+            invention = miniature_vacuum_tube
+        }
+    }
+    effect = {
+        factory_goods_output = { radio = 0.02 }
+    }
+}
+
+
+#1943 Colossus First programmable (by switches and plug panels) special-purpose (cryptanalysis) electronic digital computer.
+#computerized_decryption = {
+#    limit = { tech_power_7 = 1 }
+#    chance = {
+#        base = 0
+#        modifier = {
+#            factor = 2
+#            psychology_7 = 1
+#        }
+#        modifier = {
+#            factor = 2
+#            invention = advanced_fire_control
+#        }
+#        modifier = {
+#            factor = 1
+#            invention = telephone_switchboard
+#        }
+#    }
+#    effect = {
+#        factory_goods_output = { electric_gear = 0.01 }
+#    }
+#}
+
+#1945 ENIAC First large-scale general-purpose programmable electronic digital computer.
+general_computer_programming = {
+    limit = { tech_power_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = -5
+            #NOT = { invention = computerized_decryption } 
+            NOT = { invention = computerized_army_intelligence }
+            NOT = { invention = computerized_naval_intelligence }
+        }
+        modifier = {
+            factor = 1
+            OR = {
+                government = hms_government
+                government = democracy
+            }
+        }
+        modifier = {
+            factor = 2
+            invention = miniature_vacuum_tube
+        }
+    }
+    effect = {
+        factory_goods_output = { electric_gear = 0.02 }
+    }
+}
+
+################ medicine ###########
+#1911 – Arsphenamine a.k.a. Salvarsan[1]
+
+#1935 – Prontosil (an oral precursor to sulfanilamide), the first sulfonamide
+#first official communication about the breakthrough discovery was not published until 1935, more than two years after the drug was patented
+# For several years in the late 1930s, hundreds of manufacturers produced tens of thousands of tons of myriad forms of sulfa. This and nonexistent testing requirements led to the elixir sulfanilamide disaster in the fall of 1937, during which at least 100 people were poisoned with diethylene glycol. 
+sulfa_antibiotics = {
+    limit = { chemistry_and_electricity_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = synthetic_dye
+        }
+        modifier = {
+            factor = 2
+            invention = i_empiricism
+        }
+    }
+    effect = {
+        pop_growth = 0.0002
+    }
+}
+
+#discovery: 1928
+#1st use (fungus extract): 1930
+#1st purified: 1942
+#fermentation research on corn steep liquor at the NRRL, US Army mass production: 1944
+#mass produced available for civilian use: 1945
+mass_produced_penicillin = {
+    limit = { chemistry_and_electricity_7 = 1 }
+    chance = {
+        base = -6
+        modifier = {
+            factor = 2
+            organizational_development = 1
+        }
+        modifier = {
+            factor = 2
+            market_functionality_7 = 1
+        }
+        modifier = {
+            factor = 2
+            invention = sulfa_antibiotics
+        }
+    }
+    effect = {
+        land_attrition = -0.05
+        soldier_to_pop_loss = 0.01
+    }
+}
+
+#https://en.wikipedia.org/wiki/Timeline_of_antibiotics
+#https://pubmed.ncbi.nlm.nih.gov/18192771/
+improved_antibiotics = {
+    limit = { chemistry_and_electricity_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = synthetic_opioids
+        }
+        modifier = {
+            factor = -4
+            NOT = { invention = sulfa_antibiotics }
+        }
+        modifier = {
+            factor = -4
+            NOT = { invention = mass_produced_penicillin }
+        }
+    }
+    effect = {
+        pop_growth = 0.0002
+        land_attrition = -0.05
+        soldier_to_pop_loss = 0.01
+    }
+}
+
+

@@ -1,0 +1,555 @@
+political_decisions = {
+    #move_capital_to_nanking_ming  #merged into move_capital_to_historical_capital
+    #revoke_sino_portuguese_treaty_ming #removed because the normal revoke_sino_portuguese_treaty decision now works for RTR too
+    #inherit_ryukyu_china #removed because the normal inherit_ryukyu decision only allowed for QNG and Japan, so the other Chinas don't get to claim Ryukyu
+    #become_china_ming = { #removed because like TPG, RTR is already a Chinese dynasty, no need to become CHI if it gets overthrown, unlike QNG. The Xinhai Revolution works for it too.
+    #kongsi_ming #removed for being dumb
+    #move_capital_to_beijing_qing #merged into move_capital_to_historical_capital
+
+    prevent_warlord_era = {
+        picture = ww2_chinese_arty
+        alert = yes
+        potential = {
+            has_global_flag = the_new_army
+            has_global_flag = spread_warlord_influence
+            NOT = { has_global_flag = warlord_era_has_begun }
+            OR = {
+                #AND = {
+                #    tag = QNG
+                #    TPG = { exists = no }
+                #    CHI = { exists = no }
+                #    KMT = { exists = no }
+                #    RTR = { exists = no }
+                #}
+                AND = {
+                    tag = TPG
+                    QNG = { exists = no }
+                    CHI = { exists = no }
+                    KMT = { exists = no }
+                    RTR = { exists = no }
+                }
+                AND = {
+                    tag = CHI
+                    TPG = { exists = no }
+                    QNG = { exists = no }
+                    KMT = { exists = no }
+                    RTR = { exists = no }
+                }
+                AND = {
+                    tag = KMT
+                    TPG = { exists = no }
+                    QNG = { exists = no }
+                    CHI = { exists = no }
+                    RTR = { exists = no }
+                }
+                AND = {
+                    tag = RTR
+                    TPG = { exists = no }
+                    QNG = { exists = no }
+                    CHI = { exists = no }
+                    KMT = { exists = no }
+                }
+            }
+        }
+
+        allow = {
+            is_greater_power = yes
+            war = no
+            psychology_7 = 1
+            army_professionalism = 1
+            invention = secret_police
+            NOT = {
+                average_militancy = 4
+                num_of_revolts = 1
+            }
+            NOT = { has_country_modifier = national_confusion }
+            NOT = { has_country_modifier = law_changed_by_force }
+            NOT = { government = democracy }
+            NOT = { government = prussian_constitutionalism }
+            NOT = { government = hms_government }
+            NOT = { government = presidential_dictatorship }
+            QNG = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            KMT = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            CHI = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            FJN = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            GMJ = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            GNG = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            GXI = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            HNN = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            HUI = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            MCK = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            SXI = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            SZC = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            TPG = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            XBI = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            YNN = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            MAO = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+            RTR = {
+                OR = {
+                    exists = no
+                    tag = THIS
+                    in_sphere = THIS
+                    vassal_of = THIS
+                }
+            }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = national_confusion
+                duration = 1825
+            }
+            add_country_modifier = {
+                name = law_changed_by_force
+                duration = 1825
+            }
+            add_country_modifier = {
+                name = disunited_country 
+                duration = 1825
+            }
+            any_pop = {
+                limit = { type = officers }
+                militancy = 5
+                consciousness = -2
+                reduce_pop = 0.75
+            }
+            any_pop = {
+                limit = { type = soldiers }
+                militancy = 5
+                consciousness = -2
+                reduce_pop = 0.9
+            }
+            any_pop = {
+                limit = { type = bureaucrats }
+                militancy = 5
+                consciousness = -2
+                reduce_pop = 0.9
+            }
+            clr_global_flag = spread_warlord_influence
+            set_global_flag = warlord_era_has_begun #take the reunification_of_china decision to remove warlord cores
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+
+    #become_qing_title;Restore the Qing Empire;;;;;;;;;;;;;
+    #become_qing_desc;We have reconquered enough of China to declare ourselves the Qing Empire once again.;;;;;;;;;;;;;
+    #become_qing = {
+    #    picture = qing_emperor
+    #    alert = yes
+    #    potential = {
+    #        tag = MCK
+    #        QNG = { exists = no }
+    #        TPG = { exists = no }
+	#        RTR = { exists = no }
+	#        CHI = { exists = no }
+	#        KMT = { exists = no }
+	#        NOT = { has_global_flag = qing_restored }
+    #    }
+    #
+    #    allow = {
+    #        war = no
+    #        is_vassal = no
+    #        is_substate = no
+    #        owns = 2221
+    #        owns = 1612
+    #        owns = 1552
+    #        owns = 1524
+    #        owns = 1577
+    #        owns = 1493
+    #        owns = 1555
+    #        OR = {
+    #            government = absolute_monarchy
+    #            government = prussian_constitutionalism
+    #            government = hms_government
+    #        }
+    #    }
+    #
+    #    effect = {
+    #        set_global_flag = qing_restored
+    #        prestige = 25
+    #        all_core = { add_core = QNG }
+    #        1616 = { state_scope = { add_core = QNG } }
+    #        1612 = { state_scope = { add_core = QNG } } #Baoding
+    #        change_tag = QNG
+    #        any_owned_province = {
+    #            limit = {
+    #                NOT = { is_core = QNG }
+    #            }
+    #            add_province_modifier = {
+    #                name = anti_manchu_sentiment
+    #                duration = 1825
+    #            }
+    #        }
+    #    }
+    #    ai_will_do = { factor = 1 }
+    #}
+
+    xiu_capital = {
+    picture = tiandihui_seal
+        potential = {
+            owns = 1504
+            tag = RTR
+            NOT = { has_global_flag = xiu_capital_decreted }
+            NOT = { capital = 2221 }
+        }
+
+        allow = {
+        }
+
+        effect = {
+            prestige = 1
+            set_global_flag = xiu_capital_decreted
+            1504 = { change_province_name = "Xiujing" }
+            capital = 1504
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+
+    abolish_xiu_capital = {
+    picture = tiandihui_seal
+        potential = {
+            owns = 1504
+            NOT = { tag = RTR }
+            #NOT = { tag = LAN }
+            is_culture_group = east_asian
+            has_global_flag = xiu_capital_decreted
+        }
+
+        allow = {
+        }
+
+        effect = {
+            clr_global_flag = xiu_capital_decreted
+            1504 = { change_province_name = "Pingle" }
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+
+    empire_of_china = {
+        picture = yuan_shikai_emperor
+        alert = yes
+        potential = {
+            tag = CHI
+            government = presidential_dictatorship
+            ruling_party_ideology = reactionary
+            NOT = { has_global_flag = yuan_shikai_declared_emperor }
+        }
+
+        allow = {
+            NOT = { has_country_modifier = law_changed_by_force }
+            owns = 1616
+            mass_politics = 1
+            war = no
+            KMT = { exists = no }
+            TPG = { exists = no }
+            RTR = { exists = no }
+            QNG = { exists = no }
+        }
+
+        effect = {
+            prestige = 25
+            set_global_flag = yuan_shikai_declared_emperor
+            government = absolute_monarchy
+
+            any_owned = {
+                limit = { is_core = CHI }
+                add_province_modifier = {
+                    name = liberal_agitation
+                    duration = 1825
+                }
+            }
+
+            #middle_strata = {
+            #    limit = { is_culture_group = east_asian }
+            #    consciousness = 4
+            #    ideology = {
+            #        value = liberal
+            #        factor = 0.1
+            #    }
+            #}
+
+            any_pop = {
+                limit = { is_culture_group = east_asian }
+                scaled_militancy = {
+                    ideology = reactionary
+                    factor = -4
+                }
+                scaled_militancy = {
+                    ideology = liberal
+                    factor = 9
+                }
+            }
+            add_country_modifier = {
+                name = law_changed_by_force
+                duration = 365
+            }
+            any_country = {
+                limit = {
+                    OR = {
+                        tag = FJN
+                        tag = GMJ
+                        tag = GNG
+                        tag = GXI
+                        tag = HNN
+                        tag = HUI
+                        tag = MCK
+                        tag = SXI
+                        tag = SZC
+                        tag = TAI
+                        tag = XBI
+                        tag = XIN
+                        tag = YNN
+                        tag = MAO
+                    }
+                }
+                relation = { who = THIS value = -400 }
+            }
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+
+	blow_yellow_river_dikes = {
+		#title = "Destroy the Yellow River Dikes?"
+		#desc = "If the dikes, levees, and dams along the Yellow River were to be destroyed, it would create an artifical flood across Henan, Anhui, and Jiangsu that could slow the Japanese advance."
+		picture = yellow_river_dikes
+        alert = yes
+		potential = {
+			owns = 1511
+			controls = 1511
+    		OR = {
+    			tag = TPG
+				tag = CHI
+				tag = KMT
+				tag = RTR
+			}
+			has_global_flag = huang5 #past 1931
+			NOT = { has_global_flag = yellow_river_dikes_blown }
+			civilized = yes
+			OR = {
+				war_with = JAP
+				war_with = TKG
+			}
+			OR = {
+				has_country_modifier = great_war
+				has_country_modifier = great_war2
+				has_country_modifier = great_war3
+			}
+			national_provinces_occupied = 0.2
+			1616 = { OR = { owned_by = JAP owned_by = TKG controlled_by = JAP controlled_by = TKG } }
+			OR = {
+				1511 = { OR = { owned_by = JAP owned_by = TKG controlled_by = JAP controlled_by = TKG } }
+				1575 = { OR = { owned_by = JAP owned_by = TKG controlled_by = JAP controlled_by = TKG } }
+			}
+			OR = {
+				1542 = { OR = { owned_by = JAP owned_by = TKG controlled_by = JAP controlled_by = TKG } }
+				1536 = { OR = { owned_by = JAP owned_by = TKG controlled_by = JAP controlled_by = TKG } }
+			}
+		}
+
+		allow = {
+		}
+
+		effect = {
+			set_global_flag = yellow_river_dikes_blown
+            any_owned = {
+				limit = {
+					OR = {
+						province_id = 1511
+						province_id = 1508
+						province_id = 1512
+						province_id = 1509
+						province_id = 1478
+						province_id = 1472
+						province_id = 1476
+					}
+				}
+				any_pop = {
+					reduce_pop = 0.90
+				}
+				add_province_modifier = {
+					name = chinese_floods
+					duration = 1800
+				}
+				infrastructure = -6
+            }
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					government = proletarian_dictatorship
+					government = bourgeois_dictatorship
+					government = absolute_monarchy
+					government = prussian_constitutionalism
+					government = hms_government
+					war_policy = pacifism
+					war_policy = anti_military
+				}
+			}
+		}
+	}
+
+
+    revoke_simla_convention = {
+        alert = yes
+        picture = tibet_capital
+        potential = {
+            1587 = { is_core = CHI }
+            owns = 1587
+            NOT = { 1593 = { is_core = THIS } }
+            NOT = { is_our_vassal = TIB }
+            NOT = { has_country_flag = claimed_tawang }
+            OR = {
+                tag = CHI
+                tag = KMT
+                tag = TPG
+                tag = RTR
+                tag = TIB
+            }
+        }
+
+        allow = {
+            is_greater_power = yes
+            war = no
+            nationalism_n_imperialism = 1
+            OR = {
+                war_policy = jingoism
+                government = fascist_dictatorship
+                government = proletarian_dictatorship
+                government = presidential_dictatorship
+                government = bourgeois_dictatorship
+            }
+        }
+
+        effect = {
+            1593 = {
+                add_core = CHI
+                add_core = TIB
+                add_core = THIS
+                owner = { relation = { who = THIS value = -200 } }
+            }
+            badboy = 2
+            set_country_flag = claimed_tawang
+        }
+        ai_will_do = { factor = 1 }
+    }
+
+}

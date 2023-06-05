@@ -1,0 +1,59 @@
+modern_naval_operations = {
+    limit = { naval_science_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            modern_naval_doctrine = 1
+        }
+        modifier = {
+            factor = 2
+            modern_naval_training = 1
+        }
+    }
+    effect = {
+        navy_base = {
+            default_organisation = 1
+        }
+    }
+}
+
+improved_commerce_warfare = {
+    limit = { naval_science_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = computerized_naval_intelligence
+        }
+        modifier = {
+            factor = 2
+            modern_naval_training = 1
+        }
+    }
+    effect = {
+        navy_base = {
+            default_organisation = 1
+        }
+    }
+}
+
+sea_air_integration = {
+    limit = { naval_science_7 = 1 }
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            invention = purpose_built_air_carriers
+        }
+        modifier = {
+            factor = 2
+            invention = naval_radar
+        }
+    }
+    effect = {
+        navy_base = {
+            default_organisation = 1
+        }
+    }
+}

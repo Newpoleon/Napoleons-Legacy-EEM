@@ -1,0 +1,41 @@
+political_decisions = {
+    the_british_cession = {
+        picture = parallel_49
+        potential = {
+            tag = CAN
+            NOT = {
+                has_country_flag = imperial_cession
+            }
+        }
+
+        allow = {
+            35 = { owner = { NOT = { war_with = CAN } } }
+            CAN = { owns = 157 }
+        }
+
+        effect = {
+            badboy = -2
+            prestige = 5
+
+            35 = { owner = { country_event = 44183 } }
+            set_country_flag = imperial_cession
+        }
+
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0.25
+                NOT = {
+                    relation = {
+                        who = USA
+                        value = 0
+                    }
+                }
+            }
+            modifier = {
+                factor = 0
+                NOT = { year = 1840 }
+            }
+        }
+    }
+}

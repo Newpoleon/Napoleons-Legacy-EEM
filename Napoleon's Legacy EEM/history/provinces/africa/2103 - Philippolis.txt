@@ -1,0 +1,5 @@
+owner = BSH
+controller = BSH
+add_core = BSH
+trade_goods = cattle
+life_rating = 35
