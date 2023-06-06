@@ -1168,3 +1168,6 @@ EVTDESC16462;After the War of 1812, Richmond was chosen as a temporary Capital w
 EVT16462OPTA;The Capital will stay in Richmond;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT16462OPTB;We will return to Washington;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 EVT16462OPTC;Charleston is the heart of the South;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTNAME121292;Humiliation in Bengal;;;;;;;;;x;;;;;;;;
+EVTDESC121292;The Bengalis have humbled our army and forced us to recognize their independence. This includes handing over any land we still contronl in the Ganges Delta over to them. To add insult to injury our authority in the Assamese interior has completely collapsed without any supply from Calcutta, shrinking our influence in India even further.;;;;;;;;;x;;;;;;;;
+EVTOPTA121292;What a mess.;;;;;;x;;;;;;;;;;;
