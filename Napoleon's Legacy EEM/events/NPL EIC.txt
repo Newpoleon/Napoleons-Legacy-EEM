@@ -158,6 +158,55 @@ country_event = {
             }
         }
     }
+	
+	option = {
+        name = "EVTOPTB121265"
+        any_pop = {
+            limit = {
+                has_pop_culture = bengali
+            }
+            consciousness = -3
+            militancy = -3
+        }
+        any_owned = {
+            limit = {
+                OR = {
+                    province_id = 1252
+                    province_id = 1253
+                    province_id = 1254
+                    province_id = 1255
+                    province_id = 1247
+                    province_id = 1248
+                    province_id = 1250
+                    province_id = 1249
+                }
+            }
+            secede_province = BNG
+        }
+
+        BNG = { 
+			capital = 1254
+			military_reform = yes_foreign_artillery
+			activate_technology = bronze_muzzle_loaded_artillery
+			military_reform = yes_foreign_weapons
+			activate_technology = flintlock_rifles
+			military_reform = yes_foreign_training
+			military_reform = yes_army_schools
+			economic_reform = yes_admin_reform
+			economic_reform = yes_education_reform
+		}
+
+        war = {
+            target = BNG
+            attacker_goal = {
+                casus_belli = civil_war
+            }
+            defender_goal = {
+                casus_belli = civil_war
+            }
+        }
+		change_tag_no_core_switch = BNG
+    }
 }
 
 # EIC 1856 Mutiny - Without Doctrine of Lapse
@@ -226,6 +275,55 @@ country_event = {
                 casus_belli = civil_war
             }
         }
+    }
+	
+	option = {
+        name = "EVTOPTB121265"
+        any_pop = {
+            limit = {
+                has_pop_culture = bengali
+            }
+            consciousness = -3
+            militancy = -3
+        }
+        any_owned = {
+            limit = {
+                OR = {
+                    province_id = 1252
+                    province_id = 1253
+                    province_id = 1254
+                    province_id = 1255
+                    province_id = 1247
+                    province_id = 1248
+                    province_id = 1250
+                    province_id = 1249
+                }
+            }
+            secede_province = BNG
+        }
+
+        BNG = { 
+			capital = 1254
+			military_reform = yes_foreign_artillery
+			activate_technology = bronze_muzzle_loaded_artillery
+			military_reform = yes_foreign_weapons
+			activate_technology = flintlock_rifles
+			military_reform = yes_foreign_training
+			military_reform = yes_army_schools
+			economic_reform = yes_admin_reform
+			economic_reform = yes_education_reform
+		}
+
+        war = {
+            target = BNG
+            attacker_goal = {
+                casus_belli = civil_war
+            }
+            defender_goal = {
+                casus_belli = civil_war
+            }
+        }
+		change_tag_no_core_switch = BNG
     }
 }
 
