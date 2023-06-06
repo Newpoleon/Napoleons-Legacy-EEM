@@ -1,5 +1,5 @@
 # EIC starting event
-# EIC 1850 Warning - Religion
+# EIC 1844 Warning - Religion
 country_event = {
     id = 121262
     title = "EVTNAME121262"
@@ -29,7 +29,7 @@ country_event = {
     }
 }
 
-# EIC 1852 Warning - Westernization
+# EIC 1846 Warning - Westernization
 country_event = {
     id = 121263
     title = "EVTNAME121263"
@@ -58,7 +58,7 @@ country_event = {
     }
 }
 
-# EIC 1854 Warning - Discrimination
+# EIC 1848 Warning - Discrimination
 country_event = {
     id = 121264
     title = "EVTNAME121264"
@@ -86,13 +86,10 @@ country_event = {
             militancy = 1
         }
     }
-    option = {
-        name = "EVTOPTA121264"
-        }
-    }
+  }
 
 
-# EIC 1856 Mutiny - With Doctrine of Lapse
+# EIC 1850 Mutiny - With Doctrine of Lapse
 country_event = {
     id = 121265
     title = "EVTNAME121265"
@@ -209,7 +206,7 @@ country_event = {
     }
 }
 
-# EIC 1856 Mutiny - Without Doctrine of Lapse
+# EIC 1850 Mutiny - Without Doctrine of Lapse
 country_event = {
     id = 121266
     title = "EVTNAME121265"
@@ -327,7 +324,7 @@ country_event = {
     }
 }
 
-# EIC 1856 Mutiny - EIC submits to CAN
+# EIC 1850 Mutiny - EIC submits to CAN
 country_event = {
     id = 121267
     title = "EVTNAME121267"
@@ -711,6 +708,7 @@ country_event = {
         tag = EIC
         owns = 1305
         BAS = { owns = 1279 }
+		BAS = { ai = yes }
         year = 1840
     }
 
@@ -866,6 +864,7 @@ country_event = {
         }
 
         ENG_1261 = { owned_by = ORI }
+		ORI = { ai = yes }
         year = 1848
     }
 
