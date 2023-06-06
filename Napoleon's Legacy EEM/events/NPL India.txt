@@ -557,6 +557,10 @@ country_event = {
 
             secede_province = ASM
         }
+		ASM = {
+			military_reform = yes_foreign_weapons
+			activate_technology = flintlock_rifles
+		}
         ai_chance = {
             factor = 100
         }
@@ -616,5 +620,26 @@ country_event = {
 
             secede_province = ASM
         }
+		ASM = {
+			military_reform = yes_foreign_weapons
+			activate_technology = flintlock_rifles
+		}
+		BNG = { country_event = 121293 }
+    }
+}
+
+country_event = {
+    id = 121293
+    title = "EVTNAME121293"
+    desc = "EVTDESC121293"
+    picture = "sultan"
+
+    fire_only_once = yes
+
+	is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA121293"
+		prestige = 10
     }
 }

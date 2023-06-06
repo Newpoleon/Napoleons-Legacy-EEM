@@ -136,7 +136,17 @@ country_event = {
             secede_province = BNG
         }
 
-        BNG = { capital = 1254 }
+        BNG = { 
+			capital = 1254
+			military_reform = yes_foreign_artillery
+			activate_technology = bronze_muzzle_loaded_artillery
+			military_reform = yes_foreign_weapons
+			activate_technology = flintlock_rifles
+			military_reform = yes_foreign_training
+			military_reform = yes_army_schools
+			economic_reform = yes_admin_reform
+			economic_reform = yes_education_reform
+		}
 
         war = {
             target = BNG
@@ -195,7 +205,17 @@ country_event = {
             secede_province = BNG
         }
 
-        BNG = { capital = 1254 }
+        BNG = { 
+			capital = 1254
+			military_reform = yes_foreign_artillery
+			activate_technology = bronze_muzzle_loaded_artillery
+			military_reform = yes_foreign_weapons
+			activate_technology = flintlock_rifles
+			military_reform = yes_foreign_training
+			military_reform = yes_army_schools
+			economic_reform = yes_admin_reform
+			economic_reform = yes_education_reform
+		}
 
         war = {
             target = BNG

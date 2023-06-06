@@ -1171,3 +1171,6 @@ EVT16462OPTC;Charleston is the heart of the South;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,
 EVTNAME121292;Humiliation in Bengal;;;;;;;;;x;;;;;;;;
 EVTDESC121292;The Bengalis have humbled our army and forced us to recognize their independence. This includes handing over any land we still contronl in the Ganges Delta over to them. To add insult to injury our authority in the Assamese interior has completely collapsed without any supply from Calcutta, shrinking our influence in India even further.;;;;;;;;;x;;;;;;;;
 EVTOPTA121292;What a mess.;;;;;;x;;;;;;;;;;;
+EVTNAME121293;Victory!;;;;;;;;;x;;;;;;;;
+EVTDESC121293;Per the terms of our treaty with the British, we have regained control of our great cities which the East India Company used as a base from which to exploit India. With no real auhtority in the region, their hold on Assam has collapsed as a result. Now that all of Bengal whole once more, we can finally chart a course for our nation, and perhaps all of India, free from European domination.;;;;;;;;;x;;;;;;;;
+EVTOPTA121293;Onwards!;;;;;;x;;;;;;;;;;;
