@@ -38,4 +38,37 @@ political_decisions = {
             }
         }
     }
+	
+    colonize_oregon = {
+        picture = parallel_49
+        potential = {
+			81 = { empty = yes }
+			82 = { empty = yes }
+			83 = { empty = yes }
+			91 = { empty = yes }
+			owns = 93
+			owns = 111
+			OR = {
+				has_global_flag = peaceful_oregon_treaty
+				has_global_flag = no_oregon_treaty
+				has_global_flag = violent_oregon_treaty	
+			}
+        }
+
+        allow = {
+            war = no
+        }
+
+        effect = {
+            prestige = 2
+			81 = { secede_province = THIS }
+			82 = { secede_province = THIS }
+			83 = { secede_province = THIS }
+			91 = { secede_province = THIS }
+        }
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
 }
