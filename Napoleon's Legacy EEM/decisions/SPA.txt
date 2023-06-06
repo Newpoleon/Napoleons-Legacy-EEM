@@ -463,7 +463,13 @@ political_decisions = {
             NOT = { has_country_flag = post_colonial_country }
             OR = {
                 primary_culture = spanish
-                primary_culture = british
+                AND = {
+					primary_culture = british
+					OR = {
+						any_owned_province = { continent = africa }
+						is_greater_power = yes
+					}
+				}
                 primary_culture = portuguese
             }
         }
