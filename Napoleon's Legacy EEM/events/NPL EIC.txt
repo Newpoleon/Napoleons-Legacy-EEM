@@ -86,7 +86,7 @@ country_event = {
             militancy = 1
         }
     }
-  }
+ }
 
 
 # EIC 1850 Mutiny - With Doctrine of Lapse
@@ -345,7 +345,8 @@ country_event = {
                 casus_belli = civil_war
             }
             defender_goal = {
-                casus_belli = status_quo
+                casus_belli = acquire_all_cores
+				country = CAN
             }
         }
 
@@ -373,7 +374,7 @@ country_event = {
     }
 }
 
-# EIC wants indie
+# Event for CAN to conquer EIC
 country_event = {
     id = 121268
     title = "EVTNAME121268"
@@ -420,7 +421,7 @@ country_event = {
     }
 }
 
-# EIC first event post-indie
+# EIC first event post bengal
 country_event = {
     id = 121269
     title = "EVTNAME121269"
@@ -434,15 +435,32 @@ country_event = {
         NOT = {
             vassal_of = CAN
         }
-        year = 1850
+        year = 1851
     }
 
     mean_time_to_happen = {
         months = 1
     }
 
+
     option = {
         name = "EVTOPTA121269"
+        any_pop = {
+            limit = {
+                has_pop_culture = bengali
+            }
+            consciousness = 3
+            militancy = 3
+        }
+        set_country_flag = staying_british
+		CAN = { country_event = 121268 }
+        ai_chance = {
+            factor = 56
+        }
+    }
+
+    option = {
+        name = "EVTOPTB121269"
         government = absolute_monarchy
         any_pop = {
             limit = {
@@ -452,13 +470,14 @@ country_event = {
             militancy = 3
         }
         set_country_flag = reformed_EIC
+		CAN = { country_event = 121268 }
         ai_chance = {
             factor = 33
         }
     }
 
     option = {
-        name = "EVTOPTB121269"
+        name = "EVTOPTC121269"
         government = democracy
         political_reform = wealth_voting
         any_pop = {
@@ -474,28 +493,24 @@ country_event = {
             militancy = 3
         }
         set_country_flag = reformed_EIC
+		CAN = { country_event = 121268 }
         ai_chance = {
-            factor = 33
+            factor = 10
         }
     }
-
+	
     option = {
-        name = "EVTOPTC121269"
-        any_pop = {
-            limit = {
-                has_pop_culture = bengali
-            }
-            consciousness = 3
-            militancy = 3
-        }
-        set_country_flag = staying_british
+        name = "EVTOPTD121269"
+        EIC = { all_core = { remove_core = EIC } }
+        CAN = { inherit = EIC }
+		
         ai_chance = {
             factor = 33
         }
-    }
+    }	
 }
 
-# EIC second event post-indie
+# EIC second event post bengal/freedom
 country_event = {
     id = 121270
     title = "EVTNAME121270"
@@ -549,7 +564,7 @@ country_event = {
         }
         set_country_flag = staying_british
         ai_chance = {
-            factor = 33
+            factor = 66
         }
     }
 }
@@ -619,6 +634,7 @@ country_event = {
         ai_chance = { factor = 0 }
     }
 }
+
 country_event = {
     id = 4662018
     title = "EVTNAME4662018"
@@ -649,6 +665,7 @@ country_event = {
         ai_chance = { factor = 0 }
     }
 }
+
 country_event = {
     id = 4662019
     title = "EVTNAME4662019"
@@ -712,7 +729,7 @@ country_event = {
         year = 1840
     }
 
-    mean_time_to_happen = { months = 12 }
+    mean_time_to_happen = { months = 10 }
     fire_only_once = yes
 
     option = {
@@ -789,27 +806,57 @@ country_event = {
         has_country_flag = orissa_claim
         owns = 1305
         year = 1846
+		BUN = { exists = yes }
+		NAG = { exists = yes }
+		NOT = { 
+			has_country_flag = big_hyderabad_war_eic 
+			has_country_flag = big_mughal_war_eic 
+		}
     }
 
     fire_only_once = yes
-    mean_time_to_happen = { months = 18 }
+    mean_time_to_happen = { months = 10 }
 
     option = {
         name = "EVTOPTA4662022"
         badboy = 6
         prestige = 5
-        1280 = { secede_province = EIC }
-        1281 = { secede_province = EIC }
-        1282 = { secede_province = EIC }
-        relation = {
+		money = -10000
+        BUN = { 
+			money = 10000
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1280
+						province_id = 1281
+						province_id = 1282
+					}
+				}
+				secede_province = EIC
+			}
+		}
+		
+		NAG = { 
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1280
+						province_id = 1281
+						province_id = 1282
+					}
+				}
+				secede_province = EIC
+			}
+		}
+		
+		
+        EIC = { create_vassal = BUN }
+
+	    relation = {
             who = NAG
             value = -50
         }
 
-        EIC = { create_vassal = BUN }
-
-        money = -10000
-        BUN = { money = 10000 }
         relation = {
             who = MUG
             value = -100
@@ -819,22 +866,44 @@ country_event = {
         ai_chance = { factor = 45 }
     }
 
-    option = {
+   option = {
         name = "EVTOPTB4662022"
         badboy = 6
         prestige = 5
-        1280 = { secede_province = EIC }
-        1281 = { secede_province = EIC }
-        1282 = { secede_province = EIC }
-        relation = {
+		money = -10000
+        NAG = { 
+			money = 10000
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1280
+						province_id = 1281
+						province_id = 1282
+					}
+				}
+				secede_province = EIC
+			}
+		}
+		
+		BUN = { 
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1280
+						province_id = 1281
+						province_id = 1282
+					}
+				}
+				secede_province = EIC
+			}
+		}
+		
+		EIC = { create_vassal = NAG }
+
+	    relation = {
             who = BUN
             value = -50
         }
-
-        EIC = { create_vassal = NAG }
-
-        money = -10000
-        NAG = { money = 10000 }
 
         relation = {
             who = HYD
@@ -844,6 +913,7 @@ country_event = {
         set_country_flag = big_hyderabad_war_eic
         ai_chance = { factor = 45 }
     }
+	
     option = {
         name = "EVTOPTC4662022"
         ai_chance = { factor = 10 }
@@ -897,5 +967,172 @@ country_event = {
         ai_chance = {
             factor = 25
         }
+    }
+}
+
+country_event = {
+    id = 4662026
+    title = "EVTNAME4662026"
+    desc = "EVTDESC4662026"
+    picture = "deliberation"
+
+    trigger = {
+        tag = EIC
+        has_country_flag = orissa_claim
+        NOT = { war_with = ORI }
+        ORI = { owns = 1305 }
+		ORI = { has_recently_lost_war = yes }
+    }
+
+    mean_time_to_happen = { days = 5 }
+    fire_only_once = yes
+
+    option = {
+        name = "EVTOPTA4662019"
+        prestige = 2
+        badboy = 2
+		1305 = { secede_province = EIC }
+        relation = {
+            who = ORI
+            value = -50
+        }
+
+        ORI = {
+            prestige = -5
+            any_pop = {
+                militancy = 4
+            }
+        }
+
+        ai_chance = { factor = 95 }
+    }
+
+    option = {
+        name = "EVTOPTB4662019"
+        prestige = -10
+
+        relation = {
+            who = ORI
+            value = 50
+        }
+
+        clr_country_flag = orissa_claim
+        ai_chance = { factor = 5 }
+    }
+}
+
+country_event = {
+    id = 4662027
+    title = "EVTNAME4662022"
+    desc = "EVTDESC4662027"
+    picture = "deliberation"
+
+    trigger = {
+        tag = EIC
+        has_country_flag = orissa_claim
+        owns = 1305
+        year = 1846
+		BUN = { exists = yes }
+		NAG = { exists = no }
+		NOT = { 
+			has_country_flag = big_hyderabad_war_eic 
+			has_country_flag = big_mughal_war_eic 
+		}
+    }
+
+    fire_only_once = yes
+    mean_time_to_happen = { months = 10 }
+
+    option = {
+        name = "EVTOPTA4662027"
+        badboy = 6
+        prestige = 5
+		money = -10000
+        BUN = { 
+			money = 10000
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1280
+						province_id = 1281
+						province_id = 1282
+					}
+				}
+				secede_province = EIC
+			}
+		}
+		
+        EIC = { create_vassal = BUN }
+
+        relation = {
+            who = MUG
+            value = -100
+        }
+
+        set_country_flag = big_mughal_war_eic
+        ai_chance = { factor = 90 }
+    }
+
+    option = {
+        name = "EVTOPTC4662022"
+        ai_chance = { factor = 10 }
+    }
+}
+
+country_event = {
+    id = 4662028
+    title = "EVTNAME4662022"
+    desc = "EVTDESC4662028"
+    picture = "deliberation"
+
+    trigger = {
+        tag = EIC
+        has_country_flag = orissa_claim
+        owns = 1305
+        year = 1846
+		BUN = { exists = no }
+		NAG = { exists = yes }
+		NOT = { 
+			has_country_flag = big_hyderabad_war_eic 
+			has_country_flag = big_mughal_war_eic 
+		}
+    }
+
+    fire_only_once = yes
+    mean_time_to_happen = { months = 10 }
+
+   option = {
+        name = "EVTOPTA4662028"
+        badboy = 6
+        prestige = 5
+		money = -10000
+        NAG = { 
+			money = 10000
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 1280
+						province_id = 1281
+						province_id = 1282
+					}
+				}
+				secede_province = EIC
+			}
+		}
+		
+		EIC = { create_vassal = NAG }
+
+        relation = {
+            who = HYD
+            value = -100
+        }
+
+        set_country_flag = big_hyderabad_war_eic
+        ai_chance = { factor = 90 }
+    }
+
+    option = {
+        name = "EVTOPTC4662022"
+        ai_chance = { factor = 10 }
     }
 }

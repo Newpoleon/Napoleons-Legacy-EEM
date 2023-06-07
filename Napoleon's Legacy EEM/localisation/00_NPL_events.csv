@@ -105,7 +105,7 @@ EVTNAME4662021;The East Indian Company;;;;;;;;;;;;x
 EVTDESC4662021;Our government in control of the East India Company has gained some land in India. It would be wise to give the East India Company that land in their struggle to reclaim the Indian subcontinent.;;;;;;;;;;;;x
 EVTOPTA4662021;This is appropriate.;;;;;;;;;;;;x
 EVTNAME4662022;The New Princely States;;;;;;;;;;;;x
-EVTDESC4662022;Before the collapse our company had an array of so-called Princely States who served our interests in exchange for some level of autonomy. Through them we could enact policies that benefited our interests without directly antagonizing the Indian people. As we grow it would be wise to begin those policies again, although we only have the capacity to persue such relations with one of our smaller neighbors. The obvious choices are Nagpur or Bundelkhand as both have pliant rulers who are willing to concede lands needed to connect Bengal to Vizagapatam. With a good bribe, we could do this now!;;;;;;;;;;;;x
+EVTDESC4662022;Before the collapse our company had an array of so-called Princely States who served our interests in exchange for some level of autonomy. Through them we could enact policies that benefited our interests without directly antagonizing the Indian people. As we grow it would be wise to begin these relations again, although at the moment we only have the capacity to persue them with one of our smaller neighbors. The obvious choices are Nagpur or Bundelkhand as both have pliant rulers who are willing to concede lands needed to connect Bengal to Vizagapatam. With a good bribe, we could do this now!;;;;;;;;;;;;x
 EVTOPTA4662022;Bundelkhand is rich in food sources, they'll do.;;;;;;;;;;;;x
 EVTOPTB4662022;Nagpur is rich in dye, they're profitable.;;;;;;;;;;;;x
 EVTOPTC4662022;We want to coexist peacefully with the Indian countries.;;;;;;;;;;;;x
@@ -330,23 +330,23 @@ EVTDESC121265;Horrible news has reached us from the borders of our dominion. The
 EVTOPTA121265;Slaughter every last one of them!;;;;;;x;;;;;;;;;;;
 EVTOPTB121265;Pork Lard? In my Enfield Cartidges??;;;;;;x;;;;;;;;;;;
 EVTNAME121267;The Indian Mutiny;;;;;;;;;x;;;;;;;;
-EVTDESC121267;News has reached us from the lands of the East Indian Company of a vast mutiny of their colonial troops. White men, women, and children are being massacred, and native rulers have announced their intentions to drive the British out of India entirely. Because the Company simply cannout deal with the situation on their own, many believe we should formally announce the end of the East India Company and the incorporation of their lands directly into the British Empire.;;;;;;;;;x;;;;;;;;
+EVTDESC121267;News has reached us from the lands of the East Indian Company of a vast mutiny of their colonial troops. White men, women, and children are being massacred, and native rulers have announced their intentions to drive the British out of India entirely. Because the Company simply cannot deal with the situation on their own, many believe we should formally announce the end of the East India Company and the incorporation of their lands directly into the British Empire.;;;;;;;;;x;;;;;;;;
 EVTOPTA121267;We must act quickly to save British India!;;;;;;x;;;;;;;;;;;
 EVTOPTB121267;Who cares about India?;;;;;;x;;;;;;;;;;;
 EVTNAME121268;The East Indian Mutiny;;;;;;;;;x;;;;;;;;
-EVTDESC121268;The fools in the East India Company have announced today their intention to leave the British Empire and establish a seperate state. Letting them go cause a serious loss of revenue, but many fear that we might not be able to win a war against them.;;;;;;;;;x;;;;;;;;
+EVTDESC121268;The traitors in the East India Company have announced today their intention to leave the British Empire and establish a seperate state. Letting them go will cause a serious loss of revanue, but there is much opposition about fighting a major war across the world in India when we have enough troubles at home.;;;;;;;;;x;;;;;;;;
 EVTOPTA121268;Keep them in the Empire at all costs!;;;;;;x;;;;;;;;;;;
 EVTOPTB121268;Oh, who cares?;;;;;;x;;;;;;;;;;;
-EVTNAME121269;Reforming the Government;;;;;;;;;x;;;;;;;;
-EVTDESC121269;Now that we are an independent nation, we must decide on the form of the government. Some argue that we should stick with the Company oligarchy running the nation, saying that it has more than proved its worth. Others argue that we should set up a liberal republic with the goal of educating the natives and bringing them into the government. Some radicals have even proposed establishing a monarchy under the President of the Company, arguing that oriental despotism is the only form of government that can work in the East.;;;;;;;;;x;;;;;;;;
-EVTOPTA121269;Monarchy!;;;;;;x;;;;;;;;;;;
-EVTOPTB121269;Republic!;;;;;;x;;;;;;;;;;;
-EVTOPTC121269;The system is fine as it is, thanks.;;;;;;x;;;;;;;;;;;
+EVTNAME121269;An Independent East India Company?;;;;;;;;;x;;;;;;;;
+EVTDESC121269;Despite our victory over the Bengali Mutiny, we have recieved troubling rumors from Bytown that Parliment is planning to dissolve our Company and establish direct control over Indian affairs to prevent another rebellion. This news has sent our Board of Directors into a fury, and plans for formal independence from the British Empire. Some military officers go so far as proposing we should set up our own Monarchy with the President of the company as the "Raj of India", arguing that oriental despotism is the only form of government that can work in the East. Meanwhile several Radical Liberals on the board have suggested moving in the other direction, transforming the Company into a democratic republic for the tutelage of the native population.;;;;;;;;;x;;;;;;;;
+EVTOPTA121269;We declare Independence...;;;;;;x;;;;;;;;;;;
+EVTOPTB121269;as a Monarchy!;;;;;;x;;;;;;;;;;;
+EVTOPTC121269;as a Republic!;;;;;;x;;;;;;;;;;;
+EVTOPTD121269;actually no we don't.;;;;;;x;;;;;;;;;;;
 EVTNAME121270;Reforming the Government;;;;;;;;;x;;;;;;;;
-EVTDESC121270;The form of the government is settled, but who should run it? The more conservative members of the cabinet argue that the natives must not be allowed a part in ruling at this time due to their uneducated state. The liberals, however, argue that Bengalis should be allowed to hold lower offices in the state.;;;;;;;;;x;;;;;;;;
-EVTOPTA121270;We're going native!;;;;;;x;;;;;;;;;;;
+EVTDESC121270;Now that we have decided to move away from the company structure, the question remains on whether we should revist our policy towards the natives? The more conservative members of the cabinet argue that the Indians must not be allowed a part in ruling at this time until they have been properly uplifted by our government. The liberals, however, argue that Bengalis must be allowed to hold at least lower offices to avoid another Mutiny.;;;;;;;;;x;;;;;;;;
 EVTOPTB121270;Indians must be allowed to have a hand in ruling.;;;;;;x;;;;;;;;;;;
-EVTOPTC121270;Cultural Marxism? In MY government?;;;;;;x;;;;;;;;;;;
+EVTOPTC121270;Indians ruling Englishmen? Are you mad?;;;;;;x;;;;;;;;;;;
 EVTNAME121271;Treasures of the West;;;;;;;;;x;;;;;;;;
 EVTDESC121271;Industrial and military technology continue to flow into our nation from the West. Of course, along with these marvelous inventions come dangerous ideas that are influencing the minds of our people...;;;;;;;;;x;;;;;;;;
 EVTOPTA121271;Is that a steam-powered blowgun over there?;;;;;;x;;;;;;;;;;;
@@ -1175,3 +1175,9 @@ EVTOPTA121292;What a mess.;;;;;;x;;;;;;;;;;;
 EVTNAME121293;Victory!;;;;;;;;;x;;;;;;;;
 EVTDESC121293;Per the terms of our treaty with the British, we have regained control of our great cities which the East India Company used as a base from which to exploit India. With no real auhtority in the region, their hold on Assam has collapsed as a result. Now that all of Bengal whole once more, we can finally chart a course for our nation, and perhaps all of India, free from European domination.;;;;;;;;;x;;;;;;;;
 EVTOPTA121293;Onwards!;;;;;;x;;;;;;;;;;;
+EVTNAME4662026;The Treaty of Vizagapatam;;;;;;;;;;;;x
+EVTDESC4662026;Our victory against the weak-willed Orissans have brought us great power in the negotiations table. Though it was not an initial war aim, we can push the advantage and take the city of Vizagapatam, using this brief war as a springboard for restoring our dominion over India.;;;;;;;;;;;;x
+EVTDESC4662027;Before the collapse our company had an array of so-called Princely States who served our interests in exchange for some level of autonomy. Through them we could enact policies that benefited our interests without directly antagonizing the Indian people. As we grow it would be wise to begin these relations again, although at the moment we only have the capacity to persue them with one of our smaller neighbors. Bundelkhand is the obvious choice as it has a pliant ruler who is willing to concede lands needed to connect Bengal to Vizagapatam. With a good bribe, we could do this now!;;;;;;;;;;;;x
+EVTOPTA4662027;The rich resources of Bundelkhand are ours!;;;;;;;;;;;;x
+EVTDESC4662028;Before the collapse our company had an array of so-called Princely States who served our interests in exchange for some level of autonomy. Through them we could enact policies that benefited our interests without directly antagonizing the Indian people. As we grow it would be wise to begin these relations again, although at the moment we only have the capacity to persue them with one of our smaller neighbors. Nagpur is the obvious choice as it has a pliant ruler who is willing to concede lands needed to connect Bengal to Vizagapatam. With a good bribe, we could do this now!;;;;;;;;;;;;x
+EVTOPTA4662028;The rich resources of Nagpur are ours!;;;;;;;;;;;;x

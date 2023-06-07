@@ -16,8 +16,6 @@ political_decisions = {
 
         effect = {
             CAN = { country_event = 121267 }
-
-            BNG = { years_of_research = 5 }
         }
 
         ai_will_do = {
