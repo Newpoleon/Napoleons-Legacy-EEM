@@ -37,9 +37,8 @@ air_preheater = {
         }
     }
     effect = {
-        #factory_throughput = 0.02
-        factory_goods_output = { fuel = 0.1 } #0.02
-        rgo_goods_output = { coal = 0.2 } #0
+        factory_throughput = 0.02
+        #factory_goods_output = { fuel = 0.1 } #0.02
     }
 }
 
@@ -285,9 +284,9 @@ industrial_plastics_production = {
         }
     }
     effect = {
-        factory_goods_output = { fabric = 0.05 }
-        factory_goods_output = { glass  = 0.05 }
-        #factory_goods_output = { rubber = 0.1 }
+        factory_goods_output = { fabric = 0.02 } #0.05
+        factory_goods_output = { glass  = 0.02 } #0.05
+        factory_goods_output = { rubber = 0.10 } #0
     }
 }
 
@@ -326,7 +325,7 @@ rocket_experiments = {
 }
 
 #################### iron, coal, sulfur, oil #######
-#During the 1930s steam shovels lost out to the simpler, cheaper diesel-powered excavating shovels 
+#During the 1930s steam shovels were supplanted by simpler, cheaper diesel-powered excavating shovels that were the forerunners of those in use today. Open-pit mines were electrified at this time. Only after the Second World War, with the advent of robust high-pressure hydraulic hoses, did the more versatile hydraulic excavators take pre-eminence over the cable-hoisting winch shovels. 
 diesel_excavator = {
     limit = { metallurgy_7 = 1 }
     chance = {
@@ -403,6 +402,12 @@ diesel_excavator = {
 #The valve was placed around the hammer piston instead of being a valve head.
 #1946: Bassinger Tool
 #The rate of penetration was about 30 % higher while drilling in Oklahoma
+#Seismic exploration, beginning in the 1920s, uses reflected sound waves to map subsurface geology to help locate potential oil reservoirs. This was a great improvement over previous methods, which involved mostly luck and good knowledge of geology, although luck continued to be important in several major discoveries. Rotary drilling was a faster and more efficient way of drilling oil and water wells. It became popular after being used for the initial discovery of the East Texas field in 1930. 
+#Numerous new hard materials were developed for cutting edges such as in machining. Mushet steel, which was developed in 1868, was a forerunner of High speed steel, which was developed by a team led by Fredrick Winslow Taylor at Bethlehem Steel Company around 1900.[71] High speed steel held its hardness even when it became red hot. It was followed by a number of modern alloys.
+#From 1935 to 1955 machining cutting speeds increased from 120 to 200 ft/min to 1000 ft/min due to harder cutting edges, causing machining costs to fall by 75%.[97]
+#One of the most important new hard materials for cutting is tungsten carbide. 
+
+#In. 1928 Armenian oil delivery system engineer and inventor Armais Arutunoff successfully installed the first submersible oil pump in an oil field.[1] In 1929, Pleuger Pumps (today Pleuger Industries) developed the design of the submersible turbine pump, the forerunner of the modern multi-stage submersible pump.[2] 
 improved_hydraulic_drills = {
     limit = { metallurgy_7 = 1 }
     chance = {
@@ -434,7 +439,7 @@ improved_hydraulic_drills = {
         }
     }
     effect = {
-        rgo_goods_output = { oil = 0.5 }
+        rgo_goods_output = { oil = 1 } #0.5
         rgo_goods_output = { coal = 0.1 }
         rgo_goods_output = { iron = 0.1 }
         rgo_goods_output = { precious_metal = 0.1 }
@@ -472,8 +477,9 @@ miniature_vacuum_tube = {
         }
     }
     effect = {
-        factory_goods_output = { radio = 0.03 }
-        factory_goods_output = { telephones = 0.03 }
+        #factory_goods_output = { radio = 0.03 }
+        #factory_goods_output = { telephones = 0.03 }
+		factory_goods_output = { electric_gear = 0.02 }
     }
 }
 

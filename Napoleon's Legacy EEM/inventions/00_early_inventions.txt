@@ -1,23 +1,31 @@
 ########## Earlier Inventions ##########
-#Lubrication oil was an accidental discovery while attempting to distil kerosene. Everest noted the residue from the extraction was suitable as a lubricant.
-#In 1880 Vacuum was absorbed by Standard Oil and developed rapidly when lubricating oil was needed for the stationary engine, the automobile, and finally the electric generator, motor and transformer and the steam turbine. 
-#lubrication_oil = {
-#    limit = { organic_chemistry = 1 }
-#    chance = {
-#        base = 0
-#        modifier = {
-#            factor = 2
-#            invention = cracking
-#        }
-#        modifier = {
-#            factor = 2
-#            invention = oil_pumping_machinery
-#        }
-#    }
-#    effect = {
-#        factory_goods_output = { machine_parts = 0.02 }
-#    }
-#}
+#Better lubrication, such as from petroleum oils, reduced friction losses in mills and factories.[34] Anti-friction bearings were developed using alloy steels and precision machining techniques available in the last quarter of the 19th century. Anti-friction bearings were widely used on bicycles by the 1880s. Bearings began being used on line shafts in the decades before factory electrification and it was the pre-bearing shafts that were largely responsible for their high power losses, which were commonly 25 to 30% and often as much as 50%.[20] 
+
+#Lubrication oil was an accidental discovery while attempting to distil kerosene. Everest noted the residue from the extraction was suitable as a lubricant. 
+#Hiram Everest 1866 https://rbscp.lib.rochester.edu/sites/default/files/atoms/files/Epitaph37_1.pdf#In 1880 Vacuum was absorbed by Standard Oil and developed rapidly when lubricating oil was needed for the stationary engine, the automobile, and finally the electric generator, motor and transformer and the steam turbine. 
+lubrication_oil = {
+    limit = { 
+		organic_chemistry = 1 
+		year = 1860
+	}
+    chance = {
+        base = 0
+        modifier = {
+            factor = 2
+            invention = cracking
+        }
+        modifier = {
+            factor = 2
+            invention = oil_pumping_machinery
+       }
+    }
+    effect = {
+        factory_goods_output = { machine_parts = 0.02 }
+		rgo_goods_output = { coal = 0.05 } #0.2
+        rgo_goods_output = { iron = 0.05 } #0.1
+        rgo_goods_output = { sulphur = 0.05 }
+    }
+}
 
 #The ball screw was invented independently by H.M. Stevenson and D. Glenn who were issued in 1898 patents
 #1929: The ball screw is invented by Rudolph G. Boehm.
@@ -152,7 +160,7 @@ magnetic_separation = {
     }
     effect = {
         rgo_goods_output = { iron = 0.20 }
-        rgo_goods_output = { coal = 0.05 }
+        rgo_goods_output = { coal = 0.05 } #0.05
     }
 }
 
@@ -176,9 +184,7 @@ leaded_gasoline = {
         }
     }
     effect = {
-        factory_goods_output = {
-            fuel = 0.02
-        }
+        factory_goods_output = { fuel = 0.02 }
         education_efficiency = -0.2
     }
 }

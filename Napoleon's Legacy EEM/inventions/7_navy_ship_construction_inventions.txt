@@ -1,23 +1,4 @@
-seaplane_tenders = {
-    limit = { oil_driven_ships = 1 }
-    chance = {
-        base = 0
-        modifier = {
-            factor = 2
-            invention = military_aviation
-        }
-        modifier = {
-            factor = 2
-            invention = on_board_recon_aircraft 
-        }
-    }
-    effect = {
-        cruiser = {
-            gun_power = 1
-        }
-    }
-}
-
+#seaplane_tenders
 #experimental_air_carriers 
 
 converted_hulk_air_carriers = {
@@ -26,7 +7,7 @@ converted_hulk_air_carriers = {
         base = 2
         modifier = {
             factor = -5
-            NOT = { invention = seaplane_tenders }
+            NOT = { invention = on_board_recon_aircraft }
         }
         modifier = {
             factor = 1

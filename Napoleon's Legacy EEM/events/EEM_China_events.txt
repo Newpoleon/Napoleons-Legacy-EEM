@@ -536,6 +536,8 @@ province_event = {
         is_primary_culture = no
         average_consciousness = 4
         any_neighbor_province = { is_core = RTR }
+		NOT = { culture = beifaren }
+		NOT = { culture = manchu }
         #OR = {
         #    culture = nanfaren
         #    culture = yue
@@ -2001,6 +2003,66 @@ country_event = {
 #    title = "EVTNAME166222" #Nian Rebellion notification
 #    desc = "EVTDESC166222"
 #    picture = "nian_rebellion"
+
+#RTR picks a Capital
+country_event = {
+    id = 166222
+    title = "EVTNAME166222"
+    desc = "EVTDESC166222"
+    picture = "nanjing"
+
+    trigger = {
+        tag = RTR
+        owns = 2221 #Nanjing
+        owns = 1510 #Luoyang
+        owns = 1559 #Xi'an -> Chang'an
+        #owns = 1493 #can't pick Canton because it'll mess with the trade zones
+        owns = 1578 #Chengdu
+        owns = 1504 #Xiujing
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen = { months = 2 }
+
+    option = {
+        name = "EVT166222OPTA" #Nanjing
+        capital_scope = { any_pop = { consciousness = 2 } }
+        2221 = { any_pop = { militancy = -1 } }
+        capital = 2221
+        ai_chance = { factor = 50 }
+    }
+
+    option = {
+        name = "EVT166222OPTB" #Luoyang
+        capital_scope = { any_pop = { consciousness = 2 } }
+        1510 = { any_pop = { militancy = -1 } }
+        capital = 1510
+        ai_chance = { factor = 10 }
+    }
+
+    option = {
+        name = "EVT166222OPTC" #Xi'an
+        capital_scope = { any_pop = { consciousness = 2 } }
+        1559 = { any_pop = { militancy = -1 } change_province_name = "Chang'an" }
+        capital = 1559
+        ai_chance = { factor = 25 }
+    }
+
+    option = {
+        name = "EVT166222OPTD" #Chengdu
+        capital_scope = { any_pop = { consciousness = 2 } }
+        1578 = { any_pop = { militancy = -1 } }
+        capital = 1578
+        ai_chance = { factor = 10 }
+    }
+
+    option = {
+        name = "EVT166222OPTE" #Don't change (Xiujing)
+        ai_chance = { factor = 5 }
+    }
+}
+
 
 #166223 Miao Rebellion
 country_event = {
@@ -4605,6 +4667,27 @@ country_event = {
         primary_culture = beifaren
         add_accepted_culture = nanfaren
         set_global_flag = anti_qing_rebels_won
+		
+		
+		random = {
+            chance = 50
+            years_of_research = -3
+        }
+
+        random = {
+            chance = 30
+            years_of_research = -3
+        }
+
+        random = {
+            chance = 20
+            years_of_research = -3
+        }
+
+        random = {
+            chance = 10
+            years_of_research = -3
+        }
 
         random_list = {
             20 = {

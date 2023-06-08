@@ -301,6 +301,7 @@ political_decisions = {
     end_opium_ban = {
         picture = opium_crates
 
+		alert = no
         potential = {
             has_country_flag = opium_ban
 
@@ -333,6 +334,7 @@ political_decisions = {
                 government = fascist_dictatorship
                 government = presidential_dictatorship
                 government = bourgeois_dictatorship
+				government = absolute_monarchy
             }
         }
 

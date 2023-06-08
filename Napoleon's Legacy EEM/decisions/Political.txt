@@ -921,7 +921,6 @@ political_decisions = {
                 AND = { tag = ASH civilized = yes owns = 1907 NOT = { capital = 1907 } }
 				AND = { tag = RHO civilized = yes owns = 2068 NOT = { capital = 2068 } }
 
-				AND = { tag = RTR owns = 2221 NOT = { capital = 2221 } }
 				AND = { tag = KMT owns = 2221 NOT = { capital = 2221 } }
 				AND = { tag = QNG owns = 1616 NOT = { capital = 1616 } }
             }

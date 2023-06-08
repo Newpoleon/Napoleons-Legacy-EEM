@@ -309,5 +309,8 @@ improved_naval_aircraft = {
             gun_power = 2
             torpedo_attack = 4
         }
+		cruiser = {
+            gun_power = 1
+        }
     }
 }
