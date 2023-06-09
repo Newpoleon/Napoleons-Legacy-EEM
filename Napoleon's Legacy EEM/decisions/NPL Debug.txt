@@ -1,0 +1,37 @@
+political_decisions = {
+	
+	surrender_quetta = {
+        potential = {
+            tag = AFG
+            exists = KAL
+			owns = 1219
+			ai = yes
+			NOT = {
+				owns = 1214
+				owns = 1215
+				owns = 1217
+				owns = 2133
+				owns = 1218
+			}
+        }
+
+        allow = {
+        }
+
+        effect = {
+			any_owned = {
+				limit = {
+					OR = {
+                    province_id = 1219
+					}
+				}
+				secede_province = KAL
+			}
+        }
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
+	
+}

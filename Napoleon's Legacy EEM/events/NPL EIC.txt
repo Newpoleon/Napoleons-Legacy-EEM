@@ -345,8 +345,7 @@ country_event = {
                 casus_belli = conquest
             }
             defender_goal = {
-                casus_belli = acquire_all_cores
-				country = CAN
+                casus_belli = status_quo
             }
         }
 
