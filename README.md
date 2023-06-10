@@ -12,6 +12,7 @@ Upcoming plans include completing development of the planned Germany rework, fix
 - /gsg/ for being /gsg/ and /vst/ for being /vst/
 
 # Changelog for v0.3.3a
+- Updated to EEM 0.5.8e
 - HBC and EIC need to be GPs or have land in Africa for the "Colonization of Fernando Po" decision to show up
 - USA/CAN now get a decision to colonize empty Oregon provinces after the resolution of the Oregon Treaty
 - CAN losing in Bengal results in cleaner borders: Bengal recieves all cores and Assam is released.
