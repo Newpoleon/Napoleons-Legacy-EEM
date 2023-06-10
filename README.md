@@ -11,6 +11,29 @@ Upcoming plans include completing development of the planned Germany rework, fix
 - The HPM Politics & Economy Patch guy, here's hoping for a version 2
 - /gsg/ for being /gsg/ and /vst/ for being /vst/
 
+# Changelog for v0.3.3a
+- HBC and EIC need to be GPs or have land in Africa for the "Colonization of Fernando Po" decision to show up
+- USA/CAN now get a decision to colonize empty Oregon provinces after the resolution of the Oregon Treaty
+- CAN losing in Bengal results in cleaner borders: Bengal recieves all cores and Assam is released.
+- Bengal now has an Acquire All Cores wargoal vs CAN rather than Status Quo
+- Bengal now starts with several military and economic reforms when they revolt, they no longer gain 5 years of research when CAN annexes EIC
+- There is now an option to play as Bengal when they revolt from EIC
+- Players will no longer be auto annexed if they are playing as an Indian Unciv the EIC annexes via event in their chain
+- If EIC wins the starting war against Orissa before their event to take Vizagapatam fires, they will still get the province after the war
+- Reduced MTTH across the board for EIC expansion events (down to 10 months), so they can reasonably all fire before the Bengal Uprising
+- The event for EIC to puppet Nagpur and Bundelkhand split into three events, one for both existing, and two more for only one or the other existing
+- EIC only gains provinces from the event with Nagpur and Bundkelhand if Nagpur and Bundkelhand have those provinces
+- EIC government reform event pushed to 1851 so it will always fire after the Bengal Mutiny
+- Reforming the government will now force the EIC to fight CAN, so as to establish full independence.
+- EIC fighting CAN is now a "Civil War" and CAN fighting Bengal is now a "Conquest" rather than the other way around
+- Gave Denmark-Norway PROV2591 Tranquebar
+- Gave CAN PROV2126 Bourbon (Reunion)
+- Added a decision forcing an AI Afghanistan to lose Quetta to Kalat if Southern Afghanistan gets conquered
+- Adjusted AI weights for EIC Government reform events. Not sure if the AI will ever get these events at the moment however.
+- Denmark-Norway existing no longer prevents Scandanavia from being formed
+- Localization improvements for the EIC events
+
+
 # Changelog for v0.3.3
 - Updated Napoleon's Legacy to use EEM 0.5.8d (As of 6/3/2023) as a base rather than HPM 0.4.5.2. I think I caught everything but don't be surprised if there is some weirdness. I also did not port over EEM's four new provices, distributed respective pops back to the provinces they were taken from. Will consider whether these should be implemented later.
 - Restored the old Bookmark Title and Description
