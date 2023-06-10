@@ -421,7 +421,7 @@ political_decisions = {
             OR = {
                 tag = DEN
                 DEN = { has_country_modifier = kalmar_union }
-				AND { 
+				AND = { 
 					DEN = { exists = no }
 					DNW = { exists = yes }
 				}
@@ -434,7 +434,7 @@ political_decisions = {
             OR = {
                 tag = NOR
                 NOR = { has_country_modifier = kalmar_union }
-				AND { 
+				AND = { 
 					NOR = { exists = no }
 					DNW = { exists = yes }
 				}
@@ -501,7 +501,7 @@ political_decisions = {
             OR = {
                 tag = DEN
                 DEN = { has_country_modifier = kalmar_union }
-				AND { 
+				AND = { 
 					DEN = { exists = no }
 					DNW = { exists = yes }
 				}
@@ -514,7 +514,7 @@ political_decisions = {
             OR = {
                 tag = NOR
                 NOR = { has_country_modifier = kalmar_union }
-				AND { 
+				AND = { 
 					NOR = { exists = no }
 					DNW = { exists = yes }
 				}
