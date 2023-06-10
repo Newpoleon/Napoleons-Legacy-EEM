@@ -421,14 +421,23 @@ political_decisions = {
             OR = {
                 tag = DEN
                 DEN = { has_country_modifier = kalmar_union }
+				AND { 
+					DEN = { exists = no }
+					DNW = { exists = yes }
+				}
             }
 			OR = {
                 tag = DNW
                 DNW = { has_country_modifier = kalmar_union }
+				DNW = { exists = no }
             }
             OR = {
                 tag = NOR
                 NOR = { has_country_modifier = kalmar_union }
+				AND { 
+					NOR = { exists = no }
+					DNW = { exists = yes }
+				}
             }
         }
 
@@ -492,14 +501,23 @@ political_decisions = {
             OR = {
                 tag = DEN
                 DEN = { has_country_modifier = kalmar_union }
+				AND { 
+					DEN = { exists = no }
+					DNW = { exists = yes }
+				}
             }
 			OR = {
                 tag = DNW
                 DNW = { has_country_modifier = kalmar_union }
+				DNW = { exists = no }
             }
             OR = {
                 tag = NOR
                 NOR = { has_country_modifier = kalmar_union }
+				AND { 
+					NOR = { exists = no }
+					DNW = { exists = yes }
+				}
             }
         }
 
