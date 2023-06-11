@@ -180,7 +180,7 @@ john_hicks = {
     }
 }
 
-#Samuelson considered mathematics to be the "natural language" for economists and contributed significantly to the mathematical foundations of economics with his book Foundations of Economic Analysis.[8] He was author of the best-selling economics textbook of all time: Economics: An Introductory Analysis, first published in 1948.[9] It was the second American textbook that attempted to explain the principles of Keynesian economics. It
+#Samuelson considered mathematics to be the "natural language" for economists and contributed significantly to the mathematical foundations of economics with his book Foundations of Economic Analysis.[8] He was author of the best-selling economics textbook of all time: Economics: An Introductory Analysis, first published in 1948.[9] It was the second American textbook that attempted to explain the principles of Keynesian economics. 
 paul_samuelson = {
     limit = {
         economic_thought_and_critique_7 = 1

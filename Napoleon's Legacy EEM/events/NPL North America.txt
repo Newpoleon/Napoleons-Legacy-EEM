@@ -323,7 +323,7 @@ country_event = {
 
         COL = { all_core = { remove_core = USA } }
 		
-		set_global_flag = no_oregon_treaty							
+		set_global_flag = no_oregon_treaty
 
         any_pop = {
             scaled_militancy = {
@@ -353,7 +353,7 @@ country_event = {
         COL = { all_core = { add_core = USA } }
         COL = { all_core = { add_core = CAN } }
 		
-		set_global_flag = violent_oregon_treaty							
+		set_global_flag = violent_oregon_treaty
 
         any_pop = {
             scaled_consciousness = {
@@ -462,7 +462,8 @@ country_event = {
                 country = CAN
             }
         }
-		set_global_flag = violent_oregon_treaty							
+		
+		set_global_flag = violent_oregon_treaty
 
         ai_chance = {
             factor = 75
@@ -503,7 +504,7 @@ country_event = {
     option = {
         name = "EVT44155OPTA"
         prestige = 25
-		set_global_flag = peaceful_oregon_treaty								  
+		set_global_flag = peaceful_oregon_treaty
         any_pop = {
             scaled_consciousness = {
                 issue = jingoism

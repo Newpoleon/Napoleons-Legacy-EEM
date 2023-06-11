@@ -4688,7 +4688,7 @@ country_event = {
             chance = 10
             years_of_research = -3
         }
-
+		
         random_list = {
             20 = {
                 add_country_modifier = { name = reactionary_demands duration = 1825 }

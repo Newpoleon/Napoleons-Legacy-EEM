@@ -1,4 +1,10 @@
 #Sphere of Influence
+ILL = {
+    value = 200        #relation
+    level = 5        #3=cordial, 4 = friendly, 5 sphere
+    influence_value = 25
+}
+
 DNW = {
     value = 125        #relation
     level = 3        #3=cordial, 4 = friendly, 5 sphere
@@ -75,7 +81,7 @@ PRU = {
     value = -150
 }
 
-FRM = {
+RHB = {
     value = 200
     level = 5
     influence_value = 10
@@ -122,132 +128,132 @@ army = {
     }
 
     regiment = {
-        name= "1�re Division d'Hussard"
+        name= "1ère Division d'Hussard"
         type = hussar
         home = 420
     }
 
     regiment = {
-        name= "2�re Division d'Hussard"
+        name= "2ère Division d'Hussard"
         type = hussar
         home = 446
     }
 
     regiment = {
-        name= "1.1�re Division d'Infanterie"
+        name= "1.1ère Division d'Infanterie"
         type = infantry
         home = 438
     }
 
     regiment = {
-        name= "2.1�re Division d'Infanterie"
+        name= "2.1ère Division d'Infanterie"
         type = infantry
         home = 400
     }
 
     regiment = {
-        name= "3.1�re Division d'Infanterie"
+        name= "3.1ère Division d'Infanterie"
         type = infantry
         home = 401
     }
 
     regiment = {
-        name= "1.1�re Division d'Artillerie"
+        name= "1.1ère Division d'Artillerie"
         type = artillery
         home = 425
     }
 
     regiment = {
-        name= "2.1�re Division d'Artillerie"
+        name= "2.1ère Division d'Artillerie"
         type = artillery
         home = 400
     }
 
     regiment = {
-        name= "3.1�re Division d'Artillerie"
+        name= "3.1ère Division d'Artillerie"
         type = artillery
         home = 453
     }
 
     regiment = {
-        name= "4.1�re Division d'Artillerie"
+        name= "4.1ère Division d'Artillerie"
         type = artillery
         home = 399
     }
 }
 army = {
-    name = "1�re Arm�e"
+    name = "1ère Armèe"
     location = 409
 
     regiment = {
-        name= "1�re Division d'Hussard"
+        name= "1ère Division d'Hussard"
         type = hussar
         home = 458
     }
 
     regiment = {
-        name= "1.1�me Division d'Infanterie"
+        name= "1.1ème Division d'Infanterie"
         type = infantry
         home = 441
     }
 
     regiment = {
-        name= "2.1�me Division d'Infanterie"
+        name= "2.1ème Division d'Infanterie"
         type = infantry
         home = 2570
     }
 
     regiment = {
-        name= "3.1�me Division d'Infanterie"
+        name= "3.1ème Division d'Infanterie"
         type = infantry
         home = 398
     }
 
     regiment = {
-        name= "2.1�me Division d'Infanterie"
+        name= "2.1ème Division d'Infanterie"
         type = infantry
         home = 402
     }
 
     regiment = {
-        name= "2.2�re Division d'Infanterie"
+        name= "2.2ère Division d'Infanterie"
         type = infantry
         home = 403
     }
 
     regiment = {
-        name= "2.3�me Division d'Infanterie"
+        name= "2.3ème Division d'Infanterie"
         type = infantry
         home = 399
     }
 
     regiment = {
-        name= "1.1�me Division d'Artillerie"
+        name= "1.1ème Division d'Artillerie"
         type = artillery
         home = 399
     }
 
     regiment = {
-        name= "2.1�me Division d'Artillerie"
+        name= "2.1ème Division d'Artillerie"
         type = artillery
         home = 400
     }
 
     regiment = {
-        name= "3.1�me Division d'Artillerie"
+        name= "3.1ème Division d'Artillerie"
         type = artillery
         home = 399
     }
 
     regiment = {
-        name= "4.1�me Division d'Artillerie"
+        name= "4.1ème Division d'Artillerie"
         type = artillery
         home = 399
     }
 }
 
 army = {
-    name = "2�me Arm�e"
+    name = "2ème Armèe"
     location = 720
 
     regiment = {
@@ -257,67 +263,67 @@ army = {
     }
 
     regiment = {
-        name= "1�me Division d'Cuirasser"
+        name= "1ème Division d'Cuirasser"
         type = cuirassier
         home = 418
     }
 
     regiment = {
-        name= "2�re Division d'Cuirasser"
+        name= "2ère Division d'Cuirasser"
         type = cuirassier
         home = 406
     }
 
     regiment = {
-        name= "1.7�me Division d'Infanterie"
+        name= "1.7ème Division d'Infanterie"
         type = infantry
-        home = 415
+        home = 429
     }
 
     regiment = {
-        name= "2.7�me Division d'Infanterie"
+        name= "2.7ème Division d'Infanterie"
         type = infantry
         home = 416
     }
 
     regiment = {
-        name= "3.7�me Division d'Infanterie"
+        name= "3.7ème Division d'Infanterie"
         type = infantry
         home = 417
     }
 
     regiment = {
-        name= "4.7�me Division d'Infanterie"
+        name= "4.7ème Division d'Infanterie"
         type = infantry
         home = 452
     }
 
     regiment = {
-        name= "5.7�me Division d'Infanterie"
+        name= "5.7ème Division d'Infanterie"
         type = infantry
         home = 448
     }
 
     regiment = {
-        name= "4.1�me Division d'Artillerie"
+        name= "4.1ème Division d'Artillerie"
         type = artillery
         home = 470
     }
 
     regiment = {
-        name= "4.2�me Division d'Artillerie"
+        name= "4.2ème Division d'Artillerie"
         type = artillery
         home = 434
     }
 
     regiment = {
-        name= "4.3�me Division d'Artillerie"
+        name= "4.3ème Division d'Artillerie"
         type = artillery
         home = 462
     }
 
     regiment = {
-        name= "5.3�me Division d'Artillerie"
+        name= "5.3ème Division d'Artillerie"
         type = artillery
         home = 461
     }
@@ -325,47 +331,48 @@ army = {
 }
 
 army = {
-    name = "7�me Division d'Infanterie"
+    name = "7ème Division d'Infanterie"
     location = 375
     regiment = {
-        name= "1.7�me Division d'Infanterie"
+        name= "1.7ème Division d'Infanterie"
         type = infantry
         home = 415
     }
 
     regiment = {
-        name= "2.7�me Division d'Infanterie"
+        name= "2.7ème Division d'Infanterie"
         type = infantry
         home = 416
     }
 
     regiment = {
-        name= "3.7�me Division d'Infanterie"
+        name= "3.7ème Division d'Infanterie"
         type = infantry
         home = 417
     }
 
     regiment = {
-        name= "4.7�me Division d'Infanterie"
+        name= "4.7ème Division d'Infanterie"
         type = infantry
         home = 414
     }
 
     regiment = {
-        name= "5.7�me Division d'Infanterie"
+        name= "5.7ème Division d'Infanterie"
         type = artillery
         home = 415
     }
 
     regiment = {
-        name= "6.7�me Division d'Infanterie"
+        name= "6.7ème Division d'Infanterie"
         type = artillery
         home = 417
     }
 
     regiment = {
-        name= "7.7�me Division d'Infanterie"
-        type = artillery    home = 416
+        name= "7.7ème Division d'Infanterie"
+        type = artillery    
+		home = 416
     }
 }
 
@@ -373,67 +380,67 @@ army = {
     name = "Force d'intervention Espagnole"
     location = 498
     regiment = {
-        name= "1.8�me Division d'Infanterie"
+        name= "1.8ème Division d'Infanterie"
         type = infantry
         home = 455
     }
 
     regiment = {
-        name= "2.8�me Division d'Infanterie"
+        name= "2.8ème Division d'Infanterie"
         type = infantry
         home = 457
     }
 
     regiment = {
-        name= "3.8�me Division d'Infanterie"
+        name= "3.8ème Division d'Infanterie"
         type = infantry
         home = 473
     }
 
     regiment = {
-        name= "1.9�me Division d'Infanterie"
+        name= "1.9ème Division d'Infanterie"
         type = infantry
         home = 456
     }
 
     regiment = {
-        name= "1.10�me Division d'Infanterie"
+        name= "1.10ème Division d'Infanterie"
         type = infantry
         home = 408
     }
 
     regiment = {
-        name= "1.11�me Division d'Infanterie"
+        name= "1.11ème Division d'Infanterie"
         type = infantry
         home = 447
     }
 
     regiment = {
-        name= "2.2�me Division de cavalerie"
+        name= "2.2ème Division de cavalerie"
         type = cuirassier
         home = 463
     }
 
     regiment = {
-        name= "3.2�me Division de cavalerie"
+        name= "3.2ème Division de cavalerie"
         type = cuirassier
         home = 460
     }
 
     regiment = {
-        name= "1�me Division d'Artillerie"
+        name= "1ème Division d'Artillerie"
         type = artillery
         home = 424
     }
 
     regiment = {
-        name= "2�re Division d'Artillerie"
+        name= "2ère Division d'Artillerie"
         type = artillery
         home = 451
     }
 
     regiment = {
-        name= "3�me Division d'Artillerie"
+        name= "3ème Division d'Artillerie"
         type = artillery
         home = 449
     }
@@ -444,43 +451,43 @@ army = {
     name = "Garnison du Tours"
     location = 441
     regiment = {
-        name= "1.10�me Division d'Infanterie"
+        name= "1.10ème Division d'Infanterie"
         type = infantry
         home = 411
     }
 
     regiment = {
-        name= "2.10�me Division d'Infanterie"
+        name= "2.10ème Division d'Infanterie"
         type = infantry
         home = 407
     }
 
     regiment = {
-        name= "3.10�me Division d'Infanterie"
+        name= "3.10ème Division d'Infanterie"
         type = infantry
         home = 444
     }
 
     regiment = {
-        name= "4.10�me Division d'Infanterie"
+        name= "4.10ème Division d'Infanterie"
         type = infantry
         home = 443
     }
 
     regiment = {
-        name= "5.10�me Division d'Infanterie"
+        name= "5.10ème Division d'Infanterie"
         type = artillery
         home = 442
     }
 
     regiment = {
-        name= "6.10�me Division d'Infanterie"
+        name= "6.10ème Division d'Infanterie"
         type = artillery
         home = 441
     }
 
     regiment = {
-        name= "7.10�me Division d'Infanterie"
+        name= "7.10ème Division d'Infanterie"
         type = artillery
         home = 440
     }
@@ -1001,7 +1008,7 @@ leader = {
 }
 
 leader = {
-    name = "Guy-Victor Duperr�"
+    name = "Guy-Victor Duperrè"
     date = 1811.1.1
     type = sea
     personality = au_fait

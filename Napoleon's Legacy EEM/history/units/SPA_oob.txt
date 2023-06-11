@@ -26,9 +26,6 @@ CAN = {
 BRZ = {
     value = 100
 }
-URU = {
-    value = 75
-}
 REI = {
     value = 100
 }
@@ -66,22 +63,22 @@ navy = {
 }
 
 army = {
-    name = "Ej�rcito del Per�"
+    name = "Ejército del Perú"
     location = 2295
     regiment = {
-        name= "1. Brigada de Infanter�a"
+        name= "1. Brigada de Infantería"
         type = infantry
         home = 2295
     }
 
     regiment = {
-        name= "2. Brigada de Infanter�a"
+        name= "2. Brigada de Infantería"
         type = infantry
         home = 2295
     }
 
     regiment = {
-        name= "3. Brigada de Infanter�a"
+        name= "3. Brigada de Infantería"
         type = infantry
         home = 2302
     }

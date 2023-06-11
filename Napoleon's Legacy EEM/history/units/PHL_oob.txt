@@ -18,7 +18,7 @@ REI = {
 }
 
 army = {
-    name = "Ej�rcito de Filipinas"
+    name = "Ejército de Filipinas"
     location = 1455
 
     regiment = {

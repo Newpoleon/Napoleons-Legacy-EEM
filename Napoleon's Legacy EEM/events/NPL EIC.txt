@@ -701,7 +701,7 @@ country_event = {
 				secede_province = EIC
 			}
         }
-
+		
         ai_chance = { factor = 95 }
     }
 
@@ -920,7 +920,7 @@ country_event = {
 	
     option = {
         name = "EVTOPTC4662022"
-        ai_chance = { factor = 10 }
+        ai_chance = { factor = 5 }
     }
 }
 

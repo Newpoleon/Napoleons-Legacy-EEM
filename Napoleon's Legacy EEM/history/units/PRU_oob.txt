@@ -1,4 +1,4 @@
-BRA = {
+BRG = {
     value = 0
     level = 2
     influence_value = 25
@@ -332,7 +332,7 @@ army = {
 }
 
 navy = {
-    name = "K�niglich Preu�ische Marine"
+    name = "Königlich Preußische Marine"
     location = 680
     ship = {
         name= "1. Klipperflottille"

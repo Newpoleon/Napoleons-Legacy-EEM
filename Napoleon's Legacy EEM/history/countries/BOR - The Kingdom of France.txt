@@ -29,15 +29,18 @@ safety_regulations = no_safety
 health_care = no_health_care
 unemployment_subsidies = no_subsidies
 pensions = no_pensions
-school_reforms = low_schools
+school_reforms = acceptable_schools
 
 #New Reforms
-conscription = one_year_draft
+conscription = two_year_draft
 debt_law = debtors_prisons
 penal_system = capital_punishment
 child_labor = child_labor_legal
 citizens_rights = culture_voting_only
 border_policy = open_borders
+
+set_country_flag = catholic_country
+set_country_flag = french_country
 
 # Technologies
 post_napoleonic_thought = 1
@@ -75,21 +78,22 @@ interchangeable_parts = 1
 high_pressure_steam_engine = 1
 
 # Inventions
-#corvettes = yes
-commerce_raiders = yes
+
+secularization = yes
+social_conscience = yes
 
 # Starting Consciousness
 consciousness = 3
 nonstate_consciousness = 1
 
-ruling_party = REP_conservative
+ruling_party = FRA_conservative_3
 upper_house = {
     fascist = 0
-    liberal = 25
+    liberal = 20
     conservative = 50
-    reactionary = 25
+    reactionary = 10
     anarcho_liberal = 0
-    socialist = 25
+    socialist = 20
     communist = 0
 }
 

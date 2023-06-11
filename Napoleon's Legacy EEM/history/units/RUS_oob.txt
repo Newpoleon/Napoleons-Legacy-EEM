@@ -918,7 +918,7 @@ leader = {
 }
 
 leader = {
-    name = "Alexander von L�ders"
+    name = "Alexander von Lüders"
     picture = rus_gen_lueders
     date = 1829.1.1
     type = land

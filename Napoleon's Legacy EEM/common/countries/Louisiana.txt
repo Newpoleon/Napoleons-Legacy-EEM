@@ -141,22 +141,22 @@ party = {
 
 unit_names = {
     dreadnought = {
-        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" D�troit
+        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" Détroit
     }
     ironclad = {
-        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" D�troit
+        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" Détroit
     }
     manowar = {
-        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" D�troit
+        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" Détroit
     }
     cruiser = {
-        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" D�troit
+        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" Détroit
     }
     frigate = {
-        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" D�troit
+        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" Détroit
     }
     monitor = {
-        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" D�troit
+        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" Détroit
     }
     clipper_transport = {
 
@@ -165,6 +165,6 @@ unit_names = {
 
     }
     commerce_raider = {
-        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" D�troit
+        "Baton-Rouge" Rosalie Orléans Beauharnois Chartres "Saint-Louis" "De la Salle" Détroit
     }
 }

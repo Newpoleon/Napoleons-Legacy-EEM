@@ -1,0 +1,9 @@
+army = {
+    name = "Bergische Armee"
+    location = 536
+    regiment = {
+        name= "1. Bergische Infanterie-Brigade"
+        type = infantry
+        home = 536
+    }
+}

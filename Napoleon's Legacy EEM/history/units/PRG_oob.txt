@@ -7,9 +7,6 @@ USA = {
 BRZ = {
     value = -250
 }
-URU = {
-    value = -250
-}
 LPL = {
     value = -250
 }
@@ -24,29 +21,29 @@ REI = {
 }
 
 army = {
-    name = "Ej�rcito del Paraguay"
+    name = "Ejército del Paraguay"
     location = 2339
     regiment = {
-        name= "1.1ra Divisi�n de Infanter�a"
+        name= "1.1ra División de Infantería"
         type = infantry
         home = 2339
     }
 
     regiment = {
-        name= "2.2ra Divisi�n de Infanter�a"
+        name= "2.2ra División de Infantería"
         type = infantry
         home = 2339
     }
 
     regiment = {
-        name= "3.3ra Divisi�n de Infanter�a"
+        name= "3.3ra División de Infantería"
         type = infantry
         home = 2339
     }
 
 }
 leader = {
-    name = "Domingo Francisco S�nchez"
+    name = "Domingo Francisco Sánchez"
     type = land
     date = 1836.1.1
     background = school_of_the_bayonet

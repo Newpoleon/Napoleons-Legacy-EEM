@@ -624,7 +624,6 @@ country_event = {
 			military_reform = yes_foreign_weapons
 			activate_technology = flintlock_rifles
 		}
-		BNG = { country_event = 121293 }
     }
 }
 

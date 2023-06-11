@@ -1,6 +1,7 @@
-owner = FRM
-controller = FRM
+owner = RHB
+controller = RHB
 add_core = FRM
+add_core = RHB
 add_core = GER
 trade_goods = cattle
 life_rating = 40
