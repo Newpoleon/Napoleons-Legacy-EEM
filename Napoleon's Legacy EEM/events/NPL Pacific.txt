@@ -1,0 +1,40 @@
+country_event = {
+    id = 66000
+    title = "EVTNAME66000"
+    desc = "EVTDESC66000"
+    picture = "Waitangi"
+	fire_only_once = yes
+
+    trigger = {
+        tag = TGA
+        civilized = no
+        year = 1870
+		OR = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+		}
+    }
+	
+	mean_time_to_happen = {
+        months = 5
+        modifier = {
+            factor = 0.5
+            year = 1871
+        }
+        modifier = {
+            factor = 0.5
+            year = 1872
+        }
+    }
+
+    option = {
+        name = "EVT66000OPTA"
+        political_reform = yes_meeting
+        political_reform = non_secret_ballots
+        political_reform = landed_voting
+        government = prussian_constitutionalism
+		economic_reform = yes_admin_reform
+		economic_reform = yes_land_reform
+		prestige = 5
+    }
+}

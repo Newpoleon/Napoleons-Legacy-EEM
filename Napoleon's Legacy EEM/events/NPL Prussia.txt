@@ -320,7 +320,7 @@ country_event = {
             year = 1889
         }
 
-        has_country_flag = bismarck_in_the_reich
+        has_country_flag = von_bismarck_appointed
         exists = RHB
     }
 
@@ -366,7 +366,7 @@ country_event = {
             exists = RHB
         }
 
-        has_country_flag = bismarck_in_the_reich
+		has_country_flag = von_bismarck_appointed
     }
 
     fire_only_once = yes

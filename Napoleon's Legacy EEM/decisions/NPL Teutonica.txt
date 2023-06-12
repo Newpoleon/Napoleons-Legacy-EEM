@@ -1,9 +1,6 @@
 political_decisions = {
 
-    #
-    # TODO clean this up
     # see HPM netherlands wallonia renaming file, its far cleaner.
-    #
 
     send_Frankfurt_delegate = {
         potential = {
@@ -11,13 +8,13 @@ political_decisions = {
             NOT = {
                 exists = GER
                 exists = NGF
-                exists = RHB
                 year = 1850
                 has_global_flag = federation_rejected
                 has_global_flag = federation_accepted
                 has_country_flag = sent_delegate
+				has_global_flag = rheinbund_alt_formation
             }
-            exists = FRM
+            exists = RHB
         }
 
         allow = {
@@ -218,7 +215,7 @@ political_decisions = {
                 year = 1889
             }
 
-            has_country_flag = bismarck_in_the_reich
+            has_country_flag = von_bismarck_appointed
             has_country_flag = prussian_federation_agreement
         }
 
@@ -266,15 +263,7 @@ political_decisions = {
                 tag = PRU
                 tag = TEU
             }
-
-            # TODO simplify this
-            owns = 360
-            owns = 361
-            owns = 362
-            owns = 363
-            owns = 364
-            owns = 365
-
+			RUS_360 = { owned_by = THIS }
             NOT = {
                 exists = LIT
                 has_global_flag = prussia_renamed_lithuania
@@ -315,13 +304,7 @@ political_decisions = {
                 tag = PRU
                 tag = TEU
             }
-            owns = 354
-            owns = 355
-            owns = 356
-            owns = 357
-            owns = 358
-            owns = 359
-
+			RUS_354 = { owned_by = THIS }
             NOT = {
                 exists = LAT
                 has_global_flag = prussia_renamed_latvia
@@ -360,13 +343,7 @@ political_decisions = {
                 tag = PRU
                 tag = TEU
             }
-
-            owns = 349
-            owns = 350
-            owns = 351
-            owns = 352
-            owns = 353
-
+			RUS_349 = { owned_by = THIS }
             NOT = {
                 exists = EST
                 has_global_flag = prussia_renamed_estonia
@@ -400,14 +377,7 @@ political_decisions = {
         picture = baltic_states
         potential = {
             tag = LIT
-
-            owns = 360
-            owns = 361
-            owns = 362
-            owns = 363
-            owns = 364
-            owns = 365
-
+			RUS_360 = { owned_by = THIS }
             has_global_flag = prussia_renamed_lithuania
         }
 
@@ -441,14 +411,7 @@ political_decisions = {
         picture = baltic_states
         potential = {
             tag = LAT
-
-            owns = 354
-            owns = 355
-            owns = 356
-            owns = 357
-            owns = 358
-            owns = 359
-
+			RUS_354 = { owned_by = THIS }
             exists = LAT
             has_global_flag = prussia_renamed_latvia
         }
@@ -482,11 +445,7 @@ political_decisions = {
         picture = baltic_states
         potential = {
             tag = EST
-            owns = 349
-            owns = 350
-            owns = 351
-            owns = 352
-            owns = 353
+			RUS_349 = { owned_by = THIS }
             has_global_flag = prussia_renamed_estonia
             exists = EST
         }
@@ -562,14 +521,15 @@ political_decisions = {
                 alliance_with = TSA
                 government = democracy
             }
-
-            # TODO simplify this
-            PRU_546 = { owned_by = THIS }
-            PRU_690 = { owned_by = THIS }
-            PRU_695 = { owned_by = THIS }
-            RUS_349 = { owned_by = THIS }
-            RUS_354 = { owned_by = THIS }
-            RUS_360 = { owned_by = THIS }
+			
+			has_country_flag = ostpolitik_enacted
+			has_unclaimed_cores = no
+            #PRU_546 = { owned_by = THIS }
+            #PRU_690 = { owned_by = THIS }
+            #PRU_695 = { owned_by = THIS }
+            #RUS_349 = { owned_by = THIS }
+            #RUS_354 = { owned_by = THIS }
+            #RUS_360 = { owned_by = THIS }
         }
 
         effect = {

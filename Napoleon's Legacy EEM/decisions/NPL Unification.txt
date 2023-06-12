@@ -60,6 +60,7 @@ political_decisions = {
             prestige = 15
             add_accepted_culture = north_german
             add_accepted_culture = south_german
+			set_global_flag = rheinbund_alt_formation
             any_country = {
                 limit = {
                     is_culture_group = germanic

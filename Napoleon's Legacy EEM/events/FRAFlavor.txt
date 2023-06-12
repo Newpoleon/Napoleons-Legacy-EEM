@@ -1026,15 +1026,6 @@ country_event = {
             }
             3321 = { secede_province = THIS }
         }
-        random_owned = {
-            limit = {
-                owner = {
-                    2552 = { empty = yes }
-                    exists = CAN
-                }
-            }
-            2552 = { secede_province = CAN }
-        }
         random_country = {
             limit = {
                 tag = CAN
