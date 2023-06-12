@@ -8,7 +8,7 @@ Upcoming plans include completing development of the planned Germany rework, fix
 - all the anons and napoleons who helped develop and create Napoleon's Legacy
 - Extender-Anon for his amazing work with EEM
 - arkhometha and all the HPM contributors
-- The HPM Politics & Economy Patch guy, here's hoping for a version 2
+- Xylephone for the HPM Politics and Economy Patch
 - /gsg/ for being /gsg/ and /vst/ for being /vst/
 
 # Changelog for v0.3.3a
