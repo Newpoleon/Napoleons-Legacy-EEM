@@ -986,7 +986,15 @@ country_event = {
 
     trigger = {
         OR = {
-            tag = RHB
+            AND = {
+				tag = RHB
+				OR = {
+					has_global_flag = federation_accepted
+					has_global_flag = rheinbund_alt_formation
+					is_greater_power = yes
+					is_secondary_power = yes
+				}
+			}
             tag = GER
         }
         exists = AFA
@@ -1039,7 +1047,15 @@ country_event = {
 
     trigger = {
         OR = {
-            tag = RHB
+            AND = {
+				tag = RHB
+				OR = {
+					has_global_flag = federation_accepted
+					has_global_flag = rheinbund_alt_formation
+					is_greater_power = yes
+					is_secondary_power = yes
+				}
+			}
             tag = GER
         }
         exists = AFA
@@ -1116,5 +1132,54 @@ country_event = {
         end_war = BOR
         prestige = 15
         set_global_flag = German_war_over
+    }
+}
+
+#RHB collapses if they failed to unify, are not powerful, and France is in turmoil
+country_event = {
+    id = 37246
+    title = "EVTNAME37246"
+    desc = "EVTDESC37246"
+    picture = "Upperhouse"
+
+    trigger = {
+		tag = RHB
+        exists = AFA
+        exists = BOR
+		NOT = {
+			has_global_flag = federation_accepted
+			has_global_flag = rheinbund_alt_formation
+			is_greater_power = yes
+			is_secondary_power = yes
+		}
+		ai = yes #this could be too punitive for players, might reconsider this later though
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen =  {
+        days = 5
+    }
+
+    option = {
+        name = "EVTOPTA37246"
+        prestige = -15
+		change_tag = FRM
+		release_vassal = WUR
+        release_vassal = BAD
+        release_vassal = BAV
+        release_vassal = WRZ
+        release_vassal = HES
+        release_vassal = NAS
+        release_vassal = BRG
+		release_vassal = COB
+		release_vassal = MEI
+        release_vassal = WEI
+        release_vassal = SAX
+		release_vassal = ANH
+		release_vassal = LIP
+		release_vassal = WST
+		release_vassal = HEK
+		release_vassal = MEC
     }
 }

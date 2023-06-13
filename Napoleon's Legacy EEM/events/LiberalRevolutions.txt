@@ -39,7 +39,7 @@ country_event = {
             is_ideology_enabled = socialist
             vote_franschise = universal_weighted_voting
             vote_franschise = universal_voting
-            government = democracy
+            tag = BRI
         }
         NOT = {
             has_global_flag = liberal_revolution_should_now_fire

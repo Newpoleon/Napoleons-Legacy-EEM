@@ -1,6 +1,5 @@
-capital = 566
+capital = 545
 primary_culture = north_german
-culture = south_german
 religion = protestant
 government = absolute_monarchy
 plurality = 25.0
@@ -8,13 +7,13 @@ nationalvalue = nv_autocracy
 literacy = 0.8
 civilized = yes
 prestige = 5
-is_releasable_vassal = no
+
 
 # Political reforms
 slavery = no_slavery
 upper_house_composition = appointed
 vote_franschise = none_voting
-public_meetings = yes_meeting
+public_meetings = no_meeting
 press_rights = state_press
 trade_unions = no_trade_unions
 voting_system = first_past_the_post
@@ -31,10 +30,10 @@ school_reforms = no_schools
 
 # New Reforms
 conscription = two_year_draft
-debt_law = debtors_prisons
+debt_law = peonage
 penal_system = capital_punishment
 child_labor = child_labor_legal
-citizens_rights = culture_voting_only
+citizens_rights = primary_culture_only
 border_policy = open_borders
 
 set_country_flag = protestant_country
@@ -42,8 +41,8 @@ set_country_flag = protestant_country
 ruling_party = HEK_reactionary
 upper_house = {
     fascist = 0
-    liberal = 35
-    conservative = 55
+    liberal = 25
+    conservative = 65
     reactionary = 10
     anarcho_liberal = 0
     socialist = 0
