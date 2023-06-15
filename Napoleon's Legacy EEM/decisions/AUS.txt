@@ -120,6 +120,65 @@ political_decisions = {
             change_tag = HUN
         }
     }
+	
+	begin_hungarian_revolution = {
+        picture = gtfo
+        potential = {
+            tag = HUN
+            has_global_flag = hungarian_revolution_occurred
+            NOT = { has_country_flag = hungarian_revolution_began }
+        }
+
+        allow = {
+            war_with = AUS
+        }
+
+        effect = {
+            set_country_flag = hungarian_revolution_began
+            small_arms = 10
+            regular_clothes = 10
+            leadership = 40
+            define_general = {
+                name = "Józef Bem"
+                personality = intelligent
+                background = natural_born_leader
+            }
+            add_country_modifier = {
+                name = begin_revolution
+                duration = 365
+            }
+            any_pop = {
+                limit = { has_pop_culture = hungarian }
+                militancy = -8
+            }
+            any_owned = {
+                limit = { is_core = ROM }
+                any_pop = {
+                    limit = { has_pop_culture = romanian }
+                    militancy = 6
+                }
+                add_province_modifier = {
+                    name = nationalist_agitation
+                    duration = 1095
+                }
+            }
+            any_owned = {
+                limit = { is_core = SER }
+                any_pop = {
+                    limit = { has_pop_culture = serb }
+                    militancy = 6
+                }
+                add_province_modifier = {
+                    name = nationalist_agitation
+                    duration = 1095
+                }
+            }
+        }
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
 
     release_galicia = {
         potential = {

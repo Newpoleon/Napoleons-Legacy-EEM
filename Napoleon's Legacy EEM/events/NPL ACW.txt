@@ -1,5 +1,4 @@
 # American Civil War Chain
-
 ### First Phase
 
 # Slave owner gets shot in Pennsylvania
@@ -12,7 +11,12 @@ country_event = {
     trigger = {
         tag = USA
         year = 1850
-
+		NOT = {
+			USA_219 = { owned_by = NEN }
+			USA_223 = { owned_by = USA }
+			has_global_flag = acw_first_phase
+			has_global_flag = acw_bypass
+		}
         OR = {
             year = 1856
             has_country_flag = hasmanifestdestiny
@@ -90,7 +94,11 @@ country_event = {
 
     trigger = {
         tag = CAN
-
+		NOT = {
+			USA_219 = { owned_by = NEN }
+			USA_223 = { owned_by = USA }
+			has_global_flag = acw_bypass
+		}
         # Anything not in Pennsylvania is occupied
         NEN = {
             any_owned_province = {
@@ -117,23 +125,7 @@ country_event = {
     # Join the war, puppeting New England on victory.
     option = {
         name = "EVT44162OPTA"
-        military_access = NEN
-        create_alliance = NEN
-
-        war = {
-            target = USA
-            attacker_goal = {
-                casus_belli = cut_down_to_size
-            }
-
-            defender_goal = {
-                casus_belli = status_quo
-            }
-
-            call_ally = no
-        }
-
-        set_country_flag = acw_empire_intervenes
+		NEN = { country_event = 44186 } #Gives NEN a say in whether they are puppeted. AI will always accept.
 
         ai_chance = {
             factor = 95
@@ -171,6 +163,7 @@ country_event = {
         has_global_flag = acw_first_phase
         NOT = {
             CAN = { has_country_flag = acw_empire_intervenes }
+			has_global_flag = acw_bypass
         }
     }
 
@@ -221,6 +214,9 @@ country_event = {
         USA = { has_recently_lost_war = yes }
         USA_219 = { owned_by = NEN }
         has_global_flag = acw_first_phase
+		NOT = {
+			has_global_flag = acw_bypass
+		}
     }
 
     fire_only_once = yes
@@ -287,6 +283,9 @@ country_event = {
         NEN = { has_recently_lost_war = yes }
         USA_223 = { owned_by = USA }
         has_global_flag = acw_first_phase
+		NOT = {
+			has_global_flag = acw_bypass
+		}
     }
 
     fire_only_once = yes
@@ -1120,5 +1119,138 @@ country_event = {
         IRE = { all_core = { remove_core = CAN } }
 
         # TODO add some country flag, will be revised when conflict is redone.
+    }
+}
+
+#NEN takes Maryland before the event chain fires
+country_event = {
+    id = 44184
+    title = "EVTNAME44184"
+    desc = "EVTDESC44184"
+    picture = "treaty"
+
+    trigger = {
+        tag = NEN
+        USA_219 = { owned_by = NEN }
+        NOT = {
+			has_global_flag = acw_first_phase
+			has_global_flag = acw_bypass
+		}
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    option = {
+        name = "EVT44163OPTA"
+		set_global_flag = acw_bypass
+		set_global_flag = acw_first_phase
+        random_country = {
+            limit = {
+                179 = { owned_by = NEN }
+            }
+
+            USA = {
+                any_owned = {
+                    limit = {
+                        is_core = INC
+                    }
+
+                    add_core = NEN
+                    remove_core = USA
+                    secede_province = NEN
+                }
+            }
+        }
+    }
+}
+
+#USA takes Pennsylvania before the event chain fires
+country_event = {
+    id = 44185
+    title = "EVTNAME44185"
+    desc = "EVTDESC44185"
+    picture = "treaty"
+
+    trigger = {
+        tag = USA
+        USA_223 = { owned_by = USA }
+        NOT = {
+			has_global_flag = acw_first_phase
+			has_global_flag = acw_bypass
+		}
+    }
+
+    fire_only_once = yes
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    option = {
+        name = "EVT44163OPTA"
+		set_global_flag = acw_bypass
+		set_global_flag = acw_first_phase
+        NEN = {
+            any_owned = {
+                limit = {
+                    is_core = INC
+                }
+
+                add_core = USA
+                remove_core = NEN
+                secede_province = USA
+            }
+        }
+    }
+}
+
+#NEN decides if they want British assistance
+country_event = {
+    id = 44186
+    title = "EVTNAME44186"
+    desc = "EVTDESC44186"
+    picture = "treaty"
+	
+	is_triggered_only = yes
+
+    option = {
+        name = "EVT44186OPTA"
+		CAN = {
+			military_access = NEN
+			create_alliance = NEN
+
+			war = {
+				target = USA
+				attacker_goal = {
+					casus_belli = cut_down_to_size
+				}
+
+				defender_goal = {
+					casus_belli = status_quo
+				}
+
+				call_ally = no
+			}
+		}
+        set_country_flag = acw_empire_intervenes
+		ai_chance = {
+            factor = 100
+        }
+    }
+	
+	option = {
+        name = "EVT44186OPTB"
+		relation = {
+            who = CAN
+            value = -50 #Ungrateful!
+        }
+		
+		ai_chance = {
+            factor = 0
+        }
     }
 }
