@@ -7,17 +7,20 @@ political_decisions = {
 		
 		potential = {
 			war = yes
-			invention = strategic_destruction_doctrine
+			aeronautics = 1
 			NOT = { has_country_modifier = strat_bombers }
 			is_disarmed = no
 		}
 		
 		allow = {
+			invention = strategic_destruction_doctrine
+			invention = late_interwar_bombers
 			money = 1000000
 			military_score = 500
 			NOT = { war_policy = pacifism }
 			NOT = { national_provinces_occupied = 0.5 }
 			is_vassal = no
+			is_disarmed = no
 		}
 
 		effect = {

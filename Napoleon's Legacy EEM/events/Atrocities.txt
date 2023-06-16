@@ -5,25 +5,24 @@ province_event = {
 	desc = "$STATENAME$ has taken some damage from enemy bombing."
 
 	trigger = {
+		year = 1914
 		owner = {
 			war = yes
 			war_countries = { has_country_modifier = strat_bombers }
-			NOT = {
-				war_countries = {
-					has_country_modifier = strat_bombers
-					invention = saturation_bombing_doctrine
-					invention = gun_and_bomb_sights
-					brigades_compare = 2 #enemy has larger army
-				}
-			}
+			#NOT = { #normal and heavy bomb damage can overlap
+			#	war_countries = {
+			#		has_country_modifier = strat_bombers
+			#		invention = saturation_bombing_doctrine
+			#		invention = gun_and_bomb_sights
+			#		brigades_compare = 2 #enemy has larger army
+			#	}
+			#}
 		}
 		is_colonial = no
 		NOT = { has_province_modifier = bomb_damage }
 		NOT = { has_province_modifier = heavy_bomb_damage }
 		controlled_by = THIS
 		OR = {
-			is_capital = yes
-			port = yes
 			any_neighbor_province = {
 				OR = {
 					AND = {
@@ -35,16 +34,52 @@ province_event = {
 					}
 				}
 			}
+			AND = {
+				OR = {
+					is_capital = yes
+					port = yes
+				}
+				OR = {
+					AND = {
+						continent = north_america
+						owner = { war_countries = {  any_owned_province = { continent = north_america controller = { war_with = THIS } } } }
+					}
+					AND = {
+						continent = south_america
+						owner = { war_countries = {  any_owned_province = { continent = south_america controller = { war_with = THIS } } } }
+					}
+					AND = {
+						continent = europe
+						owner = { war_countries = {  any_owned_province = { continent = europe controller = { war_with = THIS } } } }
+					}
+					AND = {
+						continent = africa
+						owner = { war_countries = {  any_owned_province = { continent = africa controller = { war_with = THIS } } } }
+					}
+					AND = {
+						continent = asia
+						owner = { war_countries = {  any_owned_province = { continent = asia controller = { war_with = THIS } } } }
+					}
+					AND = {
+						continent = oceania
+						owner = { war_countries = {  any_owned_province = { continent = oceania controller = { war_with = THIS } } } }
+					}
+					AND = {
+						continent = australia_new_zealand
+						owner = { war_countries = {  any_owned_province = { continent = australia_new_zealand controller = { war_with = THIS } } } }
+					}
+				}
+			}
 		}
 	}
 
 	mean_time_to_happen = { 
-		months = 90
+		months = 120
 
-		modifier = {
-			factor = 0.2
-			owner = { NOT = { invention = machine_gun_armament } }
-		}
+		#modifier = {
+		#	factor = 0.2
+		#	owner = { NOT = { invention = machine_gun_armament } }
+		#}
 		modifier = {
 			factor = 0.2
 			owner = { NOT = { invention = military_aviation } }
@@ -72,15 +107,11 @@ province_event = {
 		}
 
 		modifier = {
-			factor = 0.8
-			owner = { war_countries = { invention = late_interwar_bombers } }
-		}
-		modifier = {
 			factor = 0.5
 			owner = { war_countries = { invention = saturation_bombing_doctrine } }
 		}
 		modifier = {
-			factor = 0.8
+			factor = 0.5
 			owner = { war_countries = { invention = gun_and_bomb_sights } }
 		}
 		modifier = {
@@ -111,12 +142,22 @@ province_event = {
 		}
 
 		modifier = {
-			factor = 0.5
-			owner = { war_countries = { brigades_compare = 2 } } #any enemy has larger army
+			factor = 0.8
+			owner = {
+				war_countries = { 
+					brigades_compare = 2
+					has_country_modifier = strat_bombers
+				}
+			}
 		}
 		modifier = {
-			factor = 0.5
-			owner = { war_countries = { brigades_compare = 4 } } #any enemy has larger army
+			factor = 0.8
+			owner = {
+				war_countries = { 
+					brigades_compare = 4
+					has_country_modifier = strat_bombers
+				}
+			}
 		}
 	}
 
@@ -163,6 +204,7 @@ province_event = {
 	desc = "$STATENAME$ has taken heavy damage from enemy bombing."
 
 	trigger = {
+		year = 1936
 		owner = {
 			war = yes
 			war_countries = {
@@ -177,8 +219,6 @@ province_event = {
 		NOT = { has_province_modifier = heavy_bomb_damage }
 		controlled_by = THIS
 		OR = {
-			is_capital = yes
-			port = yes
 			any_neighbor_province = {
 				OR = {
 					AND = {
@@ -190,16 +230,52 @@ province_event = {
 					}
 				}
 			}
+			AND = {
+				OR = {
+					is_capital = yes
+					port = yes
+				}
+				OR = {
+					AND = {
+						continent = north_america
+						owner = { war_countries = {  any_owned_province = { continent = north_america controller = { war_with = THIS } } } }
+					}
+					AND = {
+						continent = south_america
+						owner = { war_countries = {  any_owned_province = { continent = south_america controller = { war_with = THIS } } } }
+					}
+					AND = {
+						continent = europe
+						owner = { war_countries = {  any_owned_province = { continent = europe controller = { war_with = THIS } } } }
+					}
+					AND = {
+						continent = africa
+						owner = { war_countries = {  any_owned_province = { continent = africa controller = { war_with = THIS } } } }
+					}
+					AND = {
+						continent = asia
+						owner = { war_countries = {  any_owned_province = { continent = asia controller = { war_with = THIS } } } }
+					}
+					AND = {
+						continent = oceania
+						owner = { war_countries = {  any_owned_province = { continent = oceania controller = { war_with = THIS } } } }
+					}
+					AND = {
+						continent = australia_new_zealand
+						owner = { war_countries = {  any_owned_province = { continent = australia_new_zealand controller = { war_with = THIS } } } }
+					}
+				}
+			}
 		}
 	}
 
 	mean_time_to_happen = { 
-		months = 90
+		months = 120
 
-		modifier = {
-			factor = 0.2
-			owner = { NOT = { invention = machine_gun_armament } }
-		}
+		#modifier = {
+		#	factor = 0.2
+		#	owner = { NOT = { invention = machine_gun_armament } }
+		#}
 		modifier = {
 			factor = 0.2
 			owner = { NOT = { invention = military_aviation } }
@@ -238,9 +314,14 @@ province_event = {
 
 
 		modifier = {
-			factor = 0.5
-			owner = { war_countries = { brigades_compare = 4 } } #any enemy has larger army
-		}		
+			factor = 0.8
+			owner = {
+				war_countries = { 
+					brigades_compare = 4
+					has_country_modifier = strat_bombers
+				}
+			}
+		}
 	}
 
 	option = {
