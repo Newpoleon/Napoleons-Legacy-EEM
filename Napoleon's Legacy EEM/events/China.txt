@@ -200,6 +200,7 @@ country_event = {
                 }
                 OR = { tag = TZ1 tag = TZ2 tag = TZ3 tag = TZ4 tag = TZ5 tag = TZ6 tag = TZ7 tag = TZ8 }
             }
+			civilized = yes
             country_event = 166702
         }
     }

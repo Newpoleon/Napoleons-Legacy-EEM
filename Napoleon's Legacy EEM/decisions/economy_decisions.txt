@@ -10,11 +10,9 @@ political_decisions = {
                 ai = no
                 AND = {
                     NOT = { government = presidential_dictatorship }
-                    is_vassal = no
                     NOT = { debt_law = serfdom }
                     war = no
                     moralism = 2
-
                     NOT = { has_country_flag = orthodox_country }
                     NOT = { has_country_flag = coptic_country }
                     NOT = { has_country_flag = sunni_country }
@@ -44,6 +42,13 @@ political_decisions = {
                 government = fascist_dictatorship
                 government = presidential_dictatorship
                 government = absolute_monarchy
+            }
+			OR = {
+                is_vassal = no
+                AND = {
+                    is_vassal = yes
+                    overlord = { has_country_flag = opium_ban }
+			    }
             }
         }
 
@@ -204,6 +209,8 @@ political_decisions = {
                     OR = {
                         province_id = 1258	#Gauhati
                         province_id = 1338	#Taunggye
+						province_id = 1498	#Macau
+                        province_id = 1496	#Hong Kong
                     }
                 }
                 trade_goods = tea
@@ -340,12 +347,6 @@ political_decisions = {
 
         effect = {
             clr_country_flag = opium_ban
-            any_owned = {
-                limit = {
-                    has_province_modifier = local_opium_ban
-                }
-                remove_province_modifier = local_opium_ban
-            }
         }
 
         ai_will_do = {

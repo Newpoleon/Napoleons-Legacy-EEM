@@ -2627,10 +2627,10 @@ local_drug_habit = {
 #    icon = 2
 #}
 
-local_opium_ban = {
-    farm_RGO_eff = -0.75
-    icon = 14
-}
+#local_opium_ban = {
+#    farm_RGO_eff = -0.75
+#    icon = 14
+#}
 
 ### Strategic Bombardment ###
 

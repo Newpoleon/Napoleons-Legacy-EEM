@@ -1089,3 +1089,12 @@ country_event = {
         ai_chance = { factor = 10 }
     }
 }
+
+#TODO:
+##EIC-Hyderabad big war: Hyderabad sides with France? EIC Has no allies they can easily get, but neither does Hyderabad. Either going to be an extremely easy fight or a much more difficult fight.
+##EIC-Mughals Big War: If EIC goes down this route should recruit Nepal promising them their cores. When EIC wins and they have those provinces they can either keep their promise and give Nepal their cores or they can betray and puppet Nepal.
+###Mughals can rally much more of India to their side (Beroda, Pakistan).
+##Depening on who EIC fights, a GP gets their claws in the other power
+###Something involving the Sikh?
+##France Mysore War Fixes: Mysore shouldn't just get inherited outright, France needs to fight them.
+##What to do with Travancore? Danish colony maybe?

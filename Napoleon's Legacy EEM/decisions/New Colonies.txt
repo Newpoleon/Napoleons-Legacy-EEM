@@ -7405,7 +7405,7 @@ political_decisions = {
 		}
 		ai_will_do = { factor = 1 }
 	}
-  
+	
 	protectorate_over_comoros = {
         picture = royal_niger_company
         potential = {

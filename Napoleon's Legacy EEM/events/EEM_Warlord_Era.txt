@@ -1183,7 +1183,7 @@ country_event = {
         ai_chance = {
             factor = 40
             modifier = {
-                factor = 0
+                factor = 0.5
                 OR = { tag = GMJ tag = GNG tag = YNN }
                 NOT = { exists = KMT }
             }
@@ -1264,7 +1264,7 @@ country_event = {
         ai_chance = {
             factor = 20
             modifier = {
-                factor = 0
+                factor = 0.5
                 tag = GNG
                 NOT = { exists = KMT }
             }
@@ -1513,7 +1513,7 @@ country_event = {
         ai_chance = {
             factor = 30
             modifier = {
-                factor = 0
+                factor = 0.5
                 OR = { tag = GMJ tag = GNG tag = YNN }
                 NOT = { exists = KMT }
             }
@@ -1668,7 +1668,7 @@ country_event = {
         ai_chance = {
             factor = 20
             modifier = {
-                factor = 0
+                factor = 0.5
                 tag = GNG
                 NOT = { exists = KMT }
             }
@@ -2215,7 +2215,7 @@ country_event = {
         ai_chance = {
             factor = 20
             modifier = {
-                factor = 0
+                factor = 0.5
                 tag = GNG
                 NOT = { exists = KMT }
             }

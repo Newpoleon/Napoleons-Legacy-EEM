@@ -23,7 +23,6 @@ TGA = {
     influence_value = 25
 }
 
-
 MEX = {
     value = 100
     level = 3

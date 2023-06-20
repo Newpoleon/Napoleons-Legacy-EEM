@@ -983,6 +983,17 @@ country_event = {
                     substate_of = THIS
                 }
             }
+
+            primary_culture = beifaren
+            add_accepted_culture = nanfaren
+            remove_accepted_culture = manchu
+            remove_accepted_culture = hakka
+            remove_accepted_culture = miao
+            remove_accepted_culture = min
+            remove_accepted_culture = zhuang
+            remove_accepted_culture = yue
+            remove_accepted_culture = yi
+
             civilized = yes
             government = presidential_dictatorship
             ruling_party_ideology = reactionary

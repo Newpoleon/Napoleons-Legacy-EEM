@@ -598,7 +598,7 @@ country_event = {
                 owner = { NOT = { has_country_flag = TZ1_research } }
             }
             owner = {
-                years_of_research = 1
+                years_of_research = 0.5
                 set_country_flag = TZ1_research
             }
         }
@@ -723,7 +723,7 @@ country_event = {
                 owner = { NOT = { has_country_flag = TZ2_research } }
             }
             owner = {
-                years_of_research = 1
+                years_of_research = 0.5
                 set_country_flag = TZ2_research
             }
         }
@@ -850,7 +850,7 @@ country_event = {
                 owner = { NOT = { has_country_flag = TZ4_research } }
             }
             owner = {
-                years_of_research = 1
+                years_of_research = 0.5
                 set_country_flag = TZ4_research
             }
         }
@@ -974,7 +974,7 @@ country_event = {
                 owner = { NOT = { has_country_flag = TZ5_research } }
             }
             owner = {
-                years_of_research = 1
+                years_of_research = 0.5
                 set_country_flag = TZ5_research
             }
         }
@@ -1100,7 +1100,7 @@ country_event = {
                 owner = { NOT = { has_country_flag = TZ6_research } }
             }
             owner = {
-                years_of_research = 1
+                years_of_research = 0.5
                 set_country_flag = TZ6_research
             }
         }
@@ -1231,7 +1231,7 @@ country_event = {
                 owner = { NOT = { has_country_flag = TZ7_research } }
             }
             owner = {
-                years_of_research = 1
+                years_of_research = 0.5
                 set_country_flag = TZ7_research
             }
         }
@@ -1365,7 +1365,7 @@ country_event = {
                 owner = { NOT = { has_country_flag = TZ8_research } }
             }
             owner = {
-                years_of_research = 1
+                years_of_research = 0.5
                 set_country_flag = TZ8_research
             }
         }

@@ -3,3 +3,12 @@ controller = SWI
 add_core = SWI
 trade_goods = timber
 life_rating = 34
+
+party_loyalty = {
+    ideology = conservative
+    loyalty_value = 4.0 #20
+}
+party_loyalty = {
+    ideology = liberal
+    loyalty_value = 1.0 #5
+}

@@ -256,4 +256,97 @@ political_decisions = {
             }
         }
     }
+	
+	become_mughals = {
+        potential = {
+            OR = {
+				tag = DUR
+				AND = {
+					tag = AFG
+					civilized = yes
+				}
+			}
+			is_vassal = no
+			NOT = { exists = MUG }
+            NOT = { has_global_flag = durrani_mughal }
+        }
+
+        allow = {
+            war = no
+            prestige = 100
+			has_unclaimed_cores = no
+            OR = {
+                government = hms_government
+                government = prussian_constitutionalism
+                government = absolute_monarchy
+            }
+        }
+
+        effect = {
+            set_global_flag = durrani_mughal
+            prestige = 5
+            all_core = {
+                add_core = MUG
+                remove_core = DUR
+            }
+            change_tag = MUG
+			add_accepted_culture = panjabi
+			add_accepted_culture = avadhi
+        }
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
+	
+	incorporate_mughals = {
+        potential = {
+            OR = {
+				tag = DUR
+				AND = {
+					tag = AFG
+					civilized = yes
+				}
+			}
+			is_vassal = no
+			MUG = { exists = yes }
+			MUG = { ai = yes }
+            NOT = { has_global_flag = durrani_mughal }
+        }
+
+        allow = {
+            war = no
+            prestige = 100
+			has_unclaimed_cores = no
+			OR = {
+                government = hms_government
+                government = prussian_constitutionalism
+                government = absolute_monarchy
+            }
+			is_our_vassal = MUG
+			OR = {
+				is_greater_power = yes
+				AND = {
+					is_secondary_power = yes
+					tag = DUR
+				}
+			}
+        }
+
+        effect = {
+            set_global_flag = durrani_mughal
+            prestige = 5
+            all_core = {
+                add_core = MUG
+                remove_core = DUR
+            }
+            change_tag = MUG
+			add_accepted_culture = panjabi
+			add_accepted_culture = avadhi
+        }
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
 }

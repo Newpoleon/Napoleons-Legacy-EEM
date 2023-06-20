@@ -683,6 +683,7 @@ province_event = {
                     province_id = 1157        # Ghawar 1948 Riyadh, arabia
                     #province_id = 932        # Az Zubayr 1949(Basra already oil)
                     province_id = 1488        # 1939-1941 Yumen / Jiuquan basin / Jiayuguan
+					province_id = 1596		  # Dushzani 1939
                 }
             }
 

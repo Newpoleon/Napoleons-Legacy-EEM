@@ -220,7 +220,7 @@ mutual_funds = {
 }
 financial_institutions_7 = {
     area = financial_institutions
-    year = 1926
+    year = 1930
     cost = 25200
 
     #tax_eff = 5
@@ -442,7 +442,7 @@ market_determined_exchange_rates = {
 }
 monetary_system_7 = {
     area = monetary_system
-    year = 1926
+    year = 1930
     cost = 25200
 
 
@@ -705,7 +705,7 @@ keynesian_economics = {
 }
 economic_thought_and_critique_7 = {
     area = economic_thought_and_critique
-    year = 1926
+    year = 1930
     cost = 25200
 
     factory_input = -0.01
@@ -1027,7 +1027,7 @@ government_interventionism = {
 }
 market_functionality_7 = {
     area = market_functionality
-    year = 1926
+    year = 1930
     cost = 25200
 
     influence = 0.2
@@ -1316,7 +1316,7 @@ organizational_development = {
 
 tech_organization_7 = {
     area = tech_organization
-    year = 1926
+    year = 1930
     cost = 25200
 
     factory_output = 0.01

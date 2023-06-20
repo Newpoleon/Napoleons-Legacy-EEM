@@ -2089,12 +2089,20 @@ country_event = {
             NOT = { tag = UBD }
             sphere_owner = { neighbour = THIS }
         }
+        OR = {
+            NOT = { tag = NEN }
+            has_country_flag = usstatehood_we_have_applied
+            USA = { ai = yes }
+        }
         NOT = {
             tag = KUK
             tag = AUS
             tag = DNB
             tag = CSA
             tag = DES
+            tag = FSA
+            tag = UIL
+            tag = UNB
 			tag = VRP
             tag = INO
             tag = IRE
@@ -2348,1514 +2356,1514 @@ country_event = {
             210 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             232 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -13
+                    loyalty_value = -2.6 #-13
                 }
             }
             213 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -13
+                    loyalty_value = -2.6 #-13
                 }
             }
             220 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -13
+                    loyalty_value = -2.6 #-13
                 }
             }
             221 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -13
+                    loyalty_value = -2.6 #-13
                 }
             }
             139 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -10
+                    loyalty_value = -2.0 #-10
                 }
             }
             169 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             170 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             171 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             172 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             173 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -10
+                    loyalty_value = -2.0 #-10
                 }
             }
             178 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             179 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             180 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             181 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             182 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -7
+                    loyalty_value = -1.4 #-7
                 }
             }
             184 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             185 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             186 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             189 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             190 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             191 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             195 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             198 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             204 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             206 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
                 party_loyalty = {
                     ideology = reactionary
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             209 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             212 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             217 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -10
+                    loyalty_value = -2.0 #-10
                 }
             }
             219 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             222 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             231 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             236 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             237 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -10
+                    loyalty_value = -2.0 #-10
                 }
             }
             244 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             245 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             246 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             2555 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             2556 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             183 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -17
+                    loyalty_value = -3.4 #-17
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             239 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -17
+                    loyalty_value = -3.4 #-17
                 }
             }
             147 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             148 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             149 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             150 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             165 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             166 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             167 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             168 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             174 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             175 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             176 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             187 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             188 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             192 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             194 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             196 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             197 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             200 = {
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             205 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
                 party_loyalty = {
                     ideology = reactionary
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             207 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             208 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
             }
             229 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             230 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             243 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             233 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             234 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             235 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             238 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             240 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             241 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -45
+                    loyalty_value = -9 #-45
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -7
+                    loyalty_value = -1.4 #-7
                 }
             }
             242 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             247 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             248 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             249 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             140 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             141 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             142 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             143 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             144 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             145 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             146 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             163 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             177 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             199 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             201 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             211 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             214 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             215 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             216 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             218 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             223 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -10
+                    loyalty_value = -2.0 #-10
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -10
+                    loyalty_value = -2.0 #-10
                 }
             }
             224 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             226 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             227 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -12
+                    loyalty_value = -2.4 #-12
                 }
             }
             164 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -10
+                    loyalty_value = -2.0 #-10
                 }
             }
             193 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -10
+                    loyalty_value = -2.0 #-10
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             225 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -10
+                    loyalty_value = -2.0 #-10
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -10
+                    loyalty_value = -2.0 #-10
                 }
             }
             228 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -10
+                    loyalty_value = -2.0 #-10
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -10
+                    loyalty_value = -2.0 #-10
                 }
             }
             202 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
             }
             60 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -25
+                    loyalty_value = -5.0 #-25
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -25
+                    loyalty_value = -5.0 #-25
                 }
             }
             2146 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -40
+                    loyalty_value = -8.0 #-40
                 }
             }
             2627 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -25
+                    loyalty_value = -5.0 #-25
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -25
+                    loyalty_value = -5.0 #-25
                 }
             }
         }
 
         #UK
-        BRI = {
+        ENG = {
             266 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                 }
                 267 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                 }
                 272 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                 }
                 273 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                 }
                 274 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                 }
                 276 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                 }
                 278 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                 }
                 285 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                 }
                 291 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                 }
                 293 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                 }
                 294 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                     party_loyalty = {
                         ideology = reactionary
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                 }
                 295 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                 }
                 296 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                 }
                 297 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                 }
                 270 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -2
+                        loyalty_value = -0.4 #-2
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 1724 = {
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 275 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -10
+                        loyalty_value = -2.0 #-10
                     }
                 }
                 298 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                 }
                 303 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -17
+                        loyalty_value = -3.4 #-17
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -12
+                        loyalty_value = -2.4 #-12
                     }
                 }
                 254 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                 }
                 255 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                 }
                 256 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                 }
                 257 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                 }
                 258 = {
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 259 = {
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 260 = {
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 261 = {
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 262 = {
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 263 = {
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 264 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -10
+                        loyalty_value = -2.0 #-10
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 265 = {
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 268 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 269 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 271 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 277 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                 }
                 279 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -10
+                        loyalty_value = -2.0 #-10
                     }
                 }
                 280 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 281 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -10
+                        loyalty_value = -2.0 #-10
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 282 = {
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 283 = {
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 288 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -10
+                        loyalty_value = -2.0 #-10
                     }
                 }
                 289 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -10
+                        loyalty_value = -2.0 #-10
                     }
                 }
                 290 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 299 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 300 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                 }
                 301 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -20
+                        loyalty_value = -4.0 #-20
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                 }
                 284 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -15
+                        loyalty_value = -3.0 #-15
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -15
+                        loyalty_value = -3.0 #-15
                     }
                 }
                 286 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -15
+                        loyalty_value = -3.0 #-15
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -15
+                        loyalty_value = -3.0 #-15
                     }
                 }
                 287 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -15
+                        loyalty_value = -3.0 #-15
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                 }
                 292 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -15
+                        loyalty_value = -3.0 #-15
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -5
+                        loyalty_value = -1.0 #-5
                     }
                 }
                 302 = {
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -6
+                        loyalty_value = -1.2 #-6
                     }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -10
+                        loyalty_value = -2.0 #-10
                     }
                 }
         }
         #Portugal
-        REI = {
+        POR = {
             521 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -25
+                    loyalty_value = -5.0 #-25
                 }
             }
         }
@@ -3864,25 +3872,25 @@ country_event = {
             2344 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -30
+                    loyalty_value = -6.0 #-30
                 }
             }
             2345 = {
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -25
+                    loyalty_value = -5.0 #-25
                 }
             }
             2347 = {
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -25
+                    loyalty_value = -5.0 #-25
                 }
             }
             2346 = {
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -25
+                    loyalty_value = -5.0 #-25
                 }
             }
         }
@@ -3891,91 +3899,91 @@ country_event = {
             603 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -30
+                    loyalty_value = -6.0 #-30
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -1
+                    loyalty_value = -0.2 #-1
                 }
             }
             604 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -25
+                    loyalty_value = -5.0 #-25
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -1
+                    loyalty_value = -0.2 #-1
                 }
             }
             605 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -30
+                    loyalty_value = -6.0 #-30
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -1
+                    loyalty_value = -0.2 #-1
                 }
             }
             607 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -25
+                    loyalty_value = -5.0 #-25
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -1
+                    loyalty_value = -0.2 #-1
                 }
             }
             608 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -30
+                    loyalty_value = -6.0 #-30
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -1
+                    loyalty_value = -0.2 #-1
                 }
             }
             609 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
             }
             606 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -5
+                    loyalty_value = -1.0 #-5
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
             }
             2568 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -2
+                    loyalty_value = -0.4 #-2
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
             }
             611 = {
                 party_loyalty = {
                     ideology = liberal
-                    loyalty_value = -15
+                    loyalty_value = -3.0 #-15
                 }
                 party_loyalty = {
                     ideology = conservative
-                    loyalty_value = -20
+                    loyalty_value = -4.0 #-20
                 }
             }
         }

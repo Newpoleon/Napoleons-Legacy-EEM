@@ -42,31 +42,31 @@ province_event = {
 				OR = {
 					AND = {
 						continent = north_america
-						owner = { war_countries = {  any_owned_province = { continent = north_america controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = north_america controller = { war_with = THIS } } } }
 					}
 					AND = {
 						continent = south_america
-						owner = { war_countries = {  any_owned_province = { continent = south_america controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = south_america controller = { war_with = THIS } } } }
 					}
 					AND = {
 						continent = europe
-						owner = { war_countries = {  any_owned_province = { continent = europe controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = europe controller = { war_with = THIS } } } }
 					}
 					AND = {
 						continent = africa
-						owner = { war_countries = {  any_owned_province = { continent = africa controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = africa controller = { war_with = THIS } } } }
 					}
 					AND = {
 						continent = asia
-						owner = { war_countries = {  any_owned_province = { continent = asia controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = asia controller = { war_with = THIS } } } }
 					}
 					AND = {
 						continent = oceania
-						owner = { war_countries = {  any_owned_province = { continent = oceania controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = oceania controller = { war_with = THIS } } } }
 					}
 					AND = {
 						continent = australia_new_zealand
-						owner = { war_countries = {  any_owned_province = { continent = australia_new_zealand controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = australia_new_zealand controller = { war_with = THIS } } } }
 					}
 				}
 			}
@@ -238,31 +238,31 @@ province_event = {
 				OR = {
 					AND = {
 						continent = north_america
-						owner = { war_countries = {  any_owned_province = { continent = north_america controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = north_america controller = { war_with = THIS } } } }
 					}
 					AND = {
 						continent = south_america
-						owner = { war_countries = {  any_owned_province = { continent = south_america controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = south_america controller = { war_with = THIS } } } }
 					}
 					AND = {
 						continent = europe
-						owner = { war_countries = {  any_owned_province = { continent = europe controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = europe controller = { war_with = THIS } } } }
 					}
 					AND = {
 						continent = africa
-						owner = { war_countries = {  any_owned_province = { continent = africa controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = africa controller = { war_with = THIS } } } }
 					}
 					AND = {
 						continent = asia
-						owner = { war_countries = {  any_owned_province = { continent = asia controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = asia controller = { war_with = THIS } } } }
 					}
 					AND = {
 						continent = oceania
-						owner = { war_countries = {  any_owned_province = { continent = oceania controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = oceania controller = { war_with = THIS } } } }
 					}
 					AND = {
 						continent = australia_new_zealand
-						owner = { war_countries = {  any_owned_province = { continent = australia_new_zealand controller = { war_with = THIS } } } }
+						owner = { war_countries = {  capital_scope = { continent = australia_new_zealand controller = { war_with = THIS } } } }
 					}
 				}
 			}

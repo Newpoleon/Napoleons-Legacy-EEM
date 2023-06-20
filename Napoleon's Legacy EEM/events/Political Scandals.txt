@@ -169,7 +169,7 @@ country_event = {
             limit = { is_colonial = no }
             party_loyalty = {
                 ideology = reactionary
-                loyalty_value = -0.2
+                loyalty_value = -0.05 #-0.2
             }
         }
 
@@ -183,7 +183,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = reactionary
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -200,7 +200,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = reactionary
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -217,7 +217,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = reactionary
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -235,7 +235,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = reactionary
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -253,7 +253,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = reactionary
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -271,7 +271,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = reactionary
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -289,7 +289,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = reactionary
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -306,7 +306,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = reactionary
-                            loyalty_value = -0.5
+                            loyalty_value = -0.125 #-0.5
                         }
                     }
                 }
@@ -485,7 +485,7 @@ country_event = {
             limit = { is_colonial = no }
             party_loyalty = {
                 ideology = conservative
-                loyalty_value = -0.2
+                loyalty_value = -0.05 #-0.2
             }
         }
 
@@ -499,7 +499,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = conservative
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -516,7 +516,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = conservative
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -533,7 +533,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = conservative
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -551,7 +551,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = conservative
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -569,7 +569,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = conservative
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -587,7 +587,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = conservative
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -605,7 +605,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = conservative
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -622,7 +622,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = conservative
-                            loyalty_value = -0.5
+                            loyalty_value = -0.125 #-0.5
                         }
                     }
                 }
@@ -796,7 +796,7 @@ country_event = {
             limit = { is_colonial = no }
             party_loyalty = {
                 ideology = liberal
-                loyalty_value = -0.2
+                loyalty_value = -0.05 #-0.2
             }
         }
 
@@ -810,7 +810,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -827,7 +827,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -844,7 +844,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -862,7 +862,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -880,7 +880,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -898,7 +898,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -916,7 +916,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -933,7 +933,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = liberal
-                            loyalty_value = -0.5
+                            loyalty_value = -0.125 #-0.5
                         }
                     }
                 }
@@ -1108,7 +1108,7 @@ country_event = {
             limit = { is_colonial = no }
             party_loyalty = {
                 ideology = anarcho_liberal
-                loyalty_value = -0.2
+                loyalty_value = -0.05 #-0.2
             }
         }
 
@@ -1122,7 +1122,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = anarcho_liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1139,7 +1139,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = anarcho_liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1156,7 +1156,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = anarcho_liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1174,7 +1174,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = anarcho_liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1192,7 +1192,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = anarcho_liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1210,7 +1210,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = anarcho_liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1228,7 +1228,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = anarcho_liberal
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1245,7 +1245,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = anarcho_liberal
-                            loyalty_value = -0.5
+                            loyalty_value = -0.125 #-0.5
                         }
                     }
                 }
@@ -1420,7 +1420,7 @@ country_event = {
             limit = { is_colonial = no }
             party_loyalty = {
                 ideology = socialist
-                loyalty_value = -0.2
+                loyalty_value = -0.05 #-0.2
             }
         }
 
@@ -1434,7 +1434,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = socialist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1451,7 +1451,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = socialist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1468,7 +1468,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = socialist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1486,7 +1486,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = socialist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1504,7 +1504,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = socialist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1522,7 +1522,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = socialist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1540,7 +1540,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = socialist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1557,7 +1557,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = socialist
-                            loyalty_value = -0.5
+                            loyalty_value = -0.125 #-0.5
                         }
                     }
                 }
@@ -1732,7 +1732,7 @@ country_event = {
             limit = { is_colonial = no }
             party_loyalty = {
                 ideology = communist
-                loyalty_value = -0.2
+                loyalty_value = -0.05 #-0.2
             }
         }
 
@@ -1746,7 +1746,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = communist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1763,7 +1763,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = communist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1780,7 +1780,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = communist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1798,7 +1798,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = communist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1816,7 +1816,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = communist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1834,7 +1834,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = communist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1852,7 +1852,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = communist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -1869,7 +1869,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = communist
-                            loyalty_value = -0.5
+                            loyalty_value = -0.125 #-0.5
                         }
                     }
                 }
@@ -2045,7 +2045,7 @@ country_event = {
             limit = { is_colonial = no }
             party_loyalty = {
                 ideology = fascist
-                loyalty_value = -0.2
+                loyalty_value = -0.05 #-0.2
             }
         }
 
@@ -2059,7 +2059,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = fascist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -2076,7 +2076,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = fascist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -2093,7 +2093,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = fascist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -2111,7 +2111,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = fascist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -2129,7 +2129,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = fascist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -2147,7 +2147,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = fascist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -2165,7 +2165,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = fascist
-                            loyalty_value = -1
+                            loyalty_value = -0.25 #-1
                         }
                     }
                 }
@@ -2182,7 +2182,7 @@ country_event = {
                     any_owned = {
                         party_loyalty = {
                             ideology = fascist
-                            loyalty_value = -0.5
+                            loyalty_value = -0.125 #-0.5
                         }
                     }
                 }
@@ -2261,7 +2261,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = reactionary
-                        loyalty_value = -2
+                        loyalty_value = -0.5 #-2
                     }
                 }
             }
@@ -2273,7 +2273,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -2
+                        loyalty_value = -0.5 #-2
                     }
                 }
             }
@@ -2285,7 +2285,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -2
+                        loyalty_value = -0.5 #-2
                     }
                 }
             }
@@ -2298,7 +2298,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = anarcho_liberal
-                        loyalty_value = -2
+                        loyalty_value = -0.5 #-2
                     }
                 }
             }
@@ -2311,7 +2311,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = socialist
-                        loyalty_value = -2
+                        loyalty_value = -0.5 #-2
                     }
                 }
             }
@@ -2324,7 +2324,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = communist
-                        loyalty_value = -2
+                        loyalty_value = -0.5 #-2
                     }
                 }
             }
@@ -2337,7 +2337,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = fascist
-                        loyalty_value = -2
+                        loyalty_value = -0.5 #-2
                     }
                 }
             }
@@ -2449,7 +2449,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = reactionary
-                        loyalty_value = -0.3
+                        loyalty_value = -0.075 #-0.3
                     }
                 }
             }
@@ -2461,7 +2461,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = conservative
-                        loyalty_value = -0.3
+                        loyalty_value = -0.075 #-0.3
                     }
                 }
             }
@@ -2473,7 +2473,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = liberal
-                        loyalty_value = -0.3
+                        loyalty_value = -0.075 #-0.3
                     }
                 }
             }
@@ -2486,7 +2486,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = anarcho_liberal
-                        loyalty_value = -0.3
+                        loyalty_value = -0.075 #-0.3
                     }
                 }
             }
@@ -2499,7 +2499,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = socialist
-                        loyalty_value = -0.3
+                        loyalty_value = -0.075 #-0.3
                     }
                 }
             }
@@ -2512,7 +2512,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = communist
-                        loyalty_value = -0.3
+                        loyalty_value = -0.075 #-0.3
                     }
                 }
             }
@@ -2525,7 +2525,7 @@ country_event = {
                     limit = { is_colonial = no }
                     party_loyalty = {
                         ideology = fascist
-                        loyalty_value = -0.3
+                        loyalty_value = -0.075 #-0.3
                     }
                 }
             }

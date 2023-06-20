@@ -1163,10 +1163,7 @@ promote_to =
         }
         modifier = {
             factor = -100
-            OR = {
-                location = { is_colonial = yes }
-                country = {civilized = no}
-            }
+            location = { is_colonial = yes }
         }
     }
 
@@ -1193,9 +1190,7 @@ promote_to =
         }
         modifier = {
             factor = 100
-            location = {
-                is_colonial = yes
-            }
+            location = { is_colonial = yes }
         }
     }
 #    labourers =

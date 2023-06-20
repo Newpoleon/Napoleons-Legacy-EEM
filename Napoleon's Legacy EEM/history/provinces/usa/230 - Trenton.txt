@@ -10,11 +10,11 @@ life_rating = 35
 
 party_loyalty = {
     ideology = conservative
-    loyalty_value = 5
+    loyalty_value = 1.0 #5
 }
 party_loyalty = {
     ideology = liberal
-    loyalty_value = 15
+    loyalty_value = 3.0 #15
 }
 
 state_building = {

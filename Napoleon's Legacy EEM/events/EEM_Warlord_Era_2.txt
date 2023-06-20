@@ -379,11 +379,18 @@ country_event = {
                 factor = 0.12
             }
         }
+        rich_strata = {
+            limit = { is_culture_group = east_asian }
+            ideology = {
+                value = liberal
+                factor = 0.01
+            }
+        }
     }
 
     option = {
         name = "EVT164600OPTB"
-        poor_strata = {
+        any_pop = {
             limit = {
                 is_culture_group = east_asian
                 is_primary_culture = no
@@ -402,8 +409,8 @@ country_event = {
                 any_owned_province = { is_core = CHI }
             }
             any_pop = {
-                limit = { is_culture_group = east_asian }
-                militancy = 3
+                limit = { is_culture_group = east_asian is_primary_culture = no }
+                militancy = 6
             }
             any_owned = {
                 add_province_modifier = {
@@ -446,10 +453,10 @@ province_event = {
 
     mean_time_to_happen = {
         months = 2100
-        modifier = {
-            factor = 3
-            NOT = { controlled_by = THIS }
-        }
+        #modifier = {
+        #    factor = 3
+        #    NOT = { controlled_by = THIS }
+        #}
         modifier = {
             factor = 1.2
             owner = {
@@ -521,6 +528,10 @@ province_event = {
             factor = 0.8
             year = 1910
         }
+        modifier = {
+            factor = 0.8
+            owner = { is_disarmed = yes }
+        }
     }
 
     option = {
@@ -583,16 +594,16 @@ province_event = {
                 }
             }
 
-            any_pop = {
-                limit = { is_culture_group = east_asian strata = poor }
+            poor_strata = {
+                limit = { is_culture_group = east_asian }
                 consciousness = 2
                 ideology = {
                     value = liberal
                     factor = 0.1   #0.05
                 }
             }
-            any_pop = {
-                limit = { is_culture_group = east_asian strata = middle }
+            middle_strata = {
+                limit = { is_culture_group = east_asian }
                 consciousness = 2
                 ideology = {
                     value = liberal

@@ -3,3 +3,12 @@ controller = SWI
 add_core = SWI
 trade_goods = cattle
 life_rating = 32
+
+party_loyalty = {
+    ideology = conservative
+    loyalty_value = 4.0 #20
+}
+party_loyalty = {
+    ideology = liberal
+    loyalty_value = 3.0 #15
+}

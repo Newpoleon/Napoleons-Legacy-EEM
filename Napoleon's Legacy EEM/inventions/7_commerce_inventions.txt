@@ -1,3 +1,4 @@
+#The sociologist Alfred W. Jones is credited with coining the phrase "hedged fund"[14][15] and is credited with creating the first hedge fund structure in 1949
 hedge_funds = {
     limit = {
         financial_institutions_7 = 1
@@ -64,6 +65,8 @@ howard_r_bowen = {
 
 
 #economic_thought_and_critique_7
+
+#He coined the term econometrics in 1926 for utilising statistical methods to describe economic systems, as well as the terms microeconomics and macroeconomics in 1933, for describing individual and aggregate economic systems, respectively.[2][3][4][5] He was the first to develop a statistically informed model of business cycles in 1933.
 ragnar_frisch = {
     limit = {
         economic_thought_and_critique_7 = 1
@@ -235,10 +238,6 @@ human_relations_theory = {
             factor = 2
             psychology_7 = 1
         }
-        modifier = {
-            factor = 2
-            invention = hawthrone_study
-        }
     }
     effect = {
         factory_cost = -0.01
@@ -264,47 +263,47 @@ rational_factory_layout = {
     }
 }
 
-closed_economy = {
-    limit = { market_functionality_7 = 1 }
-    news = no
-    chance = {
-        base = 2
-        modifier = {
-            factor = 2
-            economic_policy = planned_economy
-        }
-        modifier = {
-            factor = 2
-            OR = {
-                ruling_party_ideology = communist
-                ruling_party_ideology = fascist
-            }
-        }
-    }
-    effect = {
-        factory_cost = -0.01
-    }
-}
+#closed_economy = {
+#    limit = { market_functionality_7 = 1 }
+#    news = no
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = 2
+#            economic_policy = planned_economy
+#        }
+#        modifier = {
+#            factor = 2
+#            OR = {
+#                ruling_party_ideology = communist
+#                ruling_party_ideology = fascist
+#            }
+#        }
+#    }
+#    effect = {
+#        factory_cost = -0.01
+#    }
+#}
 
 #tech_organization_7
-hawthrone_study = {
-    limit = { tech_organization_7 = 1 }
-    news = no
-    chance = {
-        base = 2
-        modifier = {
-            factor = 2
-            behaviorism = 1
-        }
-        modifier = {
-            factor = 2
-            psychology_7 = 1
-        }
-    }
-    effect = {
-        factory_output = 0.01
-    }
-}
+#hawthrone_study = {
+#    limit = { tech_organization_7 = 1 }
+#    news = no
+#    chance = {
+#        base = 2
+#        modifier = {
+#            factor = 2
+#            behaviorism = 1
+#        }
+#        modifier = {
+#            factor = 2
+#            psychology_7 = 1
+#        }
+#    }
+#    effect = {
+#        factory_output = 0.01
+#    }
+#}
 
 #Handling goods on pallets was a significant improvement over using hand trucks or carrying sacks or boxes by hand and greatly speeded up loading and unloading of trucks, rail cars and ships. 
 #1930s and became widespread by the 1950s

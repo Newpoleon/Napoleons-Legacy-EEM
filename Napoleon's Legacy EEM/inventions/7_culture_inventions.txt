@@ -268,25 +268,26 @@ absurdism = {
     }
 }
 
-#should actually occur in 1967 
-#deconstrutionism = {
-#    limit = { philosophy_7 = 1 }
-#    news = no
-#    chance = {
-#        base = 2
-#        modifier = {
-#            factor = 2
-#            average_consciousness = 5
-#        }
-#        modifier = {
-#            factor = 2
-#            invention = phenomenology
-#        }
-#    }
-#    effect = {
-#        shared_prestige = 30
-#    }
-#}
+deductive_nomological_model = {
+    limit = { philosophy_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            average_consciousness = 5
+        }
+        modifier = {
+            factor = 2
+            invention = phenomenology
+        }
+    }
+    effect = {
+        shared_prestige = 30
+    }
+}
+
+#deconstrutionism should actually occur in 1967 
 
 #nuclear_theory (in own file)
 
@@ -305,30 +306,23 @@ mass_surveillance = {
         }
         modifier = {
             factor = 2
-            OR = {
-                nationalvalue = nv_order
-                nationalvalue = nv_autocracy
-            }
-        }
-        modifier = {
-            factor = 1
-            ruling_party_ideology = reactionary
+            nationalvalue = nv_order
         }
         modifier = {
             factor = 1
             invention = national_radio_networks
         }
         modifier = {
-            factor = 2
-            invention = telephone_switchboard
-        }
-        modifier = {
-            factor = 2
+            factor = 1
             invention = general_computer_programming
         }
     }
 
     effect = {
+	    rebel_org_gain = {
+            faction = all
+            value = -0.25
+        }
         suppression_points_modifier = 0.25
     }
 }
@@ -349,8 +343,13 @@ national_liberation = {
     }
     effect = {
         seperatism = 0.5
+		rebel_org_gain = {
+            faction = nationalist_rebels
+            value = 0.17
+        }
     }
 }
+
 
 #finest_hour = {
 #    limit = { political_thought_7 = 1 }
@@ -373,6 +372,57 @@ national_liberation = {
 #        war_exhaustion = -0.05
 #    }
 #}
+
+anticolonialism = {
+    limit = { political_thought_7 = 1 }
+    news = no
+    chance = {
+        base = 1
+        modifier = {
+            factor = 2
+            OR = {
+                nationalvalue = nv_liberty
+                nationalvalue = nv_equality
+            }
+        }
+        modifier = {
+            factor = 2
+            invention = national_liberation
+        }
+    }
+    effect = {
+        rebel_org_gain = {
+            faction = independence_rebels
+            value = 0.50
+        }
+        rebel_org_gain = {
+            faction = native_rebels
+            value = 0.50
+        }
+    }
+}
+
+on_guerrilla_warfare = {
+    limit = { political_thought_7 = 1 }
+    news = no
+    chance = {
+        base = 2
+        modifier = {
+            factor = 2
+            average_militancy = 2
+        }
+        modifier = {
+            factor = 2
+            average_consciousness = 4
+        }
+    }
+    effect = {
+        rebel_org_gain = {
+            faction = partisan_rebels
+            value = 0.75
+        }
+    }
+}
 
 ##########################################psychology_7
 #television_networks = {
@@ -403,45 +453,36 @@ national_liberation = {
 #    }
 #}
 
+
 ##########################################social_thought_7
-anticolonialism = {
+
+#1945 ENIAC First large-scale general-purpose programmable electronic digital computer.
+general_computer_programming = {
     limit = { social_thought_7 = 1 }
-    news = no
     chance = {
-        base = 2
+        base = 1
         modifier = {
             factor = 2
-            political_thought_7 = 1
-        }
-        modifier = {
-            factor = 2
-            OR = {
-                nationalvalue = nv_liberty
-                nationalvalue = nv_equality
-            }
-        }
-        modifier = {
-            factor = -2
-            OR = {
-                nationalvalue = nv_order
-                nationalvalue = nv_autocracy
-            }
-        }
-        modifier = {
-            factor = -4
-            OR = {
-                ruling_party_ideology = reactionary
-                ruling_party_ideology = fascist
-            }
+			invention = computerized_army_intelligence
         }
         modifier = {
             factor = 2
-            invention = national_liberation
+			invention = computerized_naval_intelligence
+        }
+        modifier = {
+            factor = 1
+            OR = {
+                government = hms_government
+                government = democracy
+            }
+        }
+        modifier = {
+            factor = -6
+            NOT = { invention = miniature_vacuum_tube }
         }
     }
-
-    non_accepted_pop_consciousness_modifier = 0.01
     effect = {
-        plurality = 0.05
+        #factory_goods_output = { electric_gear = 0.02 }
+        education_efficiency = 0.05
     }
 }

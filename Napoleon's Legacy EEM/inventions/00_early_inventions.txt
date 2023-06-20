@@ -185,7 +185,7 @@ leaded_gasoline = {
     }
     effect = {
         factory_goods_output = { fuel = 0.02 }
-        education_efficiency = -0.2
+        education_efficiency = -0.25 #-0.2
     }
 }
 

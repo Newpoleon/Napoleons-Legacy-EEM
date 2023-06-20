@@ -151,7 +151,7 @@ province_event = {
     }
 
     mean_time_to_happen = {
-        months = 60 #36
+        months = 120 #60 #36
     }
 
     title = "Opium Plantations in $PROVINCENAME$"
@@ -164,13 +164,13 @@ province_event = {
             name = switched_production
             duration = 1825
         }
-        ai_chance = { factor = 100 }
+        #ai_chance = { factor = 100 }
     }
 
-    option = {
-        name = "No, $PROVINCENAME$'s original production is still useful."
-        ai_chance = { factor = 0 }
-    }
+    #option = {
+    #    name = "No, $PROVINCENAME$'s original production is still useful."
+    #    ai_chance = { factor = 0 }
+    #}
 	
 }
 
@@ -181,7 +181,6 @@ province_event = {
     trigger = {
         trade_goods = opium
         owner = { has_country_flag = opium_ban }
-        has_province_modifier = local_opium_ban
         owner = {
             war = no
             OR = {
@@ -213,7 +212,7 @@ province_event = {
         }
     }
 
-    mean_time_to_happen = { months = 36 }
+    mean_time_to_happen = { months = 120 }
 
     title = "Opium transition to Livestock in $PROVINCENAME$"
     desc = "Opium production, long discouraged by the government, has finally been eradicated in this province. By and large, farmers here have shifted to ranching livestock."
@@ -221,7 +220,6 @@ province_event = {
     option = {
         name = "Say NO to drugs!"
         trade_goods = cattle
-        remove_province_modifier = local_opium_ban
         add_province_modifier = {
             name = switched_production
             duration = 1825
@@ -234,7 +232,6 @@ province_event = {
     trigger = {
         trade_goods = opium
         owner = { has_country_flag = opium_ban }
-        has_province_modifier = local_opium_ban
         owner = {
             war = no
             OR = {
@@ -263,7 +260,7 @@ province_event = {
         }
     }
 
-    mean_time_to_happen = { months = 36 }
+    mean_time_to_happen = { months = 120 }
 
     title = "Opium transition to Coffee in $PROVINCENAME$"
     desc = "Opium production, long discouraged by the government, has finally been eradicated in this province. By and large, farmers here have shifted to growing coffee."
@@ -271,7 +268,6 @@ province_event = {
     option = {
         name = "Say NO to drugs!"
         trade_goods = coffee
-        remove_province_modifier = local_opium_ban
         add_province_modifier = {
             name = switched_production
             duration = 1825
@@ -285,7 +281,6 @@ province_event = {
     trigger = {
         trade_goods = opium
         owner = { has_country_flag = opium_ban }
-        has_province_modifier = local_opium_ban
         owner = {
             war = no
             OR = {
@@ -316,7 +311,7 @@ province_event = {
         }
     }
 
-    mean_time_to_happen = { months = 36 }
+    mean_time_to_happen = { months = 120 }
 
     title = "Opium transition to Cotton in $PROVINCENAME$"
     desc = "Opium production, long discouraged by the government, has finally been eradicated in this province. By and large, farmers here have shifted to growing cotton."
@@ -324,7 +319,6 @@ province_event = {
     option = {
         name = "Say NO to drugs!"
         trade_goods = cotton
-        remove_province_modifier = local_opium_ban
         add_province_modifier = {
             name = switched_production
             duration = 1825
@@ -337,7 +331,6 @@ province_event = {
     trigger = {
         trade_goods = opium
         owner = { has_country_flag = opium_ban }
-        has_province_modifier = local_opium_ban
         owner = {
             war = no
             OR = {
@@ -368,7 +361,7 @@ province_event = {
         }
     }
 
-    mean_time_to_happen = { months = 36 }
+    mean_time_to_happen = { months = 120 }
 
     title = "Opium transition to Fish in $PROVINCENAME$"
     desc = "Opium production, long discouraged by the government, has finally been eradicated in this province. By and large, farmers here have shifted to catching fish."
@@ -376,7 +369,6 @@ province_event = {
     option = {
         name = "Say NO to drugs!"
         trade_goods = fish
-        remove_province_modifier = local_opium_ban
         add_province_modifier = {
             name = switched_production
             duration = 1825
@@ -389,7 +381,6 @@ province_event = {
     trigger = {
         trade_goods = opium
         owner = { has_country_flag = opium_ban }
-        has_province_modifier = local_opium_ban
         owner = {
             war = no
             OR = {
@@ -422,7 +413,7 @@ province_event = {
         }
     }
 
-    mean_time_to_happen = { months = 36 }
+    mean_time_to_happen = { months = 120 }
 
     title = "Opium transition to Fruit in $PROVINCENAME$"
     desc = "Opium production, long discouraged by the government, has finally been eradicated in this province. By and large, farmers here have shifted to growing fruit."
@@ -430,7 +421,6 @@ province_event = {
     option = {
         name = "Say NO to drugs!"
         trade_goods = fruit
-        remove_province_modifier = local_opium_ban
         add_province_modifier = {
             name = switched_production
             duration = 1825
@@ -443,7 +433,6 @@ province_event = {
     trigger = {
         trade_goods = opium
         owner = { has_country_flag = opium_ban }
-        has_province_modifier = local_opium_ban
         owner = {
             war = no
             OR = {
@@ -484,7 +473,7 @@ province_event = {
         }
     }
 
-    mean_time_to_happen = { months = 36 }
+    mean_time_to_happen = { months = 120 }
 
     title = "Opium transition to Grain in $PROVINCENAME$"
     desc = "Opium production, long discouraged by the government, has finally been eradicated in this province. By and large, farmers here have shifted to farming grain."
@@ -492,7 +481,6 @@ province_event = {
     option = {
         name = "Say NO to drugs!"
         trade_goods = grain
-        remove_province_modifier = local_opium_ban
         add_province_modifier = {
             name = switched_production
             duration = 1825
@@ -505,7 +493,6 @@ province_event = {
     trigger = {
         trade_goods = opium
         owner = { has_country_flag = opium_ban }
-        has_province_modifier = local_opium_ban
         owner = {
             war = no
             OR = {
@@ -534,7 +521,7 @@ province_event = {
         }
     }
 
-    mean_time_to_happen = { months = 36 }
+    mean_time_to_happen = { months = 120 }
 
     title = "Opium transition to Silk in $PROVINCENAME$"
     desc = "Opium production, long discouraged by the government, has finally been eradicated in this province. By and large, farmers here have shifted to processing silk."
@@ -542,7 +529,6 @@ province_event = {
     option = {
         name = "Say NO to drugs!"
         trade_goods = silk
-        remove_province_modifier = local_opium_ban
         add_province_modifier = {
             name = switched_production
             duration = 1825
@@ -555,7 +541,6 @@ province_event = {
     trigger = {
         trade_goods = opium
         owner = { has_country_flag = opium_ban }
-        has_province_modifier = local_opium_ban
         owner = {
             war = no
             OR = {
@@ -582,11 +567,12 @@ province_event = {
         OR = {
             province_id = 1258	#Gauhati
             province_id = 1338	#Taunggye
-
+            province_id = 1498	#Macau
+            province_id = 1469	#Hong Kong
         }
     }
 
-    mean_time_to_happen = { months = 36 }
+    mean_time_to_happen = { months = 120 }
 
     title = "Opium transition to Tea in $PROVINCENAME$"
     desc = "Opium production, long discouraged by the government, has finally been eradicated in this province. By and large, farmers here have shifted to growing tea."
@@ -594,7 +580,6 @@ province_event = {
     option = {
         name = "Say NO to drugs!"
         trade_goods = tea
-        remove_province_modifier = local_opium_ban
         add_province_modifier = {
             name = switched_production
             duration = 1825
@@ -608,7 +593,6 @@ province_event = {
     trigger = {
         trade_goods = opium
         owner = { has_country_flag = opium_ban }
-        has_province_modifier = local_opium_ban
         owner = {
             war = no
             OR = {
@@ -638,7 +622,7 @@ province_event = {
         }
     }
 
-    mean_time_to_happen = { months = 36 }
+    mean_time_to_happen = { months = 120 }
 
     title = "Opium transition to Timber in $PROVINCENAME$"
     desc = "Opium production, long discouraged by the government, has finally been eradicated in this province. By and large, farmers here have shifted to cutting wood."
@@ -646,7 +630,6 @@ province_event = {
     option = {
         name = "Say NO to drugs!"
         trade_goods = timber
-        remove_province_modifier = local_opium_ban
         add_province_modifier = {
             name = switched_production
             duration = 1825
@@ -660,7 +643,6 @@ province_event = {
     trigger = {
         trade_goods = opium
         owner = { has_country_flag = opium_ban }
-        has_province_modifier = local_opium_ban
         owner = {
             war = no
             OR = {
@@ -689,7 +671,7 @@ province_event = {
         }
     }
 
-    mean_time_to_happen = { months = 36 }
+    mean_time_to_happen = { months = 120 }
 
     title = "Opium transition to Tobacco in $PROVINCENAME$"
     desc = "Opium production, long discouraged by the government, has finally been eradicated in this province. By and large, farmers here have shifted to growing tobacco."
@@ -697,7 +679,6 @@ province_event = {
     option = {
         name = "Say NO to drugs!"
         trade_goods = tobacco
-        remove_province_modifier = local_opium_ban
         add_province_modifier = {
             name = switched_production
             duration = 1825
@@ -710,7 +691,6 @@ province_event = {
     trigger = {
         trade_goods = opium
         owner = { has_country_flag = opium_ban }
-        has_province_modifier = local_opium_ban
         owner = {
             war = no
             OR = {
@@ -739,7 +719,7 @@ province_event = {
         }
     }
 
-    mean_time_to_happen = { months = 36 }
+    mean_time_to_happen = { months = 120 }
 
     title = "Opium transition to Tropical Wood in $PROVINCENAME$"
     desc = "Opium production, long discouraged by the government, has finally been eradicated in this province. By and large, farmers here have shifted to cutting tropical wood."
@@ -747,7 +727,6 @@ province_event = {
     option = {
         name = "Say NO to drugs!"
         trade_goods = tropical_wood
-        remove_province_modifier = local_opium_ban
         add_province_modifier = {
             name = switched_production
             duration = 1825
@@ -761,7 +740,6 @@ province_event = {
     trigger = {
         trade_goods = opium
         owner = { has_country_flag = opium_ban }
-        has_province_modifier = local_opium_ban
         owner = {
             war = no
             OR = {
@@ -793,7 +771,7 @@ province_event = {
         }
     }
 
-    mean_time_to_happen = { months = 36 }
+    mean_time_to_happen = { months = 120 }
 
     title = "Opium transition to Wool in $PROVINCENAME$"
     desc = "Opium production, long discouraged by the government, has finally been eradicated in this province. By and large, farmers here have shifted to herding sheep."
@@ -801,7 +779,6 @@ province_event = {
     option = {
         name = "Say NO to drugs!"
         trade_goods = tropical_wood
-        remove_province_modifier = local_opium_ban
         add_province_modifier = {
             name = switched_production
             duration = 1825
@@ -812,91 +789,26 @@ province_event = {
 
 ###################################
 
-province_event = {
-    id = 166820
-    trigger = {
-        trade_goods = opium
-        NOT = { has_province_modifier = local_opium_ban }
-        NOT = { has_province_modifier = colonial_chaos }
-        NOT = { has_province_modifier = loss_of_control }
-        NOT = { has_province_modifier = war_torn }
-        controlled_by = THIS
-        owner = {
-            has_country_flag = opium_ban
-            war = no
-            administration_spending = 0.25
-            NOT = { has_country_modifier = national_confusion }
-        }
-    }
+#province_event = {
+#    id = 166820
+#    title = "Opium Plantations Raided in $PROVINCENAME$"
+#    desc = "Drug control agents have raided and shut down several opium producers and smugglers in $PROVINCENAME$."#
+#
+#    option = {
+#        name = "Say NO to drugs!"
+#        add_province_modifier = {
+#            name = local_opium_ban
+#            duration = -1
+#        }
+#    }
+#}
 
-    mean_time_to_happen = {
-        months = 36
-        modifier = {
-            factor = 0.8
-            unemployment_by_type = { type = farmers value = 0.5  }
-            has_pop_type = farmers
-            work_available = { worker = farmers }
-        }
-        modifier = {
-            factor = 0.8
-            owner = { administration_spending = 0.50 }
-        }
-        modifier = {
-            factor = 0.8
-            country_units_in_province = THIS
-        }
-        modifier = {
-            factor = 1.25
-            is_colonial = yes
-        }
-        modifier = {
-            factor = 1.25
-            is_overseas = yes
-        }
-    }
-
-    title = "Opium Plantations Raided in $PROVINCENAME$"
-    desc = "Drug control agents have raided and shut down several opium producers and smugglers in $PROVINCENAME$."
-
-    option = {
-        name = "Say NO to drugs!"
-        add_province_modifier = {
-            name = local_opium_ban
-            duration = -1
-        }
-    }
-}
-
-province_event = {
-    id = 166821
-    trigger = {
-        has_province_modifier = local_opium_ban
-        OR = {
-            NOT = { trade_goods = opium }
-            owner = { NOT = { has_country_flag = opium_ban } }
-        }
-    }
-
-    title = "DEBUG: remove local_opium_ban"
-    desc = "You shouldn't see this event. If you do, that means an event removing local_opium_ban is messed up."
-
-    mean_time_to_happen = { months = 1 }
-    option = {
-        name = "Let's hope no one overdoses."
-        owner = {
-            any_owned = {
-                limit = {
-                    has_province_modifier = local_opium_ban
-                    OR = {
-                        NOT = { trade_goods = opium }
-                        owner = { NOT = { has_country_flag = opium_ban } }
-                    }
-                }
-                remove_province_modifier = local_opium_ban
-            }
-        }
-    }
-}
+#province_event = {
+#    id = 166821
+#    title = "DEBUG: remove local_opium_ban"
+#    desc = "You shouldn't see this event. If you do, that means an event removing local_opium_ban is messed up."
+#        name = "Let's hope no one overdoses."
+#}
 
 
 #Opium addiction spreads
@@ -912,16 +824,13 @@ province_event = {
                 is_capital = yes
             }
             trade_goods = opium
-            any_neighbor_province = {
-                has_province_modifier = local_drug_habit
-            }
+            any_neighbor_province = { has_province_modifier = local_drug_habit }
             AND = {
                 owner = { produces = opium }
                 port = yes
             }
         }
         NOT = { has_province_modifier = local_drug_habit }
-        NOT = { has_province_modifier = local_opium_ban }
         owner = { civilized = yes }
     }
 
@@ -954,7 +863,7 @@ province_event = {
         }
         modifier = {
             factor = 1.25
-            owner = { penal_system = rehabilitation }
+            owner = { penal_system = capital_punishment }
         }
         modifier = {
             factor = 0.8
@@ -969,11 +878,10 @@ province_event = {
             name = local_drug_habit
             duration = 3650
         }
-        NWO = { change_variable = { which = addict value = 1 } }
         ai_chance = {
             factor = 50
             modifier = {
-                factor = 0.5
+                factor = 0
                 religious_policy = pro_atheism
             }
         }
@@ -984,7 +892,6 @@ province_event = {
         any_pop = {
             militancy = 2
         }
-        NWO = { change_variable = { which = addict_crackdown value = 1 } }
 
         ai_chance = {
             factor = 50

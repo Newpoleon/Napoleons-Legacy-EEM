@@ -320,7 +320,8 @@ rocket_experiments = {
         }
     }
     effect = {
-        factory_goods_output = { paper = 0.01 }
+       #factory_goods_output = { paper = 0.01 }
+        shared_prestige = 30
     }
 }
 
@@ -439,10 +440,10 @@ improved_hydraulic_drills = {
         }
     }
     effect = {
-        rgo_goods_output = { oil = 1 } #0.5
-        rgo_goods_output = { coal = 0.1 }
-        rgo_goods_output = { iron = 0.1 }
-        rgo_goods_output = { precious_metal = 0.1 }
+        rgo_goods_output = { oil = 0.5 }
+        rgo_goods_output = { coal = 0.05 } #0.1
+        rgo_goods_output = { iron = 0.05 }  #0.1
+        rgo_goods_output = { precious_metal = 0.05 } #0.1
         #rgo_goods_output = { sulphur = 0.1 }
     }
 }
@@ -462,10 +463,10 @@ improved_hydraulic_drills = {
 miniature_vacuum_tube = {
     limit = { tech_power_7 = 1 }
     chance = {
-        base = 0
+        base = 2
         modifier = {
-            factor = 2
-            invention = vacuum_tube
+            factor = -6
+            NOT = { invention = vacuum_tube }
         }
         modifier = {
             factor = 2
@@ -477,9 +478,7 @@ miniature_vacuum_tube = {
         }
     }
     effect = {
-        #factory_goods_output = { radio = 0.03 }
-        #factory_goods_output = { telephones = 0.03 }
-		factory_goods_output = { electric_gear = 0.02 }
+        factory_goods_output = { electric_gear = 0.03 }
     }
 }
 
@@ -533,12 +532,12 @@ numerical_control = {
             invention = basic_oxygen_steelmaking #computerized_decryption
         }
         modifier = {
-            factor = -6
-            NOT = { invention = general_computer_programming }
-        }
-        modifier = {
             factor = 2
             tech_organization_7 = 1
+        }
+		modifier = {
+            factor = -6
+            NOT = { invention = general_computer_programming }
         }
     }
     effect = {
@@ -646,33 +645,7 @@ cavity_magnetron = {
 #    }
 #}
 
-#1945 ENIAC First large-scale general-purpose programmable electronic digital computer.
-general_computer_programming = {
-    limit = { tech_power_7 = 1 }
-    chance = {
-        base = 2
-        modifier = {
-            factor = -5
-            #NOT = { invention = computerized_decryption } 
-            NOT = { invention = computerized_army_intelligence }
-            NOT = { invention = computerized_naval_intelligence }
-        }
-        modifier = {
-            factor = 1
-            OR = {
-                government = hms_government
-                government = democracy
-            }
-        }
-        modifier = {
-            factor = 2
-            invention = miniature_vacuum_tube
-        }
-    }
-    effect = {
-        factory_goods_output = { electric_gear = 0.02 }
-    }
-}
+#general_computer_programming moved to psychology_7
 
 ################ medicine ###########
 #1911 – Arsphenamine a.k.a. Salvarsan[1]
