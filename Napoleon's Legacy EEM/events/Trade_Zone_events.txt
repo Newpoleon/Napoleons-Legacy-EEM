@@ -306,7 +306,7 @@ country_event = {
             }
             modifier = {
                 factor = 2
-                war_policy = jingism
+                war_policy = jingoism
             }
 
         }
@@ -1378,7 +1378,6 @@ country_event = {
             add_province_modifier = { name = western_presence_research duration = 3650 }
         }
         1501 = { secede_province = TZ8 }
-        3326 = { secede_province = TZ8 }
 
         create_vassal = TZ8
         create_alliance = TZ8

@@ -2794,18 +2794,15 @@ country_event = {
         }
         modifier = {
             factor = 100 #if own all treaty ports (except Macao)
-            AND = {
-                #owns = 1498 #Macao
-                owns = 1538 #Shanghai
-                owns = 1496 #Hong Kong
-                owns = 1566 #Qingdao
-                owns = 1569 #Weihaiwei
-                owns = 1606 #Jiaxing
-                owns = 2681 #Taibei
-                owns = 2562 #Tainan
-                owns = 1499 #Hainan
-                owns = 2632 #Kwangchowan
-            }
+            owns = 1538 #Shanghai
+            owns = 1496 #Hong Kong
+            owns = 1566 #Qingdao
+            owns = 1569 #Weihaiwei
+            owns = 1606 #Jiaxing
+            owns = 2681 #Taibei
+            owns = 2562 #Tainan
+            owns = 1499 #Hainan
+            owns = 2632 #Kwangchowan
         }
     }
 
@@ -2899,18 +2896,15 @@ country_event = {
         }
         modifier = {
             factor = 100 #if own all treaty ports (except Macao)
-            AND = {
-                #owns = 1498 #Macao
-                owns = 1538 #Shanghai
-                owns = 1496 #Hong Kong
-                owns = 1566 #Qingdao
-                owns = 1569 #Weihaiwei
-                owns = 1606 #Jiaxing
-                owns = 2681 #Taibei
-                owns = 2562 #Tainan
-                owns = 1499 #Hainan
-                owns = 2632 #Kwangchowan
-            }
+            owns = 1538 #Shanghai
+            owns = 1496 #Hong Kong
+            owns = 1566 #Qingdao
+            owns = 1569 #Weihaiwei
+            owns = 1606 #Jiaxing
+            owns = 2681 #Taibei
+			owns = 2562 #Tainan
+            owns = 1499 #Hainan
+            owns = 2632 #Kwangchowan
         }
     }
 
@@ -3878,8 +3872,8 @@ province_event = {
 ########## Qing 166500 ##########
 country_event = {
     id = 166500
-    title = "English Smugglers Evicted"
-    desc = "We have ejected the British opium peddlers back across the sea, where they belong."
+    title = "French Smugglers Evicted"
+    desc = "We have ejected the French opium peddlers back across the sea, where they belong."
     fire_only_once = yes
     picture = "Opiumwar"
 
@@ -3887,20 +3881,18 @@ country_event = {
         tag = QNG
         war = no
         OR = {
-            AND = { has_global_flag = kowloon_incident_war truce_with = ENG }
+            AND = { has_global_flag = kowloon_incident_war truce_with = FRA }
             has_global_flag = kowloon_incident_no_war 
 		}
-        AND = {
-            owns = 1538 #Shanghai
-            owns = 1496 #Hong Kong
-            owns = 1566 #Qingdao
-            owns = 1569 #Weihaiwei
-            owns = 1606 #Jiaxing
-            owns = 2681 #Taibei
-            owns = 2562 #Tainan
-            owns = 1499 #Hainan
-            owns = 2632 #Kwangchowan
-        }
+        owns = 1538 #Shanghai
+		owns = 1496 #Hong Kong
+        owns = 1566 #Qingdao
+        owns = 1569 #Weihaiwei
+        owns = 1606 #Jiaxing
+        owns = 2681 #Taibei
+        owns = 2562 #Tainan
+        owns = 1499 #Hainan
+        owns = 2632 #Kwangchowan
         NOT = { any_owned_province = { has_province_modifier = foreign_smugglers } }
         has_recently_lost_war = no
         NOT = { has_global_flag = qing_won_opium_war } #1839
@@ -3921,8 +3913,8 @@ country_event = {
 
 country_event = {
     id = 166501
-    title = "English Pirates Evicted Again"
-    desc = "We have once again ejected the British opium peddlers back across the sea, where they belong."
+    title = "French Pirates Evicted Again"
+    desc = "We have once again ejected the French opium peddlers back across the sea, where they belong."
     fire_only_once = yes
     picture = "arrow_incident"
 
@@ -3930,20 +3922,18 @@ country_event = {
         tag = QNG
         war = no
         OR = {
-            AND = { has_global_flag = second_opium_war truce_with = ENG }
+            AND = { has_global_flag = second_opium_war truce_with = FRA }
             has_global_flag = second_opium_no_war 
 		}
-        AND = {
-            owns = 1538 #Shanghai
-            owns = 1496 #Hong Kong
-            owns = 1566 #Qingdao
-            owns = 1569 #Weihaiwei
-            owns = 1606 #Jiaxing
-            owns = 2681 #Taibei
-            owns = 2562 #Tainan
-            owns = 1499 #Hainan
-            owns = 2632 #Kwangchowan
-        }
+        owns = 1538 #Shanghai
+        owns = 1496 #Hong Kong
+        owns = 1566 #Qingdao
+        owns = 1569 #Weihaiwei
+        owns = 1606 #Jiaxing
+        owns = 2681 #Taibei
+        owns = 2562 #Tainan
+        owns = 1499 #Hainan
+        owns = 2632 #Kwangchowan
         NOT = { any_owned_province = { has_province_modifier = foreign_smugglers } }
         has_recently_lost_war = no
         has_global_flag = qing_won_opium_war
